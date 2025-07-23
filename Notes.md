@@ -1,0 +1,1 @@
+It seems like the h5 file and the imzml file are the same thing. both have 160000 objects (spectrum)
