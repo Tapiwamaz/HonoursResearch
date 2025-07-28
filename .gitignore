@@ -1,3 +1,4 @@
 *.ibd
 *.imzml
 *.h5
+*.npy
