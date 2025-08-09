@@ -9,8 +9,6 @@
 #SBATCH --nodes=1
 # Load required modules (if needed)     
 
-# Run your Python script
-python test.py
 
-# Alternative with more control:
-# python -u test.py > output_${SLURM_JOB_ID}.out 2> error_${SLURM_JOB_ID}.err
+python -u test.py > output_${SLURM_JOB_ID}.out 2> error_${SLURM_JOB_ID}.err
+echo "Job completed successfully"
