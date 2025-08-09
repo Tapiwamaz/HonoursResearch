@@ -1,4 +1,4 @@
-Starting processing at Sun Aug 10 12:11:30 AM SAST 2025
+Starting processing at Sun Aug 10 12:17:11 AM SAST 2025
 Using input file: ../../mass_spec_data/HIV/3 June/3 June PHRU FFPE test 1_1-115501_SN0p0_1-56679_SN1p0_centroid.imzml
 Output directory: ./
 Starting processing of ../../mass_spec_data/HIV/3 June/3 June PHRU FFPE test 1_1-115501_SN0p0_1-56679_SN1p0_centroid.imzml
@@ -6,5 +6,5 @@ Loaded 56678 spectra
 Preprocessing spectra...
 Processing complete! Output saved to ./
 Praise the LORD ALMIGHTY!!!
-Job completed at Sun Aug 10 12:11:56 AM SAST 2025
+Job completed at Sun Aug 10 12:18:38 AM SAST 2025
 Job completed successfully

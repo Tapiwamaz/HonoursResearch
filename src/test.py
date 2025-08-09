@@ -4,7 +4,7 @@ from pyimzml.ImzMLParser import ImzMLParser
 from scipy.interpolate import interp1d
 import argparse
 
-def preprocess_spectra(spectra_list, target_length=10):
+def preprocess_spectra(spectra_list, target_length=20000):
     processed_intensities = []
     all_mzs = []
     
