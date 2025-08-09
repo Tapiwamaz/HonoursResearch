@@ -9,5 +9,29 @@
 #SBATCH --gres=gpu:2           # Request 2 GPUs per node
 #SBATCH --time=1-00:00:00      # 1 day max runtime (adjust as needed)
 
-python -u test.py > output_${SLURM_JOB_ID}.out 2> error_${SLURM_JOB_ID}.err
+# Create log directory
+# mkdir -p logs
+
+# Define paths
+IMZML_PATH="../../mass_spec_data/HIV/3 June/3 June PHRU FFPE test 1_1-115501_SN0p0_1-56679_SN1p0_centroid.imzml"
+OUTPUT_DIR="./"
+
+# Check if files exist
+if [ ! -f "$IMZML_PATH" ]; then
+    echo "Error: imzML file not found at $IMZML_PATH"
+    exit 1
+fi
+
+# Create output directory
+mkdir -p "$OUTPUT_DIR"
+
+# Run the Python script
+echo "Starting processing at $(date)"
+echo "Using input file: $IMZML_PATH"
+echo "Output directory: $OUTPUT_DIR"
+
+python test.py --input "$IMZML_PATH" --output "$OUTPUT_DIR"
+
+echo "Job completed at $(date)"
+
 echo "Job completed successfully"
