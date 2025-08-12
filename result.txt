@@ -1,2 +1,0 @@
-mscluster4.ms.wits.ac.za
-‘expr 3 + 2‘
