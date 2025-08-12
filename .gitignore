@@ -3,3 +3,4 @@
 *.imzML
 *.h5
 *.npy
+!HIV_Coordinates.npy
