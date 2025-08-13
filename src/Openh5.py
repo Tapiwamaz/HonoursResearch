@@ -15,11 +15,11 @@ f = h5py.File(args.input, 'r')
 coordinates = np.load(args.coordinates)
 
 my_spectra = []
-index = 0
 keys = list(f.keys())
-for key in keys:
+for index in range(len(keys)):
+    key = keys[index]
     my_spectra.append([f.get(key)["x"][:],f.get(key)["y"][:],coordinates[index]])
-    index +=1
+    
   
 
 print("Done adding to array!")    
