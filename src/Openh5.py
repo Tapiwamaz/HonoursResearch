@@ -13,12 +13,15 @@ args = parser.parse_args()
 # Load data
 f = h5py.File(args.input, 'r')
 coordinates = np.load(args.coordinates)
+print(f"Number of coords:",len(coordinates))
 
 my_spectra = []
 keys = list(f.keys())
+print(f"Number of keys:",len(keys))
 for index in range(len(keys)):
-    key = keys[index]
-    my_spectra.append([f.get(key)["x"][:],f.get(key)["y"][:],coordinates[index]])
+    if index < len(coordinates):
+        key = keys[index]
+        my_spectra.append([f.get(key)["x"][:],f.get(key)["y"][:],coordinates[index]])
     
   
 
@@ -33,7 +36,7 @@ tolerance = 0.02
 
 # Get image dimensions
 all_coords = [coord for _, _, coord in my_spectra]
-xs, ys, _ = zip(*all_coords)
+xs, ys = zip(*all_coords)
 width = max(xs) + 1
 height = max(ys) + 1
 print(width,height)
@@ -45,7 +48,7 @@ ion_image = np.zeros((height, width))
 
 # Fill in the ion image with intensities for target m/z
 times = 0 
-for mzs, intensities, (x, y, _) in my_spectra:
+for mzs, intensities, (x, y) in my_spectra:
     # Get mask of indices where mz is within target window
     mz_mask = (mzs >= target_mz - tolerance) & (mzs <= target_mz + tolerance)
     if np.any(mz_mask):
