@@ -1,0 +1,7 @@
+Starting plot generation at Wed Aug 13 09:35:45 AM SAST 2025
+Using input file: ../../mass_spec_data/HIV/3 June/3 June PHRU FFPE test 1_1-115501_SN0p0_profile.h5
+Using coordinates file: ../Data/HIV/HIV_Coordinates.npy
+Output directory: ../Output
+Plot generation completed at Wed Aug 13 09:38:37 AM SAST 2025
+Results saved to ../Output
+Thank the Lord Almighty!!!

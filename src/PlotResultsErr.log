@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home-mscluster/tmazarura/HonoursResearch/src/Openh5.py", line 21, in <module>
+    my_spectra.append([f.get(key)["x"][:],f.get(key)["y"][:],coordinates[index]])
+                                                             ~~~~~~~~~~~^^^^^^^
+IndexError: index 56678 is out of bounds for axis 0 with size 56678

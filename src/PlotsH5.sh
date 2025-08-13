@@ -8,7 +8,7 @@
 #SBATCH --time=1-00:00:00      # 1 day max runtime (adjust as needed)
 
 # Define paths
-INPUT_FILE="../../mass_spec_data/HIV/3 June/3 June PHRU FFPE test 1_1-115501_SN0p0_1-56679_SN1p0_centroid.h5"
+INPUT_FILE="../../mass_spec_data/HIV/3 June/3 June PHRU FFPE test 1_1-115501_SN0p0_profile.h5"
 COORDINATES_FILE="../Data/HIV/HIV_Coordinates.npy"
 OUTPUT_DIR="../Output"
 
