@@ -32,7 +32,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 # Choose the m/z you want to plot  and tolerance
 target_mz = 165
-tolerance = 0.02
+tolerance = 1.02
 
 # Get image dimensions
 all_coords = [coord for _, _, coord in my_spectra]
