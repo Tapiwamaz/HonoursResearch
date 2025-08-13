@@ -57,6 +57,13 @@ for mzs, intensities, (x, y) in my_spectra:
         ion_image[y, x] = ion_intensity
 print(f"Points found", times)
 
+plt.imshow(ion_image, cmap='viridis', origin='lower')
+plt.colorbar(label='Ion Intensity')
+plt.title(f"Ion Image for m/z = {target_mz}")
+plt.xlabel("X intensity")
+plt.ylabel("Y intensity")
+# plt.tight_layout()
+
 output_path = os.path.join(args.output, "ion_image.png")
 plt.savefig(output_path)
 print(f"Plot saved to {output_path}")
