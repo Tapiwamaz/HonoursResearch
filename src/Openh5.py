@@ -32,7 +32,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 # Choose the m/z you want to plot  and tolerance
 target_mz = 165
-tolerance = 1.02
+tolerance = 0.02
 
 # Get image dimensions
 all_coords = [coord for _, _, coord in my_spectra]
@@ -64,6 +64,6 @@ plt.xlabel("X intensity")
 plt.ylabel("Y intensity")
 # plt.tight_layout()
 
-output_path = os.path.join(args.output, "ion_image.png")
+output_path = os.path.join(args.output, "ion_image_cancer.png")
 plt.savefig(output_path)
 print(f"Plot saved to {output_path}")

@@ -8,8 +8,8 @@
 #SBATCH --time=1-00:00:00      # 1 day max runtime (adjust as needed)
 
 # Define paths
-INPUT_FILE="../../mass_spec_data/HIV/3 June/3 June PHRU FFPE test 1_1-115501_SN0p0_profile.h5"
-COORDINATES_FILE="../Data/HIV/HIV_Coordinates.npy"
+INPUT_FILE="../../mass_spec_data/Cancer biopsy/5 June/5 June tumour test 2_1-327482_SN0p0_profile.h5"
+COORDINATES_FILE="../Data/Cancer/Cancer_Coordinates.npy"
 OUTPUT_DIR="../Output"
 
 # Check if input files exist
