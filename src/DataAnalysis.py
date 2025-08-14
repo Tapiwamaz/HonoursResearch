@@ -23,6 +23,8 @@ for index in range(len(keys)):
     if index < len(coordinates):
         key = keys[index]
         my_spectra.append([f.get(key)["x"][:],f.get(key)["y"][:],coordinates[index]])
+    else:
+        my_spectra.append([f.get(key)["x"][:],f.get(key)["y"][:],[0,0]])   
 print("Done adding to array!")
 
 # ==================================================================================================
