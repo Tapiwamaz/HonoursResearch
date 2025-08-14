@@ -80,7 +80,7 @@ for mz in range(100,1500,1):
 
 print(f'The most frequently occuring mz range is mz={most_commmon_mz[0]} with {most_commmon_mz[1]} spectra')
 print(f'This constitutes {(most_commmon_mz[1]/len(my_spectra))*100} % of the pixels')
-print(f'The coordinates of the spectra with the most recorded mz range:\n {most_common_locations}')
+# print(f'The coordinates of the spectra with the most recorded mz range:\n {most_common_locations}')
 # ==================================================================================================
 
 
