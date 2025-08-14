@@ -31,7 +31,7 @@ print("Done adding to array!")
 import numpy as np
 import matplotlib.pyplot as plt
 # Choose the m/z you want to plot  and tolerance
-target_mz = 165
+target_mz = 271
 tolerance = 0.02
 
 # Get image dimensions
