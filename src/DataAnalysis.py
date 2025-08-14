@@ -89,8 +89,8 @@ plt.xlabel('m/z')
 plt.ylabel('Frequency (Pixels found within region')
 plt.title(f'Distribution of m/z values across spectra (tolerance={tolerance})')
 
-name = f"histogram_graph_hiv_{job}.png"
-output_path = os.path.join(args.output, "histogram_graph_hiv.png")
+name = f"histogram_graph_cancer_{job}.png"
+output_path = os.path.join(args.output, name)
 plt.savefig(output_path)
 print(f"Plot saved to {output_path}")
 
@@ -106,7 +106,7 @@ if most_common_locations:
     plt.ylabel('Y Coordinate')
     plt.title(f'Scatter Plot of Most Common Spectra (mz={most_commmon_mz[0]})')
     plt.legend()
-    name = f"most_mommon_spectra_hiv_{job}.png"
+    name = f"most_mommon_spectra_cancer_{job}.png"
     scatter_output_path = os.path.join(args.output, name)
     plt.savefig(scatter_output_path)
     print(f"Scatter plot saved to {scatter_output_path}")

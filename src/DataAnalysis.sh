@@ -33,7 +33,7 @@ echo "Using coordinates file: $COORDINATES_FILE"
 echo "Output directory: $OUTPUT_DIR"
 echo "SLURM Job ID: $SLURM_JOB_ID"
 
-python DataAnalyis.py --input "$INPUT_FILE" --coordinates "$COORDINATES_FILE" --output "$OUTPUT_DIR" --job-id "$SLURM_JOB_ID"
+python DataAnalysis.py --input "$INPUT_FILE" --coordinates "$COORDINATES_FILE" --output "$OUTPUT_DIR" --job_id "$SLURM_JOB_ID"
 
 echo "Plot generation completed at $(date)"
 echo "Results saved to $OUTPUT_DIR"
