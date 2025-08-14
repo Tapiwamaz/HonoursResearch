@@ -1,7 +1,7 @@
 #!/bin/bash
-#SBATCH --job-name=PlotResults
-#SBATCH --output=PlotResults.log
-#SBATCH --error=PlotResultsErr.log
+#SBATCH --job-name=Plots
+#SBATCH --output=Plots_%j.log
+#SBATCH --error=Plots_err_%j.log
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=4      # Using 4 cores            
