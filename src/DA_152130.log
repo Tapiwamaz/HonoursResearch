@@ -2,3 +2,15 @@ Starting plot generation at Fri Aug 15 10:58:49 AM SAST 2025
 Using input file: ../../mass_spec_data/Cancer biopsy/5 June/5 June tumour test 2_1-327482_SN0p0_profile.h5
 Output directory: ../Output
 SLURM Job ID: 152130
+Number of keys: 160000
+Done adding to array!
+Number of spectra: 160000
+Range of mz values: (np.float64(100.00000072863182), np.float64(1499.9984541702133))
+Range of intensities values: (np.float64(0.0), np.float64(6926470.5))
+Number of spectra: 160000
+The most frequently occuring mz range is mz=271 with 137283 spectra
+This constitutes 85.80187500000001 % of the pixels
+Plot saved to ../Output/histogram_cancer_h5_152130.png
+Plot generation completed at Fri Aug 15 11:41:52 AM SAST 2025
+Results saved to ../Output
+Thank the Lord Almighty!!!
