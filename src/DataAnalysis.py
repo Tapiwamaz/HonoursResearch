@@ -16,7 +16,7 @@ args = parser.parse_args()
 
 # Load data
 f = h5py.File(args.input, 'r')
-coordinates = np.load(args.coordinates)
+#coordinates = np.load(args.coordinates)
 job= args.job_id
 job_type = args.job_type
 
@@ -28,6 +28,7 @@ number_of_mzs_hist = []
 for index in range(len(keys)):
         key = keys[index]
         point = [index, len(f.get(key)["x"][:])]
+        number_of_mzs_hist.append(point)
         my_spectra.append([f.get(key)["x"][:],f.get(key)["y"][:]])
 print("Done adding to array!")
 number_of_mzs_hist = np.array(number_of_mzs_hist)  

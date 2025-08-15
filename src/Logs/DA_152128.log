@@ -1,0 +1,16 @@
+Starting plot generation at Fri Aug 15 10:56:52 AM SAST 2025
+Using input file: ../../mass_spec_data/EMPA/17092024_cardiac tissues/h5 files/Sample 23_SGLT2 only.h5
+Output directory: ../Output
+SLURM Job ID: 152128
+Number of keys: 8007
+Done adding to array!
+Number of spectra: 8007
+Range of mz values: (np.float64(100.00002039750665), np.float64(1499.9884842759134))
+Range of intensities values: (np.float64(0.0), np.float64(1999260.75))
+Number of spectra: 8007
+The most frequently occuring mz range is mz=137 with 6690 spectra
+This constitutes 83.55189209441738 % of the pixels
+Plot saved to ../Output/histogram_sglt_only_h5_152128.png
+Plot generation completed at Fri Aug 15 10:58:12 AM SAST 2025
+Results saved to ../Output
+Thank the Lord Almighty!!!

@@ -8,10 +8,10 @@
 #SBATCH --time=1-00:00:00      # 1 day max runtime (adjust as needed)
 
 # Define paths
-INPUT_FILE="../../mass_spec_data/Cancer biopsy/5 June/5 June tumour test 2_1-327482_SN0p0_profile.h5"
+INPUT_FILE="../../mass_spec_data/LPS/09102024_Leandrie_LPS_plasma test/09102024_Leandrie_LPS_plasma test/h5 files/091024_39_SAL_ST.h5"
 # COORDINATES_FILE="../Data/Cancer/Cancer_Coordinates.npy"
 OUTPUT_DIR="../Output"
-JOB_TYPE="cancer"
+JOB_TYPE="sal_st"
 
 # Check if input files exist
 if [ ! -f "$INPUT_FILE" ]; then
