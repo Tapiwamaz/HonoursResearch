@@ -56,7 +56,7 @@ tolerance = 0.02
 histogram_data = np.array([[0,0]])
 most_commmon_mz = [0,0]
 
-# I will target the mz values between the min and max mz found incrementing by 10
+# I will target the mz values between the min and max mz found incrementing by 1
 for mz in range(100,1500,1):
     count = 0
     current_locations = []
@@ -84,7 +84,7 @@ print(f'This constitutes {(most_commmon_mz[1]/len(my_spectra))*100} % of the pix
 # ==================================================================================================
 
 
-plt.bar(histogram_data[1:,0], histogram_data[1:,1],color="g")
+plt.bar(histogram_data[1:,0], histogram_data[1:,1],color="g",width=1)
 plt.xlabel('m/z')
 plt.ylabel('Frequency (Pixels found within region')
 plt.title(f'Distribution of m/z values across spectra (tolerance={tolerance})')
@@ -94,21 +94,21 @@ output_path = os.path.join(args.output, name)
 plt.savefig(output_path)
 print(f"Plot saved to {output_path}")
 
-# Scatter plot of the pixels in the most_common_locations array
-if most_common_locations:
-    # Extract x and y coordinates from the most_common_locations
-    x_coords = [coord[0] for coord in most_common_locations]
-    y_coords = [coord[1] for coord in most_common_locations]
+# # Scatter plot of the pixels in the most_common_locations array
+# if most_common_locations:
+#     # Extract x and y coordinates from the most_common_locations
+#     x_coords = [coord[0] for coord in most_common_locations]
+#     y_coords = [coord[1] for coord in most_common_locations]
 
-    plt.figure()  # Create a new figure for the scatter plot
-    plt.scatter(x_coords, y_coords, c='blue', marker='o', label='Most Common Spectra')
-    plt.xlabel('X Coordinate')
-    plt.ylabel('Y Coordinate')
-    plt.title(f'Scatter Plot of Most Common Spectra (mz={most_commmon_mz[0]})')
-    plt.legend()
-    name = f"most_mommon_spectra_cancer_{job}.png"
-    scatter_output_path = os.path.join(args.output, name)
-    plt.savefig(scatter_output_path)
-    print(f"Scatter plot saved to {scatter_output_path}")
-else:
-    print("No most common locations found to plot.")
+#     plt.figure()  # Create a new figure for the scatter plot
+#     plt.scatter(x_coords, y_coords, c='blue', marker='o', label='Most Common Spectra')
+#     plt.xlabel('X Coordinate')
+#     plt.ylabel('Y Coordinate')
+#     plt.title(f'Scatter Plot of Most Common Spectra (mz={most_commmon_mz[0]})')
+#     plt.legend()
+#     name = f"most_mommon_spectra_cancer_{job}.png"
+#     scatter_output_path = os.path.join(args.output, name)
+#     plt.savefig(scatter_output_path)
+#     print(f"Scatter plot saved to {scatter_output_path}")
+# else:
+#     print("No most common locations found to plot.")
