@@ -1,0 +1,19 @@
+Starting preprocessing at Sat Aug 16 10:42:59 PM SAST 2025
+Using input file: ../../mass_spec_data/EMPA/17092024_cardiac tissues/h5 files/Sample 17_SGLT2_LANME_1-7500_SN1p0_centroid.imzml
+Output directory: ../Data/EMPA/
+Job name: sglt2_lanme
+SLURM Job ID: 152205
+####################################
+Loading spectra...
+Total spectra loaded: 7499
+Range of mz values: (100, 1500)
+Matrix created!
+Matrix has dimensions of (7499, 70000)
+Done creating data
+Preprocessing completed at Sat Aug 16 10:43:28 PM SAST 2025
+Results saved to ../Data/EMPA/
+Files created:
+  - sglt2_lanme_x.npy (normalized intensity matrix)
+  - sglt2_lanme_mzs.npy (m/z values)
+  - sglt2_lanme_coords.npy (coordinates)
+Thank the Lord Almighty!!!

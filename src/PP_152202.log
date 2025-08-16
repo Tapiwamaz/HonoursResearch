@@ -1,0 +1,19 @@
+Starting preprocessing at Sat Aug 16 10:37:27 PM SAST 2025
+Using input file: ../../mass_spec_data/Cancer biopsy/5 June/5 June tumour test 2_1-327482_SN0p0_1-160000_SN1p0_centroid.imzml
+Output directory: ../Data/Cancer/
+Job name: cancer
+SLURM Job ID: 152202
+####################################
+Loading spectra...
+Total spectra loaded: 160000
+Range of mz values: (100, 1500)
+Matrix created!
+Matrix has dimensions of (160000, 70000)
+Done creating data
+Preprocessing completed at Sat Aug 16 10:44:48 PM SAST 2025
+Results saved to ../Data/Cancer/
+Files created:
+  - cancer_x.npy (normalized intensity matrix)
+  - cancer_mzs.npy (m/z values)
+  - cancer_coords.npy (coordinates)
+Thank the Lord Almighty!!!

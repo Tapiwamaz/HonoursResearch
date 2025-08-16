@@ -8,9 +8,9 @@
 #SBATCH --time=2-00:00:00      # 2 days max runtime 
 
 # Define paths
-INPUT_FILE="../../mass_spec_data/LPS/09102024_Leandrie_LPS_plasma test/09102024_Leandrie_LPS_plasma test/h5 files/091024_11_SAL_LT_plasma_1-1658_SN1p0_centroid.imzml"
-OUTPUT_DIR="../Data/LPS"
-JOB_NAME="SAL_LT_plasma_1-1658"
+INPUT_FILE="../../mass_spec_data/EMPA/17092024_cardiac tissues/h5 files/Sample 17_SGLT2_LANME_1-7500_SN1p0_centroid.imzml"
+OUTPUT_DIR="../Data/EMPA/"
+JOB_NAME="sglt2_lanme"
 
 # Check if input files exist
 if [ ! -f "$INPUT_FILE" ]; then
