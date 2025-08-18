@@ -1,0 +1,17 @@
+Starting preprocessing at Mon Aug 18 11:36:45 PM SAST 2025
+Using input file: ../../mass_spec_data/HIV/3 June/3 June PHRU FFPE test 1_1-115501_SN0p0_1-56679_SN1p0_centroid.imzml
+Output directory: ../Data/HIV/
+Job name: hiv_3d
+SLURM Job ID: 152486
+####################################
+Loading spectra...
+Total spectra loaded: 56678
+Range of mz values: (100, 1500)
+3D Matrix created!
+Matrix has dimensions of (459, 335, 70000)
+Done creating data
+Preprocessing completed at Mon Aug 18 11:44:30 PM SAST 2025
+Results saved to ../Data/HIV/
+Files created:
+  - hiv_3d_x.npy (normalized intensity matrix)
+Thank the Lord Almighty!!!

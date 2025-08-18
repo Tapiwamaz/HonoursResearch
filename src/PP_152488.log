@@ -1,0 +1,17 @@
+Starting preprocessing at Mon Aug 18 11:41:50 PM SAST 2025
+Using input file: ../../mass_spec_data/LPS/09102024_Leandrie_LPS_plasma test/09102024_Leandrie_LPS_plasma test/h5 files/091024_36_LPS_ST_1-1658_SN1p0_centroid.imzml
+Output directory: ../Data/LPS/
+Job name: lps_st_3d
+SLURM Job ID: 152488
+####################################
+Loading spectra...
+Total spectra loaded: 1636
+Range of mz values: (150, 2000)
+3D Matrix created!
+Matrix has dimensions of (40, 42, 92500)
+Done creating data
+Preprocessing completed at Mon Aug 18 11:42:22 PM SAST 2025
+Results saved to ../Data/LPS/
+Files created:
+  - lps_st_3d_x.npy (normalized intensity matrix)
+Thank the Lord Almighty!!!
