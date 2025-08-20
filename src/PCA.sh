@@ -4,13 +4,14 @@
 #SBATCH --error=PCA_err_%j.log
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
-#SBATCH --cpus-per-task=4      # Using 4 cores            
+#SBATCH --cpus-per-task=8      # Using more cores for biggpu            
+#SBATCH --partition=biggpu 
 #SBATCH --time=1-00:00:00      # 1 day max runtime 
 
 # Define paths
-INPUT_FILE="../Data/HIV/hiv_x.npy"
+INPUT_FILE="../Data/Cancer/cancer_x.npy"
 OUTPUT_DIR="../Results/PCA/"
-JOB_NAME="hiv"
+JOB_NAME="cancer"
 
 # Check if input file exists
 if [ ! -f "$INPUT_FILE" ]; then
