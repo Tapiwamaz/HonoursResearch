@@ -3,3 +3,8 @@ Using input file: ../Data/Cancer/cancer_x.npy
 Output directory: ../Results/PCA/
 Job name: cancer
 SLURM Job ID: 153112
+PCA analysis completed at Wed Aug 20 11:22:46 PM SAST 2025
+Results saved to ../Results/PCA/
+Files created:
+  - PCA_cancer.png (PCA scatter plot)
+Thank the Lord Almighty!!!
