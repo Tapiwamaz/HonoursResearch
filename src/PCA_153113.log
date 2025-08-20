@@ -1,0 +1,5 @@
+Starting PCA analysis at Wed Aug 20 11:00:30 PM SAST 2025
+Using input file: ../Data/HIV/hiv_x.npy
+Output directory: ../Results/PCA/
+Job name: hiv
+SLURM Job ID: 153113

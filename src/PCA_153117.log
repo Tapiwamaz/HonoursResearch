@@ -1,0 +1,58 @@
+Starting PCA analysis at Wed Aug 20 11:04:48 PM SAST 2025
+Using input file: ../Data/LPS/SAL_ST_1-1657_x.npy
+Output directory: ../Results/PCA/
+Job name: SAL_1-1657
+SLURM Job ID: 153117
+Individual Principal Component Analysis:
+============================================================
+PC1:
+  Explained Variance: 163.737458
+  Explained Variance Ratio: 0.003149 (0.31%)
+
+PC2:
+  Explained Variance: 124.879693
+  Explained Variance Ratio: 0.002401 (0.24%)
+
+PC3:
+  Explained Variance: 80.058402
+  Explained Variance Ratio: 0.001540 (0.15%)
+
+PC4:
+  Explained Variance: 77.326836
+  Explained Variance Ratio: 0.001487 (0.15%)
+
+PC5:
+  Explained Variance: 74.272466
+  Explained Variance Ratio: 0.001428 (0.14%)
+
+PC6:
+  Explained Variance: 67.679964
+  Explained Variance Ratio: 0.001301 (0.13%)
+
+PC7:
+  Explained Variance: 67.285479
+  Explained Variance Ratio: 0.001294 (0.13%)
+
+PC8:
+  Explained Variance: 66.059689
+  Explained Variance Ratio: 0.001270 (0.13%)
+
+PC9:
+  Explained Variance: 65.827228
+  Explained Variance Ratio: 0.001266 (0.13%)
+
+PC10:
+  Explained Variance: 64.880951
+  Explained Variance Ratio: 0.001248 (0.12%)
+
+Total variance explained by 10 components: 0.016384 (1.64%)
+
+MSE: 0.5526429002089379
+MAE: 0.061832526753457705
+RMSE: 0.556773084927785
+Plot saved to ../Results/PCA/PCA_SAL_1-1657.png
+PCA analysis completed at Wed Aug 20 11:05:13 PM SAST 2025
+Results saved to ../Results/PCA/
+Files created:
+  - PCA_SAL_1-1657.png (PCA scatter plot)
+Thank the Lord Almighty!!!
