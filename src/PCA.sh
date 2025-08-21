@@ -9,9 +9,9 @@
 #SBATCH --time=1-00:00:00      # 1 day max runtime 
 
 # Define paths
-INPUT_FILE="../Data/Cancer/cancer_x.npy"
-OUTPUT_DIR="../Results/PCA/"
-JOB_NAME="cancer"
+INPUT_FILE="../Data/HIV/hiv_x.npy"
+OUTPUT_DIR="../Results/PCA/HIV"
+JOB_NAME="hiv"
 
 # Check if input file exists
 if [ ! -f "$INPUT_FILE" ]; then

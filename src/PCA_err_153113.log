@@ -1,1 +1,0 @@
-/var/lib/slurm/slurmd/job153113/slurm_script: line 31: 12868 Killed                  python PCA.py --input "$INPUT_FILE" --output "$OUTPUT_DIR" --name "$JOB_NAME"

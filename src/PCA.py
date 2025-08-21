@@ -23,7 +23,7 @@ scaler = StandardScaler()
 X_scaled = scaler.fit_transform(X)
 
 # Apply PCA
-n_components = 10  # Choose number of components to keep
+n_components = 1500  # Choose number of components to keep
 pca = PCA(n_components=n_components)
 
 
@@ -41,19 +41,19 @@ pca_loss_rmse = root_mean_squared_error(X_scaled, X_reconstructed)
 print("Individual Principal Component Analysis:")
 print("============================================================")
 
-for i in range(n_components):
-    var_ratio = pca.explained_variance_ratio_[i]
-    var_value = pca.explained_variance_[i]
-    print(f"PC{i+1}:")
-    print(f"  Explained Variance: {var_value:.6f}")
-    print(f"  Explained Variance Ratio: {var_ratio:.6f} ({var_ratio*100:.2f}%)")
-    print()
+
+var_ratio = pca.explained_variance_ratio_[0]
+var_value = pca.explained_variance_[0]
+print(f"PC{1}:")
+print(f"  Explained Variance: {var_value:.6f}")
+print(f"  Explained Variance Ratio: {var_ratio:.6f} ({var_ratio*100:.2f}%)")
+print()
 
 print(f"Total variance explained by {n_components} components: {pca.explained_variance_ratio_.sum():.6f} ({pca.explained_variance_ratio_.sum()*100:.2f}%)")
 
 print(f'\nMSE: {pca_loss_mse}')
 print(f'MAE: {pca_loss_mae}')
-print(f'RMSE: {pca_loss_rmse}')
+print(f'RMSE: {pca_loss_rmse}\n')
 
 
 plt.figure(figsize=(8, 6))
