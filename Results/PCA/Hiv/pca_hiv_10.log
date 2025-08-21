@@ -1,0 +1,58 @@
+Starting PCA analysis at Wed Aug 20 11:37:04 PM SAST 2025
+Using input file: ../Data/HIV/hiv_x.npy
+Output directory: ../Results/PCA/
+Job name: hiv
+SLURM Job ID: 153121
+Individual Principal Component Analysis:
+============================================================
+PC1:
+  Explained Variance: 394.923986
+  Explained Variance Ratio: 0.005670 (0.57%)
+
+PC2:
+  Explained Variance: 115.163934
+  Explained Variance Ratio: 0.001654 (0.17%)
+
+PC3:
+  Explained Variance: 93.900637
+  Explained Variance Ratio: 0.001348 (0.13%)
+
+PC4:
+  Explained Variance: 59.684685
+  Explained Variance Ratio: 0.000857 (0.09%)
+
+PC5:
+  Explained Variance: 51.092630
+  Explained Variance Ratio: 0.000734 (0.07%)
+
+PC6:
+  Explained Variance: 42.649700
+  Explained Variance Ratio: 0.000612 (0.06%)
+
+PC7:
+  Explained Variance: 35.124708
+  Explained Variance Ratio: 0.000504 (0.05%)
+
+PC8:
+  Explained Variance: 34.383410
+  Explained Variance Ratio: 0.000494 (0.05%)
+
+PC9:
+  Explained Variance: 33.581950
+  Explained Variance Ratio: 0.000482 (0.05%)
+
+PC10:
+  Explained Variance: 32.530166
+  Explained Variance Ratio: 0.000467 (0.05%)
+
+Total variance explained by 10 components: 0.012822 (1.28%)
+
+MSE: 0.9821938365264709
+MAE: 0.05497556977062356
+RMSE: 0.9878325520478438
+Plot saved to ../Results/PCA/PCA_hiv.png
+PCA analysis completed at Wed Aug 20 11:49:15 PM SAST 2025
+Results saved to ../Results/PCA/
+Files created:
+  - PCA_hiv.png (PCA scatter plot)
+Thank the Lord Almighty!!!

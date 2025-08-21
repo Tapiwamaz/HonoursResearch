@@ -1,0 +1,58 @@
+Starting PCA analysis at Wed Aug 20 11:49:15 PM SAST 2025
+Using input file: ../Data/Cancer/cancer_x.npy
+Output directory: ../Results/PCA/
+Job name: cancer
+SLURM Job ID: 153122
+Individual Principal Component Analysis:
+============================================================
+PC1:
+  Explained Variance: 174.279384
+  Explained Variance Ratio: 0.002489 (0.25%)
+
+PC2:
+  Explained Variance: 73.794293
+  Explained Variance Ratio: 0.001054 (0.11%)
+
+PC3:
+  Explained Variance: 46.347549
+  Explained Variance Ratio: 0.000662 (0.07%)
+
+PC4:
+  Explained Variance: 32.570335
+  Explained Variance Ratio: 0.000465 (0.05%)
+
+PC5:
+  Explained Variance: 25.746738
+  Explained Variance Ratio: 0.000368 (0.04%)
+
+PC6:
+  Explained Variance: 19.686736
+  Explained Variance Ratio: 0.000281 (0.03%)
+
+PC7:
+  Explained Variance: 16.307269
+  Explained Variance Ratio: 0.000233 (0.02%)
+
+PC8:
+  Explained Variance: 13.912791
+  Explained Variance Ratio: 0.000199 (0.02%)
+
+PC9:
+  Explained Variance: 12.669512
+  Explained Variance Ratio: 0.000181 (0.02%)
+
+PC10:
+  Explained Variance: 11.183256
+  Explained Variance Ratio: 0.000160 (0.02%)
+
+Total variance explained by 10 components: 0.006092 (0.61%)
+
+MSE: 0.9940460870027523
+MAE: 0.04420844728912992
+RMSE: 0.9967465205156153
+Plot saved to ../Results/PCA/PCA_cancer.png
+PCA analysis completed at Thu Aug 21 12:22:04 AM SAST 2025
+Results saved to ../Results/PCA/
+Files created:
+  - PCA_cancer.png (PCA scatter plot)
+Thank the Lord Almighty!!!
