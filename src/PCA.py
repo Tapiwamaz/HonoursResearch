@@ -31,10 +31,13 @@ X_pca = pca.fit_transform(X_scaled)
 X_reconstructed = pca.inverse_transform(X_pca)
 X_reconstructed_original_scale = scaler.inverse_transform(X_reconstructed)
 
+
  
 pca_loss_mse = mean_squared_error(X_scaled, X_reconstructed)   
 pca_loss_mae = mean_absolute_error(X_scaled, X_reconstructed)   
-pca_loss_rmse = root_mean_squared_error(X_scaled, X_reconstructed)   
+pca_loss_rmse = root_mean_squared_error(X_scaled, X_reconstructed) 
+
+frobenius_norm = np.linalg.norm(X_scaled - X_reconstructed_original_scale, 'fro')
 
 
 # Print individual variance contribution of each PC
@@ -53,7 +56,9 @@ print(f"Total variance explained by {n_components} components: {pca.explained_va
 
 print(f'\nMSE: {pca_loss_mse}')
 print(f'MAE: {pca_loss_mae}')
-print(f'RMSE: {pca_loss_rmse}\n')
+print(f'RMSE: {pca_loss_rmse}')
+print(f"Frobenius norm (PCA reconstruction error): {frobenius_norm}\n")  
+
 
 
 plt.figure(figsize=(8, 6))
