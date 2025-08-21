@@ -1,0 +1,6 @@
+Starting NMF analysis at Thu Aug 21 11:45:13 AM SAST 2025
+Using input file: ../Data/LPS/SAL_ST_1-1657_x.npy
+Using mzs file: ../Data/LPS/SAL_ST_1-1657_mzs.npy
+Output directory: ../Results/NMF/LPS
+Job name: SAL_ST_1-1657
+SLURM Job ID: 153276

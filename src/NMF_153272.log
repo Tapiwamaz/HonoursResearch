@@ -1,0 +1,6 @@
+Starting NMF analysis at Thu Aug 21 11:37:20 AM SAST 2025
+Using input file: ../Data/HIV/hiv_x.npy
+Using mzs file: ../Data/HIV/hiv_mzs.npy
+Output directory: ../Results/NMF/HIV
+Job name: hiv
+SLURM Job ID: 153272
