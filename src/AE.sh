@@ -10,7 +10,7 @@
 
 # Define paths
 INPUT_FILE="../Data/LPS/LPS_LT_1-1660_x.npy"
-# OUTPUT_DIR="../Results/AE/LPS"
+OUTPUT_DIR="../Results/AE/LPS"
 JOB_NAME="LPS_LT_1-1660"
 
 # Check if input file exists

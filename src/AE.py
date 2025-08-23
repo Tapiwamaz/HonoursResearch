@@ -11,8 +11,8 @@ from tensorflow.keras.models import Model
 
 parser = argparse.ArgumentParser(description="Don NMF.")
 parser.add_argument("--input", required=True, help="Path to the input prerpocessed npy file.")
-# parser.add_argument("--output", required=True, help="Directory to save the plot.")
-# parser.add_argument("--name", required=True, help="Name to save output")
+parser.add_argument("--output", required=True, help="Directory to save the plot.")
+parser.add_argument("--name", required=True, help="Name to save output")
 # parser.add_argument("--mzs", required=True, help="common mz channels")
 
 
@@ -102,3 +102,30 @@ print(f"Test Loss (MAE): {test_loss:.6f}")
 print(f"Test Loss (MAE 2): {test_mae:.6f}")
 print(f"Test Loss (MSE): {test_mse:.6f}")
 
+# Plot and save the reconstructed vs original spectrum for 5 random spectra
+reconstructed = autoencoder.predict(X_test)
+
+# Create a figure with 5 subplots
+fig, axes = plt.subplots(5, 1, figsize=(10, 20))
+fig.suptitle("Original vs Reconstructed Spectra", fontsize=16)
+
+for i, ax in enumerate(axes):
+    # Select a random spectrum from the test set
+    idx = np.random.randint(0, X_test.shape[0])
+    original_spectrum = X_test[idx]
+    reconstructed_spectrum = reconstructed[idx]
+
+    # Plot the original and reconstructed spectra
+    ax.plot(original_spectrum, label="Original Spectrum", alpha=0.7)
+    ax.plot(reconstructed_spectrum, label="Reconstructed Spectrum", alpha=0.7)
+    ax.set_title(f"Spectrum {i + 1}")
+    ax.set_xlabel("Index")
+    ax.set_ylabel("Intensity")
+    ax.legend()
+    ax.grid(True)
+
+# Adjust layout and save the plot
+plt.tight_layout(rect=[0, 0, 1, 0.96])
+output_path = os.path.join(args.output, f"{args.name}_reconstructed_vs_original.png")
+plt.savefig(output_path)
+print(f"Plot saved to {output_path}")

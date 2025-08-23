@@ -1,6 +1,0 @@
-Starting NMF analysis at Fri Aug 22 08:19:01 AM SAST 2025
-Using input file: ../Data/Cancer/cancer_x.npy
-Using mzs file: ../Data/Cancer/cancer_mzs.npy
-Output directory: ../Results/NMF/Cancer
-Job name: cancer
-SLURM Job ID: 153273

@@ -1,6 +1,0 @@
-Starting NMF analysis at Thu Aug 21 11:46:34 AM SAST 2025
-Using input file: ../Data/LPS/SAL_LT_plasma_1-1658_x.npy
-Using mzs file: ../Data/LPS/SAL_LT_plasma_1-1658_mzs.npy
-Output directory: ../Results/NMF/LPS
-Job name: SAL_LT_plasma_1-1658
-SLURM Job ID: 153277
