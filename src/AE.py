@@ -7,13 +7,15 @@ import os
 from sklearn.model_selection import train_test_split
 from tensorflow.keras import layers
 from tensorflow.keras.models import Model
+from tensorflow.keras.callbacks import EarlyStopping
+
 
 
 parser = argparse.ArgumentParser(description="Don NMF.")
 parser.add_argument("--input", required=True, help="Path to the input prerpocessed npy file.")
 parser.add_argument("--output", required=True, help="Directory to save the plot.")
 parser.add_argument("--name", required=True, help="Name to save output")
-# parser.add_argument("--mzs", required=True, help="common mz channels")
+parser.add_argument("--mzs", required=True, help="common mz channels")
 
 
 args = parser.parse_args()
@@ -29,15 +31,15 @@ class SpectrumAutoencoder(Model):
         self.n_peaks = n_peaks
         
         self.encoder = tf.keras.Sequential([
-            layers.Dense(512, activation='relu'),
-            layers.Dense(256, activation='relu'),
+            layers.Dense(45000, activation='relu'),
+            layers.Dense(5000, activation='relu'),
             layers.Dense(latent_dim, activation='relu'),
         ])
-        
+
         self.decoder = tf.keras.Sequential([
-            layers.Dense(256, activation='relu'),
-            layers.Dense(512, activation='relu'),
-            layers.Dense(n_peaks, activation='linear'),  
+            layers.Dense(5000, activation='relu'),
+            layers.Dense(45000, activation='relu'),
+            layers.Dense(n_peaks, activation='relu'),  
         ])
 
     def call(self, intensities):
@@ -46,37 +48,34 @@ class SpectrumAutoencoder(Model):
         return decoded_intensities
 
 
+
 # Split data into train and test sets
 X_train, X_test = train_test_split(X, test_size=0.2, random_state=42)
 print(f"Training set shape: {X_train.shape}")
 print(f"Test set shape: {X_test.shape}")
 
-latent_dim = 64  
+latent_dim = 500 
 input_dim = X_train.shape[1]  
 
 
 autoencoder = SpectrumAutoencoder(latent_dim=latent_dim, n_peaks=input_dim)
 
-# Compile the model
 autoencoder.compile(
     optimizer='adam',
-    loss='mse',  # Mean Squared Error for reconstruction
-    metrics=['mae','mse']  # Mean Absolute Error as additional metric
+    loss='mse',  
+    metrics=['mae','mse']  
 )
 
 print(f"Autoencoder created with latent_dim={latent_dim}, input_dim={input_dim}")
 
 
 # Training the autoencoder
-from tensorflow.keras.callbacks import EarlyStopping
-
 early_stopping = EarlyStopping(
     monitor='val_loss',
-    patience=10,
+    patience=2,
     restore_best_weights=True
 )
 
-# Check data before training
 print(f"Training data stats:")
 print(f"  Shape: {X_train.shape}")
 print(f"  Min: {X_train.min():.6f}, Max: {X_train.max():.6f}")
@@ -98,9 +97,9 @@ print("Training completed!")
 
 # Evaluate the model
 test_loss, test_mae,test_mse = autoencoder.evaluate(X_test, X_test, verbose=0)
-print(f"Test Loss (MAE): {test_loss:.6f}")
-print(f"Test Loss (MAE 2): {test_mae:.6f}")
-print(f"Test Loss (MSE): {test_mse:.6f}")
+print(f"Test Loss (MSE): {test_loss:.10f}")
+print(f"Test Loss (MAE): {test_mae:.10f}")
+print(f"Test loss 2 (MSE): {test_mse:.10f}")
 
 # Plot and save the reconstructed vs original spectrum for 5 random spectra
 reconstructed = autoencoder.predict(X_test)
@@ -109,20 +108,22 @@ reconstructed = autoencoder.predict(X_test)
 fig, axes = plt.subplots(5, 1, figsize=(10, 20))
 fig.suptitle("Original vs Reconstructed Spectra", fontsize=16)
 
-for i, ax in enumerate(axes):
-    # Select a random spectrum from the test set
-    idx = np.random.randint(0, X_test.shape[0])
-    original_spectrum = X_test[idx]
-    reconstructed_spectrum = reconstructed[idx]
 
-    # Plot the original and reconstructed spectra
-    ax.plot(original_spectrum, label="Original Spectrum", alpha=0.7)
-    ax.plot(reconstructed_spectrum, label="Reconstructed Spectrum", alpha=0.7)
-    ax.set_title(f"Spectrum {i + 1}")
-    ax.set_xlabel("Index")
-    ax.set_ylabel("Intensity")
-    ax.legend()
-    ax.grid(True)
+mzs = args.mzs
+for i, ax in enumerate(axes.flat):
+    orig = X_test[i]
+    recon = reconstructed[i]
+    mse = np.mean((orig - recon) ** 2)
+    rmse = np.sqrt(mse)
+
+    ax.plot(orig, label='Original Spectrum', linewidth=2)
+    ax.plot(recon, label='AE Reconstruction', linewidth=2, alpha=0.6)
+    ax.set_title(f'Spectrum {mzs[i]}\nMSE: {mse:.2e}, RMSE: {rmse:.2e}')
+    ax.set_xlabel('Index')
+    ax.set_ylabel('Intensity')
+    ax.grid(True, alpha=0.7)
+    if i == 0:
+        ax.legend()
 
 # Adjust layout and save the plot
 plt.tight_layout(rect=[0, 0, 1, 0.96])

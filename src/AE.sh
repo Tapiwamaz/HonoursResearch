@@ -9,13 +9,19 @@
 #SBATCH --time=3-00:00:00      # 1 day max runtime 
 
 # Define paths
-INPUT_FILE="../Data/LPS/LPS_ST_1-1658_x.npy"
+INPUT_FILE="../Data/LPS/LPS_LT_1-1660_x.npy"
+MZS="../Data/LPS/LPS_LT_1-1660_mzs.npy"
 OUTPUT_DIR="../Results/AE/LPS"
-JOB_NAME="LPS_ST_1-1658"
+JOB_NAME="LPS_LT_1-1660"
 
 # Check if input file exists
 if [ ! -f "$INPUT_FILE" ]; then
     echo "Error: Input file not found at $INPUT_FILE"
+    exit 1
+fi
+
+if [ ! -f "$MZS" ]; then
+    echo "Error: MZS file not found at $MZS"
     exit 1
 fi
 
@@ -29,7 +35,7 @@ echo "Output directory: $OUTPUT_DIR"
 echo "Job name: $JOB_NAME"
 echo "SLURM Job ID: $SLURM_JOB_ID"
 
-python AE.py --input "$INPUT_FILE" --output "$OUTPUT_DIR" --name "$JOB_NAME"
+python AE.py --input "$INPUT_FILE" --output "$OUTPUT_DIR" --name "$JOB_NAME" --mzs "$MZS"
 
 echo "Autoencoder analysis completed at $(date)"
 echo "Results saved to $OUTPUT_DIR"
