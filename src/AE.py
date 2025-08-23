@@ -61,7 +61,7 @@ autoencoder = SpectrumAutoencoder(latent_dim=latent_dim, n_peaks=input_dim)
 autoencoder.compile(
     optimizer='adam',
     loss='mse',  # Mean Squared Error for reconstruction
-    metrics=['mae','rmse','mse']  # Mean Absolute Error as additional metric
+    metrics=['mae','mse']  # Mean Absolute Error as additional metric
 )
 
 print(f"Autoencoder created with latent_dim={latent_dim}, input_dim={input_dim}")
@@ -86,20 +86,19 @@ print(f"  Mean: {X_train.mean():.6f}, Std: {X_train.std():.6f}")
 print("Starting training...")
 history = autoencoder.fit(
     X_train, X_train,  
-    epochs=1,  
+    epochs=2,  
     batch_size=32,
     validation_data=(X_test, X_test),
     callbacks=[early_stopping],
-    verbose=1
+    verbose=0
 
 )
 
 print("Training completed!")
 
 # Evaluate the model
-test_loss, test_mae,test_rmse,test_mse = autoencoder.evaluate(X_test, X_test, verbose=1)
+test_loss, test_mae,test_mse = autoencoder.evaluate(X_test, X_test, verbose=0)
 print(f"Test Loss (MAE): {test_loss:.6f}")
 print(f"Test Loss (MAE 2): {test_mae:.6f}")
-print(f"Test Loss (RMSE): {test_rmse:.6f}")
 print(f"Test Loss (MSE): {test_mse:.6f}")
 
