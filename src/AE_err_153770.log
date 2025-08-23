@@ -1,0 +1,121 @@
+/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/attr_value.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
+  warnings.warn(
+/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/tensor.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
+  warnings.warn(
+/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/resource_handle.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
+  warnings.warn(
+/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/tensor_shape.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
+  warnings.warn(
+/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/types.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
+  warnings.warn(
+/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/full_type.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
+  warnings.warn(
+/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/function.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
+  warnings.warn(
+/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/node_def.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
+  warnings.warn(
+/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/op_def.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
+  warnings.warn(
+/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/graph.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
+  warnings.warn(
+/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/graph_debug_info.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
+  warnings.warn(
+/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/versions.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
+  warnings.warn(
+/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/protobuf/config.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
+  warnings.warn(
+/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at xla/tsl/protobuf/coordination_config.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
+  warnings.warn(
+/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/cost_graph.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
+  warnings.warn(
+/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/step_stats.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
+  warnings.warn(
+/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/allocation_description.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
+  warnings.warn(
+/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/tensor_description.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
+  warnings.warn(
+/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/protobuf/cluster.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
+  warnings.warn(
+/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/protobuf/debug.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
+  warnings.warn(
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1755971776.627542   14574 gpu_device.cc:2020] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 5499 MB memory:  -> device: 0, name: NVIDIA GeForce GTX 1060 6GB, pci bus id: 0000:03:00.0, compute capability: 6.1
+I0000 00:00:1755971776.628941   14574 gpu_device.cc:2020] Created device /job:localhost/replica:0/task:0/device:GPU:1 with 5499 MB memory:  -> device: 1, name: NVIDIA GeForce GTX 1060 6GB, pci bus id: 0000:83:00.0, compute capability: 6.1
+2025-08-23 19:57:16.474217: W external/local_xla/xla/tsl/framework/bfc_allocator.cc:501] Allocator (GPU_0_bfc) ran out of memory trying to allocate 15.51GiB (rounded to 16650000128)requested by op StatelessRandomUniformV2
+If the cause is memory fragmentation maybe the environment variable 'TF_GPU_ALLOCATOR=cuda_malloc_async' will improve the situation. 
+Current allocation summary follows.
+Current allocation summary follows.
+2025-08-23 19:57:16.474923: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1049] BFCAllocator dump for GPU_0_bfc
+2025-08-23 19:57:16.474976: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1056] Bin (256): 	Total Chunks: 13, Chunks in use: 13. 3.2KiB allocated for chunks. 3.2KiB in use in bin. 92B client-requested in use in bin.
+2025-08-23 19:57:16.474999: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1056] Bin (512): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2025-08-23 19:57:16.475022: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1056] Bin (1024): 	Total Chunks: 1, Chunks in use: 1. 1.2KiB allocated for chunks. 1.2KiB in use in bin. 1.0KiB client-requested in use in bin.
+2025-08-23 19:57:16.475043: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1056] Bin (2048): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2025-08-23 19:57:16.475062: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1056] Bin (4096): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2025-08-23 19:57:16.475081: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1056] Bin (8192): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2025-08-23 19:57:16.475101: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1056] Bin (16384): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2025-08-23 19:57:16.475120: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1056] Bin (32768): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2025-08-23 19:57:16.475139: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1056] Bin (65536): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2025-08-23 19:57:16.475159: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1056] Bin (131072): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2025-08-23 19:57:16.475179: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1056] Bin (262144): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2025-08-23 19:57:16.475198: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1056] Bin (524288): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2025-08-23 19:57:16.475217: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1056] Bin (1048576): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2025-08-23 19:57:16.475236: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1056] Bin (2097152): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2025-08-23 19:57:16.475255: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1056] Bin (4194304): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2025-08-23 19:57:16.475275: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1056] Bin (8388608): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2025-08-23 19:57:16.475294: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1056] Bin (16777216): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2025-08-23 19:57:16.475313: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1056] Bin (33554432): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2025-08-23 19:57:16.475343: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1056] Bin (67108864): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2025-08-23 19:57:16.475364: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1056] Bin (134217728): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2025-08-23 19:57:16.475391: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1056] Bin (268435456): 	Total Chunks: 3, Chunks in use: 2. 5.37GiB allocated for chunks. 923.08MiB in use in bin. 923.08MiB client-requested in use in bin.
+2025-08-23 19:57:16.475416: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1072] Bin for 15.51GiB was 256.00MiB, Chunk State: 
+2025-08-23 19:57:16.475445: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1078]   Size: 4.47GiB | Requested Size: 0B | in_use: 0 | bin_num: 20, prev:   Size: 256B | Requested Size: 16B | in_use: 1 | bin_num: -1
+2025-08-23 19:57:16.475463: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1085] Next region of size 5766774784
+2025-08-23 19:57:16.475482: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1105] InUse at 7f6714000000 of size 1280 next 1
+2025-08-23 19:57:16.475499: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1105] InUse at 7f6714000500 of size 256 next 2
+2025-08-23 19:57:16.475515: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1105] InUse at 7f6714000600 of size 256 next 3
+2025-08-23 19:57:16.475531: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1105] InUse at 7f6714000700 of size 256 next 4
+2025-08-23 19:57:16.475547: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1105] InUse at 7f6714000800 of size 256 next 5
+2025-08-23 19:57:16.475564: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1105] InUse at 7f6714000900 of size 256 next 6
+2025-08-23 19:57:16.475580: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1105] InUse at 7f6714000a00 of size 256 next 7
+2025-08-23 19:57:16.475596: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1105] InUse at 7f6714000b00 of size 256 next 8
+2025-08-23 19:57:16.475612: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1105] InUse at 7f6714000c00 of size 256 next 9
+2025-08-23 19:57:16.475629: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1105] InUse at 7f6714000d00 of size 483960064 next 10
+2025-08-23 19:57:16.475647: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1105] InUse at 7f6730d8b200 of size 483960064 next 11
+2025-08-23 19:57:16.475664: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1105] InUse at 7f674db15700 of size 256 next 12
+2025-08-23 19:57:16.475680: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1105] InUse at 7f674db15800 of size 256 next 13
+2025-08-23 19:57:16.475696: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1105] InUse at 7f674db15900 of size 256 next 14
+2025-08-23 19:57:16.475712: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1105] InUse at 7f674db15a00 of size 256 next 15
+2025-08-23 19:57:16.475727: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1105] InUse at 7f674db15b00 of size 256 next 16
+2025-08-23 19:57:16.475744: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1105] Free  at 7f674db15c00 of size 4798850048 next 18446744073709551615
+2025-08-23 19:57:16.475760: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1110]      Summary of in-use Chunks by size: 
+2025-08-23 19:57:16.475782: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1113] 13 Chunks of size 256 totalling 3.2KiB
+2025-08-23 19:57:16.475803: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1113] 1 Chunks of size 1280 totalling 1.2KiB
+2025-08-23 19:57:16.475824: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1113] 2 Chunks of size 483960064 totalling 923.08MiB
+2025-08-23 19:57:16.475854: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1117] Sum Total of in-use chunks: 923.08MiB
+2025-08-23 19:57:16.475874: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1119] Total bytes in pool: 5766774784 memory_limit_: 5766774784 available bytes: 0 curr_region_allocation_bytes_: 11533549568
+2025-08-23 19:57:16.475900: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1124] Stats: 
+Limit:                      5766774784
+InUse:                       967924736
+MaxInUse:                    967924736
+NumAllocs:                          21
+MaxAllocSize:                483960064
+Reserved:                            0
+PeakReserved:                        0
+LargestFreeBlock:                    0
+
+2025-08-23 19:57:16.475923: W external/local_xla/xla/tsl/framework/bfc_allocator.cc:512] *****************___________________________________________________________________________________
+2025-08-23 19:57:16.475963: W tensorflow/core/framework/op_kernel.cc:1855] OP_REQUIRES failed at stateless_random_ops_v2.cc:64 : RESOURCE_EXHAUSTED: OOM when allocating tensor with shape[92500,45000] and type float on /job:localhost/replica:0/task:0/device:GPU:0 by allocator GPU_0_bfc
+2025-08-23 19:57:16.475995: I tensorflow/core/framework/local_rendezvous.cc:407] Local rendezvous is aborting with status: RESOURCE_EXHAUSTED: OOM when allocating tensor with shape[92500,45000] and type float on /job:localhost/replica:0/task:0/device:GPU:0 by allocator GPU_0_bfc
+Traceback (most recent call last):
+  File "/home-mscluster/tmazarura/HonoursResearch/src/AE.py", line 86, in <module>
+    history = autoencoder.fit(
+        X_train, X_train,
+    ...<5 lines>...
+    
+    )
+  File "/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/keras/src/utils/traceback_utils.py", line 122, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/keras/src/backend/tensorflow/core.py", line 36, in handle
+    return self.value.handle
+           ^^^^^^^^^^^^^^^^^
+AttributeError: 'SymbolicTensor' object has no attribute 'handle'
