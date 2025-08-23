@@ -9,9 +9,9 @@
 #SBATCH --time=3-00:00:00      # 1 day max runtime 
 
 # Define paths
-INPUT_FILE="../Data/LPS/SAL_LT_plasma_1-1658_x.npy"
+INPUT_FILE="../Data/LPS/LPS_ST_1-1658_x.npy"
 OUTPUT_DIR="../Results/AE/LPS"
-JOB_NAME="SAL_LT_plasma_1-1658"
+JOB_NAME="LPS_ST_1-1658"
 
 # Check if input file exists
 if [ ! -f "$INPUT_FILE" ]; then
@@ -20,7 +20,7 @@ if [ ! -f "$INPUT_FILE" ]; then
 fi
 
 # Create output directory if it doesn't exist
-# mkdir -p "$OUTPUT_DIR"
+mkdir -p "$OUTPUT_DIR"
 
 # Run the Python script
 echo "Starting Autoencoder analysis at $(date)"

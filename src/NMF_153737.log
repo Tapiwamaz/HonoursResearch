@@ -4,3 +4,20 @@ Using mzs file: ../Data/LPS/LPS_ST_1-1658_mzs.npy
 Output directory: ../Results/NMF/LPS
 Job name: LPS_ST_1-1658
 SLURM Job ID: 153737
+Component 1 - Top sample indices: [ 396  410  129  648 1470]
+Component 1 - Top weights: [0.05094465 0.05120301 0.05145197 0.05196451 0.05201692]
+Component 2 - Top sample indices: [ 936 1146 1597 1598 1288]
+Component 2 - Top weights: [0.07318085 0.07589245 0.07907601 0.08176612 0.08216536]
+Component 3 - Top sample indices: [943 329 950 718 985]
+Component 3 - Top weights: [0.0269433  0.02728352 0.02869762 0.02952578 0.04374312]
+Total Dataset Metrics:
+MSE: 0.00000001
+MAE: 0.00000810
+RMSE: 0.00002352
+Overall reconstruction error: 1.14943310
+NMF analysis completed at Sat Aug 23 08:40:17 AM SAST 2025
+Results saved to ../Results/NMF/LPS
+Files created:
+  - LPS_ST_1-1658_original_vs_reconstructed.png (Original vs Reconstructed spectra)
+  - LPS_ST_1-1658_component_loadings_%j.png (Component loadings plot)
+Thank the Lord Almighty!!!
