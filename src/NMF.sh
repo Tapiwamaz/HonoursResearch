@@ -6,7 +6,7 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=8      # Using more cores for biggpu            
 #SBATCH --partition=bigbatch 
-#SBATCH --time=1-00:00:00      # 1 day max runtime 
+#SBATCH --time=2-00:00:00      # 1 day max runtime 
 
 # Define paths
 INPUT_FILE="../Data/LPS/SAL_LT_plasma_1-1658_x.npy"

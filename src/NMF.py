@@ -20,7 +20,7 @@ X = np.load(args.input)
 
 
 n_components = 1500  # Choose number of components
-nmf = NMF(n_components=n_components, random_state=42, max_iter=200)
+nmf = NMF(n_components=n_components, random_state=42, max_iter=1)
 W = nmf.fit_transform(X)  # Sample weights
 H = nmf.components_  # Component spectra
 

@@ -2,13 +2,24 @@ import numpy as np
 
 import matplotlib.pyplot as plt
 import tensorflow as tf
-
+import argparse
+import os
 from sklearn.model_selection import train_test_split
 from tensorflow.keras import layers
 from tensorflow.keras.models import Model
 
 
-X = np.load('../Data/LPS/LPS_LT_1-1660_x.npy')
+parser = argparse.ArgumentParser(description="Don NMF.")
+parser.add_argument("--input", required=True, help="Path to the input prerpocessed npy file.")
+# parser.add_argument("--output", required=True, help="Directory to save the plot.")
+# parser.add_argument("--name", required=True, help="Name to save output")
+# parser.add_argument("--mzs", required=True, help="common mz channels")
+
+
+args = parser.parse_args()
+
+
+X = np.load(args.input)
 # intensities of each spectrum
 
 class SpectrumAutoencoder(Model):
@@ -42,7 +53,7 @@ print(f"Test set shape: {X_test.shape}")
 
 latent_dim = 64  
 input_dim = X_train.shape[1]  
-print(f"Input dimension: {input_dim}, Latent dimension: {latent_dim}")
+
 
 autoencoder = SpectrumAutoencoder(latent_dim=latent_dim, n_peaks=input_dim)
 
@@ -50,7 +61,7 @@ autoencoder = SpectrumAutoencoder(latent_dim=latent_dim, n_peaks=input_dim)
 autoencoder.compile(
     optimizer='adam',
     loss='mse',  # Mean Squared Error for reconstruction
-    metrics=['mae']  # Mean Absolute Error as additional metric
+    metrics=['mae','rmse','mse']  # Mean Absolute Error as additional metric
 )
 
 print(f"Autoencoder created with latent_dim={latent_dim}, input_dim={input_dim}")
@@ -84,3 +95,11 @@ history = autoencoder.fit(
 )
 
 print("Training completed!")
+
+# Evaluate the model
+test_loss, test_mae,test_rmse,test_mse = autoencoder.evaluate(X_test, X_test, verbose=1)
+print(f"Test Loss (MAE): {test_loss:.6f}")
+print(f"Test Loss (MAE 2): {test_mae:.6f}")
+print(f"Test Loss (RMSE): {test_rmse:.6f}")
+print(f"Test Loss (MSE): {test_mse:.6f}")
+
