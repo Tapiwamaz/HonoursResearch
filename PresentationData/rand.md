@@ -1,0 +1,53 @@
+# Evalutaion metrics
+
+## PCA
+With number of components = 500 (down from 92500)
+Test train spit is 3:7 test size=0.3
+### LPS_LT_1660 
+
+input size =1640
+
+Training MSE: 0.2772106576686822
+Test MSE: 0.010080153010517987
+Training MAE: 0.12431147027883525
+Test MAE: 0.04287821037149593
+Training RMSE: 0.34403973611408517
+Test RMSE: 0.0633030437546502
+
+Total variance explained by 500 components: 0.576221 (57.62%)
+
+### LPS_ST_1658 
+Input size 1636
+
+Training MSE: 0.2689275235349419
+Test MSE: 0.011252547788696984
+Training MAE: 0.1304040996674656
+Test MAE: 0.04322519899080128
+Training RMSE: 0.3387308947226757
+Test RMSE: 0.06331135654863938
+
+Total variance explained by 500 components: 0.563515 (56.35%)
+
+### SAL LT Plasma 
+Input size = 1636
+
+Training MSE: 0.27091555413105434
+Test MSE: 0.011445934884621908
+Training MAE: 0.13157893216627425
+Test MAE: 0.044130068100115376
+Training RMSE: 0.34212966733835404
+Test RMSE: 0.06561945393552573
+
+Total variance explained by 500 components: 0.562711 (56.27%)
+
+### SAL ST 1657
+Input size = 1634
+
+Training MSE: 0.27282572701694247
+Test MSE: 0.011673554554999875
+Training MAE: 0.12684701111791805
+Test MAE: 0.04453708467270092
+Training RMSE: 0.3408576997527533
+Test RMSE: 0.06693868592744333
+
+Total variance explained by 500 components: 0.570300 (57.03%)
