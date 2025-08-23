@@ -1,0 +1,6 @@
+Starting NMF analysis at Sat Aug 23 08:22:44 AM SAST 2025
+Using input file: ../Data/LPS/LPS_LT_1-1660_x.npy
+Using mzs file: ../Data/LPS/LPS_LT_1-1660_mzs.npy
+Output directory: ../Results/NMF/LPS
+Job name: LPS_LT_1-1660
+SLURM Job ID: 153735

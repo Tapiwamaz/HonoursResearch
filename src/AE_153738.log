@@ -1,0 +1,5 @@
+Starting Autoencoder analysis at Sat Aug 23 08:27:09 AM SAST 2025
+Using input file: ../Data/LPS/SAL_LT_plasma_1-1658_x.npy
+Output directory: ../Results/AE/LPS
+Job name: SAL_LT_plasma_1-1658
+SLURM Job ID: 153738

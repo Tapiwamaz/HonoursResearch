@@ -1,0 +1,8 @@
+Starting Autoencoder analysis at Sat Aug 23 08:21:51 AM SAST 2025
+Using input file: ../Data/LPS/SAL_ST_1-1657_x.npy
+Output directory: ../Results/AE/LPS
+Job name: SAL_ST_1-1657
+SLURM Job ID: 153733
+Autoencoder analysis completed at Sat Aug 23 08:22:15 AM SAST 2025
+Results saved to ../Results/AE/LPS
+Thank the Lord Almighty!!!
