@@ -1,0 +1,16 @@
+Starting Autoencoder analysis at Sat Aug 23 08:21:06 PM SAST 2025
+Using input file: ../Data/LPS/SAL_LT_plasma_1-1658_x.npy
+Output directory: ../Results/AE/LPS
+Job name: SAL_LT_plasma_1-1658
+SLURM Job ID: 153772
+Training set shape: (1308, 92500)
+Test set shape: (328, 92500)
+Autoencoder created with latent_dim=500, input_dim=92500
+Training data stats:
+  Shape: (1308, 92500)
+  Min: 0.000000, Max: 0.102905
+  Mean: 0.000011, Std: 0.000244
+Starting training...
+Autoencoder analysis completed at Sat Aug 23 08:22:29 PM SAST 2025
+Results saved to ../Results/AE/LPS
+Thank the Lord Almighty!!!

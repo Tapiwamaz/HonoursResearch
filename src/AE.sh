@@ -4,8 +4,8 @@
 #SBATCH --error=AE_err_%j.log
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
-#SBATCH --cpus-per-task=8      # Using more cores for biggpu            
-#SBATCH --partition=bigbatch 
+#SBATCH --cpus-per-task=12      # Using more cores for biggpu            
+#SBATCH --partition=bigbatch
 #SBATCH --time=3-00:00:00      # 1 day max runtime 
 
 # Define paths

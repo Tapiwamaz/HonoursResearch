@@ -1,0 +1,23 @@
+Starting NMF analysis at Sat Aug 23 08:56:57 PM SAST 2025
+Using input file: ../Data/LPS/SAL_LT_plasma_1-1658_x.npy
+Using mzs file: ../Data/LPS/SAL_LT_plasma_1-1658_mzs.npy
+Output directory: ../Results/NMF/LPS
+Job name: SAL_LT_plasma_1-1658
+SLURM Job ID: 153780
+Component 1 - Top sample indices: [217  21 321 409  36]
+Component 1 - Top weights: [0.0506647  0.05207319 0.05255783 0.05278841 0.05442949]
+Component 2 - Top sample indices: [ 773  837 1614  556  834]
+Component 2 - Top weights: [0.05951175 0.06041289 0.0617701  0.06184082 0.07303949]
+Component 3 - Top sample indices: [   0 1473  575   83  697]
+Component 3 - Top weights: [0.02654105 0.02780782 0.03003504 0.03030731 0.03537188]
+Total Dataset Metrics:
+MSE: 0.00000001
+MAE: 0.00000772
+RMSE: 0.00002250
+Overall reconstruction error: 1.11749609
+NMF analysis completed at Sat Aug 23 09:09:54 PM SAST 2025
+Results saved to ../Results/NMF/LPS
+Files created:
+  - SAL_LT_plasma_1-1658_original_vs_reconstructed.png (Original vs Reconstructed spectra)
+  - SAL_LT_plasma_1-1658_component_loadings_%j.png (Component loadings plot)
+Thank the Lord Almighty!!!

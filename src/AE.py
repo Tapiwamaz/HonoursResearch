@@ -31,14 +31,14 @@ class SpectrumAutoencoder(Model):
         self.n_peaks = n_peaks
         
         self.encoder = tf.keras.Sequential([
-            layers.Dense(45000, activation='relu'),
             layers.Dense(5000, activation='relu'),
+            layers.Dense(1000, activation='relu'),
             layers.Dense(latent_dim, activation='relu'),
         ])
 
         self.decoder = tf.keras.Sequential([
+            layers.Dense(1000, activation='relu'),
             layers.Dense(5000, activation='relu'),
-            layers.Dense(45000, activation='relu'),
             layers.Dense(n_peaks, activation='relu'),  
         ])
 

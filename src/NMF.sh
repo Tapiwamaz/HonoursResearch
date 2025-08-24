@@ -4,15 +4,15 @@
 #SBATCH --error=NMF_err_%j.log
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
-#SBATCH --cpus-per-task=8      # Using more cores for biggpu            
+#SBATCH --cpus-per-task=12      # Using more cores for biggpu            
 #SBATCH --partition=stampede 
 #SBATCH --time=3-00:00:00      # 1 day max runtime 
 
 # Define paths
-INPUT_FILE="../Data/LPS/LPS_ST_1-1658_x.npy"
+INPUT_FILE="../Data/LPS/SAL_LT_plasma_1-1658_x.npy"
 OUTPUT_DIR="../Results/NMF/LPS"
-JOB_NAME="LPS_ST_1-1658"
-MZS_FILE="../Data/LPS/LPS_ST_1-1658_mzs.npy"  # Add mzs file path
+JOB_NAME="SAL_LT_plasma_1-1658"
+MZS_FILE="../Data/LPS/SAL_LT_plasma_1-1658_mzs.npy"  # Add mzs file path
 
 # Check if input file exists
 if [ ! -f "$INPUT_FILE" ]; then
