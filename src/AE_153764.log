@@ -1,8 +1,0 @@
-Starting Autoencoder analysis at Sat Aug 23 06:06:08 PM SAST 2025
-Using input file: ../Data/LPS/LPS_LT_1-1660_x.npy
-Output directory: ../Results/AE/LPS
-Job name: LPS_LT_1-1660
-SLURM Job ID: 153764
-Autoencoder analysis completed at Sat Aug 23 08:36:01 PM SAST 2025
-Results saved to ../Results/AE/LPS
-Thank the Lord Almighty!!!

@@ -85,7 +85,7 @@ print(f"  Mean: {X_train.mean():.6f}, Std: {X_train.std():.6f}")
 print("Starting training...")
 history = autoencoder.fit(
     X_train, X_train,  
-    epochs=2,  
+    epochs=10,  
     batch_size=32,
     validation_data=(X_test, X_test),
     callbacks=[early_stopping],
@@ -97,12 +97,23 @@ print("Training completed!")
 
 # Evaluate the model
 test_loss, test_mae,test_mse = autoencoder.evaluate(X_test, X_test, verbose=0)
+reconstructed = autoencoder.predict(X_test)
+
+
+# Compute the Frobenius norm of the test data and the reconstructed test data
+reconstructed = autoencoder
+frobenius_norm_original = np.linalg.norm(X_test, 'fro')
+frobenius_norm_reconstructed = np.linalg.norm(reconstructed, 'fro')
+frobenius_norm_difference = frobenius_norm_original - frobenius_norm_reconstructed
+
+print(f"Frobenius Norm of Original Test Data: {frobenius_norm_original:.10f}")
+print(f"Frobenius Norm of Reconstructed Test Data: {frobenius_norm_reconstructed:.10f}")
+print(f"Difference in Frobenius Norms: {frobenius_norm_difference:.10f}")
 print(f"Test Loss (MSE): {test_loss:.10f}")
 print(f"Test Loss (MAE): {test_mae:.10f}")
 print(f"Test loss 2 (MSE): {test_mse:.10f}")
 
 # Plot and save the reconstructed vs original spectrum for 5 random spectra
-reconstructed = autoencoder.predict(X_test)
 
 # Create a figure with 5 subplots
 fig, axes = plt.subplots(5, 1, figsize=(10, 20))
