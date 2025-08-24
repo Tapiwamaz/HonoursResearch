@@ -101,7 +101,7 @@ reconstructed = autoencoder.predict(X_test)
 
 
 # Compute the Frobenius norm of the test data and the reconstructed test data
-reconstructed = autoencoder
+reconstructed = autoencoder.predict(X_test)
 frobenius_norm_original = np.linalg.norm(X_test, 'fro')
 frobenius_norm_reconstructed = np.linalg.norm(reconstructed, 'fro')
 frobenius_norm_difference = frobenius_norm_original - frobenius_norm_reconstructed

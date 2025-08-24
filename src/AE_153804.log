@@ -1,0 +1,18 @@
+Starting Autoencoder analysis at Sun Aug 24 12:10:20 PM SAST 2025
+Using input file: ../Data/LPS/LPS_LT_1-1660_x.npy
+Output directory: ../Results/AE/LPS
+Job name: LPS_LT_1-1660
+SLURM Job ID: 153804
+Training set shape: (1312, 92500)
+Test set shape: (328, 92500)
+Autoencoder created with latent_dim=500, input_dim=92500
+Training data stats:
+  Shape: (1312, 92500)
+  Min: 0.000000, Max: 0.082642
+  Mean: 0.000011, Std: 0.000244
+Starting training...
+Training completed!
+[1m 1/11[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m7s[0m 711ms/step[1m 7/11[0m [32m━━━━━━━━━━━━[0m[37m━━━━━━━━[0m [1m0s[0m 10ms/step [1m11/11[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 86ms/step[1m11/11[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m2s[0m 89ms/step
+Autoencoder analysis completed at Sun Aug 24 12:11:46 PM SAST 2025
+Results saved to ../Results/AE/LPS
+Thank the Lord Almighty!!!
