@@ -9,9 +9,9 @@
 #SBATCH --time=3-00:00:00     
 
 # Define paths
-INPUT_FILE="../../mass_spec_data/LPS/09102024_Leandrie_LPS_plasma test/09102024_Leandrie_LPS_plasma test/h5 files/091024_36_LPS_ST_1-1658_SN1p0_centroid.imzml"
+INPUT_FILE="../../mass_spec_data/LPS/09102024_Leandrie_LPS_plasma test/09102024_Leandrie_LPS_plasma test/h5 files/091024_11_SAL_LT_plasma_1-1658_SN1p0_centroid.imzml"
 OUTPUT_DIR="../PresentationData"
-JOB_NAME="LPS_ST_1-1658"
+JOB_NAME="SAL_plasma"
   # Add mzs file path
 
 # Check if input file exists

@@ -1,0 +1,16 @@
+Starting DA analysis at Mon Aug 25 02:09:57 PM SAST 2025
+Using input file: ../../mass_spec_data/LPS/09102024_Leandrie_LPS_plasma test/09102024_Leandrie_LPS_plasma test/h5 files/091024_11_SAL_LT_plasma_1-1658_SN1p0_centroid.imzml
+Using mzs file: 
+Output directory: ../PresentationData
+Job name: SAL_plasma
+SLURM Job ID: 154086
+Plot saved to ../PresentationData/mzs_spread_SAL_plasma_154086.png
+Range of mz values: (150, 2000)
+Range of intensities values: (np.float32(53.47461), np.float32(106620.0))
+Number of spectrum: 1636
+The most frequently occuring mz range is mz=160.9600000000056 with 1636.0 spectra
+This constitutes 100.0 % of the pixels
+Plot saved to ../PresentationData/histogram_SAL_plasma_154086.png
+Data analysis completed at Mon Aug 25 02:59:07 PM SAST 2025
+Results saved to ../PresentationData
+Thank the Lord Almighty!!!
