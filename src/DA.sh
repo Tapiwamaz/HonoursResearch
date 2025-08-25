@@ -9,9 +9,9 @@
 #SBATCH --time=3-00:00:00     
 
 # Define paths
-INPUT_FILE="../Data/LPS/SAL_LT_plasma_1-1658_x.npy"
+INPUT_FILE="../../mass_spec_data/LPS/09102024_Leandrie_LPS_plasma test/09102024_Leandrie_LPS_plasma test/h5 files/091024_36_LPS_ST_1-1658_SN1p0_centroid.imzml"
 OUTPUT_DIR="../PresentationData"
-JOB_NAME="SAL_LT_plasma_1-1658"
+JOB_NAME="LPS_ST_1-1658"
   # Add mzs file path
 
 # Check if input file exists
@@ -20,11 +20,6 @@ if [ ! -f "$INPUT_FILE" ]; then
     exit 1
 fi
 
-# Check if mzs file exists
-if [ ! -f "$MZS_FILE" ]; then
-    echo "Error: MZs file not found at $MZS_FILE"
-    exit 1
-fi
 
 # Create output directory if it doesn't exist
 mkdir -p "$OUTPUT_DIR"

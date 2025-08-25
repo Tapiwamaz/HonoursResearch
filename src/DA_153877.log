@@ -1,0 +1,13 @@
+Starting DA analysis at Sun Aug 24 04:00:35 PM SAST 2025
+Using input file: ../../mass_spec_data/LPS/09102024_Leandrie_LPS_plasma test/09102024_Leandrie_LPS_plasma test/h5 files/091024_15_LPS_LT_1-1660_SN1p0_centroid.imzml
+Using mzs file: 
+Output directory: ../PresentationData
+Job name: LPS_LT_1-1660
+SLURM Job ID: 153877
+Plot saved to ../PresentationData/mzs_spread_LPS_LT_1-1660_153877.png
+Range of mz values: (150, 2000)
+Range of intensities values: (np.float32(52.31201), np.float32(77369.5))
+Number of spectrum: 1640
+Data analysis completed at Sun Aug 24 04:00:39 PM SAST 2025
+Results saved to ../PresentationData
+Thank the Lord Almighty!!!
