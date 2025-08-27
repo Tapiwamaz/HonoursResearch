@@ -4,6 +4,7 @@ import os
 import matplotlib.pyplot as plt
 from sklearn.decomposition import NMF
 from sklearn.metrics import mean_squared_error,root_mean_squared_error,mean_absolute_error
+from sklearn.model_selection import train_test_split
 
 
 parser = argparse.ArgumentParser(description="Generate ion image plot.")
@@ -20,34 +21,48 @@ X = np.load(args.input)
 
 
 n_components = 1500  # Choose number of components
+<<<<<<< HEAD
 nmf = NMF(n_components=n_components, random_state=42, max_iter=10)
 W = nmf.fit_transform(X)  # Sample weights
 H = nmf.components_  # Component spectra
+=======
+X_train, X_test = train_test_split(X, test_size=0.3, random_state=42)
 
-# Reconstruction error
-reconstruction_error = nmf.reconstruction_err_
+# Fit NMF on training data only
+nmf = NMF(n_components=n_components, random_state=42, max_iter=200)
+W_train = nmf.fit_transform(X_train)
+H = nmf.components_
+>>>>>>> main
 
+# Reconstruct train and test sets
+X_train_reconstructed = np.dot(W_train, H)
+W_test = nmf.transform(X_test)
+X_test_reconstructed = np.dot(W_test, H)
+
+# Calculate metrics for train and test sets
+mae_train = mean_absolute_error(X_train, X_train_reconstructed)
+rmse_train = root_mean_squared_error(X_train, X_train_reconstructed)
+mse_train = mean_squared_error(X_train, X_train_reconstructed)
+
+mae_test = mean_absolute_error(X_test, X_test_reconstructed)
+rmse_test = root_mean_squared_error(X_test, X_test_reconstructed)
+mse_test = mean_squared_error(X_test, X_test_reconstructed)
+
+print(f"Train Metrics:")
+print(f"MSE: {mse_train:.8f}")
+print(f"MAE: {mae_train:.8f}")
+print(f"RMSE: {rmse_train:.8f}")
+
+print(f"Test Metrics:")
+print(f"MSE: {mse_test:.8f}")
+print(f"MAE: {mae_test:.8f}")
+print(f"RMSE: {rmse_test:.8f}")
+   
 
 for i in range(min(3, n_components)):
     top_samples = np.argsort(W[:, i])[-5:] 
     print(f"Component {i+1} - Top sample indices: {top_samples}")
     print(f"Component {i+1} - Top weights: {W[top_samples, i]}")
-
-
-# Reconstruct entire dataset
-X_reconstructed = np.dot(W, H)
-
-# Calculate metrics for entire dataset
-mae_total = mean_absolute_error(X, X_reconstructed)
-rmse_total = root_mean_squared_error(X, X_reconstructed)
-mse_total = mean_squared_error(X, X_reconstructed)
-
-print(f"Total Dataset Metrics:")
-print(f"MSE: {mse_total:.8f}")
-print(f"MAE: {mae_total:.8f}")
-print(f"RMSE: {rmse_total:.8f}")
-print(f"Overall reconstruction error: {reconstruction_error:.8f}")    
-
 
 # 5. Original vs Reconstructed Spectra Comparison
 plt.figure(figsize=(15, 10))

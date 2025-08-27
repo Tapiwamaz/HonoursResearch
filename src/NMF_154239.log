@@ -1,0 +1,23 @@
+Starting NMF analysis at Tue Aug 26 03:09:11 PM SAST 2025
+Using input file: ../Data/LPS/SAL_ST_1-1657_x.npy
+Using mzs file: ../Data/LPS/SAL_ST_1-1657_mzs.npy
+Output directory: ../Results/NMF/LPS
+Job name: SAL_ST_1-1657
+SLURM Job ID: 154239
+Component 1 - Top sample indices: [161  90 176 375 170]
+Component 1 - Top weights: [0.03579176 0.03624787 0.0363265  0.0365074  0.03693005]
+Component 2 - Top sample indices: [1586 1177  605 1246 1043]
+Component 2 - Top weights: [0.04619193 0.04856361 0.04990456 0.05127591 0.05653906]
+Component 3 - Top sample indices: [ 939 1223 1480 1387 1118]
+Component 3 - Top weights: [0.01497173 0.01548479 0.0155633  0.0162335  0.01775514]
+Total Dataset Metrics:
+MSE: 0.00000000
+MAE: 0.00000305
+RMSE: 0.00000972
+Overall reconstruction error: 0.31061440
+NMF analysis completed at Tue Aug 26 03:48:35 PM SAST 2025
+Results saved to ../Results/NMF/LPS
+Files created:
+  - SAL_ST_1-1657_original_vs_reconstructed.png (Original vs Reconstructed spectra)
+  - SAL_ST_1-1657_component_loadings_%j.png (Component loadings plot)
+Thank the Lord Almighty!!!

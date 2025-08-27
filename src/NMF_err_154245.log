@@ -1,0 +1,9 @@
+/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/sklearn/decomposition/_nmf.py:1728: ConvergenceWarning: Maximum number of iterations 200 reached. Increase it to improve convergence.
+  warnings.warn(
+/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/sklearn/decomposition/_nmf.py:1728: ConvergenceWarning: Maximum number of iterations 200 reached. Increase it to improve convergence.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/home-mscluster/tmazarura/HonoursResearch/src/NMF.py", line 57, in <module>
+    top_samples = np.argsort(W[:, i])[-5:]
+                             ^
+NameError: name 'W' is not defined

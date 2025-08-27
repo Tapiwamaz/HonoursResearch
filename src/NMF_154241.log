@@ -1,0 +1,23 @@
+Starting NMF analysis at Tue Aug 26 03:14:48 PM SAST 2025
+Using input file: ../Data/LPS/LPS_LT_1-1660_x.npy
+Using mzs file: ../Data/LPS/LPS_LT_1-1660_mzs.npy
+Output directory: ../Results/NMF/LPS
+Job name: LPS_LT_1-1660
+SLURM Job ID: 154241
+Component 1 - Top sample indices: [1264  191  535  966  971]
+Component 1 - Top weights: [0.02930676 0.02937269 0.02940388 0.02953954 0.02972663]
+Component 2 - Top sample indices: [1293  200  884 1180  647]
+Component 2 - Top weights: [0.07773341 0.07795136 0.07840825 0.0834007  0.09045802]
+Component 3 - Top sample indices: [  83  933 1088  118 1431]
+Component 3 - Top weights: [0.01143762 0.01145813 0.01173533 0.0128184  0.01407116]
+Total Dataset Metrics:
+MSE: 0.00000000
+MAE: 0.00000286
+RMSE: 0.00000866
+Overall reconstruction error: 0.28610206
+NMF analysis completed at Tue Aug 26 03:56:07 PM SAST 2025
+Results saved to ../Results/NMF/LPS
+Files created:
+  - LPS_LT_1-1660_original_vs_reconstructed.png (Original vs Reconstructed spectra)
+  - LPS_LT_1-1660_component_loadings_%j.png (Component loadings plot)
+Thank the Lord Almighty!!!

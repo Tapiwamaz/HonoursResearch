@@ -9,10 +9,17 @@
 #SBATCH --time=3-00:00:00      # 1 day max runtime 
 
 # Define paths
+<<<<<<< HEAD
 INPUT_FILE="../Data/LPS/LPS_ST_1-1658_x.npy"
 OUTPUT_DIR="../Results/NMF/LPS"
 JOB_NAME="LPS_ST_1-1658"
 MZS_FILE="../Data/LPS/LPS_ST_1-1658_mzs.npy"  # Add mzs file path
+=======
+INPUT_FILE="../Data/LPS/SAL_ST_1-1657_x.npy"
+OUTPUT_DIR="../Results/NMF/LPS"
+JOB_NAME="SAL_ST_1-1657"
+MZS_FILE="../Data/LPS/SAL_ST_1-1657_mzs.npy"
+>>>>>>> main
 
 # Check if input file exists
 if [ ! -f "$INPUT_FILE" ]; then
