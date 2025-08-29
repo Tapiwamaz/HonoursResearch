@@ -3,3 +3,115 @@ Using input file: ../Data/LPS/LPS_ST_1-1658_x.npy
 Using mzs file: ../Data/LPS/SAL_LT_plasma_1-1658_mzs.npy
 Output directory: ../Results/AE/LPS/
 SLURM Job ID: 154545
+Training set shape: (1308, 92500)
+Test set shape: (328, 92500)
+Autoencoder created with latent_dim=500, input_dim=92500
+Training data stats:
+  Shape: (1308, 92500)
+  Min: 0.000000, Max: 0.081360
+  Mean: 0.000011, Std: 0.000244
+Starting training...
+Training completed!
+[1m 1/11[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m7s[0m 708ms/step[1m 7/11[0m [32m━━━━━━━━━━━━[0m[37m━━━━━━━━[0m [1m0s[0m 9ms/step  [1m11/11[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 112ms/step[1m11/11[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m2s[0m 115ms/step
+[1m 1/11[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 29ms/step[1m 6/11[0m [32m━━━━━━━━━━[0m[37m━━━━━━━━━━[0m [1m0s[0m 10ms/step[1m11/11[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 13ms/step
+Frobenius Norm of Original Test Data: 1.5937500000
+Frobenius Norm of Reconstructed Test Data: 1.4238653183
+Difference in Frobenius Norms: 0.1698846817
+Test Loss: 0.0000000162
+Test Loss (MAE): 0.0000075251
+Test loss 2 (MSE): 0.0000000162
+Mean Absolute Error (MAE) on Test Data: 0.0000075251
+Root Mean Squared Error (RMSE) on Test Data: 0.0000209943
+Mean Squared Error (MSE) on Test Data: 0.0000000162
+Plot saved to ../Results/AE/LPS/LPS_ST_1-1658_x_AE_reconstructed_vs_original.png
+Autoencoder analysis for LPS_ST_1-1658_x completed at Fri Aug 29 10:59:46 PM SAST 2025
+Results saved to ../Results/AE/LPS/
+============================================================================
+Starting Autoencoder analysis for LPS_LT_1-1660_x at Fri Aug 29 10:59:46 PM SAST 2025
+Using input file: ../Data/LPS/LPS_LT_1-1660_x.npy
+Using mzs file: ../Data/LPS/SAL_LT_plasma_1-1658_mzs.npy
+Output directory: ../Results/AE/LPS/
+SLURM Job ID: 154545
+Training set shape: (1312, 92500)
+Test set shape: (328, 92500)
+Autoencoder created with latent_dim=500, input_dim=92500
+Training data stats:
+  Shape: (1312, 92500)
+  Min: 0.000000, Max: 0.082642
+  Mean: 0.000011, Std: 0.000244
+Starting training...
+Training completed!
+[1m 1/11[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m8s[0m 802ms/step[1m 7/11[0m [32m━━━━━━━━━━━━[0m[37m━━━━━━━━[0m [1m0s[0m 10ms/step [1m11/11[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 101ms/step[1m11/11[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m2s[0m 105ms/step
+[1m 1/11[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 30ms/step[1m 6/11[0m [32m━━━━━━━━━━[0m[37m━━━━━━━━━━[0m [1m0s[0m 10ms/step[1m11/11[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 11ms/step
+Frobenius Norm of Original Test Data: 1.4042968750
+Frobenius Norm of Reconstructed Test Data: 1.2651112080
+Difference in Frobenius Norms: 0.1391856670
+Test Loss: 0.0000000138
+Test Loss (MAE): 0.0000077027
+Test loss 2 (MSE): 0.0000000138
+Mean Absolute Error (MAE) on Test Data: 0.0000077027
+Root Mean Squared Error (RMSE) on Test Data: 0.0000207871
+Mean Squared Error (MSE) on Test Data: 0.0000000138
+Plot saved to ../Results/AE/LPS/LPS_LT_1-1660_x_AE_reconstructed_vs_original.png
+Autoencoder analysis for LPS_LT_1-1660_x completed at Fri Aug 29 11:01:05 PM SAST 2025
+Results saved to ../Results/AE/LPS/
+============================================================================
+Starting Autoencoder analysis for SAL_ST_1-1657_x at Fri Aug 29 11:01:05 PM SAST 2025
+Using input file: ../Data/LPS/SAL_ST_1-1657_x.npy
+Using mzs file: ../Data/LPS/SAL_LT_plasma_1-1658_mzs.npy
+Output directory: ../Results/AE/LPS/
+SLURM Job ID: 154545
+Training set shape: (1307, 92500)
+Test set shape: (327, 92500)
+Autoencoder created with latent_dim=500, input_dim=92500
+Training data stats:
+  Shape: (1307, 92500)
+  Min: 0.000000, Max: 0.095337
+  Mean: 0.000011, Std: 0.000244
+Starting training...
+Training completed!
+[1m 1/11[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m7s[0m 718ms/step[1m 6/11[0m [32m━━━━━━━━━━[0m[37m━━━━━━━━━━[0m [1m0s[0m 10ms/step [1m11/11[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 113ms/step[1m11/11[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m2s[0m 115ms/step
+[1m 1/11[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 28ms/step[1m 7/11[0m [32m━━━━━━━━━━━━[0m[37m━━━━━━━━[0m [1m0s[0m 9ms/step [1m11/11[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 11ms/step
+Frobenius Norm of Original Test Data: 1.5712890625
+Frobenius Norm of Reconstructed Test Data: 1.3639148474
+Difference in Frobenius Norms: 0.2073742151
+Test Loss: 0.0000000194
+Test Loss (MAE): 0.0000079556
+Test loss 2 (MSE): 0.0000000194
+Mean Absolute Error (MAE) on Test Data: 0.0000079556
+Root Mean Squared Error (RMSE) on Test Data: 0.0000234030
+Mean Squared Error (MSE) on Test Data: 0.0000000194
+Plot saved to ../Results/AE/LPS/SAL_ST_1-1657_x_AE_reconstructed_vs_original.png
+Autoencoder analysis for SAL_ST_1-1657_x completed at Fri Aug 29 11:02:29 PM SAST 2025
+Results saved to ../Results/AE/LPS/
+============================================================================
+Starting Autoencoder analysis for SAL_LT_plasma_1-1658_x at Fri Aug 29 11:02:29 PM SAST 2025
+Using input file: ../Data/LPS/SAL_LT_plasma_1-1658_x.npy
+Using mzs file: ../Data/LPS/SAL_LT_plasma_1-1658_mzs.npy
+Output directory: ../Results/AE/LPS/
+SLURM Job ID: 154545
+Training set shape: (1308, 92500)
+Test set shape: (328, 92500)
+Autoencoder created with latent_dim=500, input_dim=92500
+Training data stats:
+  Shape: (1308, 92500)
+  Min: 0.000000, Max: 0.102905
+  Mean: 0.000011, Std: 0.000244
+Starting training...
+Training completed!
+[1m 1/11[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m7s[0m 732ms/step[1m 6/11[0m [32m━━━━━━━━━━[0m[37m━━━━━━━━━━[0m [1m0s[0m 11ms/step [1m11/11[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 103ms/step[1m11/11[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m2s[0m 104ms/step
+[1m 1/11[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 29ms/step[1m 6/11[0m [32m━━━━━━━━━━[0m[37m━━━━━━━━━━[0m [1m0s[0m 10ms/step[1m11/11[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 12ms/step
+Frobenius Norm of Original Test Data: 1.6523437500
+Frobenius Norm of Reconstructed Test Data: 1.4626923800
+Difference in Frobenius Norms: 0.1896513700
+Test Loss: 0.0000000179
+Test Loss (MAE): 0.0000074480
+Test loss 2 (MSE): 0.0000000179
+Mean Absolute Error (MAE) on Test Data: 0.0000074480
+Root Mean Squared Error (RMSE) on Test Data: 0.0000204116
+Mean Squared Error (MSE) on Test Data: 0.0000000179
+Plot saved to ../Results/AE/LPS/SAL_LT_plasma_1-1658_x_AE_reconstructed_vs_original.png
+Autoencoder analysis for SAL_LT_plasma_1-1658_x completed at Fri Aug 29 11:03:47 PM SAST 2025
+Results saved to ../Results/AE/LPS/
+============================================================================
+Tapedza!!! Mwari Ngaakudzwe!
