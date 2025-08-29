@@ -1,0 +1,16 @@
+Starting DA analysis at Thu Aug 28 12:37:30 AM SAST 2025
+Using input file: ../../mass_spec_data/HIV/3 June/3 June PHRU FFPE test 1_1-115501_SN0p0_1-56679_SN1p0_centroid.imzml
+Using mzs file: 
+Output directory: ../PresentationData
+Job name: hiv
+SLURM Job ID: 154371
+Plot saved to ../PresentationData/mzs_spread_hiv_154371.png
+Range of mz values: (100, 1500)
+Range of intensities values: (np.float32(467.14062), np.float32(9.275392e+06))
+Number of spectrum: 56678
+The most frequently occuring mz range is mz=273.0199999999656 with 56662.0 spectra
+This constitutes 99.971770351812 % of the pixels
+Plot saved to ../PresentationData/histogram_hiv_154371.png
+Data analysis completed at Thu Aug 28 08:09:21 AM SAST 2025
+Results saved to ../PresentationData
+Thank the Lord Almighty!!!
