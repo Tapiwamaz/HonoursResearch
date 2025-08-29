@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=AE
-#SBATCH --output=AE_%j.log
-#SBATCH --error=AE_err_%j.log
+#SBATCH --output=AE.log
+#SBATCH --error=AE_err.log
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=16      # Using more cores for biggpu            
@@ -9,9 +9,9 @@
 #SBATCH --time=3-00:00:00      # 3 days max runtime 
 
 # Define input files and output directory
-INPUT_FILES=("../Data/HIV/hiv_x.npy" "../Data/HIV/hiv_y.npy")
-MZS="../Data/HIV/hiv_mzs.npy"
-OUTPUT_DIR="../Results/AE/Hiv"
+INPUT_FILES=("../Data/LPS/LPS_ST_1-1658_x.npy" "../Data/LPS/LPS_LT_1-1660_x.npy" "../Data/LPS/SAL_ST_1-1657_x.npy" "../Data/LPS/SAL_LT_plasma_1-1658_x.npy" )
+MZS="../Data/LPS/SAL_LT_plasma_1-1658_mzs.npy"
+OUTPUT_DIR="../Results/AE/LPS/"
 
 # Check if mzs file exists
 if [ ! -f "$MZS" ]; then

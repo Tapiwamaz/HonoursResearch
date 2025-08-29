@@ -5,7 +5,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=16      # Using more cores for biggpu            
-#SBATCH --partition=stampede 
+#SBATCH --partition=biggpu 
 #SBATCH --time=3-00:00:00      # 3 days max runtime 
 
 # Define input files and output directory
