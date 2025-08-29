@@ -36,7 +36,6 @@ for INPUT_FILE in "${INPUT_FILES[@]}"; do
 
     echo "PCA analysis for $JOB_NAME completed at $(date)"
     echo "Results saved to $OUTPUT_DIR"
-    echo "Files created:"
-    echo "  - PCA_${JOB_NAME}.png (PCA scatter plot)"
+    
 done
 echo "Tapedza!!! Mwari Ngaakudzwe!"

@@ -76,7 +76,7 @@ fig, axes = plt.subplots(3, 1, figsize=(10, 12), sharex=True, sharey=True)
 
 for i in range(3):  # Plot the first 3 spectra
     axes[i].plot(X_test[i], label="Original", alpha=0.7)
-    axes[i].plot(X_reconstructed_test_original_scale[i], label="Reconstructed by PCA", alpha=0.7)
+    axes[i].plot(X_reconstructed_test[i], label="Reconstructed by PCA", alpha=0.7)
     axes[i].set_title(f"Spectrum {i + 1}")
     axes[i].legend()
 
