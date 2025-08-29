@@ -14,7 +14,7 @@ OUTPUT_DIR="../PresentationData"
 JOB_NAME="sglt2_only"
   # Add mzs file path
 
-# Check if input file exists
+# Check if input file existscd 
 if [ ! -f "$INPUT_FILE" ]; then
     echo "Error: Input file not found at $INPUT_FILE"
     exit 1
