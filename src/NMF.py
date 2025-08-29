@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 from sklearn.decomposition import NMF
 from sklearn.metrics import mean_squared_error,root_mean_squared_error,mean_absolute_error
 from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split
 
 
 parser = argparse.ArgumentParser(description="Generate ion image plot.")
@@ -23,6 +24,9 @@ X_train, X_test = train_test_split(X, test_size=0.3, random_state=42)
 
 
 n_components = 1500  # Choose number of components
+<<<<<<< HEAD
+nmf = NMF(n_components=n_components, random_state=42, max_iter=10)
+W = nmf.fit_transform(X)  # Sample weights
 print(f"Number of components: {n_components}")
 nmf = NMF(n_components=n_components, random_state=42, max_iter=1)
 # Fit NMF model on the training set

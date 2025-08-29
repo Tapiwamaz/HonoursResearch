@@ -138,6 +138,6 @@ for i, ax in enumerate(axes.flat):
 
 # Adjust layout and save the plot
 plt.tight_layout(rect=[0, 0, 1, 0.96])
-output_path = os.path.join(args.output, f"{args.name}_reconstructed_vs_original.png")
+output_path = os.path.join(args.output, f"{args.name}_AE_reconstructed_vs_original.png")
 plt.savefig(output_path)
 print(f"Plot saved to {output_path}")

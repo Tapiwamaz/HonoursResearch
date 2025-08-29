@@ -66,7 +66,7 @@ histogram_data = np.array([[0,0]])
 most_commmon_mz = [0,0]
 
 # I will target the mz values between the min and max mz found incrementing by 10
-for mz in range(math.floor(min_mz),math.ceil(max_mz),0.02):
+for mz in np.arange(math.floor(min_mz), math.ceil(max_mz), 0.02):
     count = 0
     for mzs,_,_ in my_spectra:
         mz_mask = (mzs >= mz - tolerance) & (mzs <= mz + tolerance)

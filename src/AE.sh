@@ -5,14 +5,14 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=12      # Using more cores for biggpu            
-#SBATCH --partition=bigbatch
+#SBATCH --partition=biggpu
 #SBATCH --time=3-00:00:00      # 1 day max runtime 
 
 # Define paths
-INPUT_FILE="../Data/LPS/SAL_LT_plasma_1-1658_x.npy"
-MZS="../Data/LPS/SAL_LT_plasma_1-1658_mzs.npy"
-OUTPUT_DIR="../Results/AE/LPS"
-JOB_NAME="SAL_LT_plasma_1-1658"
+INPUT_FILE="../Data/HIV/hiv_x.npy"
+MZS="../Data/HIV/hiv_mzs.npy"
+OUTPUT_DIR="../Results/AE/Hiv"
+JOB_NAME="hiv"
 
 # Check if input file exists
 if [ ! -f "$INPUT_FILE" ]; then

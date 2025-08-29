@@ -1,0 +1,20 @@
+Starting NMF analysis at Tue Aug 26 03:56:38 PM SAST 2025
+Using input file: ../Data/LPS/LPS_LT_1-1660_x.npy
+Using mzs file: ../Data/LPS/LPS_LT_1-1660_mzs.npy
+Output directory: ../Results/NMF/LPS
+Job name: LPS_LT_1-1660
+SLURM Job ID: 154247
+Train Metrics:
+MSE: 0.00000000
+MAE: 0.00000384
+RMSE: 0.00001170
+Test Metrics:
+MSE: 0.00000000
+MAE: 0.00000643
+RMSE: 0.00001989
+NMF analysis completed at Wed Aug 27 04:41:30 AM SAST 2025
+Results saved to ../Results/NMF/LPS
+Files created:
+  - LPS_LT_1-1660_original_vs_reconstructed.png (Original vs Reconstructed spectra)
+  - LPS_LT_1-1660_component_loadings.png (Component loadings plot)
+Thank the Lord Almighty!!!
