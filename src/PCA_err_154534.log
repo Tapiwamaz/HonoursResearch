@@ -1,0 +1,72 @@
+Traceback (most recent call last):
+  File "/home-mscluster/tmazarura/HonoursResearch/src/PCA.py", line 34, in <module>
+    X_pca = pca.fit_transform(X_train)
+  File "/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/sklearn/utils/_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/sklearn/base.py", line 1365, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/sklearn/decomposition/_pca.py", line 466, in fit_transform
+    U, S, _, X, x_is_centered, xp = self._fit(X)
+                                    ~~~~~~~~~^^^
+  File "/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/sklearn/decomposition/_pca.py", line 540, in _fit
+    return self._fit_full(X, n_components, xp, is_array_api_compliant)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/sklearn/decomposition/_pca.py", line 554, in _fit_full
+    raise ValueError(
+    ...<3 lines>...
+    )
+ValueError: n_components=1500 must be between 0 and min(n_samples, n_features)=1145 with svd_solver='full'
+Traceback (most recent call last):
+  File "/home-mscluster/tmazarura/HonoursResearch/src/PCA.py", line 34, in <module>
+    X_pca = pca.fit_transform(X_train)
+  File "/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/sklearn/utils/_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/sklearn/base.py", line 1365, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/sklearn/decomposition/_pca.py", line 466, in fit_transform
+    U, S, _, X, x_is_centered, xp = self._fit(X)
+                                    ~~~~~~~~~^^^
+  File "/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/sklearn/decomposition/_pca.py", line 540, in _fit
+    return self._fit_full(X, n_components, xp, is_array_api_compliant)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/sklearn/decomposition/_pca.py", line 554, in _fit_full
+    raise ValueError(
+    ...<3 lines>...
+    )
+ValueError: n_components=1500 must be between 0 and min(n_samples, n_features)=1148 with svd_solver='full'
+Traceback (most recent call last):
+  File "/home-mscluster/tmazarura/HonoursResearch/src/PCA.py", line 34, in <module>
+    X_pca = pca.fit_transform(X_train)
+  File "/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/sklearn/utils/_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/sklearn/base.py", line 1365, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/sklearn/decomposition/_pca.py", line 466, in fit_transform
+    U, S, _, X, x_is_centered, xp = self._fit(X)
+                                    ~~~~~~~~~^^^
+  File "/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/sklearn/decomposition/_pca.py", line 540, in _fit
+    return self._fit_full(X, n_components, xp, is_array_api_compliant)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/sklearn/decomposition/_pca.py", line 554, in _fit_full
+    raise ValueError(
+    ...<3 lines>...
+    )
+ValueError: n_components=1500 must be between 0 and min(n_samples, n_features)=1143 with svd_solver='full'
+Traceback (most recent call last):
+  File "/home-mscluster/tmazarura/HonoursResearch/src/PCA.py", line 34, in <module>
+    X_pca = pca.fit_transform(X_train)
+  File "/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/sklearn/utils/_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/sklearn/base.py", line 1365, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/sklearn/decomposition/_pca.py", line 466, in fit_transform
+    U, S, _, X, x_is_centered, xp = self._fit(X)
+                                    ~~~~~~~~~^^^
+  File "/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/sklearn/decomposition/_pca.py", line 540, in _fit
+    return self._fit_full(X, n_components, xp, is_array_api_compliant)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/sklearn/decomposition/_pca.py", line 554, in _fit_full
+    raise ValueError(
+    ...<3 lines>...
+    )
+ValueError: n_components=1500 must be between 0 and min(n_samples, n_features)=1145 with svd_solver='full'

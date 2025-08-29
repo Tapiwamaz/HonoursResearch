@@ -9,7 +9,7 @@
 #SBATCH --time=3-00:00:00      # 3 days max runtime 
 
 # Define input files and output directory
-INPUT_FILES=("../Data/LPS/SAL_LT_plasma_1-1658_x.npy" "../Data/LPS/SAL_LT_plasma_2-1658_x.npy")
+INPUT_FILES=("../Data/LPS/SAL_LT_plasma_1-1658_x.npy" "../Data/LPS/SAL_ST_1-1657_x.npy" "../Data/LPS/LPS_ST_1-1658_x.npy" "../Data/LPS/LPS_LT_1-1660_x.npy")
 OUTPUT_DIR="../Results/NMF/LPS"
 MZS_FILE="../Data/LPS/SAL_LT_plasma_1-1658_mzs.npy"  # Add mzs file path
 

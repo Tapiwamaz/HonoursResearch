@@ -1,0 +1,4 @@
+Starting PCA analysis for LPS_ST_1-1658_x at Fri Aug 29 10:09:32 PM SAST 2025
+Using input file: ../Data/LPS/LPS_ST_1-1658_x.npy
+Output directory: ../Results/PCA/LPS/
+SLURM Job ID: 154536

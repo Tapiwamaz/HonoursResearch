@@ -26,7 +26,7 @@ X_train, X_test = train_test_split(X_scaled, test_size=0.3, random_state=42)
 
 
 # Apply PCA
-n_components = 1500  # Choose number of components to keep
+n_components = 500  # Choose number of components to keep
 pca = PCA(n_components=n_components)
 print(f'Number of components: {n_components}')
 

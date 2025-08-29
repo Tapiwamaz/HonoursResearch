@@ -23,8 +23,8 @@ X_train, X_test = train_test_split(X, test_size=0.3, random_state=42)
 
 
 
-n_components = 1500  # Choose number of components
-<<<<<<< HEAD
+n_components = 500  # Choose number of components
+
 nmf = NMF(n_components=n_components, random_state=42, max_iter=10)
 W = nmf.fit_transform(X)  # Sample weights
 print(f"Number of components: {n_components}")

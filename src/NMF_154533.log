@@ -1,0 +1,45 @@
+Starting NMF analysis for SAL_LT_plasma_1-1658_x at Fri Aug 29 10:03:43 PM SAST 2025
+Using input file: ../Data/LPS/SAL_LT_plasma_1-1658_x.npy
+Using mzs file: ../Data/LPS/SAL_LT_plasma_1-1658_mzs.npy
+Output directory: ../Results/NMF/LPS
+SLURM Job ID: 154533
+NMF analysis for SAL_LT_plasma_1-1658_x completed at Fri Aug 29 10:03:43 PM SAST 2025
+Results saved to ../Results/NMF/LPS
+Files created:
+  - SAL_LT_plasma_1-1658_x_original_vs_reconstructed.png (Original vs Reconstructed spectra)
+  - SAL_LT_plasma_1-1658_x_component_loadings_%j.png (Component loadings plot)
+============================================================================
+Starting NMF analysis for SAL_ST_1-1657_x at Fri Aug 29 10:03:43 PM SAST 2025
+Using input file: ../Data/LPS/SAL_ST_1-1657_x.npy
+Using mzs file: ../Data/LPS/SAL_LT_plasma_1-1658_mzs.npy
+Output directory: ../Results/NMF/LPS
+SLURM Job ID: 154533
+NMF analysis for SAL_ST_1-1657_x completed at Fri Aug 29 10:03:43 PM SAST 2025
+Results saved to ../Results/NMF/LPS
+Files created:
+  - SAL_ST_1-1657_x_original_vs_reconstructed.png (Original vs Reconstructed spectra)
+  - SAL_ST_1-1657_x_component_loadings_%j.png (Component loadings plot)
+============================================================================
+Starting NMF analysis for LPS_ST_1-1658_x at Fri Aug 29 10:03:43 PM SAST 2025
+Using input file: ../Data/LPS/LPS_ST_1-1658_x.npy
+Using mzs file: ../Data/LPS/SAL_LT_plasma_1-1658_mzs.npy
+Output directory: ../Results/NMF/LPS
+SLURM Job ID: 154533
+NMF analysis for LPS_ST_1-1658_x completed at Fri Aug 29 10:03:44 PM SAST 2025
+Results saved to ../Results/NMF/LPS
+Files created:
+  - LPS_ST_1-1658_x_original_vs_reconstructed.png (Original vs Reconstructed spectra)
+  - LPS_ST_1-1658_x_component_loadings_%j.png (Component loadings plot)
+============================================================================
+Starting NMF analysis for LPS_LT_1-1660_x at Fri Aug 29 10:03:44 PM SAST 2025
+Using input file: ../Data/LPS/LPS_LT_1-1660_x.npy
+Using mzs file: ../Data/LPS/SAL_LT_plasma_1-1658_mzs.npy
+Output directory: ../Results/NMF/LPS
+SLURM Job ID: 154533
+NMF analysis for LPS_LT_1-1660_x completed at Fri Aug 29 10:03:44 PM SAST 2025
+Results saved to ../Results/NMF/LPS
+Files created:
+  - LPS_LT_1-1660_x_original_vs_reconstructed.png (Original vs Reconstructed spectra)
+  - LPS_LT_1-1660_x_component_loadings_%j.png (Component loadings plot)
+============================================================================
+Tapedza!!! Mwari Ngaakudzwe!
