@@ -8,6 +8,8 @@ from sklearn.model_selection import train_test_split
 from tensorflow.keras import layers
 from tensorflow.keras.models import Model
 from tensorflow.keras.callbacks import EarlyStopping
+from sklearn.metrics import mean_squared_error,root_mean_squared_error,mean_absolute_error
+
 
 
 
@@ -109,9 +111,18 @@ frobenius_norm_difference = frobenius_norm_original - frobenius_norm_reconstruct
 print(f"Frobenius Norm of Original Test Data: {frobenius_norm_original:.10f}")
 print(f"Frobenius Norm of Reconstructed Test Data: {frobenius_norm_reconstructed:.10f}")
 print(f"Difference in Frobenius Norms: {frobenius_norm_difference:.10f}")
-print(f"Test Loss (MSE): {test_loss:.10f}")
+print(f"Test Loss: {test_loss:.10f}")
 print(f"Test Loss (MAE): {test_mae:.10f}")
 print(f"Test loss 2 (MSE): {test_mse:.10f}")
+
+
+mae_test = mean_absolute_error(X_test, reconstructed)
+rmse_test = root_mean_squared_error(X_test, reconstructed)
+mse_test = mean_squared_error(X_test, reconstructed)
+
+print(f"Mean Absolute Error (MAE) on Test Data: {mae_test:.10f}")
+print(f"Root Mean Squared Error (RMSE) on Test Data: {rmse_test:.10f}")
+print(f"Mean Squared Error (MSE) on Test Data: {mse_test:.10f}")
 
 # Plot and save the reconstructed vs original spectrum for 5 random spectra
 
