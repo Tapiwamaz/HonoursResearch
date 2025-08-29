@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import mean_squared_error,root_mean_squared_error,mean_absolute_error
+from sklearn.model_selection import train_test_split
 
 
 parser = argparse.ArgumentParser(description="Generate ion image plot.")
@@ -21,52 +22,68 @@ X = np.load(args.input)
 
 scaler = StandardScaler()
 X_scaled = scaler.fit_transform(X)
+X_train, X_test = train_test_split(X_scaled, test_size=0.3, random_state=42)
+
 
 # Apply PCA
 n_components = 1500  # Choose number of components to keep
 pca = PCA(n_components=n_components)
+print(f'Number of components: {n_components}')
 
 
-X_pca = pca.fit_transform(X_scaled)
-X_reconstructed = pca.inverse_transform(X_pca)
-X_reconstructed_original_scale = scaler.inverse_transform(X_reconstructed)
+X_pca = pca.fit_transform(X_train)
+# Reconstruct and calculate metrics for training data
+X_reconstructed_train = pca.inverse_transform(X_pca)
+X_reconstructed_train_original_scale = scaler.inverse_transform(X_reconstructed_train)
 
+pca_loss_mse_train = mean_squared_error(X_train, X_reconstructed_train)
+pca_loss_mae_train = mean_absolute_error(X_train, X_reconstructed_train)
+pca_loss_rmse_train = root_mean_squared_error(X_train, X_reconstructed_train)
 
- 
-pca_loss_mse = mean_squared_error(X_scaled, X_reconstructed)   
-pca_loss_mae = mean_absolute_error(X_scaled, X_reconstructed)   
-pca_loss_rmse = root_mean_squared_error(X_scaled, X_reconstructed) 
+frobenius_norm_train = np.linalg.norm(X_train - X_reconstructed_train_original_scale, 'fro')
 
-frobenius_norm = np.linalg.norm(X_scaled - X_reconstructed_original_scale, 'fro')
+# Apply PCA transformation to test data
+X_pca_test = pca.transform(X_test)
 
+# Reconstruct and calculate metrics for test data
+X_reconstructed_test = pca.inverse_transform(X_pca_test)
+X_reconstructed_test_original_scale = scaler.inverse_transform(X_reconstructed_test)
 
-# Print individual variance contribution of each PC
-print("Individual Principal Component Analysis:")
-print("============================================================")
+pca_loss_mse_test = mean_squared_error(X_test, X_reconstructed_test)
+pca_loss_mae_test = mean_absolute_error(X_test, X_reconstructed_test)
+pca_loss_rmse_test = root_mean_squared_error(X_test, X_reconstructed_test)
 
+frobenius_norm_test = np.linalg.norm(X_test - X_reconstructed_test_original_scale, 'fro')
 
-var_ratio = pca.explained_variance_ratio_[0]
-var_value = pca.explained_variance_[0]
-print(f"PC{1}:")
-print(f"  Explained Variance: {var_value:.6f}")
-print(f"  Explained Variance Ratio: {var_ratio:.6f} ({var_ratio*100:.2f}%)")
-print()
 
 print(f"Total variance explained by {n_components} components: {pca.explained_variance_ratio_.sum():.6f} ({pca.explained_variance_ratio_.sum()*100:.2f}%)")
 
-print(f'\nMSE: {pca_loss_mse}')
-print(f'MAE: {pca_loss_mae}')
-print(f'RMSE: {pca_loss_rmse}')
-print(f"Frobenius norm (PCA reconstruction error): {frobenius_norm}\n")  
+print("\nTraining Data Metrics:")
+print(f'MSE: {pca_loss_mse_train}')
+print(f'MAE: {pca_loss_mae_train}')
+print(f'RMSE: {pca_loss_rmse_train}')
+print(f"Frobenius norm (PCA reconstruction error): {frobenius_norm_train}\n")
+
+print("Test Data Metrics:")
+print(f'MSE: {pca_loss_mse_test}')
+print(f'MAE: {pca_loss_mae_test}')
+print(f'RMSE: {pca_loss_rmse_test}')
+print(f"Frobenius norm (PCA reconstruction error): {frobenius_norm_test}\n")
 
 
 
-plt.figure(figsize=(8, 6))
-plt.scatter(X_pca[:, 0], X_pca[:, 1], alpha=0.7)
-plt.xlabel(f'PC1 ({pca.explained_variance_ratio_[0]:.2%} variance)')
-plt.ylabel(f'PC2 ({pca.explained_variance_ratio_[1]:.2%} variance)')
-plt.title(f'PCA of Spectral Data {args.name}')
+fig, axes = plt.subplots(3, 1, figsize=(10, 12), sharex=True, sharey=True)
 
-output_path = os.path.join(args.output, f"PCA_{args.name}.png")
+for i in range(3):  # Plot the first 3 spectra
+    axes[i].plot(X_test[i], label="Original", alpha=0.7)
+    axes[i].plot(X_reconstructed_test_original_scale[i], label="Reconstructed by PCA", alpha=0.7)
+    axes[i].set_title(f"Spectrum {i + 1}")
+    axes[i].legend()
+
+fig.suptitle(f"Original vs Reconstructed Spectra ({args.name})", fontsize=16)
+fig.supxlabel("Features")
+fig.supylabel("Intensity")
+
+output_path = os.path.join(args.output, f"pca_spectra_reconstruction_{args.name}.png")
 plt.savefig(output_path)
 print(f"Plot saved to {output_path}")

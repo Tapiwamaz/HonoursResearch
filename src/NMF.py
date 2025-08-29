@@ -4,6 +4,7 @@ import os
 import matplotlib.pyplot as plt
 from sklearn.decomposition import NMF
 from sklearn.metrics import mean_squared_error,root_mean_squared_error,mean_absolute_error
+from sklearn.model_selection import train_test_split
 
 
 parser = argparse.ArgumentParser(description="Generate ion image plot.")
@@ -17,61 +18,71 @@ args = parser.parse_args()
 
 
 X = np.load(args.input)
+X_train, X_test = train_test_split(X, test_size=0.3, random_state=42)
+
 
 
 n_components = 1500  # Choose number of components
+print(f"Number of components: {n_components}")
 nmf = NMF(n_components=n_components, random_state=42, max_iter=1)
-W = nmf.fit_transform(X)  # Sample weights
+# Fit NMF model on the training set
+W_train = nmf.fit_transform(X_train)  
 H = nmf.components_  # Component spectra
 
-# Reconstruction error
-reconstruction_error = nmf.reconstruction_err_
+# Reconstruct training set
+X_train_reconstructed = np.dot(W_train, H)
+
+# Calculate metrics for training set
+mae_train = mean_absolute_error(X_train, X_train_reconstructed)
+rmse_train = root_mean_squared_error(X_train, X_train_reconstructed)
+mse_train = mean_squared_error(X_train, X_train_reconstructed)
+
+print(f"Training Set Metrics:")
+print(f"MSE: {mse_train:.8f}")
+print(f"MAE: {mae_train:.8f}")
+print(f"RMSE: {rmse_train:.8f}")
 
 
-for i in range(min(3, n_components)):
-    top_samples = np.argsort(W[:, i])[-5:] 
-    print(f"Component {i+1} - Top sample indices: {top_samples}")
-    print(f"Component {i+1} - Top weights: {W[top_samples, i]}")
+W_test = nmf.transform(X_test)  # Transform test set using the trained model
+X_test_reconstructed = np.dot(W_test, H)
+
+# Calculate metrics for test set
+mae_test = mean_absolute_error(X_test, X_test_reconstructed)
+rmse_test = root_mean_squared_error(X_test, X_test_reconstructed)
+mse_test = mean_squared_error(X_test, X_test_reconstructed)
+
+print(f"Test Set Metrics:")
+print(f"MSE: {mse_test:.8f}")
+print(f"MAE: {mae_test:.8f}")
+print(f"RMSE: {rmse_test:.8f}")
+
+# Combine reconstructed training and test sets for further analysis
+X_reconstructed = np.vstack((X_train_reconstructed, X_test_reconstructed))
 
 
-# Reconstruct entire dataset
-X_reconstructed = np.dot(W, H)
 
-# Calculate metrics for entire dataset
-mae_total = mean_absolute_error(X, X_reconstructed)
-rmse_total = root_mean_squared_error(X, X_reconstructed)
-mse_total = mean_squared_error(X, X_reconstructed)
-
-print(f"Total Dataset Metrics:")
-print(f"MSE: {mse_total:.8f}")
-print(f"MAE: {mae_total:.8f}")
-print(f"RMSE: {rmse_total:.8f}")
-print(f"Overall reconstruction error: {reconstruction_error:.8f}")    
-
-
-# 5. Original vs Reconstructed Spectra Comparison
 plt.figure(figsize=(15, 10))
-sample_indices = [0, len(X)//4, len(X)//2, 3*len(X)//4, len(X)-1]
+sample_indices = [0,1,2]
 
 # Calculate metrics for each sample
 sample_mae = []
 sample_rmse = []
 sample_mse = []
 
-for i, idx in enumerate(sample_indices):
+for i in range(3):
     # Calculate metrics for this specific sample
-    mae = mean_absolute_error(X[idx], X_reconstructed[idx])
-    rmse = root_mean_squared_error(X[idx], X_reconstructed[idx])
-    mse = mean_squared_error(X[idx], X_reconstructed[idx])
+    mae = mean_absolute_error(X[i], X_reconstructed[i])
+    rmse = root_mean_squared_error(X[i], X_reconstructed[i])
+    mse = mean_squared_error(X[i], X_reconstructed[i])
     
     sample_mae.append(mae)
     sample_rmse.append(rmse)
     sample_mse.append(mse)
     
     plt.subplot(2, 3, i+1)
-    plt.plot(X[idx], label='Original', alpha=0.8)
-    plt.plot(X_reconstructed[idx], label='Reconstructed', alpha=0.8, linestyle='--')
-    plt.title(f'Sample {idx}\nMAE: {mae:.2e}, RMSE: {rmse:.2e}')
+    plt.plot(X[i], label='Original', alpha=0.8)
+    plt.plot(X_reconstructed[i], label='Reconstructed', alpha=0.8, linestyle='--')
+    plt.title(f'Sample {i}\nMAE: {mae:.2e}, RMSE: {rmse:.2e}')
     plt.xlabel('m/z channel')
     plt.ylabel('Intensity')
     plt.legend()
@@ -80,6 +91,7 @@ for i, idx in enumerate(sample_indices):
 plt.tight_layout()
 plt.savefig(os.path.join(args.output, f'{args.name}_original_vs_reconstructed.png'), dpi=300)
 plt.close()
+
 
 
 mzs = np.load(args.mzs)  # Load mzs from npy file
