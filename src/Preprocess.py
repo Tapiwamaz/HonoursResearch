@@ -46,6 +46,11 @@ for i, (mzs, intensities,_) in enumerate(my_spectra):
 tic = binned.sum(axis=1, keepdims=True)
 X = binned / tic
 
+# Min-max normalization to [0, 1] range per pixel
+X_min = X.min(axis=1, keepdims=True)
+X_max = X.max(axis=1, keepdims=True)
+X = (X - X_min) / (X_max - X_min + 1e-8)  # Adding a small epsilon to avoid division by zero
+
 X = X.astype(np.float16)
 print(f"Matrix created!")
 print(f"Matrix has dimensions of",X.shape)
