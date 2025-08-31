@@ -1,5 +1,5 @@
-2025-08-31 07:50:32.869307: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
-2025-08-31 07:50:37.058415: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+2025-09-01 01:41:01.655628: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-09-01 01:41:08.856274: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
 To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
 /home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/attr_value.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
   warnings.warn(
@@ -41,68 +41,68 @@ To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other ope
   warnings.warn(
 /home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/protobuf/debug.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
   warnings.warn(
-2025-08-31 07:50:53.915426: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-09-01 01:41:36.504408: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
-I0000 00:00:1756619483.215580   48097 gpu_device.cc:2020] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 22342 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 3090, pci bus id: 0000:17:00.0, compute capability: 8.6
-2025-08-31 07:51:39.392859: I external/local_xla/xla/service/service.cc:163] XLA service 0x7f0bd0005470 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
-2025-08-31 07:51:39.392900: I external/local_xla/xla/service/service.cc:171]   StreamExecutor device (0): NVIDIA GeForce RTX 3090, Compute Capability 8.6
-2025-08-31 07:51:39.664178: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:269] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
-2025-08-31 07:51:40.198237: I external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:473] Loaded cuDNN version 91002
-2025-08-31 07:51:40.282878: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
-2025-08-31 07:51:40.282968: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
-2025-08-31 07:51:40.283021: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
-2025-08-31 07:51:40.283070: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
-2025-08-31 07:51:41.369295: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_351', 4 bytes spill stores, 4 bytes spill loads
+I0000 00:00:1756683726.066453   27994 gpu_device.cc:2020] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 22342 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 3090, pci bus id: 0000:17:00.0, compute capability: 8.6
+2025-09-01 01:42:21.766767: I external/local_xla/xla/service/service.cc:163] XLA service 0x7f44bc00cd60 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2025-09-01 01:42:21.766797: I external/local_xla/xla/service/service.cc:171]   StreamExecutor device (0): NVIDIA GeForce RTX 3090, Compute Capability 8.6
+2025-09-01 01:42:21.999931: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:269] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+2025-09-01 01:42:22.491873: I external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:473] Loaded cuDNN version 91002
+2025-09-01 01:42:22.536983: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-09-01 01:42:22.537020: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-09-01 01:42:22.537039: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-09-01 01:42:22.537058: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-09-01 01:42:23.526263: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_351', 12 bytes spill stores, 12 bytes spill loads
 
-2025-08-31 07:51:41.432342: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_351', 12 bytes spill stores, 12 bytes spill loads
+2025-09-01 01:42:23.545603: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_363', 12 bytes spill stores, 12 bytes spill loads
 
-2025-08-31 07:51:41.482075: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_351', 12 bytes spill stores, 12 bytes spill loads
+2025-09-01 01:42:24.047520: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_419', 288 bytes spill stores, 288 bytes spill loads
 
-2025-08-31 07:51:41.534774: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_363', 12 bytes spill stores, 12 bytes spill loads
+2025-09-01 01:42:24.230502: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_351', 4 bytes spill stores, 4 bytes spill loads
 
-2025-08-31 07:51:41.682994: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_399', 8 bytes spill stores, 8 bytes spill loads
+2025-09-01 01:42:24.345886: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_399', 8 bytes spill stores, 8 bytes spill loads
 
-2025-08-31 07:51:41.754792: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_413', 8 bytes spill stores, 8 bytes spill loads
+2025-09-01 01:42:24.413418: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_351', 12 bytes spill stores, 12 bytes spill loads
 
-2025-08-31 07:51:41.759019: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_417', 8 bytes spill stores, 8 bytes spill loads
+2025-09-01 01:42:24.440956: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_417', 56 bytes spill stores, 56 bytes spill loads
 
-2025-08-31 07:51:41.761030: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_419', 8 bytes spill stores, 8 bytes spill loads
+2025-09-01 01:42:24.574081: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_419', 8 bytes spill stores, 8 bytes spill loads
 
-2025-08-31 07:51:41.850626: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_413', 56 bytes spill stores, 56 bytes spill loads
+2025-09-01 01:42:24.650708: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_415', 288 bytes spill stores, 288 bytes spill loads
 
-2025-08-31 07:51:42.120463: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_415', 8 bytes spill stores, 8 bytes spill loads
+2025-09-01 01:42:24.678140: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_413', 8 bytes spill stores, 8 bytes spill loads
 
-2025-08-31 07:51:42.255462: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_419', 288 bytes spill stores, 288 bytes spill loads
+2025-09-01 01:42:24.758508: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_417', 8 bytes spill stores, 8 bytes spill loads
 
-2025-08-31 07:51:42.487165: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_415', 288 bytes spill stores, 288 bytes spill loads
+2025-09-01 01:42:24.768444: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_419', 56 bytes spill stores, 56 bytes spill loads
 
-2025-08-31 07:51:42.535352: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_417', 288 bytes spill stores, 288 bytes spill loads
+2025-09-01 01:42:24.934510: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_413', 8 bytes spill stores, 8 bytes spill loads
 
-2025-08-31 07:51:42.559902: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_415', 56 bytes spill stores, 56 bytes spill loads
+2025-09-01 01:42:24.949361: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_417', 288 bytes spill stores, 288 bytes spill loads
 
-2025-08-31 07:51:42.612823: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_413', 288 bytes spill stores, 288 bytes spill loads
+2025-09-01 01:42:25.017512: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_419', 8 bytes spill stores, 8 bytes spill loads
 
-2025-08-31 07:51:42.636481: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_413', 8 bytes spill stores, 8 bytes spill loads
+2025-09-01 01:42:25.041443: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_415', 56 bytes spill stores, 56 bytes spill loads
 
-2025-08-31 07:51:42.660759: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_417', 56 bytes spill stores, 56 bytes spill loads
+2025-09-01 01:42:25.055841: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_417', 8 bytes spill stores, 8 bytes spill loads
 
-2025-08-31 07:51:42.723982: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_417', 8 bytes spill stores, 8 bytes spill loads
+2025-09-01 01:42:25.123152: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_413', 56 bytes spill stores, 56 bytes spill loads
 
-2025-08-31 07:51:42.746339: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_419', 8 bytes spill stores, 8 bytes spill loads
+2025-09-01 01:42:25.132170: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_413', 288 bytes spill stores, 288 bytes spill loads
 
-2025-08-31 07:51:42.766788: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_419', 56 bytes spill stores, 56 bytes spill loads
+2025-09-01 01:42:25.141536: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_415', 8 bytes spill stores, 8 bytes spill loads
 
-2025-08-31 07:51:42.884883: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_415', 8 bytes spill stores, 8 bytes spill loads
+2025-09-01 01:42:25.150476: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_415', 8 bytes spill stores, 8 bytes spill loads
 
-2025-08-31 07:51:44.340266: W external/local_xla/xla/hlo/transforms/simplifiers/hlo_rematerialization.cc:3023] Can't reduce memory use below 7.96GiB (8544646900 bytes) by rematerialization; only reduced to 12.20GiB (13095758688 bytes), down from 12.20GiB (13098770600 bytes) originally
-I0000 00:00:1756619506.010581   48220 device_compiler.h:196] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
-2025-08-31 07:51:49.789141: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_453', 8 bytes spill stores, 8 bytes spill loads
+2025-09-01 01:42:26.318935: W external/local_xla/xla/hlo/transforms/simplifiers/hlo_rematerialization.cc:3023] Can't reduce memory use below 7.96GiB (8544646900 bytes) by rematerialization; only reduced to 12.20GiB (13095758720 bytes), down from 12.20GiB (13098770600 bytes) originally
+I0000 00:00:1756683747.881424   28117 device_compiler.h:196] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+2025-09-01 01:42:31.739444: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_453', 8 bytes spill stores, 8 bytes spill loads
 
-2025-08-31 07:51:50.588662: W external/local_xla/xla/hlo/transforms/simplifiers/hlo_rematerialization.cc:3023] Can't reduce memory use below 7.96GiB (8547458900 bytes) by rematerialization; only reduced to 12.20GiB (13096442576 bytes), down from 12.20GiB (13096470576 bytes) originally
-2025-08-31 07:51:54.917931: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_32', 20 bytes spill stores, 20 bytes spill loads
+2025-09-01 01:42:32.350382: W external/local_xla/xla/hlo/transforms/simplifiers/hlo_rematerialization.cc:3023] Can't reduce memory use below 7.96GiB (8547458900 bytes) by rematerialization; only reduced to 12.20GiB (13096442576 bytes), down from 12.20GiB (13096470576 bytes) originally
+2025-09-01 01:42:36.133925: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_32', 20 bytes spill stores, 20 bytes spill loads
 
-2025-08-31 07:53:19.414842: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
-2025-08-31 07:53:19.457019: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+2025-09-01 01:44:16.120408: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-09-01 01:44:16.162940: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
 To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
 /home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/attr_value.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
   warnings.warn(
@@ -144,65 +144,65 @@ To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other ope
   warnings.warn(
 /home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/protobuf/debug.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
   warnings.warn(
-2025-08-31 07:53:24.483463: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-09-01 01:44:24.876175: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
-I0000 00:00:1756619613.659969   50770 gpu_device.cc:2020] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 22342 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 3090, pci bus id: 0000:17:00.0, compute capability: 8.6
-2025-08-31 07:53:47.135219: I external/local_xla/xla/service/service.cc:163] XLA service 0x7f4998005320 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
-2025-08-31 07:53:47.135263: I external/local_xla/xla/service/service.cc:171]   StreamExecutor device (0): NVIDIA GeForce RTX 3090, Compute Capability 8.6
-2025-08-31 07:53:47.176261: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:269] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
-2025-08-31 07:53:47.351097: I external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:473] Loaded cuDNN version 91002
-2025-08-31 07:53:47.371509: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
-2025-08-31 07:53:47.371542: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
-2025-08-31 07:53:47.371561: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
-2025-08-31 07:53:47.371579: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
-2025-08-31 07:53:47.868217: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_368', 12 bytes spill stores, 12 bytes spill loads
+I0000 00:00:1756683874.889346   31263 gpu_device.cc:2020] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 22342 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 3090, pci bus id: 0000:17:00.0, compute capability: 8.6
+2025-09-01 01:44:48.360645: I external/local_xla/xla/service/service.cc:163] XLA service 0x7f089000dbf0 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2025-09-01 01:44:48.360726: I external/local_xla/xla/service/service.cc:171]   StreamExecutor device (0): NVIDIA GeForce RTX 3090, Compute Capability 8.6
+2025-09-01 01:44:48.399616: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:269] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+2025-09-01 01:44:48.577999: I external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:473] Loaded cuDNN version 91002
+2025-09-01 01:44:48.598288: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-09-01 01:44:48.598321: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-09-01 01:44:48.598341: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-09-01 01:44:48.598359: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-09-01 01:44:49.208930: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_380', 12 bytes spill stores, 12 bytes spill loads
 
-2025-08-31 07:53:48.066503: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_368', 4 bytes spill stores, 4 bytes spill loads
+2025-09-01 01:44:49.390741: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_416', 8 bytes spill stores, 8 bytes spill loads
 
-2025-08-31 07:53:48.458465: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_380', 12 bytes spill stores, 12 bytes spill loads
+2025-09-01 01:44:49.496669: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_368', 4 bytes spill stores, 4 bytes spill loads
 
-2025-08-31 07:53:48.543993: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_416', 8 bytes spill stores, 8 bytes spill loads
+2025-09-01 01:44:49.728081: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_368', 12 bytes spill stores, 12 bytes spill loads
 
-2025-08-31 07:53:48.790687: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_434', 8 bytes spill stores, 8 bytes spill loads
+2025-09-01 01:44:50.010740: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_434', 8 bytes spill stores, 8 bytes spill loads
 
-2025-08-31 07:53:49.081538: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_430', 56 bytes spill stores, 56 bytes spill loads
+2025-09-01 01:44:50.187434: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_430', 8 bytes spill stores, 8 bytes spill loads
 
-2025-08-31 07:53:49.099331: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_436', 8 bytes spill stores, 8 bytes spill loads
+2025-09-01 01:44:50.307144: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_430', 56 bytes spill stores, 56 bytes spill loads
 
-2025-08-31 07:53:49.409765: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_432', 8 bytes spill stores, 8 bytes spill loads
+2025-09-01 01:44:50.385789: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_368', 12 bytes spill stores, 12 bytes spill loads
 
-2025-08-31 07:53:49.425009: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_430', 288 bytes spill stores, 288 bytes spill loads
+2025-09-01 01:44:50.428294: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_432', 8 bytes spill stores, 8 bytes spill loads
 
-2025-08-31 07:53:49.511494: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_430', 8 bytes spill stores, 8 bytes spill loads
+2025-09-01 01:44:50.456083: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_434', 56 bytes spill stores, 56 bytes spill loads
 
-2025-08-31 07:53:49.597829: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_432', 8 bytes spill stores, 8 bytes spill loads
+2025-09-01 01:44:50.529702: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_430', 8 bytes spill stores, 8 bytes spill loads
 
-2025-08-31 07:53:49.600083: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_430', 8 bytes spill stores, 8 bytes spill loads
+2025-09-01 01:44:50.553948: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_436', 8 bytes spill stores, 8 bytes spill loads
 
-2025-08-31 07:53:49.656968: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_368', 12 bytes spill stores, 12 bytes spill loads
+2025-09-01 01:44:50.600754: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_436', 8 bytes spill stores, 8 bytes spill loads
 
-2025-08-31 07:53:49.745139: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_436', 56 bytes spill stores, 56 bytes spill loads
+2025-09-01 01:44:50.822132: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_434', 8 bytes spill stores, 8 bytes spill loads
 
-2025-08-31 07:53:49.825499: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_434', 8 bytes spill stores, 8 bytes spill loads
+2025-09-01 01:44:51.018099: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_432', 56 bytes spill stores, 56 bytes spill loads
 
-2025-08-31 07:53:49.848253: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_434', 56 bytes spill stores, 56 bytes spill loads
+2025-09-01 01:44:51.041670: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_434', 288 bytes spill stores, 288 bytes spill loads
 
-2025-08-31 07:53:49.875799: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_434', 288 bytes spill stores, 288 bytes spill loads
+2025-09-01 01:44:51.081135: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_432', 288 bytes spill stores, 288 bytes spill loads
 
-2025-08-31 07:53:49.899765: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_436', 8 bytes spill stores, 8 bytes spill loads
+2025-09-01 01:44:51.088391: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_436', 56 bytes spill stores, 56 bytes spill loads
 
-2025-08-31 07:53:49.915272: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_432', 56 bytes spill stores, 56 bytes spill loads
+2025-09-01 01:44:51.114880: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_432', 8 bytes spill stores, 8 bytes spill loads
 
-2025-08-31 07:53:49.984454: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_436', 288 bytes spill stores, 288 bytes spill loads
+2025-09-01 01:44:51.330468: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_436', 288 bytes spill stores, 288 bytes spill loads
 
-2025-08-31 07:53:50.131089: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_432', 288 bytes spill stores, 288 bytes spill loads
+2025-09-01 01:44:51.387618: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_430', 288 bytes spill stores, 288 bytes spill loads
 
-2025-08-31 07:53:50.685977: W external/local_xla/xla/hlo/transforms/simplifiers/hlo_rematerialization.cc:3023] Can't reduce memory use below 7.96GiB (8544646900 bytes) by rematerialization; only reduced to 12.20GiB (13098242520 bytes), down from 12.20GiB (13098768584 bytes) originally
-I0000 00:00:1756619632.342001   50889 device_compiler.h:196] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
-2025-08-31 07:53:56.720285: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_32', 20 bytes spill stores, 20 bytes spill loads
+2025-09-01 01:44:51.946986: W external/local_xla/xla/hlo/transforms/simplifiers/hlo_rematerialization.cc:3023] Can't reduce memory use below 7.96GiB (8544646900 bytes) by rematerialization; only reduced to 12.20GiB (13095760736 bytes), down from 12.20GiB (13098768584 bytes) originally
+I0000 00:00:1756683893.722874   31382 device_compiler.h:196] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+2025-09-01 01:44:57.945614: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_32', 20 bytes spill stores, 20 bytes spill loads
 
-2025-08-31 07:55:03.021934: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
-2025-08-31 07:55:03.064892: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+2025-09-01 01:46:25.574253: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-09-01 01:46:25.616043: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
 To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
 /home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/attr_value.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
   warnings.warn(
@@ -244,68 +244,68 @@ To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other ope
   warnings.warn(
 /home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/protobuf/debug.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
   warnings.warn(
-2025-08-31 07:55:08.328876: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-09-01 01:46:34.879074: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
-I0000 00:00:1756619717.743744   53282 gpu_device.cc:2020] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 22342 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 3090, pci bus id: 0000:17:00.0, compute capability: 8.6
-2025-08-31 07:55:31.208881: I external/local_xla/xla/service/service.cc:163] XLA service 0x7f2260016820 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
-2025-08-31 07:55:31.208932: I external/local_xla/xla/service/service.cc:171]   StreamExecutor device (0): NVIDIA GeForce RTX 3090, Compute Capability 8.6
-2025-08-31 07:55:31.241457: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:269] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
-2025-08-31 07:55:31.425828: I external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:473] Loaded cuDNN version 91002
-2025-08-31 07:55:31.445689: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
-2025-08-31 07:55:31.445722: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
-2025-08-31 07:55:31.445740: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
-2025-08-31 07:55:31.445757: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
-2025-08-31 07:55:32.140481: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_351', 12 bytes spill stores, 12 bytes spill loads
+I0000 00:00:1756684009.311417   34374 gpu_device.cc:2020] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 22342 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 3090, pci bus id: 0000:17:00.0, compute capability: 8.6
+2025-09-01 01:47:02.863480: I external/local_xla/xla/service/service.cc:163] XLA service 0x7f60cc017010 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2025-09-01 01:47:02.863531: I external/local_xla/xla/service/service.cc:171]   StreamExecutor device (0): NVIDIA GeForce RTX 3090, Compute Capability 8.6
+2025-09-01 01:47:02.909593: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:269] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+2025-09-01 01:47:03.102901: I external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:473] Loaded cuDNN version 91002
+2025-09-01 01:47:03.123865: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-09-01 01:47:03.123899: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-09-01 01:47:03.123919: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-09-01 01:47:03.123937: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-09-01 01:47:03.885109: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_363', 12 bytes spill stores, 12 bytes spill loads
 
-2025-08-31 07:55:32.462547: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_415', 8 bytes spill stores, 8 bytes spill loads
+2025-09-01 01:47:04.206146: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_351', 12 bytes spill stores, 12 bytes spill loads
 
-2025-08-31 07:55:32.663750: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_351', 4 bytes spill stores, 4 bytes spill loads
+2025-09-01 01:47:04.276268: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_399', 8 bytes spill stores, 8 bytes spill loads
 
-2025-08-31 07:55:32.716249: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_363', 12 bytes spill stores, 12 bytes spill loads
+2025-09-01 01:47:04.373378: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_419', 8 bytes spill stores, 8 bytes spill loads
 
-2025-08-31 07:55:32.733496: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_413', 56 bytes spill stores, 56 bytes spill loads
+2025-09-01 01:47:04.526612: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_351', 12 bytes spill stores, 12 bytes spill loads
 
-2025-08-31 07:55:32.739270: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_351', 12 bytes spill stores, 12 bytes spill loads
+2025-09-01 01:47:04.598526: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_415', 8 bytes spill stores, 8 bytes spill loads
 
-2025-08-31 07:55:33.282300: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_399', 8 bytes spill stores, 8 bytes spill loads
+2025-09-01 01:47:04.617799: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_419', 8 bytes spill stores, 8 bytes spill loads
 
-2025-08-31 07:55:33.321800: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_413', 8 bytes spill stores, 8 bytes spill loads
+2025-09-01 01:47:04.760226: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_351', 4 bytes spill stores, 4 bytes spill loads
 
-2025-08-31 07:55:33.446087: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_419', 8 bytes spill stores, 8 bytes spill loads
+2025-09-01 01:47:04.927454: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_413', 288 bytes spill stores, 288 bytes spill loads
 
-2025-08-31 07:55:33.521013: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_417', 8 bytes spill stores, 8 bytes spill loads
+2025-09-01 01:47:04.999697: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_413', 56 bytes spill stores, 56 bytes spill loads
 
-2025-08-31 07:55:33.571257: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_419', 8 bytes spill stores, 8 bytes spill loads
+2025-09-01 01:47:05.184224: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_417', 56 bytes spill stores, 56 bytes spill loads
 
-2025-08-31 07:55:33.635675: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_417', 288 bytes spill stores, 288 bytes spill loads
+2025-09-01 01:47:05.216505: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_417', 8 bytes spill stores, 8 bytes spill loads
 
-2025-08-31 07:55:33.644809: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_417', 8 bytes spill stores, 8 bytes spill loads
+2025-09-01 01:47:05.224583: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_413', 8 bytes spill stores, 8 bytes spill loads
 
-2025-08-31 07:55:33.823611: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_419', 56 bytes spill stores, 56 bytes spill loads
+2025-09-01 01:47:05.538963: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_415', 8 bytes spill stores, 8 bytes spill loads
 
-2025-08-31 07:55:33.908878: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_415', 56 bytes spill stores, 56 bytes spill loads
+2025-09-01 01:47:05.569250: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_415', 56 bytes spill stores, 56 bytes spill loads
 
-2025-08-31 07:55:33.919415: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_413', 8 bytes spill stores, 8 bytes spill loads
+2025-09-01 01:47:05.583305: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_417', 8 bytes spill stores, 8 bytes spill loads
 
-2025-08-31 07:55:33.970696: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_419', 288 bytes spill stores, 288 bytes spill loads
+2025-09-01 01:47:05.611524: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_413', 8 bytes spill stores, 8 bytes spill loads
 
-2025-08-31 07:55:33.985077: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_413', 288 bytes spill stores, 288 bytes spill loads
+2025-09-01 01:47:05.720685: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_419', 56 bytes spill stores, 56 bytes spill loads
 
-2025-08-31 07:55:34.010711: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_417', 56 bytes spill stores, 56 bytes spill loads
+2025-09-01 01:47:05.721013: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_419', 288 bytes spill stores, 288 bytes spill loads
 
-2025-08-31 07:55:34.118978: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_415', 8 bytes spill stores, 8 bytes spill loads
+2025-09-01 01:47:05.777143: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_417', 288 bytes spill stores, 288 bytes spill loads
 
-2025-08-31 07:55:34.151784: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_415', 288 bytes spill stores, 288 bytes spill loads
+2025-09-01 01:47:05.954683: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_415', 288 bytes spill stores, 288 bytes spill loads
 
-2025-08-31 07:55:34.762530: W external/local_xla/xla/hlo/transforms/simplifiers/hlo_rematerialization.cc:3023] Can't reduce memory use below 7.96GiB (8544646900 bytes) by rematerialization; only reduced to 12.20GiB (13095758688 bytes), down from 12.20GiB (13098770600 bytes) originally
-I0000 00:00:1756619736.416645   53389 device_compiler.h:196] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
-2025-08-31 07:55:39.663810: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_453', 8 bytes spill stores, 8 bytes spill loads
+2025-09-01 01:47:06.516036: W external/local_xla/xla/hlo/transforms/simplifiers/hlo_rematerialization.cc:3023] Can't reduce memory use below 7.96GiB (8544646900 bytes) by rematerialization; only reduced to 12.20GiB (13095758688 bytes), down from 12.20GiB (13098770600 bytes) originally
+I0000 00:00:1756684028.138509   34491 device_compiler.h:196] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+2025-09-01 01:47:11.407823: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_453', 8 bytes spill stores, 8 bytes spill loads
 
-2025-08-31 07:55:40.940341: W external/local_xla/xla/hlo/transforms/simplifiers/hlo_rematerialization.cc:3023] Can't reduce memory use below 7.96GiB (8548161900 bytes) by rematerialization; only reduced to 12.20GiB (13095973576 bytes), down from 12.20GiB (13096000576 bytes) originally
-2025-08-31 07:55:44.833365: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_32', 20 bytes spill stores, 20 bytes spill loads
+2025-09-01 01:47:12.707630: W external/local_xla/xla/hlo/transforms/simplifiers/hlo_rematerialization.cc:3023] Can't reduce memory use below 7.96GiB (8548161900 bytes) by rematerialization; only reduced to 12.20GiB (13095973576 bytes), down from 12.20GiB (13096000576 bytes) originally
+2025-09-01 01:47:16.329584: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_32', 20 bytes spill stores, 20 bytes spill loads
 
-2025-08-31 07:56:51.333988: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
-2025-08-31 07:56:51.377715: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+2025-09-01 01:48:46.457631: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-09-01 01:48:46.500408: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
 To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
 /home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/attr_value.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
   warnings.warn(
@@ -347,63 +347,63 @@ To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other ope
   warnings.warn(
 /home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/protobuf/debug.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
   warnings.warn(
-2025-08-31 07:56:56.636915: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-09-01 01:48:54.576429: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
-I0000 00:00:1756619826.105491   55946 gpu_device.cc:2020] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 22342 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 3090, pci bus id: 0000:17:00.0, compute capability: 8.6
-2025-08-31 07:57:19.515360: I external/local_xla/xla/service/service.cc:163] XLA service 0x7f985c00cec0 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
-2025-08-31 07:57:19.515411: I external/local_xla/xla/service/service.cc:171]   StreamExecutor device (0): NVIDIA GeForce RTX 3090, Compute Capability 8.6
-2025-08-31 07:57:19.560380: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:269] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
-2025-08-31 07:57:19.734288: I external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:473] Loaded cuDNN version 91002
-2025-08-31 07:57:19.754793: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
-2025-08-31 07:57:19.754827: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
-2025-08-31 07:57:19.754847: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
-2025-08-31 07:57:19.754865: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
-2025-08-31 07:57:20.241377: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_363', 12 bytes spill stores, 12 bytes spill loads
+I0000 00:00:1756684144.040273   37636 gpu_device.cc:2020] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 22342 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 3090, pci bus id: 0000:17:00.0, compute capability: 8.6
+2025-09-01 01:49:17.583209: I external/local_xla/xla/service/service.cc:163] XLA service 0x7efbe800d620 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2025-09-01 01:49:17.583255: I external/local_xla/xla/service/service.cc:171]   StreamExecutor device (0): NVIDIA GeForce RTX 3090, Compute Capability 8.6
+2025-09-01 01:49:17.627789: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:269] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+2025-09-01 01:49:17.805826: I external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:473] Loaded cuDNN version 91002
+2025-09-01 01:49:17.826235: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-09-01 01:49:17.826268: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-09-01 01:49:17.826287: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-09-01 01:49:17.826304: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-09-01 01:49:18.626886: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_351', 12 bytes spill stores, 12 bytes spill loads
 
-2025-08-31 07:57:20.618482: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_351', 4 bytes spill stores, 4 bytes spill loads
+2025-09-01 01:49:18.717551: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_413', 8 bytes spill stores, 8 bytes spill loads
 
-2025-08-31 07:57:20.897951: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_351', 12 bytes spill stores, 12 bytes spill loads
+2025-09-01 01:49:18.757604: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_351', 4 bytes spill stores, 4 bytes spill loads
 
-2025-08-31 07:57:21.055494: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_351', 12 bytes spill stores, 12 bytes spill loads
+2025-09-01 01:49:18.781343: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_399', 8 bytes spill stores, 8 bytes spill loads
 
-2025-08-31 07:57:21.189116: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_399', 8 bytes spill stores, 8 bytes spill loads
+2025-09-01 01:49:19.419852: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_415', 8 bytes spill stores, 8 bytes spill loads
 
-2025-08-31 07:57:21.309067: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_413', 8 bytes spill stores, 8 bytes spill loads
+2025-09-01 01:49:19.432315: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_351', 12 bytes spill stores, 12 bytes spill loads
 
-2025-08-31 07:57:21.456067: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_417', 288 bytes spill stores, 288 bytes spill loads
+2025-09-01 01:49:19.593643: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_415', 8 bytes spill stores, 8 bytes spill loads
 
-2025-08-31 07:57:21.624007: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_415', 56 bytes spill stores, 56 bytes spill loads
+2025-09-01 01:49:19.778441: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_419', 8 bytes spill stores, 8 bytes spill loads
 
-2025-08-31 07:57:21.673394: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_415', 8 bytes spill stores, 8 bytes spill loads
+2025-09-01 01:49:19.839200: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_419', 56 bytes spill stores, 56 bytes spill loads
 
-2025-08-31 07:57:21.798477: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_419', 56 bytes spill stores, 56 bytes spill loads
+2025-09-01 01:49:20.032946: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_417', 288 bytes spill stores, 288 bytes spill loads
 
-2025-08-31 07:57:21.956840: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_415', 288 bytes spill stores, 288 bytes spill loads
+2025-09-01 01:49:20.171191: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_417', 8 bytes spill stores, 8 bytes spill loads
 
-2025-08-31 07:57:22.060027: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_413', 56 bytes spill stores, 56 bytes spill loads
+2025-09-01 01:49:20.189048: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_363', 12 bytes spill stores, 12 bytes spill loads
 
-2025-08-31 07:57:22.118492: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_417', 8 bytes spill stores, 8 bytes spill loads
+2025-09-01 01:49:20.201390: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_415', 56 bytes spill stores, 56 bytes spill loads
 
-2025-08-31 07:57:22.127156: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_419', 8 bytes spill stores, 8 bytes spill loads
+2025-09-01 01:49:20.235541: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_417', 56 bytes spill stores, 56 bytes spill loads
 
-2025-08-31 07:57:22.168672: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_417', 56 bytes spill stores, 56 bytes spill loads
+2025-09-01 01:49:20.255999: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_419', 8 bytes spill stores, 8 bytes spill loads
 
-2025-08-31 07:57:22.182543: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_417', 8 bytes spill stores, 8 bytes spill loads
+2025-09-01 01:49:20.256077: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_419', 288 bytes spill stores, 288 bytes spill loads
 
-2025-08-31 07:57:22.279797: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_419', 8 bytes spill stores, 8 bytes spill loads
+2025-09-01 01:49:20.323551: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_415', 288 bytes spill stores, 288 bytes spill loads
 
-2025-08-31 07:57:22.286229: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_415', 8 bytes spill stores, 8 bytes spill loads
+2025-09-01 01:49:20.402796: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_413', 8 bytes spill stores, 8 bytes spill loads
 
-2025-08-31 07:57:22.321060: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_413', 8 bytes spill stores, 8 bytes spill loads
+2025-09-01 01:49:20.407361: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_417', 8 bytes spill stores, 8 bytes spill loads
 
-2025-08-31 07:57:22.401998: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_419', 288 bytes spill stores, 288 bytes spill loads
+2025-09-01 01:49:20.479918: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_413', 288 bytes spill stores, 288 bytes spill loads
 
-2025-08-31 07:57:22.454003: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_413', 288 bytes spill stores, 288 bytes spill loads
+2025-09-01 01:49:20.530291: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_413', 56 bytes spill stores, 56 bytes spill loads
 
-2025-08-31 07:57:23.049729: W external/local_xla/xla/hlo/transforms/simplifiers/hlo_rematerialization.cc:3023] Can't reduce memory use below 7.96GiB (8544646900 bytes) by rematerialization; only reduced to 12.20GiB (13095760736 bytes), down from 12.20GiB (13098768584 bytes) originally
-I0000 00:00:1756619844.818619   56064 device_compiler.h:196] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
-2025-08-31 07:57:28.342121: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_453', 8 bytes spill stores, 8 bytes spill loads
+2025-09-01 01:49:21.086230: W external/local_xla/xla/hlo/transforms/simplifiers/hlo_rematerialization.cc:3023] Can't reduce memory use below 7.96GiB (8544646900 bytes) by rematerialization; only reduced to 12.20GiB (13095760736 bytes), down from 12.20GiB (13098768584 bytes) originally
+I0000 00:00:1756684162.886833   37755 device_compiler.h:196] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+2025-09-01 01:49:26.256001: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_453', 8 bytes spill stores, 8 bytes spill loads
 
-2025-08-31 07:57:29.336426: W external/local_xla/xla/hlo/transforms/simplifiers/hlo_rematerialization.cc:3023] Can't reduce memory use below 7.96GiB (8547458900 bytes) by rematerialization; only reduced to 12.20GiB (13095882576 bytes), down from 12.20GiB (13096470576 bytes) originally
-2025-08-31 07:57:33.044188: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_32', 20 bytes spill stores, 20 bytes spill loads
+2025-09-01 01:49:27.414984: W external/local_xla/xla/hlo/transforms/simplifiers/hlo_rematerialization.cc:3023] Can't reduce memory use below 7.96GiB (8547458900 bytes) by rematerialization; only reduced to 12.20GiB (13096442576 bytes), down from 12.20GiB (13096470576 bytes) originally
+2025-09-01 01:49:31.389537: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_32', 20 bytes spill stores, 20 bytes spill loads
 
