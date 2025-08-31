@@ -5,13 +5,13 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=16      # Using more cores for biggpu            
-#SBATCH --partition=biggpu 
+#SBATCH --partition=bigbatch 
 #SBATCH --time=3-00:00:00      # 3 days max runtime 
 
 # Define input files and output directory
-INPUT_FILES=("../Data/LPS/SAL_LT_plasma_1-1658_x.npy" "../Data/LPS/SAL_ST_1-1657_x.npy" "../Data/LPS/LPS_ST_1-1658_x.npy" "../Data/LPS/LPS_LT_1-1660_x.npy")
+INPUT_FILES=("../Data/LPS/lps_st_x_x.npy" "../Data/LPS/lps_lt_x_x.npy" "../Data/LPS/sal_st_x_x.npy" "../Data/LPS/sal_lt_plasma_x_x.npy")
 OUTPUT_DIR="../Results/NMF/LPS"
-MZS_FILE="../Data/LPS/SAL_LT_plasma_1-1658_mzs.npy"  # Add mzs file path
+MZS_FILE="../Data/LPS/sal_st_x_mzs.npy"  # Add mzs file path
 
 # Create output directory if it doesn't exist
 mkdir -p "$OUTPUT_DIR"

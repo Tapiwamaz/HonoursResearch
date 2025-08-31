@@ -1,0 +1,81 @@
+Starting NMF analysis for lps_st_x_x at Sun Aug 31 07:48:08 AM SAST 2025
+Using input file: ../Data/LPS/lps_st_x_x.npy
+Using mzs file: ../Data/LPS/sal_st_x_mzs.npy
+Output directory: ../Results/NMF/LPS
+SLURM Job ID: 154612
+Number of components: 500
+Training Set Metrics:
+MSE: 0.00000575
+MAE: 0.00019930
+RMSE: 0.00056976
+Test Set Metrics:
+MSE: 0.00000586
+MAE: 0.00023571
+RMSE: 0.00060549
+NMF analysis for lps_st_x_x completed at Sun Aug 31 07:54:06 AM SAST 2025
+Results saved to ../Results/NMF/LPS
+Files created:
+  - lps_st_x_x_original_vs_reconstructed.png (Original vs Reconstructed spectra)
+  - lps_st_x_x_component_loadings_%j.png (Component loadings plot)
+============================================================================
+Starting NMF analysis for lps_lt_x_x at Sun Aug 31 07:54:06 AM SAST 2025
+Using input file: ../Data/LPS/lps_lt_x_x.npy
+Using mzs file: ../Data/LPS/sal_st_x_mzs.npy
+Output directory: ../Results/NMF/LPS
+SLURM Job ID: 154612
+Number of components: 500
+Training Set Metrics:
+MSE: 0.00000919
+MAE: 0.00026013
+RMSE: 0.00072398
+Test Set Metrics:
+MSE: 0.00000910
+MAE: 0.00029976
+RMSE: 0.00077701
+NMF analysis for lps_lt_x_x completed at Sun Aug 31 08:00:09 AM SAST 2025
+Results saved to ../Results/NMF/LPS
+Files created:
+  - lps_lt_x_x_original_vs_reconstructed.png (Original vs Reconstructed spectra)
+  - lps_lt_x_x_component_loadings_%j.png (Component loadings plot)
+============================================================================
+Starting NMF analysis for sal_st_x_x at Sun Aug 31 08:00:09 AM SAST 2025
+Using input file: ../Data/LPS/sal_st_x_x.npy
+Using mzs file: ../Data/LPS/sal_st_x_mzs.npy
+Output directory: ../Results/NMF/LPS
+SLURM Job ID: 154612
+Number of components: 500
+Training Set Metrics:
+MSE: 0.00000682
+MAE: 0.00021764
+RMSE: 0.00062669
+Test Set Metrics:
+MSE: 0.00000677
+MAE: 0.00026104
+RMSE: 0.00069988
+NMF analysis for sal_st_x_x completed at Sun Aug 31 08:06:13 AM SAST 2025
+Results saved to ../Results/NMF/LPS
+Files created:
+  - sal_st_x_x_original_vs_reconstructed.png (Original vs Reconstructed spectra)
+  - sal_st_x_x_component_loadings_%j.png (Component loadings plot)
+============================================================================
+Starting NMF analysis for sal_lt_plasma_x_x at Sun Aug 31 08:06:13 AM SAST 2025
+Using input file: ../Data/LPS/sal_lt_plasma_x_x.npy
+Using mzs file: ../Data/LPS/sal_st_x_mzs.npy
+Output directory: ../Results/NMF/LPS
+SLURM Job ID: 154612
+Number of components: 500
+Training Set Metrics:
+MSE: 0.00000461
+MAE: 0.00017951
+RMSE: 0.00050792
+Test Set Metrics:
+MSE: 0.00000456
+MAE: 0.00021367
+RMSE: 0.00053519
+NMF analysis for sal_lt_plasma_x_x completed at Sun Aug 31 08:12:12 AM SAST 2025
+Results saved to ../Results/NMF/LPS
+Files created:
+  - sal_lt_plasma_x_x_original_vs_reconstructed.png (Original vs Reconstructed spectra)
+  - sal_lt_plasma_x_x_component_loadings_%j.png (Component loadings plot)
+============================================================================
+Tapedza!!! Mwari Ngaakudzwe!

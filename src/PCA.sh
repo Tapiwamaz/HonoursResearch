@@ -9,9 +9,10 @@
 #SBATCH --time=1-00:00:00      # 1 day max runtime 
 
 
-INPUT_FILES=("../Data/LPS/LPS_ST_1-1658_x.npy" "../Data/LPS/LPS_LT_1-1660_x.npy" "../Data/LPS/SAL_ST_1-1657_x.npy" "../Data/LPS/SAL_LT_plasma_1-1658_x.npy")
+INPUT_FILES=("../Data/LPS/lps_st_x_x.npy" "../Data/LPS/lps_lt_x_x.npy" "../Data/LPS/sal_lt_plasma_x_x.npy" "../Data/LPS/sal_st_x_x.npy")
 OUTPUT_DIR="../Results/PCA/LPS/"
 
+echo "Scaled Data"
 # Create output directory if it doesn't exist
 mkdir -p "$OUTPUT_DIR"
 

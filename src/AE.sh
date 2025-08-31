@@ -9,10 +9,11 @@
 #SBATCH --time=3-00:00:00      # 3 days max runtime 
 
 # Define input files and output directory
-INPUT_FILES=("../Data/LPS/LPS_ST_1-1658_x.npy" "../Data/LPS/LPS_LT_1-1660_x.npy" "../Data/LPS/SAL_ST_1-1657_x.npy" "../Data/LPS/SAL_LT_plasma_1-1658_x.npy" )
-MZS="../Data/LPS/SAL_LT_plasma_1-1658_mzs.npy"
+INPUT_FILES=("../Data/LPS/lps_st_x_x.npy" "../Data/LPS/lps_lt_x_x.npy" "../Data/LPS/sal_st_x_x.npy" "../Data/LPS/sal_lt_plasma_x_x.npy" )
+MZS="../Data/LPS/sal_st_x_mzs.npy"
 OUTPUT_DIR="../Results/AE/LPS/"
 
+echo "Scaled data"
 # Check if mzs file exists
 if [ ! -f "$MZS" ]; then
     echo "Error: MZS file not found at $MZS"

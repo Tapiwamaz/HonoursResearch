@@ -1,0 +1,9 @@
+/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/pyimzml/ontology/ontology.py:80: UserWarning: Unrecognized accession in <cvParam>:  (name: "").
+  warn('Unrecognized accession in <cvParam>: %s (name: "%s").' % (accession, raw_name))
+/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/pyimzml/ontology/ontology.py:92: UserWarning: Accession IMS:1000042 found with incorrect name "max count of pixel x". Updating name to "max count of pixels x".
+  warn(
+/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/pyimzml/ontology/ontology.py:92: UserWarning: Accession IMS:1000043 found with incorrect name "max count of pixel y". Updating name to "max count of pixels y".
+  warn(
+/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/pyimzml/ontology/ontology.py:92: UserWarning: Accession IMS:1000046 found with incorrect name "pixel size x". Updating name to "pixel size (x)".
+  warn(
+/var/lib/slurm/slurmd/job154606/slurm_script: line 18: 29021 Killed                  python Preprocess.py --input "$INPUT_FILE" --output "$OUTPUT_DIR" --name "$JOB_NAME"

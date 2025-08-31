@@ -3,18 +3,16 @@
 #SBATCH --output=PP_%j.log
 #SBATCH --error=PP_err_%j.log
 #SBATCH --nodes=1
-#SBATCH --partition=bigatch
+#SBATCH --partition=biggpu
 #SBATCH --ntasks-per-node=1
-#SBATCH --cpus-per-task=4      # Using 4 cores            
+#SBATCH --cpus-per-task=16      # Using 4 cores            
 #SBATCH --time=2-00:00:00      # 2 days max runtime 
 
 # Define input files and corresponding job names
 INPUT_FILES=(
-    "../../mass_spec_data/LPS/09102024_Leandrie_LPS_plasma test/09102024_Leandrie_LPS_plasma test/h5 files/091024_39_SAL_ST_1-1657_SN1p0_centroid.imzml"
-    "../../mass_spec_data/LPS/09102024_Leandrie_LPS_plasma test/09102024_Leandrie_LPS_plasma test/h5 files/091024_40_SAL_LT_1-1658_SN1p0_centroid.imzml"
-)
-JOB_NAMES=("sal_st_3d" "sal_lt_3d")
-OUTPUT_DIR="../Data/LPS/"
+  "../../mass_spec_data/Cancer biopsy/5 June/5 June tumour test 2_1-327482_SN0p0_1-160000_SN1p0_centroid.imzml
+JOB_NAMES=("cnacer_scaled")
+OUTPUT_DIR="../Data/Cancer/"
 
 # Iterate over input files and job names
 for i in "${!INPUT_FILES[@]}"; do
