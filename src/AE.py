@@ -74,7 +74,7 @@ print(f"Autoencoder created with latent_dim={latent_dim}, input_dim={input_dim}"
 # Training the autoencoder
 early_stopping = EarlyStopping(
     monitor='val_loss',
-    patience=2,
+    patience=5,
     restore_best_weights=True
 )
 
@@ -87,7 +87,7 @@ print(f"  Mean: {X_train.mean():.6f}, Std: {X_train.std():.6f}")
 print("Starting training...")
 history = autoencoder.fit(
     X_train, X_train,  
-    epochs=15,  
+    epochs=20,  
     batch_size=32,
     validation_data=(X_test, X_test),
     callbacks=[early_stopping],

@@ -53,7 +53,7 @@ X = (X - X_min) / (X_max - X_min + 1e-6)  # Adding a small epsilon to avoid divi
 
 X = X.astype(np.float16)
 print(f"Matrix created!")
-print(f"Matrix has dimensions of",X.shape)
+print(f"Matrix has dimensions of", X.shape)
 
 name = f"{args.name}_x.npy"
 output = os.path.join(args.output, name)
