@@ -38,7 +38,7 @@ for INPUT_FILE in "${INPUT_FILES[@]}"; do
     # Run the Python script
     echo "Starting Autoencoder analysis for $JOB_NAME at $(date)"
     echo "Using input file: $INPUT_FILE"
-    echo "Using mzs file: $MZS"
+    # echo "Using mzs file: $MZS"
     echo "Output directory: $OUTPUT_DIR"
     echo "SLURM Job ID: $SLURM_JOB_ID"
 
