@@ -11,7 +11,7 @@
 # Define input files and corresponding job names
 INPUT_FILES=(
   "../../mass_spec_data/Cancer biopsy/5 June/5 June tumour test 2_1-327482_SN0p0_1-160000_SN1p0_centroid.imzml
-JOB_NAMES=("cnacer_scaled")
+JOB_NAMES=("cancer_150-1500")
 OUTPUT_DIR="../Data/Cancer/"
 
 # Iterate over input files and job names
@@ -24,7 +24,7 @@ for i in "${!INPUT_FILES[@]}"; do
         echo "Error: Input file not found at $INPUT_FILE"
         continue
     fi
-
+ 
     # Check if corresponding .ibd file exists
     IBD_FILE="${INPUT_FILE%.*}.ibd"
     if [ ! -f "$IBD_FILE" ]; then
@@ -43,8 +43,8 @@ for i in "${!INPUT_FILES[@]}"; do
 
     echo "Preprocessing for $JOB_NAME completed at $(date)"
     echo "Results saved to $OUTPUT_DIR"
-    echo "Files created:"
-    echo "  - ${JOB_NAME}_x.npy (normalized intensity matrix)"
+ #   echo "Files created:"
+ #   echo "  - ${JOB_NAME}_x.npy (normalized intensity matrix)"
     echo "============================================================================"
 done
 
