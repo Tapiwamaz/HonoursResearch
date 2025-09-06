@@ -46,6 +46,11 @@ for i, (mzs, intensities,_) in enumerate(my_spectra):
 tic = binned.sum(axis=1, keepdims=True)
 X = binned / tic
 
+# Filter to only include m/z values between 150 and 1500
+mz_mask = (common_mzs >= 150) & (common_mzs <= 1500)
+X = X[:, mz_mask]
+common_mzs = common_mzs[mz_mask]
+
 # Min-max normalization to [0, 1] range per pixel
 X_min = X.min(axis=1, keepdims=True)
 X_max = X.max(axis=1, keepdims=True)

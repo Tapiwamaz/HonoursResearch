@@ -1,0 +1,52 @@
+#!/bin/bash
+#SBATCH --job-name=AE
+#SBATCH --output=AE.log
+#SBATCH --error=AE_err.log
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=16      # Using more cores for biggpu            
+#SBATCH --partition=bigbatch
+#SBATCH --time=3-00:00:00      # 3 days max runtime 
+
+# Define input files and output directory
+INPUT_FILES=("../Data/LPS/lps_st_x_x.npy" "../Data/LPS/lps_lt_x_x.npy" "../Data/LPS/sal_st_x_x.npy" "../Data/LPS/sal_lt_plasma_x_x.npy" )
+# MZS="../Data/LPS/sal_st_x_mzs.npy"
+OUTPUT_DIR="../Results/AE/LPS/"
+
+echo "Scaled data"
+echo "tanh activations"
+# # Check if mzs file exists
+# if [ ! -f "$MZS" ]; then
+#     echo "Error: MZS file not found at $MZS"
+#     exit 1
+# fi
+
+# Create output directory if it doesn't exist
+mkdir -p "$OUTPUT_DIR"
+
+# Iterate over input files
+for INPUT_FILE in "${INPUT_FILES[@]}"; do
+    # Extract job name from input file
+    JOB_NAME=$(basename "$INPUT_FILE" .npy)
+
+    # Check if input file exists
+    if [ ! -f "$INPUT_FILE" ]; then
+        echo "Error: Input file not found at $INPUT_FILE"
+        continue
+    fi
+
+    # Run the Python script
+    echo "Starting Autoencoder analysis for $JOB_NAME at $(date)"
+    echo "Using input file: $INPUT_FILE"
+    echo "Using mzs file: $MZS"
+    echo "Output directory: $OUTPUT_DIR"
+    echo "SLURM Job ID: $SLURM_JOB_ID"
+
+    python SaveAE.py --input "$INPUT_FILE" --output "$OUTPUT_DIR" --name "$JOB_NAME"
+
+    echo "Autoencoder analysis for $JOB_NAME completed at $(date)"
+    echo "Results saved to $OUTPUT_DIR"
+    echo "============================================================================"
+done
+
+echo "Tapedza!!! Mwari Ngaakudzwe!"

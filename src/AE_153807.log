@@ -1,26 +1,0 @@
-Starting Autoencoder analysis at Sun Aug 24 12:14:10 PM SAST 2025
-Using input file: ../Data/LPS/LPS_ST_1-1658_x.npy
-Output directory: ../Results/AE/LPS
-Job name: LPS_ST_1-1658
-SLURM Job ID: 153807
-Training set shape: (1308, 92500)
-Test set shape: (328, 92500)
-Autoencoder created with latent_dim=500, input_dim=92500
-Training data stats:
-  Shape: (1308, 92500)
-  Min: 0.000000, Max: 0.081360
-  Mean: 0.000011, Std: 0.000244
-Starting training...
-Training completed!
-[1m 1/11[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m7s[0m 759ms/step[1m 6/11[0m [32m━━━━━━━━━━[0m[37m━━━━━━━━━━[0m [1m0s[0m 11ms/step [1m11/11[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 106ms/step[1m11/11[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m2s[0m 108ms/step
-[1m 1/11[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 27ms/step[1m 7/11[0m [32m━━━━━━━━━━━━[0m[37m━━━━━━━━[0m [1m0s[0m 9ms/step [1m11/11[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 11ms/step
-Frobenius Norm of Original Test Data: 1.5937500000
-Frobenius Norm of Reconstructed Test Data: 1.3355474472
-Difference in Frobenius Norms: 0.2582025528
-Test Loss (MSE): 0.0000000241
-Test Loss (MAE): 0.0000077992
-Test loss 2 (MSE): 0.0000000241
-Plot saved to ../Results/AE/LPS/LPS_ST_1-1658_reconstructed_vs_original.png
-Autoencoder analysis completed at Sun Aug 24 12:15:40 PM SAST 2025
-Results saved to ../Results/AE/LPS
-Thank the Lord Almighty!!!

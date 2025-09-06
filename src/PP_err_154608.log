@@ -1,4 +1,0 @@
-/var/lib/slurm/slurmd/job154608/slurm_script: line 47: syntax error near unexpected token `('
-/var/lib/slurm/slurmd/job154608/slurm_script: line 47: `    echo "  - ${JOB_NAME}_x.npy (normalized intensity matrix)"'
-/var/lib/slurm/slurmd/job154608/slurm_script: line 49: syntax error near unexpected token `done'
-/var/lib/slurm/slurmd/job154608/slurm_script: line 49: `done'
