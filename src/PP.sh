@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=PP
-#SBATCH --output=PP_%j.log
-#SBATCH --error=PP_err_%j.log
+#SBATCH --output=PP.log
+#SBATCH --error=PP_err.log
 #SBATCH --nodes=1
 #SBATCH --partition=biggpu
 #SBATCH --ntasks-per-node=1
@@ -10,8 +10,8 @@
 
 # Define input files and corresponding job names
 INPUT_FILES=(
-  "../../mass_spec_data/Cancer biopsy/5 June/5 June tumour test 2_1-327482_SN0p0_1-160000_SN1p0_centroid.imzml")
-JOB_NAMES=("cancer_150-1500")
+  "../../mass_spec_data/HIV/3 June/3 June PHRU FFPE test 1_1-115501_SN0p0_1-56679_SN1p0_centroid.imzml")
+JOB_NAMES=("hiv-150-1500")
 OUTPUT_DIR="../Data/Cancer/"
 
 # Iterate over input files and job names

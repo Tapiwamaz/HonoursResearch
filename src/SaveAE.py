@@ -87,7 +87,7 @@ print(f"  Mean: {X_train.mean():.6f}, Std: {X_train.std():.6f}")
 print("Starting training...")
 history = autoencoder.fit(
     X_train, X_train,  
-    epochs=10,  
+    epochs=15,  
     batch_size=32,
     validation_data=(X_test, X_test),
     callbacks=[early_stopping],

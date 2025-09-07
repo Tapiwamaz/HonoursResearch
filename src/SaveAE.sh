@@ -5,11 +5,11 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=16      # Using more cores for biggpu            
-#SBATCH --partition=bigbatch
+#SBATCH --partition=biggpu
 #SBATCH --time=3-00:00:00      # 3 days max runtime 
 
 # Define input files and output directory
-INPUT_FILES=("../Data/LPS/lps_st_x_x.npy" "../Data/LPS/lps_lt_x_x.npy" "../Data/LPS/sal_st_x_x.npy" "../Data/LPS/sal_lt_plasma_x_x.npy" )
+INPUT_FILES=("../Data/Cancer/cancer_150-1500_x.npy" )
 # MZS="../Data/LPS/sal_st_x_mzs.npy"
 OUTPUT_DIR="../Results/AE/LPS/"
 
