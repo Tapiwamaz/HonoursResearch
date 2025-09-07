@@ -1,0 +1,90 @@
+Scaled Data
+Starting PCA analysis for lps_st_x_x at Sun Aug 31 07:48:14 AM SAST 2025
+Using input file: ../Data/LPS/lps_st_x_x.npy
+Output directory: ../Results/PCA/LPS/
+SLURM Job ID: 154613
+Number of components: 500
+Total variance explained by 500 components: 0.592203 (59.22%)
+
+Training Data Metrics:
+MSE: 0.2283719278684516
+MAE: 0.11817137192305267
+RMSE: 0.292022611598839
+Frobenius norm (PCA reconstruction error): 7696.007311897205
+
+Test Data Metrics:
+MSE: 0.5519492632314669
+MAE: 0.06170649569113714
+RMSE: 0.4088764392420912
+Frobenius norm (PCA reconstruction error): 5029.52794440499
+
+Plot saved to ../Results/PCA/LPS/pca_spectra_reconstruction_lps_st_x_x.png
+PCA analysis for lps_st_x_x completed at Sun Aug 31 07:48:49 AM SAST 2025
+Results saved to ../Results/PCA/LPS/
+Starting PCA analysis for lps_lt_x_x at Sun Aug 31 07:48:49 AM SAST 2025
+Using input file: ../Data/LPS/lps_lt_x_x.npy
+Output directory: ../Results/PCA/LPS/
+SLURM Job ID: 154613
+Number of components: 500
+Total variance explained by 500 components: 0.603657 (60.37%)
+
+Training Data Metrics:
+MSE: 0.22152050580975735
+MAE: 0.11132527195902496
+RMSE: 0.28484688304892924
+Frobenius norm (PCA reconstruction error): 7696.545022711666
+
+Test Data Metrics:
+MSE: 0.5559722207007055
+MAE: 0.06298925769440487
+RMSE: 0.41173767357393454
+Frobenius norm (PCA reconstruction error): 5051.474659611343
+
+Plot saved to ../Results/PCA/LPS/pca_spectra_reconstruction_lps_lt_x_x.png
+PCA analysis for lps_lt_x_x completed at Sun Aug 31 07:49:23 AM SAST 2025
+Results saved to ../Results/PCA/LPS/
+Starting PCA analysis for sal_lt_plasma_x_x at Sun Aug 31 07:49:23 AM SAST 2025
+Using input file: ../Data/LPS/sal_lt_plasma_x_x.npy
+Output directory: ../Results/PCA/LPS/
+SLURM Job ID: 154613
+Number of components: 500
+Total variance explained by 500 components: 0.591252 (59.13%)
+
+Training Data Metrics:
+MSE: 0.2314990226556208
+MAE: 0.11960969101642148
+RMSE: 0.2955265180352278
+Frobenius norm (PCA reconstruction error): 7740.145221493065
+
+Test Data Metrics:
+MSE: 0.5470346956783526
+MAE: 0.061305793741710794
+RMSE: 0.4058637327591498
+Frobenius norm (PCA reconstruction error): 5004.282396158969
+
+Plot saved to ../Results/PCA/LPS/pca_spectra_reconstruction_sal_lt_plasma_x_x.png
+PCA analysis for sal_lt_plasma_x_x completed at Sun Aug 31 07:49:57 AM SAST 2025
+Results saved to ../Results/PCA/LPS/
+Starting PCA analysis for sal_st_x_x at Sun Aug 31 07:49:57 AM SAST 2025
+Using input file: ../Data/LPS/sal_st_x_x.npy
+Output directory: ../Results/PCA/LPS/
+SLURM Job ID: 154613
+Number of components: 500
+Total variance explained by 500 components: 0.598711 (59.87%)
+
+Training Data Metrics:
+MSE: 0.22361166448474687
+MAE: 0.11448331458292153
+RMSE: 0.28665161285920093
+Frobenius norm (PCA reconstruction error): 7669.052770676228
+
+Test Data Metrics:
+MSE: 0.5678510414810455
+MAE: 0.06095738324448682
+RMSE: 0.4163218258374246
+Frobenius norm (PCA reconstruction error): 5097.657001524805
+
+Plot saved to ../Results/PCA/LPS/pca_spectra_reconstruction_sal_st_x_x.png
+PCA analysis for sal_st_x_x completed at Sun Aug 31 07:50:30 AM SAST 2025
+Results saved to ../Results/PCA/LPS/
+Tapedza!!! Mwari Ngaakudzwe!

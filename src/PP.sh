@@ -10,7 +10,7 @@
 
 # Define input files and corresponding job names
 INPUT_FILES=(
-  "../../mass_spec_data/Cancer biopsy/5 June/5 June tumour test 2_1-327482_SN0p0_1-160000_SN1p0_centroid.imzml
+  "../../mass_spec_data/Cancer biopsy/5 June/5 June tumour test 2_1-327482_SN0p0_1-160000_SN1p0_centroid.imzml")
 JOB_NAMES=("cancer_150-1500")
 OUTPUT_DIR="../Data/Cancer/"
 

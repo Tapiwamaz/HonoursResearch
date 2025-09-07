@@ -1,22 +1,0 @@
-Starting Autoencoder analysis at Sun Aug 24 09:47:43 AM SAST 2025
-Using input file: ../Data/LPS/SAL_LT_plasma_1-1658_x.npy
-Output directory: ../Results/AE/LPS
-Job name: SAL_LT_plasma_1-1658
-SLURM Job ID: 153794
-Training set shape: (1308, 92500)
-Test set shape: (328, 92500)
-Autoencoder created with latent_dim=500, input_dim=92500
-Training data stats:
-  Shape: (1308, 92500)
-  Min: 0.000000, Max: 0.102905
-  Mean: 0.000011, Std: 0.000244
-Starting training...
-Training completed!
-Test Loss (MSE): 0.0000000215
-Test Loss (MAE): 0.0000097280
-Test loss 2 (MSE): 0.0000000215
-[1m 1/11[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m6s[0m 690ms/step[1m 6/11[0m [32m━━━━━━━━━━[0m[37m━━━━━━━━━━[0m [1m0s[0m 10ms/step [1m11/11[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 114ms/step[1m11/11[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m2s[0m 117ms/step
-Plot saved to ../Results/AE/LPS/SAL_LT_plasma_1-1658_reconstructed_vs_original.png
-Autoencoder analysis completed at Sun Aug 24 09:48:30 AM SAST 2025
-Results saved to ../Results/AE/LPS
-Thank the Lord Almighty!!!
