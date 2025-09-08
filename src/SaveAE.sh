@@ -12,6 +12,8 @@
 INPUT_FILES=("../Data/HIV/hiv-150-1500_x.npy" )
 # MZS="../Data/LPS/sal_st_x_mzs.npy"
 OUTPUT_DIR="../Models/AE"
+PARTITIONS=30
+PART_NUM=1
 
 echo "Scaled data"
 echo "tanh activations"
@@ -42,7 +44,7 @@ for INPUT_FILE in "${INPUT_FILES[@]}"; do
     echo "Output directory: $OUTPUT_DIR"
     echo "SLURM Job ID: $SLURM_JOB_ID"
 
-    python SaveAE.py --input "$INPUT_FILE" --output "$OUTPUT_DIR" --name "$JOB_NAME"
+    python SaveAE.py --input "$INPUT_FILE" --output "$OUTPUT_DIR" --name "$JOB_NAME" --partitions "$PARTITIONS" --partNum "$PART_NUM"
 
     echo "Autoencoder analysis for $JOB_NAME completed at $(date)"
     echo "Results saved to $OUTPUT_DIR"

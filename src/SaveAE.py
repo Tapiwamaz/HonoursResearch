@@ -1,6 +1,4 @@
 import numpy as np
-
-import matplotlib.pyplot as plt
 import tensorflow as tf
 import argparse
 import os
@@ -9,7 +7,8 @@ from tensorflow.keras import layers
 from tensorflow.keras.models import Model
 from tensorflow.keras.callbacks import EarlyStopping
 from sklearn.metrics import mean_squared_error,root_mean_squared_error,mean_absolute_error
-from tensorflow.keras import activations
+
+import math
 
 
 
@@ -27,13 +26,20 @@ parser = argparse.ArgumentParser(description="Saving the AE encoder.")
 parser.add_argument("--input", required=True, help="Path to the input preprocess npy.")
 parser.add_argument("--output", required=True, help="Directory to save the encoder.")
 parser.add_argument("--name", required=True, help="Name to save output")
+parser.add_argument("--partitions",required=True,help="Number of paritions")
+parser.add_argument("--partNum",required=True,help="The number of the partition we are on")
+
 
 
 args = parser.parse_args()
 
+part_num = args.partNum
+partitions = args.partitions
 
-X = np.load(args.input)
+X = np.load(args.input,mmap_mode='r')
+X_subset = X[math.round(len(X)*(part_num-1/partitions)):math.round(len(X)*(part_num/partitions))]
 # intensities of each spectrum
+print(f"Dataset partitioned into {partitions} number of chunks\nPartition: {part_num}")
 
 class SpectrumAutoencoder(Model):
     def __init__(self, latent_dim, n_peaks):
@@ -60,14 +66,16 @@ class SpectrumAutoencoder(Model):
 
 
 
-# Split data into train and test sets
-X_train, X_test = train_test_split(X, test_size=0.2, random_state=42)
+# Split data into train, validation, and test sets (70% train, 10% val, 20% test)
+X_temp, X_test = train_test_split(X_subset, test_size=0.2, random_state=42)
+X_train, X_val = train_test_split(X_temp, test_size=0.125, random_state=42)  # 0.125 * 0.8 = 0.1
+
 print(f"Training set shape: {X_train.shape}")
+print(f"Validation set shape: {X_val.shape}")
 print(f"Test set shape: {X_test.shape}")
 
 latent_dim = 500 
 input_dim = X_train.shape[1]  
-
 
 autoencoder = SpectrumAutoencoder(latent_dim=latent_dim, n_peaks=input_dim)
 
@@ -78,7 +86,6 @@ autoencoder.compile(
 )
 
 print(f"Autoencoder created with latent_dim={latent_dim}, input_dim={input_dim}")
-
 
 # Training the autoencoder
 early_stopping = EarlyStopping(
@@ -92,16 +99,14 @@ print(f"  Shape: {X_train.shape}")
 print(f"  Min: {X_train.min():.6f}, Max: {X_train.max():.6f}")
 print(f"  Mean: {X_train.mean():.6f}, Std: {X_train.std():.6f}")
 
-
 print("Starting training...")
 history = autoencoder.fit(
     X_train, X_train,  
     epochs=15,  
     batch_size=32,
-    validation_data=(X_test, X_test),
+    validation_data=(X_val, X_val),
     callbacks=[early_stopping],
     verbose=0
-
 )
 
 print("Training completed!")
