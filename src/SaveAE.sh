@@ -9,13 +9,13 @@
 #SBATCH --time=3-00:00:00      # 3 days max runtime 
 
 # Define input files and output directory
-INPUT_FILES=("../Data/HIV/hiv-150-1500_x.npy" )
+INPUT_FILES=("../Data/Cancer/hiv-150-1500_x.npy" )
 # MZS="../Data/LPS/sal_st_x_mzs.npy"
 OUTPUT_DIR="../Models/AE"
-PARTITIONS=30
+PARTITIONS=15
 PART_NUM=1
 
-echo "Scaled data"
+echo "Larger HIV data"
 echo "tanh activations"
 # # Check if mzs file exists
 # if [ ! -f "$MZS" ]; then

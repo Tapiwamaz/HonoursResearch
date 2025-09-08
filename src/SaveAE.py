@@ -33,11 +33,11 @@ parser.add_argument("--partNum",required=True,help="The number of the partition 
 
 args = parser.parse_args()
 
-part_num = args.partNum
-partitions = args.partitions
+part_num = int(args.partNum)
+partitions = int(args.partitions)
 
 X = np.load(args.input,mmap_mode='r')
-X_subset = X[math.round(len(X)*(part_num-1/partitions)):math.round(len(X)*(part_num/partitions))]
+X_subset = X[math.floor(len(X)*((part_num-1)/partitions)):math.ceil(len(X)*(part_num/partitions))]
 # intensities of each spectrum
 print(f"Dataset partitioned into {partitions} number of chunks\nPartition: {part_num}")
 
@@ -131,6 +131,6 @@ print(f"Root Mean Squared Error (RMSE) on Test Data: {rmse_test:.10f}")
 print(f"Mean Squared Error (MSE) on Test Data: {mse_test:.10f}")
 
 
-encoder_save_path = os.path.join(args.output, f"{args.name}_encoder")
+encoder_save_path = os.path.join(args.output, f"{args.name}_encoder.keras")
 autoencoder.encoder.save(encoder_save_path)
 print(f"Encoder saved to {encoder_save_path}")

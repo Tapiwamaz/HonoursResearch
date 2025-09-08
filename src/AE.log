@@ -1,18 +1,31 @@
-Scaled data
+Larger HIV data
 tanh activations
-Starting Autoencoder analysis for hiv-150-1500_x at Sun Sep  7 09:53:29 PM SAST 2025
-Using input file: ../Data/HIV/hiv-150-1500_x.npy
+Starting Autoencoder analysis for hiv-150-1500_x at Mon Sep  8 02:16:53 PM SAST 2025
+Using input file: ../Data/Cancer/hiv-150-1500_x.npy
 Output directory: ../Models/AE
-SLURM Job ID: 155311
-Training set shape: (45342, 67499)
-Test set shape: (11336, 67499)
+SLURM Job ID: 155352
+Dataset partitioned into 15 number of chunks
+Partition: 1
+Training set shape: (2645, 67499)
+Validation set shape: (378, 67499)
+Test set shape: (756, 67499)
 Autoencoder created with latent_dim=500, input_dim=67499
 Training data stats:
-  Shape: (45342, 67499)
-  Min: 0.000000, Max: 1.000000
-  Mean: 0.000125, Std: inf
+  Shape: (2645, 67499)
+  Min: 0.000000, Max: 0.999993
+  Mean: 0.000130, Std: 0.003868
 Starting training...
-Autoencoder analysis for hiv-150-1500_x completed at Sun Sep  7 09:56:54 PM SAST 2025
+Training completed!
+[1m 1/24[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m5s[0m 255ms/step[1m 5/24[0m [32m━━━━[0m[37m━━━━━━━━━━━━━━━━[0m [1m0s[0m 13ms/step [1m10/24[0m [32m━━━━━━━━[0m[37m━━━━━━━━━━━━[0m [1m0s[0m 12ms/step[1m15/24[0m [32m━━━━━━━━━━━━[0m[37m━━━━━━━━[0m [1m0s[0m 12ms/step[1m20/24[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 12ms/step[1m24/24[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 21ms/step[1m24/24[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m1s[0m 22ms/step
+[1m 1/24[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m1s[0m 46ms/step[1m 6/24[0m [32m━━━━━[0m[37m━━━━━━━━━━━━━━━[0m [1m0s[0m 11ms/step[1m11/24[0m [32m━━━━━━━━━[0m[37m━━━━━━━━━━━[0m [1m0s[0m 11ms/step[1m16/24[0m [32m━━━━━━━━━━━━━[0m[37m━━━━━━━[0m [1m0s[0m 11ms/step[1m21/24[0m [32m━━━━━━━━━━━━━━━━━[0m[37m━━━[0m [1m0s[0m 10ms/step[1m24/24[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 11ms/step
+Test Loss: 0.0000010630
+Test Loss (MAE): 0.0000641608
+Test loss 2 (MSE): 0.0000010630
+Mean Absolute Error (MAE) on Test Data: 0.0000641608
+Root Mean Squared Error (RMSE) on Test Data: 0.0002716068
+Mean Squared Error (MSE) on Test Data: 0.0000010630
+Encoder saved to ../Models/AE/hiv-150-1500_x_encoder.keras
+Autoencoder analysis for hiv-150-1500_x completed at Mon Sep  8 02:20:14 PM SAST 2025
 Results saved to ../Models/AE
 ============================================================================
 Tapedza!!! Mwari Ngaakudzwe!
