@@ -1,18 +1,18 @@
 Scaled data
 tanh activations
-Starting Autoencoder analysis for cancer_150-1500_x at Sun Sep  7 02:55:41 PM SAST 2025
-Using input file: ../Data/Cancer/cancer_150-1500_x.npy
-Output directory: ../Results/AE/LPS/
-SLURM Job ID: 155302
-Training set shape: (128000, 67499)
-Test set shape: (32000, 67499)
+Starting Autoencoder analysis for hiv-150-1500_x at Sun Sep  7 09:53:29 PM SAST 2025
+Using input file: ../Data/HIV/hiv-150-1500_x.npy
+Output directory: ../Models/AE
+SLURM Job ID: 155311
+Training set shape: (45342, 67499)
+Test set shape: (11336, 67499)
 Autoencoder created with latent_dim=500, input_dim=67499
 Training data stats:
-  Shape: (128000, 67499)
-  Min: 0.000000, Max: 0.999996
-  Mean: 0.000134, Std: 0.005330
+  Shape: (45342, 67499)
+  Min: 0.000000, Max: 1.000000
+  Mean: 0.000125, Std: inf
 Starting training...
-Autoencoder analysis for cancer_150-1500_x completed at Sun Sep  7 03:01:06 PM SAST 2025
-Results saved to ../Results/AE/LPS/
+Autoencoder analysis for hiv-150-1500_x completed at Sun Sep  7 09:56:54 PM SAST 2025
+Results saved to ../Models/AE
 ============================================================================
 Tapedza!!! Mwari Ngaakudzwe!

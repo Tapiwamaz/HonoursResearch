@@ -9,9 +9,9 @@
 #SBATCH --time=3-00:00:00      # 3 days max runtime 
 
 # Define input files and output directory
-INPUT_FILES=("../Data/Cancer/cancer_150-1500_x.npy" )
+INPUT_FILES=("../Data/HIV/hiv-150-1500_x.npy" )
 # MZS="../Data/LPS/sal_st_x_mzs.npy"
-OUTPUT_DIR="../Results/AE/LPS/"
+OUTPUT_DIR="../Models/AE"
 
 echo "Scaled data"
 echo "tanh activations"

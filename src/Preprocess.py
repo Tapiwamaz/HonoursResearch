@@ -58,7 +58,7 @@ mz_mask = (common_mzs >= 150) & (common_mzs <= 1500)
 X = X[:, mz_mask]
 common_mzs = common_mzs[mz_mask]
 
-X = X.astype(np.float32)
+X = X.astype(np.float16)
 print(f"Matrix created!")
 print(f"Matrix has dimensions of", X.shape)
 

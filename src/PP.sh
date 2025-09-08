@@ -10,15 +10,15 @@
 
 # Define input files and corresponding job names
 INPUT_FILES=(
-  "../../mass_spec_data/HIV/3 June/3 June PHRU FFPE test 1_1-115501_SN0p0_1-56679_SN1p0_centroid.imzml")
-JOB_NAMES=("hiv-150-1500")
-OUTPUT_DIR="../Data/Cancer/"
+  "../../mass_spec_data/HIV/3 June/3 June PHRU FFPE test 1_1-115501_SN0p0_1-56679_SN1p0_centroid.imzml" "../../mass_spec_data/Cancer biopsy/5 June/5 June tumour test 2_1-327482_SN0p0_1-160000_SN1p0_centroid.imzml")
+JOB_NAMES=("hiv-150-1500" "cancer-150-1500")
+OUTPUT_DIRS=("../Data/HIV/" "../Data/Cancer/")
 
 # Iterate over input files and job names
 for i in "${!INPUT_FILES[@]}"; do
     INPUT_FILE="${INPUT_FILES[$i]}"
     JOB_NAME="${JOB_NAMES[$i]}"
-
+	OUTPUT_DIR="${OUTPUT_DIRS[$I]}"
     # Check if input file exists
     if [ ! -f "$INPUT_FILE" ]; then
         echo "Error: Input file not found at $INPUT_FILE"

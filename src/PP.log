@@ -1,8 +1,8 @@
-Starting preprocessing for hiv-150-1500 at Sun Sep  7 02:13:54 PM SAST 2025
+Starting preprocessing for hiv-150-1500 at Sun Sep  7 03:23:10 PM SAST 2025
 Using input file: ../../mass_spec_data/HIV/3 June/3 June PHRU FFPE test 1_1-115501_SN0p0_1-56679_SN1p0_centroid.imzml
-Output directory: ../Data/Cancer/
+Output directory: ../Data/HIV/
 Job name: hiv-150-1500
-SLURM Job ID: 155300
+SLURM Job ID: 155303
 ####################################
 Loading spectra...
 Total spectra loaded: 56678
@@ -10,7 +10,22 @@ Range of mz values: (100, 1500)
 Matrix created!
 Matrix has dimensions of (56678, 67499)
 Done creating data
-Preprocessing for hiv-150-1500 completed at Sun Sep  7 02:23:42 PM SAST 2025
-Results saved to ../Data/Cancer/
+Preprocessing for hiv-150-1500 completed at Sun Sep  7 03:27:09 PM SAST 2025
+Results saved to ../Data/HIV/
+============================================================================
+Starting preprocessing for cancer-150-1500 at Sun Sep  7 03:27:09 PM SAST 2025
+Using input file: ../../mass_spec_data/Cancer biopsy/5 June/5 June tumour test 2_1-327482_SN0p0_1-160000_SN1p0_centroid.imzml
+Output directory: ../Data/HIV/
+Job name: cancer-150-1500
+SLURM Job ID: 155303
+####################################
+Loading spectra...
+Total spectra loaded: 160000
+Range of mz values: (100, 1500)
+Matrix created!
+Matrix has dimensions of (160000, 67499)
+Done creating data
+Preprocessing for cancer-150-1500 completed at Sun Sep  7 03:36:44 PM SAST 2025
+Results saved to ../Data/HIV/
 ============================================================================
 Tapedza!!! Mwari Ngaakudzwe!
