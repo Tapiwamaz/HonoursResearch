@@ -11,7 +11,7 @@
 INPUT_FILE="../Data/Cancer/hiv-150-1500_x.npy"
 OUTPUT_DIR="../Models/AE"
 PARTITIONS=15
-ENCODER_PATH="$OUTPUT_DIR/hiv-150-1500_x_encoder.keras"
+ENCODER_PATH="$OUTPUT_DIR/ae_encoder.keras"
 
 echo "tanh activations"
 mkdir -p "$OUTPUT_DIR"

@@ -1,31 +1,256 @@
-Larger HIV data
 tanh activations
-Starting Autoencoder analysis for hiv-150-1500_x at Mon Sep  8 02:16:53 PM SAST 2025
-Using input file: ../Data/Cancer/hiv-150-1500_x.npy
-Output directory: ../Models/AE
-SLURM Job ID: 155352
-Dataset partitioned into 15 number of chunks
-Partition: 1
+Autoencoder training started at: Mon Sep  8 02:47:27 PM SAST 2025
+Starting partition 2 of 15 at Mon Sep  8 02:47:27 PM SAST 2025
+Latent dimension: 500
+Input dimension: 67499
+Training set shape: (2646, 67499)
+Validation set shape: (378, 67499)
+Test set shape: (756, 67499)
+Starting training...
+Training completed!
+[1m 1/24[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m6s[0m 270ms/step[1m 5/24[0m [32m━━━━[0m[37m━━━━━━━━━━━━━━━━[0m [1m0s[0m 14ms/step [1m10/24[0m [32m━━━━━━━━[0m[37m━━━━━━━━━━━━[0m [1m0s[0m 13ms/step[1m15/24[0m [32m━━━━━━━━━━━━[0m[37m━━━━━━━━[0m [1m0s[0m 12ms/step[1m20/24[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 12ms/step[1m24/24[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 22ms/step[1m24/24[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m1s[0m 23ms/step
+Test Loss: 0.0000009727
+Test Loss (MAE): 0.0000610310
+Test loss 2 (MSE): 0.0000009727
+Mean Absolute Error (MAE) on Test Data: 0.0000610310
+Root Mean Squared Error (RMSE) on Test Data: 0.0002623629
+Mean Squared Error (MSE) on Test Data: 0.0000009727
+Encoder updated and saved to ../Models/AE/ae_encoder.keras
+Partition 2 completed at Mon Sep  8 02:52:42 PM SAST 2025
+============================================================================
+Starting partition 3 of 15 at Mon Sep  8 02:52:42 PM SAST 2025
+Latent dimension: 500
+Input dimension: 67499
 Training set shape: (2645, 67499)
 Validation set shape: (378, 67499)
 Test set shape: (756, 67499)
-Autoencoder created with latent_dim=500, input_dim=67499
-Training data stats:
-  Shape: (2645, 67499)
-  Min: 0.000000, Max: 0.999993
-  Mean: 0.000130, Std: 0.003868
 Starting training...
 Training completed!
-[1m 1/24[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m5s[0m 255ms/step[1m 5/24[0m [32m━━━━[0m[37m━━━━━━━━━━━━━━━━[0m [1m0s[0m 13ms/step [1m10/24[0m [32m━━━━━━━━[0m[37m━━━━━━━━━━━━[0m [1m0s[0m 12ms/step[1m15/24[0m [32m━━━━━━━━━━━━[0m[37m━━━━━━━━[0m [1m0s[0m 12ms/step[1m20/24[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 12ms/step[1m24/24[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 21ms/step[1m24/24[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m1s[0m 22ms/step
-[1m 1/24[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m1s[0m 46ms/step[1m 6/24[0m [32m━━━━━[0m[37m━━━━━━━━━━━━━━━[0m [1m0s[0m 11ms/step[1m11/24[0m [32m━━━━━━━━━[0m[37m━━━━━━━━━━━[0m [1m0s[0m 11ms/step[1m16/24[0m [32m━━━━━━━━━━━━━[0m[37m━━━━━━━[0m [1m0s[0m 11ms/step[1m21/24[0m [32m━━━━━━━━━━━━━━━━━[0m[37m━━━[0m [1m0s[0m 10ms/step[1m24/24[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 11ms/step
-Test Loss: 0.0000010630
-Test Loss (MAE): 0.0000641608
-Test loss 2 (MSE): 0.0000010630
-Mean Absolute Error (MAE) on Test Data: 0.0000641608
-Root Mean Squared Error (RMSE) on Test Data: 0.0002716068
-Mean Squared Error (MSE) on Test Data: 0.0000010630
-Encoder saved to ../Models/AE/hiv-150-1500_x_encoder.keras
-Autoencoder analysis for hiv-150-1500_x completed at Mon Sep  8 02:20:14 PM SAST 2025
-Results saved to ../Models/AE
+[1m 1/24[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m6s[0m 269ms/step[1m 5/24[0m [32m━━━━[0m[37m━━━━━━━━━━━━━━━━[0m [1m0s[0m 14ms/step [1m10/24[0m [32m━━━━━━━━[0m[37m━━━━━━━━━━━━[0m [1m0s[0m 12ms/step[1m15/24[0m [32m━━━━━━━━━━━━[0m[37m━━━━━━━━[0m [1m0s[0m 12ms/step[1m20/24[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 12ms/step[1m24/24[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 23ms/step[1m24/24[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m1s[0m 25ms/step
+Test Loss: 0.0000011709
+Test Loss (MAE): 0.0000642838
+Test loss 2 (MSE): 0.0000011709
+Mean Absolute Error (MAE) on Test Data: 0.0000642838
+Root Mean Squared Error (RMSE) on Test Data: 0.0002979134
+Mean Squared Error (MSE) on Test Data: 0.0000011709
+Encoder updated and saved to ../Models/AE/ae_encoder.keras
+Partition 3 completed at Mon Sep  8 02:56:41 PM SAST 2025
 ============================================================================
+Starting partition 4 of 15 at Mon Sep  8 02:56:41 PM SAST 2025
+Latent dimension: 500
+Input dimension: 67499
+Training set shape: (2646, 67499)
+Validation set shape: (378, 67499)
+Test set shape: (756, 67499)
+Starting training...
+Training completed!
+[1m 1/24[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m5s[0m 255ms/step[1m 5/24[0m [32m━━━━[0m[37m━━━━━━━━━━━━━━━━[0m [1m0s[0m 15ms/step [1m10/24[0m [32m━━━━━━━━[0m[37m━━━━━━━━━━━━[0m [1m0s[0m 13ms/step[1m15/24[0m [32m━━━━━━━━━━━━[0m[37m━━━━━━━━[0m [1m0s[0m 12ms/step[1m20/24[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 12ms/step[1m24/24[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 22ms/step[1m24/24[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m1s[0m 23ms/step
+Test Loss: 0.0000010534
+Test Loss (MAE): 0.0000626942
+Test loss 2 (MSE): 0.0000010534
+Mean Absolute Error (MAE) on Test Data: 0.0000626942
+Root Mean Squared Error (RMSE) on Test Data: 0.0002740395
+Mean Squared Error (MSE) on Test Data: 0.0000010534
+Encoder updated and saved to ../Models/AE/ae_encoder.keras
+Partition 4 completed at Mon Sep  8 03:00:52 PM SAST 2025
+============================================================================
+Starting partition 5 of 15 at Mon Sep  8 03:00:52 PM SAST 2025
+Latent dimension: 500
+Input dimension: 67499
+Training set shape: (2645, 67499)
+Validation set shape: (378, 67499)
+Test set shape: (756, 67499)
+Starting training...
+Training completed!
+[1m 1/24[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m6s[0m 286ms/step[1m 6/24[0m [32m━━━━━[0m[37m━━━━━━━━━━━━━━━[0m [1m0s[0m 12ms/step [1m11/24[0m [32m━━━━━━━━━[0m[37m━━━━━━━━━━━[0m [1m0s[0m 12ms/step[1m16/24[0m [32m━━━━━━━━━━━━━[0m[37m━━━━━━━[0m [1m0s[0m 12ms/step[1m21/24[0m [32m━━━━━━━━━━━━━━━━━[0m[37m━━━[0m [1m0s[0m 11ms/step[1m24/24[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 21ms/step[1m24/24[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m1s[0m 23ms/step
+Test Loss: 0.0000009345
+Test Loss (MAE): 0.0000632385
+Test loss 2 (MSE): 0.0000009345
+Mean Absolute Error (MAE) on Test Data: 0.0000632385
+Root Mean Squared Error (RMSE) on Test Data: 0.0002839424
+Mean Squared Error (MSE) on Test Data: 0.0000009345
+Encoder updated and saved to ../Models/AE/ae_encoder.keras
+Partition 5 completed at Mon Sep  8 03:05:03 PM SAST 2025
+============================================================================
+Starting partition 6 of 15 at Mon Sep  8 03:05:03 PM SAST 2025
+Latent dimension: 500
+Input dimension: 67499
+Training set shape: (2646, 67499)
+Validation set shape: (378, 67499)
+Test set shape: (756, 67499)
+Starting training...
+Training completed!
+[1m 1/24[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m6s[0m 271ms/step[1m 6/24[0m [32m━━━━━[0m[37m━━━━━━━━━━━━━━━[0m [1m0s[0m 12ms/step [1m11/24[0m [32m━━━━━━━━━[0m[37m━━━━━━━━━━━[0m [1m0s[0m 12ms/step[1m16/24[0m [32m━━━━━━━━━━━━━[0m[37m━━━━━━━[0m [1m0s[0m 11ms/step[1m20/24[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 12ms/step[1m23/24[0m [32m━━━━━━━━━━━━━━━━━━━[0m[37m━[0m [1m0s[0m 13ms/step[1m24/24[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 24ms/step[1m24/24[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m1s[0m 25ms/step
+Test Loss: 0.0000011628
+Test Loss (MAE): 0.0000659847
+Test loss 2 (MSE): 0.0000011628
+Mean Absolute Error (MAE) on Test Data: 0.0000659847
+Root Mean Squared Error (RMSE) on Test Data: 0.0003054666
+Mean Squared Error (MSE) on Test Data: 0.0000011628
+Encoder updated and saved to ../Models/AE/ae_encoder.keras
+Partition 6 completed at Mon Sep  8 03:09:08 PM SAST 2025
+============================================================================
+Starting partition 7 of 15 at Mon Sep  8 03:09:08 PM SAST 2025
+Latent dimension: 500
+Input dimension: 67499
+Training set shape: (2645, 67499)
+Validation set shape: (378, 67499)
+Test set shape: (756, 67499)
+Starting training...
+Training completed!
+[1m 1/24[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m5s[0m 249ms/step[1m 5/24[0m [32m━━━━[0m[37m━━━━━━━━━━━━━━━━[0m [1m0s[0m 13ms/step [1m10/24[0m [32m━━━━━━━━[0m[37m━━━━━━━━━━━━[0m [1m0s[0m 12ms/step[1m15/24[0m [32m━━━━━━━━━━━━[0m[37m━━━━━━━━[0m [1m0s[0m 12ms/step[1m20/24[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 12ms/step[1m24/24[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 23ms/step[1m24/24[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m1s[0m 25ms/step
+Test Loss: 0.0000012360
+Test Loss (MAE): 0.0000713489
+Test loss 2 (MSE): 0.0000012360
+Mean Absolute Error (MAE) on Test Data: 0.0000713490
+Root Mean Squared Error (RMSE) on Test Data: 0.0003594626
+Mean Squared Error (MSE) on Test Data: 0.0000012360
+Encoder updated and saved to ../Models/AE/ae_encoder.keras
+Partition 7 completed at Mon Sep  8 03:13:09 PM SAST 2025
+============================================================================
+Starting partition 8 of 15 at Mon Sep  8 03:13:09 PM SAST 2025
+Latent dimension: 500
+Input dimension: 67499
+Training set shape: (2646, 67499)
+Validation set shape: (378, 67499)
+Test set shape: (756, 67499)
+Starting training...
+Training completed!
+[1m 1/24[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m6s[0m 270ms/step[1m 5/24[0m [32m━━━━[0m[37m━━━━━━━━━━━━━━━━[0m [1m0s[0m 14ms/step [1m10/24[0m [32m━━━━━━━━[0m[37m━━━━━━━━━━━━[0m [1m0s[0m 13ms/step[1m15/24[0m [32m━━━━━━━━━━━━[0m[37m━━━━━━━━[0m [1m0s[0m 12ms/step[1m20/24[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 12ms/step[1m24/24[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 23ms/step[1m24/24[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m1s[0m 24ms/step
+Test Loss: 0.0000010805
+Test Loss (MAE): 0.0000647736
+Test loss 2 (MSE): 0.0000010805
+Mean Absolute Error (MAE) on Test Data: 0.0000647736
+Root Mean Squared Error (RMSE) on Test Data: 0.0003069391
+Mean Squared Error (MSE) on Test Data: 0.0000010805
+Encoder updated and saved to ../Models/AE/ae_encoder.keras
+Partition 8 completed at Mon Sep  8 03:17:16 PM SAST 2025
+============================================================================
+Starting partition 9 of 15 at Mon Sep  8 03:17:16 PM SAST 2025
+Latent dimension: 500
+Input dimension: 67499
+Training set shape: (2645, 67499)
+Validation set shape: (378, 67499)
+Test set shape: (756, 67499)
+Starting training...
+Training completed!
+[1m 1/24[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m5s[0m 254ms/step[1m 5/24[0m [32m━━━━[0m[37m━━━━━━━━━━━━━━━━[0m [1m0s[0m 14ms/step [1m10/24[0m [32m━━━━━━━━[0m[37m━━━━━━━━━━━━[0m [1m0s[0m 13ms/step[1m15/24[0m [32m━━━━━━━━━━━━[0m[37m━━━━━━━━[0m [1m0s[0m 12ms/step[1m20/24[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 12ms/step[1m24/24[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 32ms/step[1m24/24[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m1s[0m 33ms/step
+Test Loss: 0.0000011475
+Test Loss (MAE): 0.0000657717
+Test loss 2 (MSE): 0.0000011475
+Mean Absolute Error (MAE) on Test Data: 0.0000657717
+Root Mean Squared Error (RMSE) on Test Data: 0.0002940956
+Mean Squared Error (MSE) on Test Data: 0.0000011475
+Encoder updated and saved to ../Models/AE/ae_encoder.keras
+Partition 9 completed at Mon Sep  8 03:21:20 PM SAST 2025
+============================================================================
+Starting partition 10 of 15 at Mon Sep  8 03:21:20 PM SAST 2025
+Latent dimension: 500
+Input dimension: 67499
+Training set shape: (2646, 67499)
+Validation set shape: (378, 67499)
+Test set shape: (756, 67499)
+Starting training...
+Training completed!
+[1m 1/24[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m6s[0m 269ms/step[1m 6/24[0m [32m━━━━━[0m[37m━━━━━━━━━━━━━━━[0m [1m0s[0m 12ms/step [1m11/24[0m [32m━━━━━━━━━[0m[37m━━━━━━━━━━━[0m [1m0s[0m 12ms/step[1m16/24[0m [32m━━━━━━━━━━━━━[0m[37m━━━━━━━[0m [1m0s[0m 11ms/step[1m21/24[0m [32m━━━━━━━━━━━━━━━━━[0m[37m━━━[0m [1m0s[0m 11ms/step[1m24/24[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 21ms/step[1m24/24[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m1s[0m 22ms/step
+Test Loss: 0.0000009670
+Test Loss (MAE): 0.0000633324
+Test loss 2 (MSE): 0.0000009670
+Mean Absolute Error (MAE) on Test Data: 0.0000633324
+Root Mean Squared Error (RMSE) on Test Data: 0.0002609148
+Mean Squared Error (MSE) on Test Data: 0.0000009670
+Encoder updated and saved to ../Models/AE/ae_encoder.keras
+Partition 10 completed at Mon Sep  8 03:25:38 PM SAST 2025
+============================================================================
+Starting partition 11 of 15 at Mon Sep  8 03:25:38 PM SAST 2025
+Latent dimension: 500
+Input dimension: 67499
+Training set shape: (2645, 67499)
+Validation set shape: (378, 67499)
+Test set shape: (756, 67499)
+Starting training...
+Training completed!
+[1m 1/24[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m5s[0m 255ms/step[1m 6/24[0m [32m━━━━━[0m[37m━━━━━━━━━━━━━━━[0m [1m0s[0m 12ms/step [1m11/24[0m [32m━━━━━━━━━[0m[37m━━━━━━━━━━━[0m [1m0s[0m 11ms/step[1m16/24[0m [32m━━━━━━━━━━━━━[0m[37m━━━━━━━[0m [1m0s[0m 11ms/step[1m21/24[0m [32m━━━━━━━━━━━━━━━━━[0m[37m━━━[0m [1m0s[0m 11ms/step[1m24/24[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 20ms/step[1m24/24[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m1s[0m 22ms/step
+Test Loss: 0.0000010696
+Test Loss (MAE): 0.0000637839
+Test loss 2 (MSE): 0.0000010696
+Mean Absolute Error (MAE) on Test Data: 0.0000637839
+Root Mean Squared Error (RMSE) on Test Data: 0.0002988757
+Mean Squared Error (MSE) on Test Data: 0.0000010696
+Encoder updated and saved to ../Models/AE/ae_encoder.keras
+Partition 11 completed at Mon Sep  8 03:29:43 PM SAST 2025
+============================================================================
+Starting partition 12 of 15 at Mon Sep  8 03:29:43 PM SAST 2025
+Latent dimension: 500
+Input dimension: 67499
+Training set shape: (2646, 67499)
+Validation set shape: (378, 67499)
+Test set shape: (756, 67499)
+Starting training...
+Training completed!
+[1m 1/24[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m5s[0m 251ms/step[1m 5/24[0m [32m━━━━[0m[37m━━━━━━━━━━━━━━━━[0m [1m0s[0m 14ms/step [1m10/24[0m [32m━━━━━━━━[0m[37m━━━━━━━━━━━━[0m [1m0s[0m 13ms/step[1m15/24[0m [32m━━━━━━━━━━━━[0m[37m━━━━━━━━[0m [1m0s[0m 12ms/step[1m20/24[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 12ms/step[1m24/24[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 22ms/step[1m24/24[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m1s[0m 24ms/step
+Test Loss: 0.0000013058
+Test Loss (MAE): 0.0000636369
+Test loss 2 (MSE): 0.0000013058
+Mean Absolute Error (MAE) on Test Data: 0.0000636369
+Root Mean Squared Error (RMSE) on Test Data: 0.0002983295
+Mean Squared Error (MSE) on Test Data: 0.0000013058
+Encoder updated and saved to ../Models/AE/ae_encoder.keras
+Partition 12 completed at Mon Sep  8 03:33:51 PM SAST 2025
+============================================================================
+Starting partition 13 of 15 at Mon Sep  8 03:33:51 PM SAST 2025
+Latent dimension: 500
+Input dimension: 67499
+Training set shape: (2645, 67499)
+Validation set shape: (378, 67499)
+Test set shape: (756, 67499)
+Starting training...
+Training completed!
+[1m 1/24[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m5s[0m 254ms/step[1m 5/24[0m [32m━━━━[0m[37m━━━━━━━━━━━━━━━━[0m [1m0s[0m 15ms/step [1m10/24[0m [32m━━━━━━━━[0m[37m━━━━━━━━━━━━[0m [1m0s[0m 13ms/step[1m15/24[0m [32m━━━━━━━━━━━━[0m[37m━━━━━━━━[0m [1m0s[0m 12ms/step[1m20/24[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 12ms/step[1m24/24[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 22ms/step[1m24/24[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m1s[0m 24ms/step
+Test Loss: 0.0000008987
+Test Loss (MAE): 0.0000624294
+Test loss 2 (MSE): 0.0000008987
+Mean Absolute Error (MAE) on Test Data: 0.0000624294
+Root Mean Squared Error (RMSE) on Test Data: 0.0002939513
+Mean Squared Error (MSE) on Test Data: 0.0000008987
+Encoder updated and saved to ../Models/AE/ae_encoder.keras
+Partition 13 completed at Mon Sep  8 03:38:00 PM SAST 2025
+============================================================================
+Starting partition 14 of 15 at Mon Sep  8 03:38:00 PM SAST 2025
+Latent dimension: 500
+Input dimension: 67499
+Training set shape: (2646, 67499)
+Validation set shape: (378, 67499)
+Test set shape: (756, 67499)
+Starting training...
+Training completed!
+[1m 1/24[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m6s[0m 268ms/step[1m 6/24[0m [32m━━━━━[0m[37m━━━━━━━━━━━━━━━[0m [1m0s[0m 12ms/step [1m11/24[0m [32m━━━━━━━━━[0m[37m━━━━━━━━━━━[0m [1m0s[0m 12ms/step[1m16/24[0m [32m━━━━━━━━━━━━━[0m[37m━━━━━━━[0m [1m0s[0m 11ms/step[1m21/24[0m [32m━━━━━━━━━━━━━━━━━[0m[37m━━━[0m [1m0s[0m 11ms/step[1m24/24[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 21ms/step[1m24/24[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m1s[0m 23ms/step
+Test Loss: 0.0000011509
+Test Loss (MAE): 0.0000637502
+Test loss 2 (MSE): 0.0000011509
+Mean Absolute Error (MAE) on Test Data: 0.0000637502
+Root Mean Squared Error (RMSE) on Test Data: 0.0003159633
+Mean Squared Error (MSE) on Test Data: 0.0000011509
+Encoder updated and saved to ../Models/AE/ae_encoder.keras
+Partition 14 completed at Mon Sep  8 03:42:13 PM SAST 2025
+============================================================================
+Starting partition 15 of 15 at Mon Sep  8 03:42:13 PM SAST 2025
+Latent dimension: 500
+Input dimension: 67499
+Training set shape: (2645, 67499)
+Validation set shape: (378, 67499)
+Test set shape: (756, 67499)
+Starting training...
+Training completed!
+[1m 1/24[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m6s[0m 276ms/step[1m 6/24[0m [32m━━━━━[0m[37m━━━━━━━━━━━━━━━[0m [1m0s[0m 12ms/step [1m11/24[0m [32m━━━━━━━━━[0m[37m━━━━━━━━━━━[0m [1m0s[0m 12ms/step[1m16/24[0m [32m━━━━━━━━━━━━━[0m[37m━━━━━━━[0m [1m0s[0m 12ms/step[1m21/24[0m [32m━━━━━━━━━━━━━━━━━[0m[37m━━━[0m [1m0s[0m 11ms/step[1m24/24[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 21ms/step[1m24/24[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m1s[0m 22ms/step
+Test Loss: 0.0000016250
+Test Loss (MAE): 0.0000670508
+Test loss 2 (MSE): 0.0000016250
+Mean Absolute Error (MAE) on Test Data: 0.0000670508
+Root Mean Squared Error (RMSE) on Test Data: 0.0003291829
+Mean Squared Error (MSE) on Test Data: 0.0000016250
+Encoder updated and saved to ../Models/AE/ae_encoder.keras
+Partition 15 completed at Mon Sep  8 03:46:36 PM SAST 2025
+============================================================================
+Autoencoder training finished at: Mon Sep  8 03:46:36 PM SAST 2025
 Tapedza!!! Mwari Ngaakudzwe!

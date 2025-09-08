@@ -1,7 +1,7 @@
 #!/bin/bash
-#SBATCH --job-name=AE
-#SBATCH --output=AE.log
-#SBATCH --error=AE_err.log
+#SBATCH --job-name=AE-tanh
+#SBATCH --output=AE_tanh.log
+#SBATCH --error=AE__tanh_err.log
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=16      # Using more cores for biggpu            
@@ -13,7 +13,7 @@ INPUT_FILES=("../Data/LPS/lps_st_x_x.npy" "../Data/LPS/lps_lt_x_x.npy" "../Data/
 MZS="../Data/LPS/sal_st_x_mzs.npy"
 OUTPUT_DIR="../Results/AE/LPS/"
 
-echo "Scaled data"
+echo "tanh levol"
 # Check if mzs file exists
 if [ ! -f "$MZS" ]; then
     echo "Error: MZS file not found at $MZS"
