@@ -1,0 +1,42 @@
+#!/bin/bash
+#SBATCH --job-name=SaveAE
+#SBATCH --output=SaveAE.log
+#SBATCH --error=SaveAE_err.log
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=16
+#SBATCH --partition=biggpu
+#SBATCH --time=3-00:00:00
+
+INPUT_FILE="../Data/Pretrain/hiv-cancer-150-1500.npy"
+OUTPUT_DIR="../Models/AE"
+PARTITIONS=15
+NAME="ae_mixed"
+
+mkdir -p "$OUTPUT_DIR"
+
+START_TIME=$(date)
+echo "Encoder saving started at: $START_TIME"
+
+JOB_NAME=$(basename "$INPUT_FILE" .npy)
+
+if [ ! -f "$INPUT_FILE" ]; then
+    echo "Error: Input file not found at $INPUT_FILE"
+    exit 1
+fi
+
+# Save the encoder for the first partition only
+PART_NUM=1
+echo "Saving encoder for partition $PART_NUM of $PARTITIONS at $(date)"
+python SaveAE.py \
+    --input "$INPUT_FILE" \
+    --output "$OUTPUT_DIR" \
+    --name "$JOB_NAME" \
+    --partitions "$PARTITIONS" \
+    --partNum "$PART_NUM"
+echo "Encoder for partition $PART_NUM saved at $(date)"
+echo "============================================================================"
+
+END_TIME=$(date)
+echo "Encoder saving finished at: $END_TIME"
+echo "Tapedza!!! Mwari Ngaakudzwe!"
