@@ -8,7 +8,7 @@
 #SBATCH --partition=biggpu
 #SBATCH --time=3-00:00:00
 
-INPUT_FILE="../Data/Pretrain/hiv-cancer-150-1500.npy"
+INPUT_FILE="../Data/Pretrain/hiv_cancer_150-1500.npy"
 OUTPUT_DIR="../Models/AE"
 PARTITIONS=15
 NAME="ae_mixed"
