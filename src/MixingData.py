@@ -4,8 +4,7 @@ import os
 
 parser = argparse.ArgumentParser(description="MIX DATA for pretraining")
 parser.add_argument("--inputOne", required=True, help="Path to the input prerpocessed npy file.")
-#parser.add_argument("--inputTwo", required=True, help="Path to the input prerpocessed npy file.")
-
+parser.add_argument("--inputTwo", required=True, help="Path to the input prerpocessed npy file.")
 parser.add_argument("--output", required=True, help="Directory to save the result.")
 parser.add_argument("--name", required=True, help="Name to save output")
 
@@ -25,7 +24,10 @@ def mix_npy_files(file1_path, file2_path, output_path=None):
         numpy.ndarray: Combined and shuffled data
     """
     data1 = np.load(file1_path)
+    print(f'length of first is {len(data1)}')
     data2 = np.load(file2_path)
+    print(f'length of second is {len(data2)}')
+
     combined_data = np.concatenate([data1, data2], axis=0)
     np.random.shuffle(combined_data)
     print(f"Length of combined is {len(combined_data)}")
@@ -37,5 +39,5 @@ def mix_npy_files(file1_path, file2_path, output_path=None):
 
 # Example usage:
 output_path = os.path.join(args.output, f"{args.name}.npy")
-mix_npy_files(file1_path=args.inputOne, file2_path=args.inputOne, output_path=output_path)
+mix_npy_files(file1_path=args.inputOne, file2_path=args.inputTwo, output_path=output_path)
 #print(f'Length of mixed is {len(np.load(args.inputOne))}')
