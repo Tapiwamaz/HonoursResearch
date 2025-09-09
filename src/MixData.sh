@@ -4,11 +4,11 @@
 #SBATCH --error=MixData_err.log
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
-#SBATCH --cpus-per-task=12
-#SBATCH --partition=bigbatch
+#SBATCH --cpus-per-task=16
+#SBATCH --partition=biggpu
 #SBATCH --time=1-00:00:00
 
-INPUT_ONE="../Data/Pretrain/hiv_cancer_150-1500.npy"
+INPUT_ONE="../Data/Cancer/hiv-150-1500_x.npy"
 INPUT_TWO="../Data/Cancer/cancer_150-1500_x.npy"
 OUTPUT_DIR="../Data/Pretrain"
 MIXED_NAME="hiv_cancer_150-1500"
@@ -20,6 +20,7 @@ echo "Mixing data started at: $START_TIME"
 
 python MixingData.py \
     --inputOne "$INPUT_ONE" \
+	--inputTwo "$INPUT_TWO" \
     --output "$OUTPUT_DIR" \
     --name "$MIXED_NAME"
 

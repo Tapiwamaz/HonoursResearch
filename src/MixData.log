@@ -1,4 +1,7 @@
-Mixing data started at: Mon Sep  8 04:05:30 PM SAST 2025
-Length of mixed is 113356
-Mixing data finished at: Mon Sep  8 04:14:01 PM SAST 2025
+Mixing data started at: Mon Sep  8 04:35:52 PM SAST 2025
+length of first is 56678
+length of second is 160000
+Length of combined is 216678
+File save to ../Data/Pretrain/hiv_cancer_150-1500.npy
+Mixing data finished at: Mon Sep  8 05:07:48 PM SAST 2025
 Done!

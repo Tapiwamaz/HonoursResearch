@@ -37,6 +37,9 @@ part_num = int(args.partNum)
 partitions = int(args.partitions)
 
 X = np.load(args.input,mmap_mode='r')
+start = 0
+end = math.ceil(len(X)*(part_num/partitions))
+print(f'Start to end indices: ({start},{end})')
 X_subset = X[math.floor(len(X)*((part_num-1)/partitions)):math.ceil(len(X)*(part_num/partitions))]
 # intensities of each spectrum
 print(f"Dataset partitioned into {partitions} number of chunks\nPartition: {part_num}")

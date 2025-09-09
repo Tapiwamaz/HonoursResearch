@@ -5,13 +5,13 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=16      # Using more cores for biggpu            
-#SBATCH --partition=biggpu
+#SBATCH --partition=bigbatch
 #SBATCH --time=3-00:00:00      # 3 days max runtime 
 
-INPUT_FILE="../Data/Cancer/hiv-150-1500_x.npy"
+INPUT_FILE="../Data/Pretrain/hiv_cancer_150-1500.npy"
 OUTPUT_DIR="../Models/AE"
-PARTITIONS=15
-ENCODER_PATH="$OUTPUT_DIR/ae_encoder.keras"
+PARTITIONS=20
+ENCODER_PATH="$OUTPUT_DIR/ae_encoder_mixed.keras"
 
 echo "tanh activations"
 mkdir -p "$OUTPUT_DIR"
