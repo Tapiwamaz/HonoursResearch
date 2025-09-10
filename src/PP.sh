@@ -3,16 +3,16 @@
 #SBATCH --output=PP.log
 #SBATCH --error=PP_err.log
 #SBATCH --nodes=1
-#SBATCH --partition=biggpu
+#SBATCH --partition=bigbatch
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=16      # Using 4 cores            
 #SBATCH --time=2-00:00:00      # 2 days max runtime 
 
 # Define input files and corresponding job names
 INPUT_FILES=(
-  "../../mass_spec_data/HIV/3 June/3 June PHRU FFPE test 1_1-115501_SN0p0_1-56679_SN1p0_centroid.imzml" "../../mass_spec_data/Cancer biopsy/5 June/5 June tumour test 2_1-327482_SN0p0_1-160000_SN1p0_centroid.imzml")
-JOB_NAMES=("hiv-150-1500" "cancer-150-1500")
-OUTPUT_DIRS=("../Data/HIV/" "../Data/Cancer/")
+  "../../mass_spec_data/LPS/09102024_Leandrie_LPS_plasma test/09102024_Leandrie_LPS_plasma test/h5 files/091024_15_LPS_LT_1-1660_SN1p0_centroid.imzml" "../../mass_spec_data/LPS/09102024_Leandrie_LPS_plasma test/09102024_Leandrie_LPS_plasma test/h5 files/091024_15_LPS_LT_1-1660_SN1p0_centroid.imzml" "../../mass_spec_data/LPS/09102024_Leandrie_LPS_plasma test/09102024_Leandrie_LPS_plasma test/h5 files/091024_39_SAL_ST_1-1657_SN1p0_centroid.imzml" "../../mass_spec_data/LPS/09102024_Leandrie_LPS_plasma test/09102024_Leandrie_LPS_plasma test/h5 files/091024_11_SAL_LT_plasma_1-1658_SN1p0_centroid.imzml")
+JOB_NAMES=("lps-lt-150-1500" "lps_plasma-150-1500" "sal-st-150-1500" "sal-plasma-150-1500")
+OUTPUT_DIRS=("../Data/LPS/" "../Data/LPS/" "../Data/LPS/" "../Data/LPS/")
 
 # Iterate over input files and job names
 for i in "${!INPUT_FILES[@]}"; do

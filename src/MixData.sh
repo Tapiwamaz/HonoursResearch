@@ -5,11 +5,11 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=16
-#SBATCH --partition=biggpu
+#SBATCH --partition=bigbatch
 #SBATCH --time=1-00:00:00
 
-INPUT_ONE="../Data/Cancer/sal-st-150-1500_x.npy"
-INPUT_TWO="../Data/Cancer/lps-lt-150-1500_x.npy"
+INPUT_ONE="../Data/LPS/sal-st-150-1500_x.npy"
+INPUT_TWO="../Data/LPS/lps-lt-150-1500_x.npy"
 OUTPUT_DIR="../Data/Pretrain"
 MIXED_NAME="sal-lps-150-1500(labeled)"
 
