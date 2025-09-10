@@ -8,10 +8,10 @@
 #SBATCH --partition=biggpu
 #SBATCH --time=1-00:00:00
 
-INPUT_ONE="../Data/Cancer/hiv-150-1500_x.npy"
-INPUT_TWO="../Data/Cancer/cancer_150-1500_x.npy"
+INPUT_ONE="../Data/Cancer/sal-st-150-1500_x.npy"
+INPUT_TWO="../Data/Cancer/lps-lt-150-1500_x.npy"
 OUTPUT_DIR="../Data/Pretrain"
-MIXED_NAME="hiv_cancer_150-1500"
+MIXED_NAME="sal-lps-150-1500(labeled)"
 
 mkdir -p "$OUTPUT_DIR"
 
