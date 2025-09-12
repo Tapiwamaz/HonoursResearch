@@ -22,3 +22,9 @@ if [ ! -f "$INPUT_FILE" ]; then
     echo "Error: Input file not found at $INPUT_FILE"
     exit 1
 fi
+
+python TrainNMF.py --input "$INPUT_FILE" --output "$OUTPUT_DIR" --name "$JOB_NAME" 
+
+END_TIME=$(date)
+echo "Autoencoder training finished at: $END_TIME"
+echo "Tapedza!!! Mwari Ngaakudzwe!"
