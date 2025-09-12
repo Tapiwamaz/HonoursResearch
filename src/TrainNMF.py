@@ -29,25 +29,21 @@ H = nmf.components_
 X_train_recon = np.dot(W_train, H)
 mae_train = mean_absolute_error(X_train, X_train_recon)
 mse_train = mean_squared_error(X_train, X_train_recon)
-print(f"Train MAE: {mae_train:.4f}, MSE: {mse_train:.4f}")
+print(f"Train MAE: {mae_train:.10f}, MSE: {mse_train:.10}")
 
 # Transform val/test using trained NMF
 W_val = nmf.transform(X_val)
 X_val_recon = np.dot(W_val, H)
 mae_val = mean_absolute_error(X_val, X_val_recon)
-print(f"Val MAE: {mae_val:.4f}")
+print(f"Val MAE: {mae_val:.10f}")
 
 W_test = nmf.transform(X_test)
 X_test_recon = np.dot(W_test, H)
 mae_test = mean_absolute_error(X_test, X_test_recon)
-print(f"Test MAE: {mae_test:.4f}")
+print(f"Test MAE: {mae_test:.10f}")
 
 # Save W for val/test if needed
 # np.save(os.path.join(args.output, f"{args.name}_W_val.npy"), W_val)
 # np.save(os.path.join(args.output, f"{args.name}_W_test.npy"), W_test)
 
 
-joblib.dump(nmf, os.path.join(args.output, f"{args.name}_nmf_model.joblib"))
-
-nmf = joblib.load("path/to/D1_nmf_model.joblib")
-W_D2 = nmf.transform(D2)

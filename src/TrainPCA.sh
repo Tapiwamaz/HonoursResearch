@@ -5,7 +5,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=16      # Using more cores for biggpu            
-#SBATCH --partition=biggpu
+#SBATCH --partition=bigbatch
 #SBATCH --time=3-00:00:00      # 3 days max runtime 
 
 INPUT_FILE="../Data/Pretrain/hiv_cancer_150-1500.npy"
@@ -24,10 +24,10 @@ if [ ! -f "$INPUT_FILE" ]; then
     exit 1
 fi
 
-python TrainPCA.py --input "$INPUT_FILE" 
-        \ --output "$OUTPUT_DIR" 
-        \ --name "$JOB_NAME" 
-        \ --classifier_data "$CLASSIFIER_DATA"
+python TrainPCA.py --input "$INPUT_FILE" \
+      --output "$OUTPUT_DIR" \
+      --name "$JOB_NAME" \
+      --classifier_data "$CLASSIFIER_DATA"
 
 END_TIME=$(date)
 echo "Autoencoder training finished at: $END_TIME"
