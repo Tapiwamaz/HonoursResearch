@@ -1,0 +1,83 @@
+_wandb:
+    value:
+        cli_version: 0.21.4
+        e:
+            dv5bqrehj7bx7b6ifa6amxilh3n93cwi:
+                codePath: Notebooks/Classifier.ipynb
+                codePathLocal: Classifier.ipynb
+                cpu_count: 6
+                cpu_count_logical: 12
+                disk:
+                    /:
+                        total: "982240026624"
+                        used: "155378130944"
+                email: mazaruratapiwa03@gmail.com
+                executable: /home/vmuser/anaconda3/bin/python
+                git:
+                    commit: 676a727542a8d6a013bcba948bce8a635193673b
+                    remote: https://github.com/Tapiwamaz/HonoursResearch.git
+                host: reference2025
+                memory:
+                    total: "16465805312"
+                os: Linux-6.8.0-51-generic-x86_64-with-glibc2.39
+                program: /home/vmuser/Documents/HonoursResearch/Notebooks/Classifier.ipynb
+                python: CPython 3.12.7
+                root: /home/vmuser/Documents/HonoursResearch/Notebooks
+                startedAt: "2025-09-12T15:44:36.306630Z"
+                writerId: dv5bqrehj7bx7b6ifa6amxilh3n93cwi
+        m:
+            - "1": batch/batch_step
+              "6":
+                - 3
+              "7": []
+            - "2": batch/*
+              "5": 1
+              "6":
+                - 1
+              "7": []
+        python_version: 3.12.7
+        t:
+            "1":
+                - 2
+                - 3
+                - 5
+                - 49
+                - 53
+            "2":
+                - 2
+                - 3
+                - 5
+                - 49
+                - 53
+            "3":
+                - 2
+                - 7
+                - 16
+                - 38
+                - 39
+            "4": 3.12.7
+            "5": 0.21.4
+            "8":
+                - 1
+            "12": 0.21.4
+            "13": linux-x86_64
+activation:
+    value: relu
+batch_size:
+    value: 32
+dropout:
+    value: 0.5
+epochs:
+    value: 50
+hidden_size:
+    value: 64
+learning_rate:
+    value: 0.001
+loss:
+    value: sparse_categorical_crossentropy
+metric:
+    value: accuracy
+optimizer:
+    value: adam
+output_activation:
+    value: softmax

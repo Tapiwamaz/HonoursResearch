@@ -1,0 +1,28 @@
+{
+  "os":  "Linux-6.8.0-51-generic-x86_64-with-glibc2.39",
+  "python":  "CPython 3.12.7",
+  "startedAt":  "2025-09-12T15:44:36.306630Z",
+  "program":  "/home/vmuser/Documents/HonoursResearch/Notebooks/Classifier.ipynb",
+  "codePath":  "Notebooks/Classifier.ipynb",
+  "codePathLocal":  "Classifier.ipynb",
+  "git":  {
+    "remote":  "https://github.com/Tapiwamaz/HonoursResearch.git",
+    "commit":  "676a727542a8d6a013bcba948bce8a635193673b"
+  },
+  "email":  "mazaruratapiwa03@gmail.com",
+  "root":  "/home/vmuser/Documents/HonoursResearch/Notebooks",
+  "host":  "reference2025",
+  "executable":  "/home/vmuser/anaconda3/bin/python",
+  "cpu_count":  6,
+  "cpu_count_logical":  12,
+  "disk":  {
+    "/":  {
+      "total":  "982240026624",
+      "used":  "155378130944"
+    }
+  },
+  "memory":  {
+    "total":  "16465805312"
+  },
+  "writerId":  "dv5bqrehj7bx7b6ifa6amxilh3n93cwi"
+}

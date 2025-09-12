@@ -19,19 +19,19 @@ args = parser.parse_args()
 
 
 X = np.load(args.input)
-X_train, X_test = train_test_split(X, test_size=0.3, random_state=42)
+X_temp, X_test = train_test_split(X, test_size=0.2, random_state=42)
+X_train, X_val = train_test_split(X_temp, test_size=0.125, random_state=42)
+
 
 
 
 n_components = 500  # Choose number of components
 
-nmf = NMF(n_components=n_components, random_state=42, max_iter=10)
-W = nmf.fit_transform(X)  # Sample weights
+nmf = NMF(n_components=n_components, random_state=42, max_iter=50)
+W = nmf.fit_transform(X) 
 print(f"Number of components: {n_components}")
-nmf = NMF(n_components=n_components, random_state=42, max_iter=1)
-# Fit NMF model on the training set
 W_train = nmf.fit_transform(X_train)  
-H = nmf.components_  # Component spectra
+H = nmf.components_  
 
 # Reconstruct training set
 X_train_reconstructed = np.dot(W_train, H)
