@@ -24,10 +24,10 @@ if [ ! -f "$INPUT_FILE" ]; then
     exit 1
 fi
 
-python TrainPCA.py --input "$INPUT_FILE" 
-        \ --output "$OUTPUT_DIR" 
-        \ --name "$JOB_NAME" 
-        \ --classifier_data "$CLASSIFIER_DATA"
+python TrainPCA.py --input "$INPUT_FILE" \
+        --output "$OUTPUT_DIR" \
+        --name "$JOB_NAME" \
+        --classifier_data "$CLASSIFIER_DATA"
 
 END_TIME=$(date)
 echo "Autoencoder training finished at: $END_TIME"
