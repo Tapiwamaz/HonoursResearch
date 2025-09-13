@@ -26,7 +26,7 @@ args = parser.parse_args()
 
 
 
-nmf = joblib.load(args.nmt_encoder)
+nmf = joblib.load(args.nmf_encoder)
 
 data = np.load(args.input_data)
 data = data.astype(np.float32)
