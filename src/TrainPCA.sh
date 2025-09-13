@@ -1,11 +1,11 @@
 #!/bin/bash
 #SBATCH --job-name=PCA
-#SBATCH --output=PCA_batch.log
-#SBATCH --error=PCA_batch_err.log
+#SBATCH --output=PCA.log
+#SBATCH --error=PCA_err.log
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=16      # Using more cores for biggpu            
-#SBATCH --partition=bigbatch
+#SBATCH --partition=biggpu
 #SBATCH --time=3-00:00:00      # 3 days max runtime 
 
 INPUT_FILE="../Data/Pretrain/hiv_cancer_150-1500.npy"
