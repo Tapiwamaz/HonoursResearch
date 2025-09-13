@@ -73,7 +73,7 @@ print(f'Val data shape: {X_val.shape}')
 print(f'Test data shape: {X_test.shape}')
 
 input_dim = X_train.shape[1]
-model = MLPClassifier(input_dim=input_dim,hidden_size=config.hidden_size)
+model = MLPClassifier(input_dim=input_dim)
 
 early_stopping = EarlyStopping(
     monitor='accuracy',

@@ -1,5 +1,5 @@
-2025-09-13 20:01:59.234208: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
-2025-09-13 20:01:59.297520: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+2025-09-13 20:19:07.668778: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-09-13 20:19:07.732181: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
 To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
 /home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/attr_value.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
   warnings.warn(
@@ -41,53 +41,22 @@ To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other ope
   warnings.warn(
 /home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/protobuf/debug.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
   warnings.warn(
-2025-09-13 20:02:06.898628: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-09-13 20:19:53.752442: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
 /home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/sklearn/decomposition/_nmf.py:1728: ConvergenceWarning: Maximum number of iterations 100 reached. Increase it to improve convergence.
   warnings.warn(
-wandb: Currently logged in as: trapezium (trapezium-wits-university) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
-wandb: creating run
-wandb: Tracking run with wandb version 0.21.4
-wandb: Run data is saved locally in /home-mscluster/tmazarura/HonoursResearch/src/wandb/run-20250913_200411-dpp566or
-wandb: Run `wandb offline` to turn off syncing.
-wandb: Syncing run swift-galaxy-3
-wandb: ⭐️ View project at https://wandb.ai/trapezium-wits-university/NMFClassifier
-wandb: 🚀 View run at https://wandb.ai/trapezium-wits-university/NMFClassifier/runs/dpp566or
 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
-I0000 00:00:1757786654.487188 1998320 gpu_device.cc:2020] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 22342 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 3090, pci bus id: 0000:17:00.0, compute capability: 8.6
-2025-09-13 20:04:15.897671: I external/local_xla/xla/service/service.cc:163] XLA service 0x7efb5c009240 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
-2025-09-13 20:04:15.897710: I external/local_xla/xla/service/service.cc:171]   StreamExecutor device (0): NVIDIA GeForce RTX 3090, Compute Capability 8.6
-2025-09-13 20:04:15.915527: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:269] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
-2025-09-13 20:04:16.053607: I external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:473] Loaded cuDNN version 91002
-2025-09-13 20:04:16.079994: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
-2025-09-13 20:04:16.080048: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
-2025-09-13 20:04:16.879847: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_222', 12 bytes spill stores, 12 bytes spill loads
+I0000 00:00:1757787760.818433  107603 gpu_device.cc:2020] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 22342 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 3090, pci bus id: 0000:17:00.0, compute capability: 8.6
+2025-09-13 20:22:42.298820: I external/local_xla/xla/service/service.cc:163] XLA service 0x7f3b0c01ad70 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2025-09-13 20:22:42.298844: I external/local_xla/xla/service/service.cc:171]   StreamExecutor device (0): NVIDIA GeForce RTX 3090, Compute Capability 8.6
+2025-09-13 20:22:42.310603: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:269] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+2025-09-13 20:22:42.387982: I external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:473] Loaded cuDNN version 91002
+2025-09-13 20:22:42.412228: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-09-13 20:22:42.412276: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-09-13 20:22:43.192305: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_222', 16 bytes spill stores, 16 bytes spill loads
 
-2025-09-13 20:04:16.886791: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_222', 16 bytes spill stores, 16 bytes spill loads
+2025-09-13 20:22:43.241925: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_222', 12 bytes spill stores, 12 bytes spill loads
 
-2025-09-13 20:04:17.045309: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_222', 272 bytes spill stores, 272 bytes spill loads
+2025-09-13 20:22:43.411300: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_222', 272 bytes spill stores, 272 bytes spill loads
 
-I0000 00:00:1757786657.780862 1998513 device_compiler.h:196] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
-2025-09-13 20:04:18.088082: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
-wandb: updating run metadata
-wandb: uploading history steps 0-10, summary, console lines 0-3
-wandb: 
-wandb: Run history:
-wandb:      epoch/accuracy ▁▁▂▅▄▇▇█▇▆▆
-wandb:         epoch/epoch ▁▂▂▃▄▅▅▆▇▇█
-wandb: epoch/learning_rate ▁▁▁▁▁▁▁▁▁▁▁
-wandb:          epoch/loss ▆█▆▃▃▄▃▂▄▃▁
-wandb:  epoch/val_accuracy ▁█▇███▇██▇▂
-wandb:      epoch/val_loss █▅▆▇▆▆▃▁▅▃▂
-wandb: 
-wandb: Run summary:
-wandb:      epoch/accuracy 0.5072
-wandb:         epoch/epoch 10
-wandb: epoch/learning_rate 0.001
-wandb:          epoch/loss 0.69301
-wandb:  epoch/val_accuracy 0.49541
-wandb:      epoch/val_loss 0.69309
-wandb: 
-wandb: 🚀 View run swift-galaxy-3 at: https://wandb.ai/trapezium-wits-university/NMFClassifier/runs/dpp566or
-wandb: ⭐️ View project at: https://wandb.ai/trapezium-wits-university/NMFClassifier
-wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
-wandb: Find logs at: ./wandb/run-20250913_200411-dpp566or/logs
+I0000 00:00:1757787764.193394  107729 device_compiler.h:196] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+2025-09-13 20:22:44.483830: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
