@@ -1,12 +1,16 @@
-ClassifierNMF training started at: Sat Sep 13 07:43:08 PM SAST 2025
+ClassifierNMF training started at: Sat Sep 13 08:01:57 PM SAST 2025
 (3274, 67499)
 Shape of nmf transformed data: (3274, 500)
 Training data shape: (2291, 500)
 Val data shape: (327, 500)
 Test data shape: (656, 500)
 Training started....
-[1;34mwandb[0m: 
-[1;34mwandb[0m: 🚀 View run [33msparkling-spaceship-2[0m at: [34m[0m
-[1;34mwandb[0m: Find logs at: [1;35mwandb/run-20250913_194516-0qwf5ks6/logs[0m
-ClassifierNMF training finished at: Sat Sep 13 07:45:35 PM SAST 2025
+Training completed!
+[1m 1/21[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 23ms/step - accuracy: 0.6562 - loss: 0.6929[1m12/21[0m [32m━━━━━━━━━━━[0m[37m━━━━━━━━━[0m [1m0s[0m 5ms/step - accuracy: 0.5390 - loss: 0.6931 [1m21/21[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 43ms/step - accuracy: 0.5225 - loss: 0.6931[1m21/21[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m1s[0m 45ms/step - accuracy: 0.4909 - loss: 0.6932
+[1m 1/21[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m5s[0m 280ms/step[1m21/21[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 16ms/step [1m21/21[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m1s[0m 17ms/step
+TN: 103, FP: 225, FN: 109, TP: 219
+AUC: 0.4968954491374182
+Test loss: 0.6931945085525513
+Test Accuracy 0.4908536672592163
+ClassifierNMF training finished at: Sat Sep 13 08:04:28 PM SAST 2025
 Tapedza!!! Mwari Ngaakudzwe!

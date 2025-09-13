@@ -8,8 +8,8 @@
 #SBATCH --partition=bigbatch
 #SBATCH --time=3-00:00:00
 
-INPUT_DATA="../Models/pca-classifier-train-data.npy"
-INPUT_LABELS="../Data/LPS/sal-lps-150-1500(labeled)_labels.npy"
+INPUT_DATA="../Models/PCA/pca-classifier-train-data.npy"
+INPUT_LABELS="../Data/Pretrain/sal-lps-150-1500(labeled)_labels.npy"
 OUTPUT_DIR="../Output/PCA"
 NAME="pca-classifier"
 

@@ -1,0 +1,4 @@
+Training data shape: (2291, 500)
+Val data shape: (327, 500)
+Test data shape: (656, 500)
+Training started....
