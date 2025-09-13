@@ -13,6 +13,6 @@ Test Data Metrics:
 MSE: 0.9827944040298462
 MAE: 0.052619997411966324
 RMSE: 0.9145423769950867
-Classifier data PCA transformation saved to ../Models/PCA/hiv-cancer-big_classifier_data_pca.npy
-Autoencoder training finished at: Sat Sep 13 06:39:35 PM SAST 2025
+Classifier data PCA transformation saved to ../Models/PCA/pca-classifier-train-data.npy
+PCA training finished at: Sat Sep 13 06:39:35 PM SAST 2025
 Tapedza!!! Mwari Ngaakudzwe!
