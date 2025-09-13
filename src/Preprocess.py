@@ -34,7 +34,7 @@ print(f'Range of mz values:',(min_mz,max_mz))
 
 
 common_mzs = np.arange(min_mz,max_mz,0.02)
-binned = np.zeros((len(my_spectra), len(common_mzs)), dtype=np.float32)
+binned = np.zeros((len(my_spectra), len(common_mzs)), dtype=np.float64)
 
 for i, (mzs, intensities,_) in enumerate(my_spectra):
     indices = np.digitize(mzs, common_mzs) - 1
@@ -59,7 +59,7 @@ X = X[:, mz_mask]
 X = X[:,:len(X[0])-1]
 common_mzs = common_mzs[mz_mask]
 
-X = X.astype(np.float16)
+X = X.astype(np.float64)
 print(f"Matrix created!")
 print(f"Matrix has dimensions of", X.shape)
 
