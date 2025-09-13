@@ -1,9 +1,1 @@
-NMF training started at: Fri Sep 12 11:30:17 PM SAST 2025
-Train shape: (151674, 67499)
-Test shape: (43336, 67499)
-Val shape: (21668, 67499)
-Train MAE: 0.0000886757, MSE: 1.764040121e-06
-Val MAE: 0.0000875198, Val MSE: 1.8217536990050576e-06
-Val MAE: 0.0000875198, Val MSE: 1.7974691672861809e-06
-NMF finished at: Sat Sep 13 02:19:24 AM SAST 2025
-Tapedza!!! Mwari Ngaakudzwe!
+NMF training started at: Sat Sep 13 05:33:06 PM SAST 2025

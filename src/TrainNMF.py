@@ -46,14 +46,16 @@ print(f"Val MAE: {mae_val:.10f}, Val MSE: {mse_val}")
 W_test = nmf.transform(X_test)
 X_test_recon = np.dot(W_test, H)
 mae_test = mean_absolute_error(X_test, X_test_recon)
-mse_val = mean_squared_error(X_test,X_test_recon)
-print(f"Val MAE: {mae_val:.10f}, Val MSE: {mse_val}")
+mse_test = mean_squared_error(X_test,X_test_recon)
+print(f"Val MAE: {mae_test:.10f}, Val MSE: {mse_test}")
 
 # Remove no longer used variables to save memory
 del X, X_train, X_temp, X_val, X_test, X_train_recon, X_val_recon, X_test_recon, W_train, W_val, W_test
 
 # Load classifier data
 classifier_data = np.load(args.classifier_data, mmap_mode='r')
+print(f'Shape of classifier_data: {classifier_data.shape}')
+# classifier_data = classifier_data[:,len(classifier_data[0])-1]
 
 # Use NMF to transform classifier data to lower-dimensional space
 W_classifier = nmf.transform(classifier_data)
