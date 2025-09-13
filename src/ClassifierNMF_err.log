@@ -1,5 +1,5 @@
-2025-09-13 19:23:43.033079: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
-2025-09-13 19:23:43.097009: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+2025-09-13 19:43:09.967233: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-09-13 19:43:10.028001: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
 To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
 /home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/attr_value.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
   warnings.warn(
@@ -41,32 +41,33 @@ To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other ope
   warnings.warn(
 /home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/protobuf/debug.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
   warnings.warn(
-2025-09-13 19:23:56.292382: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-09-13 19:43:21.289260: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
 /home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/sklearn/decomposition/_nmf.py:1728: ConvergenceWarning: Maximum number of iterations 100 reached. Increase it to improve convergence.
   warnings.warn(
 wandb: Currently logged in as: trapezium (trapezium-wits-university) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: creating run
 wandb: Tracking run with wandb version 0.21.4
-wandb: Run data is saved locally in /home-mscluster/tmazarura/HonoursResearch/src/wandb/run-20250913_192615-0e60phno
+wandb: Run data is saved locally in /home-mscluster/tmazarura/HonoursResearch/src/wandb/run-20250913_194516-0qwf5ks6
 wandb: Run `wandb offline` to turn off syncing.
-wandb: Syncing run gallant-snowball-1
+wandb: Syncing run sparkling-spaceship-2
 wandb: ⭐️ View project at https://wandb.ai/trapezium-wits-university/NMFClassifier
-wandb: 🚀 View run at https://wandb.ai/trapezium-wits-university/NMFClassifier/runs/0e60phno
+wandb: 🚀 View run at https://wandb.ai/trapezium-wits-university/NMFClassifier/runs/0qwf5ks6
 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
-I0000 00:00:1757784387.945373  101049 gpu_device.cc:2020] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 22342 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 3090, pci bus id: 0000:17:00.0, compute capability: 8.6
-2025-09-13 19:26:32.340495: I external/local_xla/xla/service/service.cc:163] XLA service 0x7f35900068b0 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
-2025-09-13 19:26:32.340535: I external/local_xla/xla/service/service.cc:171]   StreamExecutor device (0): NVIDIA GeForce RTX 3090, Compute Capability 8.6
-2025-09-13 19:26:32.720816: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:269] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
-2025-09-13 19:26:33.194855: I external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:473] Loaded cuDNN version 91002
-2025-09-13 19:26:33.393878: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
-2025-09-13 19:26:33.394046: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
-2025-09-13 19:26:34.190490: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_222', 16 bytes spill stores, 16 bytes spill loads
+I0000 00:00:1757785518.863495  101672 gpu_device.cc:2020] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 22342 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 3090, pci bus id: 0000:17:00.0, compute capability: 8.6
+2025-09-13 19:45:20.213799: I external/local_xla/xla/service/service.cc:163] XLA service 0x7fb96c003c10 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2025-09-13 19:45:20.213840: I external/local_xla/xla/service/service.cc:171]   StreamExecutor device (0): NVIDIA GeForce RTX 3090, Compute Capability 8.6
+2025-09-13 19:45:20.240357: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:269] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+2025-09-13 19:45:20.308398: I external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:473] Loaded cuDNN version 91002
+2025-09-13 19:45:20.324399: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-09-13 19:45:20.324444: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-09-13 19:45:21.062632: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_222', 12 bytes spill stores, 12 bytes spill loads
 
-2025-09-13 19:26:34.244326: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_222', 12 bytes spill stores, 12 bytes spill loads
+2025-09-13 19:45:21.076837: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_222', 16 bytes spill stores, 16 bytes spill loads
 
-2025-09-13 19:26:34.382710: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_222', 272 bytes spill stores, 272 bytes spill loads
+2025-09-13 19:45:21.308180: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_222', 272 bytes spill stores, 272 bytes spill loads
 
-I0000 00:00:1757784395.780987  101242 device_compiler.h:196] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
-2025-09-13 19:26:36.081651: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+I0000 00:00:1757785522.057460  101861 device_compiler.h:196] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+2025-09-13 19:45:22.364068: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
 Traceback (most recent call last):
   File "/home-mscluster/tmazarura/HonoursResearch/src/ClassifierNMF.py", line 90, in <module>
     history = model.fit(
@@ -76,7 +77,11 @@ Traceback (most recent call last):
     )
   File "/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/keras/src/utils/traceback_utils.py", line 122, in error_handler
     raise e.with_traceback(filtered_tb) from None
-  File "/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/wandb/integration/keras/callbacks/model_checkpoint.py", line 128, in on_epoch_end
-    super().on_epoch_end(epoch, logs)
-    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-KeyError: 'Failed to format this callback filepath: "nmf_model_{epoch:02d}_{batch:02d}.keras". Reason: \'batch\''
+  File "/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/wandb/integration/keras/callbacks/model_checkpoint.py", line 138, in on_epoch_end
+    self._log_ckpt_as_artifact(filepath, aliases=aliases)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/wandb/integration/keras/callbacks/model_checkpoint.py", line 156, in _log_ckpt_as_artifact
+    except ValueError:
+    ...<3 lines>...
+        pass
+FileNotFoundError: No such file or directory nmf_model_03.keras

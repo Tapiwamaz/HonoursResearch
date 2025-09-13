@@ -1,4 +1,4 @@
-ClassifierNMF training started at: Sat Sep 13 07:23:40 PM SAST 2025
+ClassifierNMF training started at: Sat Sep 13 07:43:08 PM SAST 2025
 (3274, 67499)
 Shape of nmf transformed data: (3274, 500)
 Training data shape: (2291, 500)
@@ -6,7 +6,7 @@ Val data shape: (327, 500)
 Test data shape: (656, 500)
 Training started....
 [1;34mwandb[0m: 
-[1;34mwandb[0m: 🚀 View run [33mgallant-snowball-1[0m at: [34m[0m
-[1;34mwandb[0m: Find logs at: [1;35mwandb/run-20250913_192615-0e60phno/logs[0m
-ClassifierNMF training finished at: Sat Sep 13 07:26:53 PM SAST 2025
+[1;34mwandb[0m: 🚀 View run [33msparkling-spaceship-2[0m at: [34m[0m
+[1;34mwandb[0m: Find logs at: [1;35mwandb/run-20250913_194516-0qwf5ks6/logs[0m
+ClassifierNMF training finished at: Sat Sep 13 07:45:35 PM SAST 2025
 Tapedza!!! Mwari Ngaakudzwe!
