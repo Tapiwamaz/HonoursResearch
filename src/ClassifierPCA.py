@@ -88,7 +88,7 @@ history = model.fit(
     verbose=0,
     callbacks=[early_stopping,
                WandbMetricsLogger(),
-               WandbModelCheckpoint("nmf_model_{epoch:02d}_{batch:02d}.keras",save_best_only=True,monitor='accuracy')
+            #    WandbModelCheckpoint("nmf_model_{epoch:02d}_{batch:02d}.keras",save_best_only=True,monitor='accuracy')
                ]
 )
 wandb.finish()
