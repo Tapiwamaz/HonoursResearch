@@ -1,0 +1,61 @@
+Starting preprocessing for lps-lt-150-1500 at Sat Sep 13 06:04:53 PM SAST 2025
+Using input file: ../../mass_spec_data/LPS/09102024_Leandrie_LPS_plasma test/09102024_Leandrie_LPS_plasma test/h5 files/091024_15_LPS_LT_1-1660_SN1p0_centroid.imzml
+Output directory: ../Data/LPS/
+Job name: lps-lt-150-1500
+SLURM Job ID: 156177
+####################################
+Loading spectra...
+Total spectra loaded: 1640
+Range of mz values: (150, 2000)
+Matrix created!
+Matrix has dimensions of (1640, 67499)
+Done creating data
+Preprocessing for lps-lt-150-1500 completed at Sat Sep 13 06:05:01 PM SAST 2025
+Results saved to ../Data/LPS/
+============================================================================
+Starting preprocessing for lps_plasma-150-1500 at Sat Sep 13 06:05:01 PM SAST 2025
+Using input file: ../../mass_spec_data/LPS/09102024_Leandrie_LPS_plasma test/09102024_Leandrie_LPS_plasma test/h5 files/091024_15_LPS_LT_1-1660_SN1p0_centroid.imzml
+Output directory: ../Data/LPS/
+Job name: lps_plasma-150-1500
+SLURM Job ID: 156177
+####################################
+Loading spectra...
+Total spectra loaded: 1640
+Range of mz values: (150, 2000)
+Matrix created!
+Matrix has dimensions of (1640, 67499)
+Done creating data
+Preprocessing for lps_plasma-150-1500 completed at Sat Sep 13 06:05:09 PM SAST 2025
+Results saved to ../Data/LPS/
+============================================================================
+Starting preprocessing for sal-st-150-1500 at Sat Sep 13 06:05:09 PM SAST 2025
+Using input file: ../../mass_spec_data/LPS/09102024_Leandrie_LPS_plasma test/09102024_Leandrie_LPS_plasma test/h5 files/091024_39_SAL_ST_1-1657_SN1p0_centroid.imzml
+Output directory: ../Data/LPS/
+Job name: sal-st-150-1500
+SLURM Job ID: 156177
+####################################
+Loading spectra...
+Total spectra loaded: 1634
+Range of mz values: (150, 2000)
+Matrix created!
+Matrix has dimensions of (1634, 67499)
+Done creating data
+Preprocessing for sal-st-150-1500 completed at Sat Sep 13 06:05:15 PM SAST 2025
+Results saved to ../Data/LPS/
+============================================================================
+Starting preprocessing for sal-plasma-150-1500 at Sat Sep 13 06:05:15 PM SAST 2025
+Using input file: ../../mass_spec_data/LPS/09102024_Leandrie_LPS_plasma test/09102024_Leandrie_LPS_plasma test/h5 files/091024_11_SAL_LT_plasma_1-1658_SN1p0_centroid.imzml
+Output directory: ../Data/LPS/
+Job name: sal-plasma-150-1500
+SLURM Job ID: 156177
+####################################
+Loading spectra...
+Total spectra loaded: 1636
+Range of mz values: (150, 2000)
+Matrix created!
+Matrix has dimensions of (1636, 67499)
+Done creating data
+Preprocessing for sal-plasma-150-1500 completed at Sat Sep 13 06:05:22 PM SAST 2025
+Results saved to ../Data/LPS/
+============================================================================
+Tapedza!!! Mwari Ngaakudzwe!
