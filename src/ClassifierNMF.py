@@ -36,23 +36,23 @@ print(data.shape)
 X = nmf.transform(data)
 print(f'Shape of nmf transformed data: {X.shape}')
 
-wandb.init(
-    project="NMFClassifier",
-    config={
-        "hidden_size": 64,
-        "activation": "relu",
-        "dropout": 0.5,
-        "output_activation": "softmax",
-        "optimizer": "adam",
-        "loss": "sparse_categorical_crossentropy",
-        "metric": "accuracy",
-        "epochs": 50,
-        "batch_size": 32,
-        "learning_rate": 0.001
-    }
-)
+# wandb.init(
+#     project="NMFClassifier",
+#     config={
+#         "hidden_size": 64,
+#         "activation": "relu",
+#         "dropout": 0.5,
+#         "output_activation": "softmax",
+#         "optimizer": "adam",
+#         "loss": "sparse_categorical_crossentropy",
+#         "metric": "accuracy",
+#         "epochs": 50,
+#         "batch_size": 32,
+#         "learning_rate": 0.001
+#     }
+# )
 
-config = wandb.config
+# config = wandb.config
 
 class MLPClassifier(tf.keras.Model):
     def __init__(self, input_dim, num_classes=2, hidden_size=64, dropout_rate=0.5):
@@ -92,12 +92,12 @@ history = model.fit(
     epochs=50, batch_size=32,    
     validation_data=(X_val, y_val), 
     verbose=0,
-    callbacks=[early_stopping,
-               WandbMetricsLogger(),
-            #    WandbModelCheckpoint("nmf_model_{epoch:02d}.keras",save_best_only=True,save_weights_only=False,monitor='accuracy')
-               ]
+    # callbacks=[early_stopping,
+    #            WandbMetricsLogger(),
+    #         #    WandbModelCheckpoint("nmf_model_{epoch:02d}.keras",save_best_only=True,save_weights_only=False,monitor='accuracy')
+    #            ]
 )
-wandb.finish()
+# wandb.finish()
 print("Training completed!")
 
 
