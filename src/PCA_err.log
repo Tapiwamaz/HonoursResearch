@@ -1,0 +1,1 @@
+/var/lib/slurm/slurmd/job156163/slurm_script: line 30: 593585 Killed                  python TrainPCA.py --input "$INPUT_FILE" --output "$OUTPUT_DIR" --name "$JOB_NAME" --classifier_data "$CLASSIFIER_DATA"

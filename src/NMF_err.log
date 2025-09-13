@@ -5,9 +5,18 @@
 /home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/sklearn/decomposition/_nmf.py:1728: ConvergenceWarning: Maximum number of iterations 100 reached. Increase it to improve convergence.
   warnings.warn(
 Traceback (most recent call last):
-  File "/home-mscluster/tmazarura/HonoursResearch/src/TrainNMF.py", line 52, in <module>
-    nmf = joblib.load("path/to/D1_nmf_model.joblib")
-  File "/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/joblib/numpy_pickle.py", line 735, in load
-    with open(filename, "rb") as f:
-         ~~~~^^^^^^^^^^^^^^^^
-FileNotFoundError: [Errno 2] No such file or directory: 'path/to/D1_nmf_model.joblib'
+  File "/home-mscluster/tmazarura/HonoursResearch/src/TrainNMF.py", line 59, in <module>
+    W_classifier = nmf.transform(classifier_data)
+  File "/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/sklearn/utils/_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/sklearn/decomposition/_nmf.py", line 1761, in transform
+    W, *_ = self._fit_transform(X, H=self.components_, update_H=False)
+            ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/sklearn/decomposition/_nmf.py", line 1688, in _fit_transform
+    W, H = self._check_w_h(X, W, H, update_H)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/sklearn/decomposition/_nmf.py", line 1222, in _check_w_h
+    raise TypeError(
+    ...<3 lines>...
+    )
+TypeError: H should have the same dtype as X. Got H.dtype = float32.

@@ -10,21 +10,21 @@
 
 INPUT_FILE="../Data/Pretrain/hiv_cancer_150-1500.npy"
 OUTPUT_DIR="../Models/NMF"
-
+CLASSIFIER_DATA="../Data/Pretrain/sal-lps-150-1500(labeled)_data.npy"
 mkdir -p "$OUTPUT_DIR"
 
 START_TIME=$(date)
 echo "NMF training started at: $START_TIME"
 
-JOB_NAME="hiv-cancer"
+JOB_NAME="sal_lps"
 
 if [ ! -f "$INPUT_FILE" ]; then
     echo "Error: Input file not found at $INPUT_FILE"
     exit 1
 fi
 
-python TrainNMF.py --input "$INPUT_FILE" --output "$OUTPUT_DIR" --name "$JOB_NAME" 
+python TrainNMF.py --input "$INPUT_FILE" --output "$OUTPUT_DIR" --name "$JOB_NAME" --classifier_data "$CLASSIFIER_DATA"
 
 END_TIME=$(date)
-echo "Autoencoder training finished at: $END_TIME"
+echo "NMF finished at: $END_TIME"
 echo "Tapedza!!! Mwari Ngaakudzwe!"
