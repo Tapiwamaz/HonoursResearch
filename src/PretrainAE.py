@@ -100,7 +100,7 @@ class SpectrumAutoencoder(Model):
 
 autoencoder = SpectrumAutoencoder(encoder, decoder)
 autoencoder.compile(
-    optimizer='adam',
+    optimizer=tf.keras.optimizers.Adam(learning_rate=lr_schedule),
     loss='mse',
     metrics=['mae', 'mse']
 )
