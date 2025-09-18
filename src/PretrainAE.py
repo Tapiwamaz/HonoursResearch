@@ -48,8 +48,8 @@ print(f"Latent dimension: {latent_dim}")
 print(f"Input dimension: {input_dim}")
 
 lr_schedule = tf.keras.optimizers.schedules.ExponentialDecay(
-    initial_learning_rate=0.001,
-    decay_steps=1000,
+    initial_learning_rate=0.002,
+    decay_steps=500,
     decay_rate=0.96,
     staircase=True
 )
