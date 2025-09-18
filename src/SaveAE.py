@@ -57,14 +57,18 @@ class SpectrumAutoencoder(Model):
         
         self.encoder = tf.keras.Sequential([
             layers.Dense(2000, activation='tanh'),
+            layers.Dropout(0.3),
             layers.Dense(1000, activation='tanh'),
+            layers.Dropout(0.3),
             layers.Dense(latent_dim, activation='tanh'),
         ])
 
         self.decoder = tf.keras.Sequential([
             layers.Dense(1000, activation='tanh'),
+            layers.Dropout(0.3),
             layers.Dense(2000, activation='tanh'),
-            layers.Dense(n_peaks, activation='relu'),  
+            layers.Dropout(0.3),
+            layers.Dense(n_peaks, activation='sigmoid'),  
         ])
 
     def call(self, intensities):
@@ -89,7 +93,7 @@ wandb.init(
         "decoder_layer_1": 1000,
         "decoder_layer_2": 2000,
         "activation": "tanh",
-        "output_activation": "relu",
+        "output_activation": "sigmoid",
         "optimizer": "adam",
         "learning_rate": lr_schedule,
         "loss": "mse",
@@ -142,7 +146,10 @@ history = autoencoder.fit(
     verbose=0
 )
 
-print("Training completed!")
+print("Training completed!\n")
+
+autoencoder.encoder.summary()
+print("\n")
 
 test_loss, test_mae,test_mse = autoencoder.evaluate(X_test, X_test, verbose=0)
 reconstructed = autoencoder.predict(X_test)

@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=SaveAE
-#SBATCH --output=SaveAE.log
-#SBATCH --error=SaveAE_err.log
+#SBATCH --output=SaveAE_%j.log
+#SBATCH --error=SaveAE_%j_err.log
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=16
@@ -11,7 +11,7 @@
 INPUT_FILE="../Data/Pretrain/hiv_cancer_150-1500.npy"
 OUTPUT_DIR="../Models/AE"
 PARTITIONS=10
-NAME="encoder_250"
+NAME="encoder_250_dropout_sigmoid"
 
 mkdir -p "$OUTPUT_DIR"
 
