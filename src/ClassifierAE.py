@@ -59,7 +59,7 @@ model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=0.001),
               metrics=['accuracy'],
             )
 
-model.summary()
+
 
 print("Training started....")
 history = model.fit(
@@ -70,6 +70,8 @@ history = model.fit(
     callbacks=[early_stopping]
 )
 
+print(f"Done training")
+model.summary()
 # Plot and save training graphs
 import matplotlib.pyplot as plt
 
