@@ -1,17 +1,17 @@
 #!/bin/bash
-#SBATCH --job-name=AE
-#SBATCH --output=AE.log
-#SBATCH --error=AE_err.log
+#SBATCH --job-name=PretrainAE
+#SBATCH --output=PretrainAE_%j.log
+#SBATCH --error=PretrainAE_err_%j.log
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=16      # Using more cores for biggpu            
-#SBATCH --partition=bigbatch
+#SBATCH --partition=biggpu
 #SBATCH --time=3-00:00:00      # 3 days max runtime 
 
 INPUT_FILE="../Data/Pretrain/hiv_cancer_150-1500.npy"
 OUTPUT_DIR="../Models/AE"
 PARTITIONS=10
-ENCODER_PATH="$OUTPUT_DIR/encoder-250.keras"
+ENCODER_PATH="../Models/AE/encoder_250_dropout_wmse.keras"
 
 mkdir -p "$OUTPUT_DIR"
 
