@@ -8,10 +8,10 @@
 #SBATCH --partition=bigbatch
 #SBATCH --time=1-00:00:00
 
-INPUT_ONE="../Data/LPS/sal-st-150-1500_x.npy"
-INPUT_TWO="../Data/LPS/lps-lt-150-1500_x.npy"
+INPUT_ONE="../Data/LPS/sal-plasma-150-1500_x.npy"
+INPUT_TWO="../Data/LPS/lps_plasma-150-1500_x.npy"
 OUTPUT_DIR="../Data/Pretrain"
-MIXED_NAME="sal-lps-150-1500(labeled)"
+MIXED_NAME="sal-lps-150-1500(labeled)_fulltest"
 
 mkdir -p "$OUTPUT_DIR"
 

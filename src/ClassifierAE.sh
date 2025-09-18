@@ -10,7 +10,7 @@
 
 INPUT_DATA="../Data/Pretrain/sal-lps-150-1500(labeled)_data.npy"
 INPUT_LABELS="../Data/Pretrain/sal-lps-150-1500(labeled)_labels.npy"
-AE_ENCODER="../Models/AE/autoencoder_encoder.keras"
+AE_ENCODER="../Models/AE/ae_encoder_mixed.keras"
 OUTPUT_DIR="../Output/AE"
 NAME="ae-base-classifier"
 

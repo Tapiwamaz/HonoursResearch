@@ -59,12 +59,14 @@ model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=0.001),
               metrics=['accuracy'],
             )
 
+model.summary()
+
 print("Training started....")
 history = model.fit(
     X_train, y_train,
     epochs=50, batch_size=32,    
     validation_data=(X_val, y_val), 
-    verbose=1,
+    verbose=0,
     callbacks=[early_stopping]
 )
 

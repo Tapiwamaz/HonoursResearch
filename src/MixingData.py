@@ -64,5 +64,5 @@ def mix_npy_files_without(file1_path, file2_path, output_data_path=None):
 
 output_data_path = os.path.join(args.output, f"{args.name}_data.npy")
 output_label_path = os.path.join(args.output, f"{args.name}_labels.npy")
-# mix_npy_files_with_labels(args.inputOne, args.inputTwo, output_data_path, output_label_path)
-mix_npy_files_without(args.inputOne, args.inputTwo, output_data_path)
+mix_npy_files_with_labels(args.inputOne, args.inputTwo, output_data_path, output_label_path)
+# mix_npy_files_without(args.inputOne, args.inputTwo, output_data_path)
