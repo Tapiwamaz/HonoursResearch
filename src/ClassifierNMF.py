@@ -20,7 +20,6 @@ parser.add_argument("--input_data", required=True, help="Path to input npy file.
 parser.add_argument("--input_lables",required=True, help="Input labels")
 parser.add_argument("--output", required=True, help="Directory to save results.")
 parser.add_argument("--nmf_encoder", required=True, help="NMF joblib")
-
 parser.add_argument("--name", required=True, help="Base name for output files.")
 args = parser.parse_args()
 

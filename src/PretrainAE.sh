@@ -29,7 +29,7 @@ fi
 # Loop over all partitions
 for (( PART_NUM=2; PART_NUM<=PARTITIONS; PART_NUM++ )); do
     echo "Starting partition $PART_NUM of $PARTITIONS at $(date)"
-    python TrainAE.py \
+    python PretrainAE.py \
         --input "$INPUT_FILE" \
         --output "$OUTPUT_DIR" \
         --name "$JOB_NAME" \
