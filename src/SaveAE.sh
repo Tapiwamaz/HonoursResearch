@@ -11,7 +11,7 @@
 INPUT_FILE="../Data/Pretrain/hiv_cancer_150-1500.npy"
 OUTPUT_DIR="../Models/AE"
 PARTITIONS=10
-NAME="encoder_250_dropout_relu"
+NAME="encoder_150_dropout_relu_wmse"
 
 mkdir -p "$OUTPUT_DIR"
 
