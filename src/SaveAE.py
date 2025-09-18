@@ -83,6 +83,21 @@ lr_schedule = tf.keras.optimizers.schedules.ExponentialDecay(
     decay_rate=0.96,
     staircase=True
 )
+def weighted_mse_loss(y_true, y_pred):
+    """
+    Custom loss function that assigns more weight to non-zero values.
+    """
+    # Create a weight tensor: 10.0 for non-zero values, 1.0 for zeros.
+    # The factor (10 here) is a hyperparameter you can tune.
+    weight = 1.0 + 9.0 * tf.cast(y_true > 0, tf.float32)
+    
+    # Calculate the squared error
+    squared_error = tf.square(y_true - y_pred)
+    
+    # Apply the weights and compute the mean
+    weighted_squared_error = weight * squared_error
+    return tf.reduce_mean(weighted_squared_error)
+
 wandb.init(
     project="Autoencoder Training",
     # track hyperparameters and run metadata with wandb.config
@@ -93,10 +108,10 @@ wandb.init(
         "decoder_layer_1": 1000,
         "decoder_layer_2": 2000,
         "activation": "tanh",
-        "output_activation": "sigmoid",
+        "output_activation": "relu",
         "optimizer": "adam",
         "learning_rate": lr_schedule,
-        "loss": "mse",
+        "loss": "weighted_mse_loss",
         "metrics": ["mae", "mse"],
         "epochs": 20,
         "batch_size": 32,
@@ -121,7 +136,7 @@ autoencoder = SpectrumAutoencoder(latent_dim=latent_dim, n_peaks=input_dim)
 
 autoencoder.compile(
     optimizer=tf.keras.optimizers.Adam(learning_rate=lr_schedule),
-    loss='mse',  
+    loss=weighted_mse_loss,  
     metrics=['mae','mse']  
 )
 
