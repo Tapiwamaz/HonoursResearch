@@ -10,8 +10,8 @@
 
 INPUT_FILE="../Data/Pretrain/hiv_cancer_150-1500.npy"
 OUTPUT_DIR="../Models/AE"
-PARTITIONS=15
-NAME="ae_mixed"
+PARTITIONS=10
+NAME="encoder_250"
 
 mkdir -p "$OUTPUT_DIR"
 

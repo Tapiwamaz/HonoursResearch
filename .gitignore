@@ -6,3 +6,5 @@
 !*_Coordinates.npy
 *.keras
 Models
+wandb
+./src/wandb

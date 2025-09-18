@@ -10,10 +10,9 @@
 
 INPUT_FILE="../Data/Pretrain/hiv_cancer_150-1500.npy"
 OUTPUT_DIR="../Models/AE"
-PARTITIONS=20
+PARTITIONS=10
 ENCODER_PATH="$OUTPUT_DIR/ae_encoder_mixed.keras"
 
-echo "tanh activations"
 mkdir -p "$OUTPUT_DIR"
 
 START_TIME=$(date)

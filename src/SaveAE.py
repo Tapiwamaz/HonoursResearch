@@ -7,8 +7,10 @@ from tensorflow.keras import layers
 from tensorflow.keras.models import Model
 from tensorflow.keras.callbacks import EarlyStopping
 from sklearn.metrics import mean_squared_error,root_mean_squared_error,mean_absolute_error
-
 import math
+import wandb
+from wandb.integration.keras.callbacks import WandbMetricsLogger, WandbModelCheckpoint
+
 
 
 
@@ -44,6 +46,9 @@ X_subset = X[math.floor(len(X)*((part_num-1)/partitions)):math.ceil(len(X)*(part
 # intensities of each spectrum
 print(f"Dataset partitioned into {partitions} number of chunks\nPartition: {part_num}")
 
+
+
+
 class SpectrumAutoencoder(Model):
     def __init__(self, latent_dim, n_peaks):
         super(SpectrumAutoencoder, self).__init__()
@@ -51,14 +56,14 @@ class SpectrumAutoencoder(Model):
         self.n_peaks = n_peaks
         
         self.encoder = tf.keras.Sequential([
-            layers.Dense(5000, activation='tanh'),
+            layers.Dense(2000, activation='tanh'),
             layers.Dense(1000, activation='tanh'),
-            layers.Dense(latent_dim, activation='relu'),
+            layers.Dense(latent_dim, activation='tanh'),
         ])
 
         self.decoder = tf.keras.Sequential([
             layers.Dense(1000, activation='tanh'),
-            layers.Dense(5000, activation='tanh'),
+            layers.Dense(2000, activation='tanh'),
             layers.Dense(n_peaks, activation='relu'),  
         ])
 
@@ -68,6 +73,34 @@ class SpectrumAutoencoder(Model):
         return decoded_intensities
 
 
+lr_schedule = tf.keras.optimizers.schedules.ExponentialDecay(
+    initial_learning_rate=0.0015,
+    decay_steps=1000,
+    decay_rate=0.96,
+    staircase=True
+)
+wandb.init(
+    project="Autoencoder Training",
+    # track hyperparameters and run metadata with wandb.config
+    config={
+        "latent_dim": 250,
+        "encoder_layer_1": 2000,
+        "encoder_layer_2": 1000,
+        "decoder_layer_1": 1000,
+        "decoder_layer_2": 2000,
+        "activation": "tanh",
+        "output_activation": "relu",
+        "optimizer": "adam",
+        "learning_rate": lr_schedule,
+        "loss": "mse",
+        "metrics": ["mae", "mse"],
+        "epochs": 20,
+        "batch_size": 32,
+        "early_stopping_patience": 5
+    }
+)
+
+config = wandb.config
 
 # Split data into train, validation, and test sets (70% train, 10% val, 20% test)
 X_temp, X_test = train_test_split(X_subset, test_size=0.2, random_state=42)
@@ -77,38 +110,35 @@ print(f"Training set shape: {X_train.shape}")
 print(f"Validation set shape: {X_val.shape}")
 print(f"Test set shape: {X_test.shape}")
 
-latent_dim = 500 
+latent_dim = 250 
 input_dim = X_train.shape[1]  
 
 autoencoder = SpectrumAutoencoder(latent_dim=latent_dim, n_peaks=input_dim)
 
 autoencoder.compile(
-    optimizer='adam',
+    optimizer=tf.keras.optimizers.Adam(learning_rate=lr_schedule),
     loss='mse',  
     metrics=['mae','mse']  
 )
 
 print(f"Autoencoder created with latent_dim={latent_dim}, input_dim={input_dim}")
 
-# Training the autoencoder
+
 early_stopping = EarlyStopping(
     monitor='val_loss',
-    patience=3,
+    patience=5,
     restore_best_weights=True
 )
 
-print(f"Training data stats:")
-print(f"  Shape: {X_train.shape}")
-print(f"  Min: {X_train.min():.6f}, Max: {X_train.max():.6f}")
-print(f"  Mean: {X_train.mean():.6f}, Std: {X_train.std():.6f}")
 
 print("Starting training...")
 history = autoencoder.fit(
     X_train, X_train,  
-    epochs=15,  
+    epochs=20,  
     batch_size=32,
     validation_data=(X_val, X_val),
-    callbacks=[early_stopping],
+    callbacks=[early_stopping,
+               WandbMetricsLogger()],
     verbose=0
 )
 
@@ -117,12 +147,9 @@ print("Training completed!")
 test_loss, test_mae,test_mse = autoencoder.evaluate(X_test, X_test, verbose=0)
 reconstructed = autoencoder.predict(X_test)
 
-reconstructed = autoencoder.predict(X_test)
-
-
 print(f"Test Loss: {test_loss:.10f}")
 print(f"Test Loss (MAE): {test_mae:.10f}")
-print(f"Test loss 2 (MSE): {test_mse:.10f}")
+print(f"Test loss (MSE): {test_mse:.10f}")
 
 
 mae_test = mean_absolute_error(X_test, reconstructed)
