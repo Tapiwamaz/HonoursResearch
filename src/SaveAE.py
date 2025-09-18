@@ -102,7 +102,7 @@ wandb.init(
     project="Autoencoder Training",
     # track hyperparameters and run metadata with wandb.config
     config={
-        "latent_dim": 250,
+        "latent_dim": 100,
         "encoder_layer_1": 2000,
         "encoder_layer_2": 1000,
         "decoder_layer_1": 1000,
@@ -129,7 +129,7 @@ print(f"Training set shape: {X_train.shape}")
 print(f"Validation set shape: {X_val.shape}")
 print(f"Test set shape: {X_test.shape}")
 
-latent_dim = 250 
+latent_dim = 100 
 input_dim = X_train.shape[1]  
 
 autoencoder = SpectrumAutoencoder(latent_dim=latent_dim, n_peaks=input_dim)
@@ -153,7 +153,7 @@ early_stopping = EarlyStopping(
 print("Starting training...")
 history = autoencoder.fit(
     X_train, X_train,  
-    epochs=20,  
+    epochs=25,  
     batch_size=32,
     validation_data=(X_val, X_val),
     callbacks=[early_stopping,
