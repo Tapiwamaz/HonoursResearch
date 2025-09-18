@@ -98,7 +98,7 @@ plt.close()
 
 print("Training completed!")
 
-from sklearn.metrics import confusion_matrix, roc_auc_score, roc_curve, ConfusionMatrixDisplay
+from sklearn.metrics import confusion_matrix, roc_auc_score, roc_curve, ConfusionMatrixDisplay, precision_score, recall_score, f1_score
 
 loss, accuracy = model.evaluate(X_test, y_test)
 
@@ -109,6 +109,25 @@ y_pred = np.argmax(y_pred_probs, axis=1)
 cm = confusion_matrix(y_test, y_pred)
 tn, fp, fn, tp = cm.ravel()
 print(f'TN: {tn}, FP: {fp}, FN: {fn}, TP: {tp}')
+
+precision = precision_score(y_test, y_pred)
+recall = recall_score(y_test, y_pred)
+f1 = f1_score(y_test, y_pred)
+specificity = tn / (tn + fp)
+false_positive_rate = fp / (fp + tn)
+false_negative_rate = fn / (fn + tp)
+true_positive_rate = tp / (tp + fn)  # Same as recall/sensitivity
+negative_predictive_value = tn / (tn + fn)
+
+print(f'Precision: {precision:.4f}')
+print(f'Recall (Sensitivity/TPR): {recall:.4f}')
+print(f'Specificity (TNR): {specificity:.4f}')
+print(f'F1-Score: {f1:.4f}')
+print(f'False Positive Rate (FPR): {false_positive_rate:.4f}')
+print(f'False Negative Rate (FNR): {false_negative_rate:.4f}')
+print(f'Negative Predictive Value (NPV): {negative_predictive_value:.4f}')
+
+
 if len(np.unique(y_test)) == 2:
     auc = roc_auc_score(y_test, y_pred_probs[:, 1])
     print(f'AUC: {auc}')
