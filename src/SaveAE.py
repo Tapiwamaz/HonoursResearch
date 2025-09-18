@@ -68,7 +68,7 @@ class SpectrumAutoencoder(Model):
             layers.Dropout(0.3),
             layers.Dense(2000, activation='tanh'),
             layers.Dropout(0.3),
-            layers.Dense(n_peaks, activation='sigmoid'),  
+            layers.Dense(n_peaks, activation='relu'),  
         ])
 
     def call(self, intensities):

@@ -11,14 +11,13 @@
 INPUT_FILE="../Data/Pretrain/hiv_cancer_150-1500.npy"
 OUTPUT_DIR="../Models/AE"
 PARTITIONS=10
-NAME="encoder_250_dropout_sigmoid"
+NAME="encoder_250_dropout_relu"
 
 mkdir -p "$OUTPUT_DIR"
 
 START_TIME=$(date)
 echo "Encoder saving started at: $START_TIME"
 
-JOB_NAME=$(basename "$INPUT_FILE" .npy)
 
 if [ ! -f "$INPUT_FILE" ]; then
     echo "Error: Input file not found at $INPUT_FILE"
@@ -31,7 +30,7 @@ echo "Saving encoder for partition $PART_NUM of $PARTITIONS at $(date)"
 python SaveAE.py \
     --input "$INPUT_FILE" \
     --output "$OUTPUT_DIR" \
-    --name "$JOB_NAME" \
+    --name "$NAME" \
     --partitions "$PARTITIONS" \
     --partNum "$PART_NUM"
 echo "Encoder for partition $PART_NUM saved at $(date)"
