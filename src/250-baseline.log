@@ -16,7 +16,7 @@ Test loss (MSE): 0.0000025636
 Mean Absolute Error (MAE) on Test Data: 0.0000586847
 Root Mean Squared Error (RMSE) on Test Data: 0.0008601489
 Mean Squared Error (MSE) on Test Data: 0.0000025636
-Encoder saved to ../Models/AE/hiv_cancer_150-1500_encoder.keras
+Encoder saved to ../Models/AE/250-baseline.keras
 Encoder for partition 1 saved at Thu Sep 18 08:46:45 PM SAST 2025
 ============================================================================
 Encoder saving finished at: Thu Sep 18 08:46:45 PM SAST 2025

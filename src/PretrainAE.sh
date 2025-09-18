@@ -11,7 +11,7 @@
 INPUT_FILE="../Data/Pretrain/hiv_cancer_150-1500.npy"
 OUTPUT_DIR="../Models/AE"
 PARTITIONS=10
-ENCODER_PATH="$OUTPUT_DIR/ae_encoder_mixed.keras"
+ENCODER_PATH="$OUTPUT_DIR/encoder-250.keras"
 
 mkdir -p "$OUTPUT_DIR"
 

@@ -8,6 +8,8 @@ from tensorflow.keras.models import Model, load_model
 from tensorflow.keras.callbacks import EarlyStopping
 from sklearn.metrics import mean_squared_error, root_mean_squared_error, mean_absolute_error
 import math
+import wandb
+from wandb.integration.keras.callbacks import WandbMetricsLogger, WandbModelCheckpoint
 
 # GPU memory growth
 gpus = tf.config.experimental.list_physical_devices('GPU')
@@ -45,12 +47,43 @@ input_dim = encoder.input_shape[-1]
 print(f"Latent dimension: {latent_dim}")
 print(f"Input dimension: {input_dim}")
 
+lr_schedule = tf.keras.optimizers.schedules.ExponentialDecay(
+    initial_learning_rate=0.0015,
+    decay_steps=1000,
+    decay_rate=0.96,
+    staircase=True
+)
+
+wandb.init(
+    project="Pretraining",
+    # track hyperparameters and run metadata with wandb.config
+    config={
+        "latent_dim": 250,
+        "encoder_layer_1": 2000,
+        "encoder_layer_2": 1000,
+        "decoder_layer_1": 1000,
+        "decoder_layer_2": 2000,
+        "activation": "tanh",
+        "output_activation": "relu",
+        "optimizer": "adam",
+        "learning_rate": lr_schedule,
+        "loss": "mse",
+        "metrics": ["mae", "mse"],
+        "epochs": 20,
+        "batch_size": 32,
+        "early_stopping_patience": 5
+    }
+)
+
+
 
 # Build a new decoder
 decoder = tf.keras.Sequential([
-    layers.Dense(1000, activation='tanh'),
-    layers.Dense(5000, activation='tanh'),
-    layers.Dense(input_dim, activation='relu'),
+            layers.Dense(1000, activation='tanh'),
+            layers.Dropout(0.3),
+            layers.Dense(2000, activation='tanh'),
+            layers.Dropout(0.3),
+            layers.Dense(input_dim, activation='relu'),  
 ])
 
 # Build the full autoencoder model
@@ -81,17 +114,17 @@ print(f"Test set shape: {X_test.shape}")
 
 early_stopping = EarlyStopping(
     monitor='val_loss',
-    patience=3,
+    patience=5,
     restore_best_weights=True
 )
 
 print("Starting training...")
 history = autoencoder.fit(
     X_train, X_train,
-    epochs=15,
+    epochs=20,
     batch_size=32,
     validation_data=(X_val, X_val),
-    callbacks=[early_stopping],
+    callbacks=[early_stopping,WandbMetricsLogger()],
     verbose=0
 )
 print("Training completed!")
@@ -105,7 +138,7 @@ mse_test = mean_squared_error(X_test, reconstructed)
 
 print(f"Test Loss: {test_loss:.10f}")
 print(f"Test Loss (MAE): {test_mae:.10f}")
-print(f"Test loss 2 (MSE): {test_mse:.10f}")
+print(f"Test loss (MSE): {test_mse:.10f}")
 print(f"Mean Absolute Error (MAE) on Test Data: {mae_test:.10f}")
 print(f"Root Mean Squared Error (RMSE) on Test Data: {rmse_test:.10f}")
 print(f"Mean Squared Error (MSE) on Test Data: {mse_test:.10f}")
