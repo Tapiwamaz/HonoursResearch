@@ -36,7 +36,7 @@ latent_vectors = scaler.fit_transform(latent_vectors)
 print("Latent vectors scaled.")
 
 print("Running t-SNE...")
-tsne = TSNE(n_components=2, perplexity=100, max_iter=2000, random_state=42)
+tsne = TSNE(n_components=2, perplexity=30, max_iter=2000, random_state=42)
 latent_tsne = tsne.fit_transform(latent_vectors)
 print("t-SNE completed.")
 
