@@ -13,7 +13,7 @@ OUTPUT_DIR="../Results/kmeans"
 COORDS="../Data/Cancer/cancer-150-1500-coords.npy"
 ENCODER="../Models/AE/encoder_250.keras"
 JOB_NAME="cancer_kmeans_baseline"
-K_CLUSTERS=2
+K_CLUSTERS=3
 
 
 mkdir -p "$OUTPUT_DIR"
