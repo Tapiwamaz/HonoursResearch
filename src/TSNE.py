@@ -48,7 +48,7 @@ plt.title('t-SNE of Latent Space Colored by Spatial Location')
 plt.xlabel('t-SNE 1')
 plt.ylabel('t-SNE 2')
 
-output_path = os.path.join(args.output, "tnse_plot.png")
+output_path = os.path.join(args.output, "tnse_plot_30ball_basline.png")
 plt.savefig(output_path)
 print(f"t-SNE plot saved to {output_path}")
 plt.close()
