@@ -1,1 +1,19 @@
 K-Means clustering started at: Sat Sep 20 10:01:57 PM SAST 2025
+Loaded encoder
+Loaded data
+Shape: (160000, 250)
+Coordinates shape: (160000, 3)
+Image dimensions: 400 x 401
+
+Cluster Statistics:
+Total number of pixels: 160000
+Cluster 0: 18754 pixels (11.72%)
+Cluster 1: 16018 pixels (10.01%)
+Cluster 2: 125228 pixels (78.27%)
+Saved joint plot to: ../Results/kmeans/cancer_kmeans_wmse_kmeans_k3_joint.png
+Saved individual clusters subplot to: ../Results/kmeans/cancer_kmeans_wmse_kmeans_k3_individual_clusters.png
+
+All plots saved to: ../Results/kmeans
+Job 'cancer_kmeans_wmse' completed successfully!
+K-Means clustering finished at: Sat Sep 20 10:07:35 PM SAST 2025
+Tapedza!!! Mwari Ngaakudzwe!

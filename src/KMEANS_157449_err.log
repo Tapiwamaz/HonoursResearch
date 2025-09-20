@@ -45,3 +45,9 @@ To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other ope
 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
 I0000 00:00:1758398530.084598   42090 gpu_device.cc:2020] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 47189 MB memory:  -> device: 0, name: Quadro RTX 8000, pci bus id: 0000:17:00.0, compute capability: 7.5
 I0000 00:00:1758398530.086136   42090 gpu_device.cc:2020] Created device /job:localhost/replica:0/task:0/device:GPU:1 with 47180 MB memory:  -> device: 1, name: Quadro RTX 8000, pci bus id: 0000:73:00.0, compute capability: 7.5
+2025-09-20 22:06:54.868791: I external/local_xla/xla/service/service.cc:163] XLA service 0x7fb06c004240 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2025-09-20 22:06:54.869181: I external/local_xla/xla/service/service.cc:171]   StreamExecutor device (0): Quadro RTX 8000, Compute Capability 7.5
+2025-09-20 22:06:54.869191: I external/local_xla/xla/service/service.cc:171]   StreamExecutor device (1): Quadro RTX 8000, Compute Capability 7.5
+2025-09-20 22:06:54.877286: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:269] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+2025-09-20 22:06:54.916527: I external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:473] Loaded cuDNN version 91002
+I0000 00:00:1758398815.257969   42448 device_compiler.h:196] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
