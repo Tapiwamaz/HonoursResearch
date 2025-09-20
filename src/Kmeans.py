@@ -59,17 +59,23 @@ for cluster_id, count in zip(unique_clusters, cluster_counts):
 os.makedirs(args.output, exist_ok=True)
 
 colors = [
-    "blue", "green","red" , "orange", "purple", "brown", "pink", "gray", "olive", "cyan"
+    (0, 0, 1),      # blue
+    (0, 1, 0),      # green
+    (1, 0, 0),      # red
+    (1, 0.647, 0),  # orange
+    (0.5, 0, 0.5),  # purple
+    (0.647, 0.165, 0.165),  # brown
+    (1, 0.753, 0.796),      # pink
+    (0.5, 0.5, 0.5),        # gray
+    (0.5, 0.5, 0),          # olive
+    (0, 1, 1)       # cyan
 ]
-# Ensure there are enough colors for the number of clusters
-if optimal_k > len(colors):
-    raise ValueError(f"Not enough colors defined for {optimal_k} clusters. Add more colors to the array.")
 
 # Joint plot: All clusters together
 plt.figure(figsize=(12, 10))
 colored_cluster_map = np.full((height, width, 3), 0, dtype=np.uint8)  # Default to black background
 for cluster_id in range(optimal_k):
-    cluster_color = plt.colors.to_rgb(colors[cluster_id % len(colors)])  # Convert to RGB
+    cluster_color = colors[cluster_id]  # Convert to RGB
     cluster_color = [int(c * 255) for c in cluster_color]  # Scale to 0-255
     colored_cluster_map[cluster_map == cluster_id] = cluster_color
 
