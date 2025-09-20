@@ -9,7 +9,9 @@ parser = argparse.ArgumentParser(description="T-SNE")
 parser.add_argument("--input", required=True, help="X to the input preprocess npy.")
 parser.add_argument("--output", required=True, help="Directory to save plot.")
 parser.add_argument("--coords", required=True, help="Coordinates")
+parser.add_argument("--name", required=True, help="Name")
 parser.add_argument("--encoder", required=True, help="Path to the existing encoder .keras file")
+
 args = parser.parse_args()
 
 print(f"Loading encoder from {args.encoder}")
@@ -48,7 +50,7 @@ plt.title('t-SNE of Latent Space Colored by Spatial Location')
 plt.xlabel('t-SNE 1')
 plt.ylabel('t-SNE 2')
 
-output_path = os.path.join(args.output, "tnse_plot_30ball_basline.png")
+output_path = os.path.join(args.output, f"tnse_plot_{args.name}.png")
 plt.savefig(output_path)
 print(f"t-SNE plot saved to {output_path}")
 plt.close()

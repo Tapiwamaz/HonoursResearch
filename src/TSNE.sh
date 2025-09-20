@@ -11,7 +11,8 @@
 INPUT_FILE="../Data/HIV/hiv-150-1500_x.npy"
 OUTPUT_DIR="../Results/tsne"
 COORDS="../Data/HIV/hiv_coords.npy"
-ENCODER="../Models/AE/encoder_250.keras"
+ENCODER="../Models/AE/encoder_250_dropout_wmse.keras"
+NAME="hiv_wmse"
 
 
 mkdir -p "$OUTPUT_DIR"
