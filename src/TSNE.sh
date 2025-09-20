@@ -5,14 +5,14 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=16      # Using more cores for biggpu            
-#SBATCH --partition=bigbatch
+#SBATCH --partition=biggpu
 #SBATCH --time=3-00:00:00      # 3 days max runtime 
 
-INPUT_FILE="../Data/HIV/hiv-150-1500_x.npy"
+INPUT_FILE="../Data/Cancer/cancer_150-1500_x.npy"
 OUTPUT_DIR="../Results/tsne"
-COORDS="../Data/HIV/hiv_coords.npy"
-ENCODER="../Models/AE/encoder_250_dropout_wmse.keras"
-NAME="hiv_wmse"
+COORDS="../Data/Cancer/cancer-150-1500-coords.npy"
+ENCODER="../Models/AE/encoder_250.keras"
+NAME="cancer_base"
 
 
 mkdir -p "$OUTPUT_DIR"
@@ -30,7 +30,8 @@ fi
 python TSNE.py --input "$INPUT_FILE" \
         --output "$OUTPUT_DIR" \
         --encoder "$ENCODER" \
-        --coords "$COORDS"
+        --coords "$COORDS" \
+		--name "$NAME"
 
 END_TIME=$(date)
 echo "T-SNE training finished at: $END_TIME"
