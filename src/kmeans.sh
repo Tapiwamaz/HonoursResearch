@@ -5,14 +5,14 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=16      # Using more cores for biggpu            
-#SBATCH --partition=biggpu
+#SBATCH --partition=bigbatch
 #SBATCH --time=3-00:00:00      # 3 days max runtime 
 
-INPUT_FILE="../Data/Cancer/cancer_150-1500_x.npy"
+INPUT_FILE="../Data/HIV/hiv_150-1500_x.npy"
 OUTPUT_DIR="../Results/kmeans"
-COORDS="../Data/Cancer/cancer-150-1500-coords.npy"
-ENCODER="../Models/AE/encoder_250.keras"
-JOB_NAME="cancer_kmeans_baseline"
+COORDS="../Data/HIV/hiv-150-1500-coords.npy"
+ENCODER="../Models/AE/encoder_250_dropout_wmse.keras"
+JOB_NAME="hiv_kmeans_wmse"
 K_CLUSTERS=3
 
 

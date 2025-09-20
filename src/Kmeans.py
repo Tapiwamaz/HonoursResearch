@@ -32,7 +32,6 @@ cluster_labels = kmeans.fit_predict(latent_vectors)
 
 coords = np.load(args.coords)  
 print(f"Coordinates shape: {coords.shape}")
-print(f"First few coordinates: {coords[:5]}")
 
 # Handle different coordinate formats
 if coords.shape[1] == 3:
@@ -59,10 +58,22 @@ for cluster_id, count in zip(unique_clusters, cluster_counts):
 # Create output directory if it doesn't exist
 os.makedirs(args.output, exist_ok=True)
 
+colors = [
+    "blue", "green","red" , "orange", "purple", "brown", "pink", "gray", "olive", "cyan"
+]
+# Ensure there are enough colors for the number of clusters
+if optimal_k > len(colors):
+    raise ValueError(f"Not enough colors defined for {optimal_k} clusters. Add more colors to the array.")
+
 # Joint plot: All clusters together
 plt.figure(figsize=(12, 10))
-plt.imshow(cluster_map, cmap='viridis', vmin=0, vmax=optimal_k-1, origin='lower')
-plt.colorbar(ticks=range(optimal_k), label='Cluster ID')
+colored_cluster_map = np.full((height, width, 3), 0, dtype=np.uint8)  # Default to black background
+for cluster_id in range(optimal_k):
+    cluster_color = plt.colors.to_rgb(colors[cluster_id % len(colors)])  # Convert to RGB
+    cluster_color = [int(c * 255) for c in cluster_color]  # Scale to 0-255
+    colored_cluster_map[cluster_map == cluster_id] = cluster_color
+
+plt.imshow(colored_cluster_map, origin='lower')
 plt.title(f"Tissue Segmentation via K-Means (k={optimal_k}) on Latent Space - {args.name}")
 plt.xlabel('X Coordinate')
 plt.ylabel('Y Coordinate')
@@ -88,16 +99,14 @@ for cluster_id in range(optimal_k):
     row = cluster_id // cols
     col = cluster_id % cols
     
-    # Create binary mask for this cluster
     cluster_only_map = np.where(cluster_map == cluster_id, 1, 0)
     
-    im = axes[row, col].imshow(cluster_only_map, cmap='Reds', vmin=0, vmax=1, origin='lower')
-    axes[row, col].set_title(f"Cluster {cluster_id}")
+    # Use the static color array for the title or legend
+    axes[row, col].imshow(cluster_only_map, cmap=colors[cluster_id % len(colors)], vmin=0, vmax=1, origin='lower')
+    axes[row, col].set_title(f"Cluster {cluster_id} ({colors[cluster_id % len(colors)]})")
     axes[row, col].set_xlabel('X Coordinate')
     axes[row, col].set_ylabel('Y Coordinate')
     
-    # Add colorbar to each subplot
-    plt.colorbar(im, ax=axes[row, col], label='Presence')
 
 # Hide empty subplots if any
 for i in range(optimal_k, rows * cols):
