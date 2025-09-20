@@ -1,0 +1,19 @@
+K-Means clustering started at: Sat Sep 20 10:00:00 PM SAST 2025
+Loaded encoder
+Loaded data
+Shape: (56678, 250)
+Coordinates shape: (56678, 3)
+Image dimensions: 335 x 460
+
+Cluster Statistics:
+Total number of pixels: 56678
+Cluster 0: 16909 pixels (29.83%)
+Cluster 1: 4916 pixels (8.67%)
+Cluster 2: 34853 pixels (61.49%)
+Saved joint plot to: ../Results/kmeans/hiv_kmeans_wmse_kmeans_k3_joint.png
+Saved individual clusters subplot to: ../Results/kmeans/hiv_kmeans_wmse_kmeans_k3_individual_clusters.png
+
+All plots saved to: ../Results/kmeans
+Job 'hiv_kmeans_wmse' completed successfully!
+K-Means clustering finished at: Sat Sep 20 10:01:57 PM SAST 2025
+Tapedza!!! Mwari Ngaakudzwe!
