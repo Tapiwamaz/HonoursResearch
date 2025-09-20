@@ -105,13 +105,16 @@ for cluster_id in range(optimal_k):
     row = cluster_id // cols
     col = cluster_id % cols
     
-    cluster_only_map = np.where(cluster_map == cluster_id, 1, 0)
-    
-    # Use the static color array for the title or legend
-    axes[row, col].imshow(cluster_only_map, cmap=colors[cluster_id % len(colors)], vmin=0, vmax=1, origin='lower')
-    axes[row, col].set_title(f"Cluster {cluster_id} ({colors[cluster_id % len(colors)]})")
+    cluster_only_map = np.zeros((height, width, 3), dtype=np.uint8)  # Default to black
+    cluster_color = [int(c * 255) for c in colors[cluster_id % len(colors)]]  # Scale RGB to 0-255
+    cluster_only_map[cluster_map == cluster_id] = cluster_color
+
+    # Plot the cluster map
+    axes[row, col].imshow(cluster_only_map, origin='lower')
+    axes[row, col].set_title(f"Cluster {cluster_id}")
     axes[row, col].set_xlabel('X Coordinate')
     axes[row, col].set_ylabel('Y Coordinate')
+
     
 
 # Hide empty subplots if any
