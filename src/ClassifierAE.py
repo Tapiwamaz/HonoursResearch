@@ -23,11 +23,18 @@ X = np.load(args.x)
 Y = np.load(args.y)
 print(f'Shape of input data: {X.shape}')
 
+lr_schedule = tf.keras.optimizers.schedules.ExponentialDecay(
+    initial_learning_rate=0.002,
+    decay_steps=500,
+    decay_rate=0.96,
+    staircase=True
+)
+
 class MLPClassifier(tf.keras.Model):
     def __init__(self, encoder, num_classes=2, hidden_size=64, dropout_rate=0.5):
         super().__init__()
         self.encoder = encoder
-        self.encoder.trainable = False  # Freeze encoder
+        self.encoder.trainable = True  # Freeze encoder
         self.hidden = layers.Dense(hidden_size, activation='relu')
         self.dropout = layers.Dropout(dropout_rate)
         self.classifier = layers.Dense(num_classes, activation='softmax')
@@ -50,11 +57,11 @@ model = MLPClassifier(encoder)
 
 early_stopping = EarlyStopping(
     monitor='accuracy',
-    patience=3,
+    patience=4,
     restore_best_weights=True
 )
 
-model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=0.001),
+model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=lr_schedule),
               loss='sparse_categorical_crossentropy',
               metrics=['accuracy'],
             )
@@ -157,6 +164,8 @@ plt.close()
 print(f'Test loss: {loss}')
 print(f'Test Accuracy {accuracy}')
 
-save_path = os.path.join(args.output, f"{args.name}.keras")
-model.save(save_path)
-print(f"Classifier trained and saved to {save_path}")
+# save_path = os.path.join(args.output, f"{args.name}_classifier.keras")
+# model.save(save_path)
+# print(f"Classifier trained and saved to {save_path}")
+model.encoder.save(args.encoder)
+print(f"Encoder updated and saved to {args.encoder}")
