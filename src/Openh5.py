@@ -6,7 +6,7 @@ import os
 import matplotlib.pyplot as plt
 
 
-def plot_image( file: h5py.File ,sorted_keys: list[str],mz : float ,shape ,output_dir: str,tolerance: float=0.02):
+def plot_image( file: h5py.File ,sorted_keys: list[str],mz : float,name: str ,shape ,output_dir: str,tolerance: float=0.02):
     img = np.zeros(shape)
     for index, key in enumerate(sorted_keys):
         mass_to_charges = file[str(key)]["x"][:]
@@ -23,7 +23,7 @@ def plot_image( file: h5py.File ,sorted_keys: list[str],mz : float ,shape ,outpu
     plt.xlabel("X intensity")
     plt.ylabel("Y intensity")
 
-    output_path = os.path.join(output_dir, f"image_{mz}.png")
+    output_path = os.path.join(output_dir, f"{name}_image_{mz}.png")
     plt.savefig(output_path)
     print(f"Plot saved to {output_path}") 
 
@@ -45,8 +45,8 @@ tolerance = 0.02
 width = 400
 height = 400
 
-output_path = f"{args.output}{args.name}"
+output_path = f"{args.output}/{args.name}"
 for mz in target_mzs:
-    plot_image(file=f,sorted_keys=sorted_keys,shape=(width,height),output_dir=output_path,mz=mz)
+    plot_image(file=f,sorted_keys=sorted_keys,shape=(width,height),output_dir=args.output,mz=mz,name=args.name)
 
 print("Done")

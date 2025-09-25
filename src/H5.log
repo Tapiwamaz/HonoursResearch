@@ -1,0 +1,14 @@
+Starting OpenH5.py for hiv at Thu Sep 25 09:49:10 PM SAST 2025
+Using input file: ../../mass_spec_data/HIV/3 June/3 June PHRU FFPE test 1_1-115501_SN0p0_profile.h5
+Output directory: ../Results/H5
+SLURM Job ID: 158124
+File loaded
+Plot saved to ../Results/H5/hiv_image_120.png
+Plot saved to ../Results/H5/hiv_image_150.png
+Plot saved to ../Results/H5/hiv_image_200.png
+Plot saved to ../Results/H5/hiv_image_250.png
+Plot saved to ../Results/H5/hiv_image_271.png
+Done
+hiv completed at Thu Sep 25 09:53:32 PM SAST 2025
+Results saved to ../Results/H5
+Tapedza!!! Mwari Ngaakudzwe!

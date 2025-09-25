@@ -1,16 +1,16 @@
 #!/bin/bash
 #SBATCH --job-name=H5
-#SBATCH --output=H5_%j.log
-#SBATCH --error=H5_err_%j.log
+#SBATCH --output=H5.log
+#SBATCH --error=H5_err.log
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=16      # Using more cores for biggpu            
 #SBATCH --partition=bigbatch 
 #SBATCH --time=3-00:00:00      # 3 days max runtime 
 
-INPUT_FILE="../../mass_spec_data/Cancer biopsy/5 June/5 June tumour test 2_1-327482_SN0p0_profile.h5"
+INPUT_FILE="../../mass_spec_data/HIV/3 June/3 June PHRU FFPE test 1_1-115501_SN0p0_profile.h5"
 OUTPUT_DIR="../Results/H5"
-NAME="cancer"
+NAME="hiv"
 
 
 
@@ -28,7 +28,7 @@ echo "Using input file: $INPUT_FILE"
 echo "Output directory: $OUTPUT_DIR"
 echo "SLURM Job ID: $SLURM_JOB_ID"
 
-python OpenH5.py --input "$INPUT_FILE" --output "$OUTPUT_DIR" --name "$NAME"
+python Openh5.py --input "$INPUT_FILE" --output "$OUTPUT_DIR" --name "$NAME"
 
 echo "$NAME completed at $(date)"
 echo "Results saved to $OUTPUT_DIR"
