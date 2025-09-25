@@ -10,7 +10,7 @@
 
 INPUT_FILE="../../mass_spec_data/HIV/3 June/3 June PHRU FFPE test 1_1-115501_SN0p0_profile.h5"
 OUTPUT_DIR="../Results/H5"
-NAME="hiv"
+NAME="cancer"
 
 
 
