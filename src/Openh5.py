@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import math
 
 
-def plot_image( file: h5py.File ,sorted_keys: list[int],mz : float,name: str ,shape ,output_dir: str,tolerance: float=0.02):
+def plot_image( file: h5py.File ,sorted_keys: list[int],mz : float,name: str ,shape ,output_dir: str,tolerance: float=100.02):
     img = np.zeros(shape)
     count = 0
     for index, key in enumerate(sorted_keys):
