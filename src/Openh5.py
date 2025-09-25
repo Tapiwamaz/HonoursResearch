@@ -25,7 +25,7 @@ def plot_image( file: h5py.File ,sorted_keys: list[int],mz : float,name: str ,sh
         img[row,col] = val
 
     plt.figure(figsize=(12, 8))
-    plt.imshow(img, cmap='viridis', origin='lower', aspect='auto')
+    plt.imshow(img, cmap='hot', origin='lower', aspect='auto')
     plt.colorbar(label='Intensity')
     plt.title(f"Ion Image for m/z = {mz}")
     plt.xlabel("X position")
@@ -107,11 +107,11 @@ f = h5py.File(args.input, 'r')
 print(f"File loaded")
 sorted_keys = sorted([int(key) for key in f.keys()])
 
-print(sorted_keys)
-print("\n")
+# print(sorted_keys)
+# print("\n")
 
-target_mzs = [120,150,200,250,271]
-tolerance = 0.02
+target_mzs = [271,390]
+tolerance = 100
 width = 400
 height = 400
 

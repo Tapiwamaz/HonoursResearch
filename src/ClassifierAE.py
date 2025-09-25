@@ -53,6 +53,22 @@ print(f'Training data shape: {X_train.shape}')
 print(f'Val data shape: {X_val.shape}')
 print(f'Test data shape: {X_test.shape}')
 
+# Add class distribution debugging
+print("\n=== CLASS DISTRIBUTION ANALYSIS ===")
+print(f"Original dataset Y shape: {Y.shape}")
+print(f"Original dataset classes: {np.unique(Y, return_counts=True)}")
+print(f"Training set classes: {np.unique(y_train, return_counts=True)}")
+print(f"Validation set classes: {np.unique(y_val, return_counts=True)}")
+print(f"Test set classes: {np.unique(y_test, return_counts=True)}")
+
+# Check if we have both classes in training
+train_classes = np.unique(y_train)
+if len(train_classes) < 2:
+    print(f"WARNING: Training set only contains class(es): {train_classes}")
+    print("This will cause the model to only predict the majority class!")
+else:
+    print(f"Training set contains both classes: {train_classes}")
+
 model = MLPClassifier(encoder)
 
 early_stopping = EarlyStopping(
