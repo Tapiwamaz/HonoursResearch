@@ -1,14 +1,19 @@
-Starting OpenH5.py for hiv at Thu Sep 25 09:49:10 PM SAST 2025
-Using input file: ../../mass_spec_data/HIV/3 June/3 June PHRU FFPE test 1_1-115501_SN0p0_profile.h5
+Starting OpenH5.py for cancer at Thu Sep 25 10:05:36 PM SAST 2025
+Using input file: ../../mass_spec_data/Cancer biopsy/5 June/5 June tumour test 2_1-327482_SN0p0_profile.h5
 Output directory: ../Results/H5
-SLURM Job ID: 158124
+SLURM Job ID: 158128
 File loaded
-Plot saved to ../Results/H5/hiv_image_120.png
-Plot saved to ../Results/H5/hiv_image_150.png
-Plot saved to ../Results/H5/hiv_image_200.png
-Plot saved to ../Results/H5/hiv_image_250.png
-Plot saved to ../Results/H5/hiv_image_271.png
+Plot saved to ../Results/H5/cancer_image_120.png
+Found: 1451
+Plot saved to ../Results/H5/cancer_image_150.png
+Found: 707
+Plot saved to ../Results/H5/cancer_image_200.png
+Found: 320
+Plot saved to ../Results/H5/cancer_image_250.png
+Found: 282
+Plot saved to ../Results/H5/cancer_image_271.png
+Found: 137283
 Done
-hiv completed at Thu Sep 25 09:53:32 PM SAST 2025
+cancer completed at Thu Sep 25 10:14:22 PM SAST 2025
 Results saved to ../Results/H5
 Tapedza!!! Mwari Ngaakudzwe!
