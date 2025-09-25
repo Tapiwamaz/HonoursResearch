@@ -115,16 +115,16 @@ tolerance = 100
 width = 400
 height = 400
 
-for mz in target_mzs:
-    plot_image(file=f,sorted_keys=sorted_keys,shape=(width,height),output_dir=args.output,mz=mz,name=args.name)
+# for mz in target_mzs:
+#     plot_image(file=f,sorted_keys=sorted_keys,shape=(width,height),output_dir=args.output,mz=mz,name=args.name)
 
-print("Done")
+# print("Done")
 
 
 
-# prepare_data(shape=(335,460),sorted_keys=sorted_keys,output_dir=args.output,name=args.name,file=f)
+prepare_data(shape=(width,height),sorted_keys=sorted_keys,output_dir=args.output,name=args.name,file=f)
 
-# print("Done creating data")
+print("Done creating data")
 
 
 
