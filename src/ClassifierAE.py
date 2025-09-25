@@ -34,7 +34,7 @@ class MLPClassifier(tf.keras.Model):
     def __init__(self, encoder, num_classes=2, hidden_size=64, dropout_rate=0.5):
         super().__init__()
         self.encoder = encoder
-        self.encoder.trainable = True  # Freeze encoder
+        self.encoder.trainable = False  # Freeze encoder
         self.hidden = layers.Dense(hidden_size, activation='relu')
         self.dropout = layers.Dropout(dropout_rate)
         self.classifier = layers.Dense(num_classes, activation='softmax')
@@ -167,5 +167,5 @@ print(f'Test Accuracy {accuracy}')
 # save_path = os.path.join(args.output, f"{args.name}_classifier.keras")
 # model.save(save_path)
 # print(f"Classifier trained and saved to {save_path}")
-model.encoder.save(args.encoder)
-print(f"Encoder updated and saved to {args.encoder}")
+#model.encoder.save(args.encoder)
+#print(f"Encoder updated and saved to {args.encoder}")

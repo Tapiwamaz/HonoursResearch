@@ -10,9 +10,9 @@
 
 INPUT_DATA="../Data/Pretrain/sal-lps-150-1500(labeled)_data.npy"
 INPUT_LABELS="../Data/Pretrain/sal-lps-150-1500(labeled)_labels.npy"
-AE_ENCODER="../Models/AE/classified_enc_250_wmse.keras "
+AE_ENCODER="../Models/AE/encoder_250_dropout_wmse.keras"
 OUTPUT_DIR="../Output/AE"
-NAME="classified_enc_250_wmse"
+NAME="rand"
 
 mkdir -p "$OUTPUT_DIR"
 
