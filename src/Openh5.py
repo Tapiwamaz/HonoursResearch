@@ -8,11 +8,14 @@ import matplotlib.pyplot as plt
 
 def plot_image( file: h5py.File ,sorted_keys: list[str],mz : float,name: str ,shape ,output_dir: str,tolerance: float=0.02):
     img = np.zeros(shape)
+    count = 0
     for index, key in enumerate(sorted_keys):
         mass_to_charges = file[str(key)]["x"][:]
         intensities = file[str(key)]["y"][:]
         mask = np.abs(mass_to_charges - mz) <= tolerance
         val = np.sum(intensities[mask]) if np.any(mask) else 0
+        if np.any(mask):
+            count +=1
         
         row,col = divmod(index,shape[1])
         img[row,col] = val
@@ -25,7 +28,9 @@ def plot_image( file: h5py.File ,sorted_keys: list[str],mz : float,name: str ,sh
 
     output_path = os.path.join(output_dir, f"{name}_image_{mz}.png")
     plt.savefig(output_path)
-    print(f"Plot saved to {output_path}") 
+    plt.close()
+    print(f"Plot saved to {output_path}")
+    print(f"Found: {count}") 
 
 parser = argparse.ArgumentParser(description="Generate ion image plot.")
 parser.add_argument("--input", required=True, help="Path to the input HDF5 file.")
