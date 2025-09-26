@@ -12,8 +12,8 @@ INPUT_FILE="../Data/Cancer/cancer_150-1500_x.npy"
 OUTPUT_DIR="../Results/kmeans"
 COORDS="../Data/Cancer/cancer-150-1500-coords.npy"
 ENCODER="../Models/AE/encoder_250_dropout_wmse.keras"
-JOB_NAME="cancer_kmeans_wmse"
-K_CLUSTERS=3
+JOB_NAME="cancer_wmse"
+# K_CLUSTERS=3
 
 
 mkdir -p "$OUTPUT_DIR"
@@ -33,17 +33,22 @@ if [ ! -f "$ENCODER" ]; then
     exit 1
 fi
 
-if [ ! -f "$COORDS" ]; then
-    echo "Error: Coordinates file not found at $COORDS"
-    exit 1
-fi
+# if [ ! -f "$COORDS" ]; then
+#     echo "Error: Coordinates file not found at $COORDS"
+#     exit 1
+# fi
+
+# python Kmeans.py --input "$INPUT_FILE" \
+#         --output "$OUTPUT_DIR" \
+#         --coords "$COORDS" \
+#         --encoder "$ENCODER" \
+#         --name "$JOB_NAME" \
+#         --k "$K_CLUSTERS"
 
 python Kmeans.py --input "$INPUT_FILE" \
         --output "$OUTPUT_DIR" \
-        --coords "$COORDS" \
         --encoder "$ENCODER" \
-        --name "$JOB_NAME" \
-        --k "$K_CLUSTERS"
+        --name "$JOB_NAME"       
 
 END_TIME=$(date)
 echo "K-Means clustering finished at: $END_TIME"
