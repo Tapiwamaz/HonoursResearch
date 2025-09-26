@@ -1,0 +1,9 @@
+K-Means clustering started at: Fri Sep 26 10:13:30 AM SAST 2025
+Loaded encoder
+Loaded data
+Shape: (160000, 250)
+Saved elbow analysis plot to: ../Results/kmeans/cancer_wmse_elbow_silhouette_analysis.png
+Inspect the elbow plot to determine the optimal k.
+Inertias: [126519.796875, 118729.3203125, 114945.296875, 111927.046875, 110037.328125, 108376.078125, 106943.1171875, 105576.3984375, 104384.0546875]
+K-Means clustering finished at: Fri Sep 26 11:16:13 AM SAST 2025
+Tapedza!!! Mwari Ngaakudzwe!

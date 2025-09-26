@@ -1,0 +1,9 @@
+K-Means clustering started at: Fri Sep 26 10:14:58 AM SAST 2025
+Loaded encoder
+Loaded data
+Shape: (56678, 250)
+Saved elbow analysis plot to: ../Results/kmeans/hiv_wmse_elbow_silhouette_analysis.png
+Inspect the elbow plot to determine the optimal k.
+Inertias: [9761.3076171875, 8724.291015625, 8302.7255859375, 7926.046875, 7659.64453125, 7414.25390625, 7194.76416015625, 7070.04052734375, 6957.7392578125]
+K-Means clustering finished at: Fri Sep 26 10:30:56 AM SAST 2025
+Tapedza!!! Mwari Ngaakudzwe!

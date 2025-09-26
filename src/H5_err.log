@@ -1,8 +1,0 @@
-Traceback (most recent call last):
-  File "/home-mscluster/tmazarura/HonoursResearch/src/Openh5.py", line 125, in <module>
-    prepare_data(shape=(width,height),sorted_keys=sorted_keys,output_dir=args.output,name=args.name,file=f)
-    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home-mscluster/tmazarura/HonoursResearch/src/Openh5.py", line 80, in prepare_data
-    mz_mask = (common_mzs >= 150) & (common_mzs <= 1500)
-               ^^^^^^^^^^
-UnboundLocalError: cannot access local variable 'common_mzs' where it is not associated with a value
