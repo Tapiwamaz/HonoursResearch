@@ -70,7 +70,6 @@ def prepare_data(file: h5py.File, name :str , output_dir: str,shape,sorted_keys:
     X = binned / tic
 
     del binned
-    del common_mzs
 
     X_min = X.min(axis=1, keepdims=True)
     X_max = X.max(axis=1, keepdims=True)
@@ -79,7 +78,8 @@ def prepare_data(file: h5py.File, name :str , output_dir: str,shape,sorted_keys:
     # Filter to only include m/z values between 150 and 1500
     mz_mask = (common_mzs >= 150) & (common_mzs <= 1500)
     X = X[:, mz_mask]
-    X = X[:,:len(X[0])-1]
+    if len(X[0]) == 67500:
+        X = X[:,:len(X[0])-1]
     common_mzs = common_mzs[mz_mask]
 
     X = X.astype(np.float32)
