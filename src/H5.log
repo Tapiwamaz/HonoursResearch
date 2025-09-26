@@ -1,13 +1,9 @@
-Starting OpenH5.py for cancer at Thu Sep 25 11:20:18 PM SAST 2025
+Starting OpenH5.py for cancer_150_1500_h5 at Thu Sep 25 11:49:25 PM SAST 2025
 Using input file: ../../mass_spec_data/Cancer biopsy/5 June/5 June tumour test 2_1-327482_SN0p0_profile.h5
-Output directory: ../Results/H5
-SLURM Job ID: 158191
+Output directory: ../Data/Pretrain
+SLURM Job ID: 158203
 File loaded
-Plot saved to ../Results/H5/cancer_image_271.png
-Found: 160000
-Plot saved to ../Results/H5/cancer_image_390.png
-Found: 160000
-Done
-cancer completed at Thu Sep 25 11:23:24 PM SAST 2025
-Results saved to ../Results/H5
+Range of mz values: (100, 1500)
+cancer_150_1500_h5 completed at Fri Sep 26 12:04:46 AM SAST 2025
+Results saved to ../Data/Pretrain
 Tapedza!!! Mwari Ngaakudzwe!

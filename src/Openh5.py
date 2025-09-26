@@ -59,7 +59,7 @@ def prepare_data(file: h5py.File, name :str , output_dir: str,shape,sorted_keys:
     common_mzs = np.arange(min_mz,max_mz,0.02)
     binned = np.zeros((len(my_spectra), len(common_mzs)), dtype=np.float32)
 
-    for i, (mzs, intensities,_) in enumerate(my_spectra):
+    for i, (mzs, intensities) in enumerate(my_spectra):
         indices = np.digitize(mzs, common_mzs) - 1
         for k, val in zip(indices, intensities):
             if 0 <= k < binned.shape[1]:
