@@ -192,6 +192,12 @@ plt.savefig(subplot_path, dpi=300, bbox_inches='tight')
 print(f"Saved individual clusters subplot to: {subplot_path}")
 plt.close()
 
+centroids = kmeans.cluster_centers_
+centroids_path = os.path.join(args.output, f"{args.name}_centroids_k{optimal_k}.npy")
+np.save(centroids_path, centroids)
+print(f"Saved centroids to: {centroids_path}")
+print(f"Centroids shape: {centroids.shape}")
+
 print(f"\nAll plots saved to: {args.output}")
 print(f"Job '{args.name}' completed successfully!")
 
