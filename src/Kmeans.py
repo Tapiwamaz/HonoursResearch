@@ -81,6 +81,9 @@ print(f"Loaded data")
 latent_vectors = encoder.predict(X,verbose=0)
 print(f"Shape: {latent_vectors.shape}")
 
+del X
+del encoder
+
 # inertias = get_optimal_k(data=latent_vectors,max_k=10)
 # print(f"Inertias: {inertias}")
 
