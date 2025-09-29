@@ -9,9 +9,9 @@
 #SBATCH --time=3-00:00:00      # 3 days max runtime 
 
 INPUT_FILE="../Data/Pretrain/hiv_cancer_150-1500.npy"
-OUTPUT_DIR="../Models/AE"
+OUTPUT_DIR="../Models/Decoder/"
 PARTITIONS=10
-ENCODER_PATH="../Models/AE/encoder_250_dropout_wmse.keras"
+ENCODER_PATH="../Models/Decoder/encoder.keras"
 
 mkdir -p "$OUTPUT_DIR"
 

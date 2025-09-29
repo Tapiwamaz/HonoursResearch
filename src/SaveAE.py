@@ -102,7 +102,7 @@ wandb.init(
     project="Autoencoder Training",
     # track hyperparameters and run metadata with wandb.config
     config={
-        "latent_dim": 150,
+        "latent_dim": 250,
         "encoder_layer_1": 2000,
         "encoder_layer_2": 1000,
         "decoder_layer_1": 1000,
@@ -129,7 +129,7 @@ print(f"Training set shape: {X_train.shape}")
 print(f"Validation set shape: {X_val.shape}")
 print(f"Test set shape: {X_test.shape}")
 
-latent_dim = 150
+latent_dim = 250
 input_dim = X_train.shape[1]  
 
 autoencoder = SpectrumAutoencoder(latent_dim=latent_dim, n_peaks=input_dim)
@@ -183,6 +183,10 @@ print(f"Root Mean Squared Error (RMSE) on Test Data: {rmse_test:.10f}")
 print(f"Mean Squared Error (MSE) on Test Data: {mse_test:.10f}")
 
 
-encoder_save_path = os.path.join(args.output, f"{args.name}_encoder.keras")
+encoder_save_path = os.path.join(args.output, f"{args.name}.keras")
 autoencoder.encoder.save(encoder_save_path)
 print(f"Encoder saved to {encoder_save_path}")
+
+decoder_save_path = os.path.join(args.output, f"decoder.keras")
+autoencoder.decoder.save(decoder_save_path)
+print(f"Decoder saved")

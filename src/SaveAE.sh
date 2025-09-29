@@ -9,9 +9,9 @@
 #SBATCH --time=3-00:00:00
 
 INPUT_FILE="../Data/Pretrain/hiv_cancer_150-1500.npy"
-OUTPUT_DIR="../Models/AE"
+OUTPUT_DIR="../Models/Decoder/"
 PARTITIONS=10
-NAME="encoder_150_dropout_relu_wmse"
+NAME="encoder"
 
 mkdir -p "$OUTPUT_DIR"
 
