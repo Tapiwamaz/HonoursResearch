@@ -8,7 +8,7 @@
 #SBATCH --partition=biggpu
 #SBATCH --time=3-00:00:00
 
-INPUT_FILE="../Data/Encoded/hiv_cancer_encoded.npy"
+INPUT_FILE="../Data/Encoded/hiv-cancer-encoded.npy"
 OUTPUT_DIR="../Models/Decoder"
 NAME="decoder_250_dropout_wmse"
 

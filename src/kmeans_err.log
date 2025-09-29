@@ -1,5 +1,5 @@
-2025-09-29 08:39:19.606125: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
-2025-09-29 08:39:19.653788: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+2025-09-29 10:38:34.367851: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-09-29 10:38:34.426170: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
 To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
 /home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/attr_value.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
   warnings.warn(
@@ -41,13 +41,13 @@ To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other ope
   warnings.warn(
 /home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/protobuf/debug.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
   warnings.warn(
-2025-09-29 08:39:24.708185: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-09-29 10:38:40.531346: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
-I0000 00:00:1759127970.823422 2658926 gpu_device.cc:2020] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 47189 MB memory:  -> device: 0, name: Quadro RTX 8000, pci bus id: 0000:17:00.0, compute capability: 7.5
-I0000 00:00:1759127970.824894 2658926 gpu_device.cc:2020] Created device /job:localhost/replica:0/task:0/device:GPU:1 with 47180 MB memory:  -> device: 1, name: Quadro RTX 8000, pci bus id: 0000:73:00.0, compute capability: 7.5
-2025-09-29 08:44:15.104212: I external/local_xla/xla/service/service.cc:163] XLA service 0x7fddc0016d50 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
-2025-09-29 08:44:15.104567: I external/local_xla/xla/service/service.cc:171]   StreamExecutor device (0): Quadro RTX 8000, Compute Capability 7.5
-2025-09-29 08:44:15.104576: I external/local_xla/xla/service/service.cc:171]   StreamExecutor device (1): Quadro RTX 8000, Compute Capability 7.5
-2025-09-29 08:44:15.112066: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:269] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
-2025-09-29 08:44:15.151680: I external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:473] Loaded cuDNN version 91002
-I0000 00:00:1759128255.517608 2659289 device_compiler.h:196] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+I0000 00:00:1759135129.077166  437961 gpu_device.cc:2020] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 47157 MB memory:  -> device: 0, name: Quadro RTX 8000, pci bus id: 0000:17:00.0, compute capability: 7.5
+I0000 00:00:1759135129.077919  437961 gpu_device.cc:2020] Created device /job:localhost/replica:0/task:0/device:GPU:1 with 47155 MB memory:  -> device: 1, name: Quadro RTX 8000, pci bus id: 0000:73:00.0, compute capability: 7.5
+2025-09-29 10:43:40.800293: I external/local_xla/xla/service/service.cc:163] XLA service 0x7fb67c005110 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2025-09-29 10:43:40.800699: I external/local_xla/xla/service/service.cc:171]   StreamExecutor device (0): Quadro RTX 8000, Compute Capability 7.5
+2025-09-29 10:43:40.800708: I external/local_xla/xla/service/service.cc:171]   StreamExecutor device (1): Quadro RTX 8000, Compute Capability 7.5
+2025-09-29 10:43:40.808601: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:269] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+2025-09-29 10:43:40.838602: I external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:473] Loaded cuDNN version 91002
+I0000 00:00:1759135422.392236  438323 device_compiler.h:196] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
