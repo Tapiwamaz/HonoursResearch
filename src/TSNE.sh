@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=TSNE
-#SBATCH --output=TSNE_%j.log
-#SBATCH --error=TSNE_%j_err.log
+#SBATCH --output=tsne_%j.log
+#SBATCH --error=tsne_err.log
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=16      # Using more cores for biggpu            
