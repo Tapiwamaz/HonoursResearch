@@ -8,12 +8,12 @@
 #SBATCH --partition=biggpu
 #SBATCH --time=3-00:00:00      # 3 days max runtime 
 
-INPUT_FILE="../Data/Pretrain/cancer_150_1500_h5_x.npy"
+INPUT_FILE="../Data/Cancer/cancer_150-1500_x.npy"
 OUTPUT_DIR="../Results/tsne"
-COORDS="../Data/Pretrain/cancer_150_1500_h5_x.npy_coords.npy"
+COORDS="../Data/Cancer/cancer-150-1500-coords.npy"
 ENCODER="../Models/AE/encoder_250_dropout_wmse.keras"
-NAME="cancer_wmse"
-CENTROIDS="../Results/kmeans/cance_h5_wmse_centroids_k3.npy"
+NAME="cancer_imzml_wmse_centroided"
+CENTROIDS="../Results/kmeans/cancer_wmse_imzml_centroids_k3.npy"
 
 
 mkdir -p "$OUTPUT_DIR"
@@ -31,8 +31,8 @@ fi
 python TSNE.py --input "$INPUT_FILE" \
         --output "$OUTPUT_DIR" \
         --encoder "$ENCODER" \
-        --coords "$COORDS" \
-		--name "$NAME"
+		--name "$NAME"\
+		--centroids "$CENTROIDS"
 
 END_TIME=$(date)
 echo "T-SNE training finished at: $END_TIME"

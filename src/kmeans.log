@@ -1,21 +1,21 @@
-K-Means clustering started at: Sun Sep 28 10:21:47 PM SAST 2025
+K-Means clustering started at: Mon Sep 29 08:39:19 AM SAST 2025
 Loaded encoder
 Loaded data
-Shape: (56678, 250)
-Coordinates shape: (56678, 3)
-Image dimensions: 335 x 460
+Shape: (160000, 250)
+Coordinates shape: (160000, 3)
+Image dimensions: 400 x 401
 
 Cluster Statistics:
-Total number of pixels: 56678
-Cluster 0: 16866 pixels (29.76%)
-Cluster 1: 34900 pixels (61.58%)
-Cluster 2: 4912 pixels (8.67%)
-Saved joint plot to: ../Results/kmeans/hiv_wmse_kmeans_k3_joint.png
-Saved individual clusters subplot to: ../Results/kmeans/hiv_wmse_kmeans_k3_individual_clusters.png
-Saved centroids to: ../Results/kmeans/hiv_wmse_centroids_k3.npy
+Total number of pixels: 160000
+Cluster 0: 18754 pixels (11.72%)
+Cluster 1: 16018 pixels (10.01%)
+Cluster 2: 125228 pixels (78.27%)
+Saved joint plot to: ../Results/kmeans/cancer_wmse_imzml_kmeans_k3_joint.png
+Saved individual clusters subplot to: ../Results/kmeans/cancer_wmse_imzml_kmeans_k3_individual_clusters.png
+Saved centroids to: ../Results/kmeans/cancer_wmse_imzml_centroids_k3.npy
 Centroids shape: (3, 250)
 
 All plots saved to: ../Results/kmeans
-Job 'hiv_wmse' completed successfully!
-K-Means clustering finished at: Sun Sep 28 10:33:59 PM SAST 2025
+Job 'cancer_wmse_imzml' completed successfully!
+K-Means clustering finished at: Mon Sep 29 08:44:56 AM SAST 2025
 Tapedza!!! Mwari Ngaakudzwe!
