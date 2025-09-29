@@ -27,6 +27,8 @@ parser.add_argument("--name", required=True, help="Name to save output")
 parser.add_argument("--partitions", required=True, help="Number of partitions")
 parser.add_argument("--partNum", required=True, help="The number of the partition we are on")
 parser.add_argument("--encoder", required=True, help="Path to the existing encoder .keras file")
+parser.add_argument("--decoder", required=True, help="Path to the existing decoder .keras file")
+
 
 args = parser.parse_args()
 
@@ -42,6 +44,8 @@ X_subset = X[math.floor(len(X)*((part_num-1)/partitions)):math.ceil(len(X)*(part
 
 # Load the existing encoder
 encoder = load_model(args.encoder)
+decoder = load_model(args.decoder)
+
 latent_dim = encoder.output_shape[-1]
 input_dim = encoder.input_shape[-1]
 print(f"Latent dimension: {latent_dim}")
@@ -90,16 +94,6 @@ wandb.init(
     }
 )
 
-
-
-# Build a new decoder
-decoder = tf.keras.Sequential([
-            layers.Dense(1000, activation='tanh'),
-            layers.Dropout(0.3),
-            layers.Dense(2000, activation='tanh'),
-            layers.Dropout(0.3),
-            layers.Dense(input_dim, activation='relu'),  
-])
 
 # Build the full autoencoder model
 class SpectrumAutoencoder(Model):
@@ -162,3 +156,7 @@ print(f"Mean Squared Error (MSE) on Test Data: {mse_test:.10f}")
 encoder_save_path = args.encoder
 autoencoder.encoder.save(encoder_save_path)
 print(f"Encoder updated and saved to {encoder_save_path}")
+
+decoder_save_path = args.decoder
+autoencoder.decoder.save(decoder_save_path)
+print(f"Decoder updated and saved to {decoder_save_path}")

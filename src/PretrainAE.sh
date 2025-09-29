@@ -12,6 +12,8 @@ INPUT_FILE="../Data/Pretrain/hiv_cancer_150-1500.npy"
 OUTPUT_DIR="../Models/Decoder/"
 PARTITIONS=10
 ENCODER_PATH="../Models/Decoder/encoder.keras"
+DECODER_PATH="../Models/Decoder/decoder.keras"
+
 
 mkdir -p "$OUTPUT_DIR"
 
@@ -34,7 +36,8 @@ for (( PART_NUM=2; PART_NUM<=PARTITIONS; PART_NUM++ )); do
         --name "$JOB_NAME" \
         --partitions "$PARTITIONS" \
         --partNum "$PART_NUM" \
-        --encoder "$ENCODER_PATH"
+        --encoder "$ENCODER_PATH" \ 
+        --decoder "$DECODER_PATH"
     echo "Partition $PART_NUM completed at $(date)"
     echo "============================================================================"
 done
