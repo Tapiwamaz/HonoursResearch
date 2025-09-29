@@ -8,12 +8,12 @@
 #SBATCH --partition=biggpu
 #SBATCH --time=3-00:00:00      # 3 days max runtime 
 
-INPUT_FILE="../Data/Pretrain/cancer_150_1500_h5_x.npy"
-OUTPUT_DIR="../Results/kmeans"
-COORDS="../Data/Pretrain/cancer_150_1500_h5_x.npy_coords.npy"
-ENCODER="../Models/AE/encoder_250_dropout_wmse.keras"
-JOB_NAME="cancer_wmse_h5"
-K_CLUSTERS=2
+INPUT_FILE="../Data/HIV/hiv-150-1500_x.npy"
+OUTPUT_DIR="../Models/Decoder/kmeans"
+COORDS="../Data/HIV/hiv-150-1500_coords.npy"
+ENCODER="../Models/Decoder/encoder.keras"
+JOB_NAME="hiv"
+K_CLUSTERS=3
 
 
 mkdir -p "$OUTPUT_DIR"
