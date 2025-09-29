@@ -36,7 +36,7 @@ for (( PART_NUM=2; PART_NUM<=PARTITIONS; PART_NUM++ )); do
         --name "$JOB_NAME" \
         --partitions "$PARTITIONS" \
         --partNum "$PART_NUM" \
-        --encoder "$ENCODER_PATH" \ 
+        --encoder "$ENCODER_PATH" \
         --decoder "$DECODER_PATH"
     echo "Partition $PART_NUM completed at $(date)"
     echo "============================================================================"

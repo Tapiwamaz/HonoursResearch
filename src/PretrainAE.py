@@ -74,7 +74,7 @@ def weighted_mse_loss(y_true, y_pred):
     return tf.reduce_mean(weighted_squared_error)
 
 wandb.init(
-    project="Pretraining",
+    project="NewPre",
     # track hyperparameters and run metadata with wandb.config
     config={
         "latent_dim": 250,
@@ -123,14 +123,14 @@ print(f"Test set shape: {X_test.shape}")
 
 early_stopping = EarlyStopping(
     monitor='val_loss',
-    patience=5,
+    patience=20,
     restore_best_weights=True
 )
 
 print("Starting training...")
 history = autoencoder.fit(
     X_train, X_train,
-    epochs=20,
+    epochs=25,
     batch_size=32,
     validation_data=(X_val, X_val),
     callbacks=[early_stopping,WandbMetricsLogger()],
