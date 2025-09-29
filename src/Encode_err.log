@@ -45,3 +45,88 @@ To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other ope
 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
 I0000 00:00:1759134542.480314 2662177 gpu_device.cc:2020] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 47189 MB memory:  -> device: 0, name: Quadro RTX 8000, pci bus id: 0000:17:00.0, compute capability: 7.5
 I0000 00:00:1759134542.481815 2662177 gpu_device.cc:2020] Created device /job:localhost/replica:0/task:0/device:GPU:1 with 47180 MB memory:  -> device: 1, name: Quadro RTX 8000, pci bus id: 0000:73:00.0, compute capability: 7.5
+2025-09-29 10:55:48.934136: W external/local_xla/xla/tsl/framework/bfc_allocator.cc:501] Allocator (GPU_0_bfc) ran out of memory trying to allocate 54.48GiB (rounded to 58502193408)requested by op _EagerConst
+If the cause is memory fragmentation maybe the environment variable 'TF_GPU_ALLOCATOR=cuda_malloc_async' will improve the situation. 
+Current allocation summary follows.
+Current allocation summary follows.
+2025-09-29 10:55:48.934747: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1049] BFCAllocator dump for GPU_0_bfc
+2025-09-29 10:55:48.934792: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1056] Bin (256): 	Total Chunks: 12, Chunks in use: 12. 3.0KiB allocated for chunks. 3.0KiB in use in bin. 84B client-requested in use in bin.
+2025-09-29 10:55:48.934808: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1056] Bin (512): 	Total Chunks: 1, Chunks in use: 0. 512B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2025-09-29 10:55:48.934828: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1056] Bin (1024): 	Total Chunks: 2, Chunks in use: 2. 2.2KiB allocated for chunks. 2.2KiB in use in bin. 2.0KiB client-requested in use in bin.
+2025-09-29 10:55:48.934842: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1056] Bin (2048): 	Total Chunks: 1, Chunks in use: 0. 3.0KiB allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2025-09-29 10:55:48.934856: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1056] Bin (4096): 	Total Chunks: 2, Chunks in use: 1. 8.0KiB allocated for chunks. 4.0KiB in use in bin. 3.9KiB client-requested in use in bin.
+2025-09-29 10:55:48.934870: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1056] Bin (8192): 	Total Chunks: 1, Chunks in use: 1. 8.0KiB allocated for chunks. 8.0KiB in use in bin. 7.8KiB client-requested in use in bin.
+2025-09-29 10:55:48.934883: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1056] Bin (16384): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2025-09-29 10:55:48.934895: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1056] Bin (32768): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2025-09-29 10:55:48.934907: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1056] Bin (65536): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2025-09-29 10:55:48.934919: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1056] Bin (131072): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2025-09-29 10:55:48.934931: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1056] Bin (262144): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2025-09-29 10:55:48.934946: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1056] Bin (524288): 	Total Chunks: 1, Chunks in use: 0. 976.8KiB allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2025-09-29 10:55:48.934962: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1056] Bin (1048576): 	Total Chunks: 1, Chunks in use: 1. 1.90MiB allocated for chunks. 1.90MiB in use in bin. 976.6KiB client-requested in use in bin.
+2025-09-29 10:55:48.934974: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1056] Bin (2097152): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2025-09-29 10:55:48.934998: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1056] Bin (4194304): 	Total Chunks: 1, Chunks in use: 0. 7.63MiB allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2025-09-29 10:55:48.935014: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1056] Bin (8388608): 	Total Chunks: 1, Chunks in use: 1. 12.39MiB allocated for chunks. 12.39MiB in use in bin. 7.63MiB client-requested in use in bin.
+2025-09-29 10:55:48.935027: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1056] Bin (16777216): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2025-09-29 10:55:48.935038: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1056] Bin (33554432): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2025-09-29 10:55:48.935050: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1056] Bin (67108864): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2025-09-29 10:55:48.935062: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1056] Bin (134217728): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2025-09-29 10:55:48.935079: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1056] Bin (268435456): 	Total Chunks: 2, Chunks in use: 1. 46.06GiB allocated for chunks. 514.98MiB in use in bin. 514.98MiB client-requested in use in bin.
+2025-09-29 10:55:48.935097: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1072] Bin for 54.48GiB was 256.00MiB, Chunk State: 
+2025-09-29 10:55:48.935122: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1078]   Size: 45.56GiB | Requested Size: 976.6KiB | in_use: 0 | bin_num: 20, prev:   Size: 514.98MiB | Requested Size: 514.98MiB | in_use: 1 | bin_num: -1
+2025-09-29 10:55:48.935133: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1085] Next region of size 49481449472
+2025-09-29 10:55:48.935146: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1105] InUse at 7f1616000000 of size 1280 next 1
+2025-09-29 10:55:48.935166: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1105] InUse at 7f1616000500 of size 256 next 2
+2025-09-29 10:55:48.935175: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1105] InUse at 7f1616000600 of size 256 next 3
+2025-09-29 10:55:48.935185: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1105] InUse at 7f1616000700 of size 256 next 4
+2025-09-29 10:55:48.935194: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1105] InUse at 7f1616000800 of size 256 next 5
+2025-09-29 10:55:48.935203: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1105] InUse at 7f1616000900 of size 4096 next 11
+2025-09-29 10:55:48.935213: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1105] InUse at 7f1616001900 of size 1024 next 21
+2025-09-29 10:55:48.935223: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1105] Free  at 7f1616001d00 of size 3072 next 7
+2025-09-29 10:55:48.935233: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1105] InUse at 7f1616002900 of size 256 next 8
+2025-09-29 10:55:48.935242: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1105] InUse at 7f1616002a00 of size 256 next 6
+2025-09-29 10:55:48.935251: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1105] InUse at 7f1616002b00 of size 256 next 9
+2025-09-29 10:55:48.935261: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1105] Free  at 7f1616002c00 of size 4096 next 12
+2025-09-29 10:55:48.935270: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1105] InUse at 7f1616003c00 of size 256 next 14
+2025-09-29 10:55:48.935279: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1105] InUse at 7f1616003d00 of size 256 next 15
+2025-09-29 10:55:48.935294: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1105] InUse at 7f1616003e00 of size 256 next 13
+2025-09-29 10:55:48.935304: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1105] InUse at 7f1616003f00 of size 256 next 19
+2025-09-29 10:55:48.935313: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1105] InUse at 7f1616004000 of size 256 next 22
+2025-09-29 10:55:48.935323: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1105] Free  at 7f1616004100 of size 512 next 16
+2025-09-29 10:55:48.935332: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1105] InUse at 7f1616004300 of size 8192 next 10
+2025-09-29 10:55:48.935343: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1105] InUse at 7f1616006300 of size 1992192 next 23
+2025-09-29 10:55:48.935356: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1105] Free  at 7f16161ec900 of size 1000192 next 24
+2025-09-29 10:55:48.935366: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1105] InUse at 7f16162e0c00 of size 12994560 next 17
+2025-09-29 10:55:48.935380: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1105] Free  at 7f1616f45400 of size 8000000 next 18
+2025-09-29 10:55:48.935394: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1105] InUse at 7f16176e6600 of size 539992064 next 20
+2025-09-29 10:55:48.935407: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1105] Free  at 7f16379e0600 of size 48917445120 next 18446744073709551615
+2025-09-29 10:55:48.935417: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1110]      Summary of in-use Chunks by size: 
+2025-09-29 10:55:48.935431: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1113] 12 Chunks of size 256 totalling 3.0KiB
+2025-09-29 10:55:48.935443: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1113] 1 Chunks of size 1024 totalling 1.0KiB
+2025-09-29 10:55:48.935455: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1113] 1 Chunks of size 1280 totalling 1.2KiB
+2025-09-29 10:55:48.935466: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1113] 1 Chunks of size 4096 totalling 4.0KiB
+2025-09-29 10:55:48.935478: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1113] 1 Chunks of size 8192 totalling 8.0KiB
+2025-09-29 10:55:48.935490: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1113] 1 Chunks of size 1992192 totalling 1.90MiB
+2025-09-29 10:55:48.935507: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1113] 1 Chunks of size 12994560 totalling 12.39MiB
+2025-09-29 10:55:48.935523: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1113] 1 Chunks of size 539992064 totalling 514.98MiB
+2025-09-29 10:55:48.935542: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1117] Sum Total of in-use chunks: 529.29MiB
+2025-09-29 10:55:48.935554: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1119] Total bytes in pool: 49481449472 memory_limit_: 49481449472 available bytes: 0 curr_region_allocation_bytes_: 98962898944
+2025-09-29 10:55:48.935572: I external/local_xla/xla/tsl/framework/bfc_allocator.cc:1124] Stats: 
+Limit:                     49481449472
+InUse:                       554996480
+MaxInUse:                   1619979008
+NumAllocs:                          54
+MaxAllocSize:                539992064
+Reserved:                            0
+PeakReserved:                        0
+LargestFreeBlock:                    0
+
+2025-09-29 10:55:48.935587: W external/local_xla/xla/tsl/framework/bfc_allocator.cc:512] **__________________________________________________________________________________________________
+Traceback (most recent call last):
+  File "/home-mscluster/tmazarura/HonoursResearch/src/EncodeData.py", line 17, in <module>
+    latent_vectors = encoder.predict(X,verbose=0)
+  File "/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/keras/src/utils/traceback_utils.py", line 122, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/tensorflow/python/framework/constant_op.py", line 108, in convert_to_eager_tensor
+    return ops.EagerTensor(value, ctx.device_name, dtype)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tensorflow.python.framework.errors_impl.InternalError: Failed copying input tensor from /job:localhost/replica:0/task:0/device:CPU:0 to /job:localhost/replica:0/task:0/device:GPU:0 in order to run _EagerConst: Dst tensor is not initialized.

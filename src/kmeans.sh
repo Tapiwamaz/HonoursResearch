@@ -8,11 +8,11 @@
 #SBATCH --partition=biggpu
 #SBATCH --time=3-00:00:00      # 3 days max runtime 
 
-INPUT_FILE="../Data/Cancer/cancer_150-1500_x.npy"
+INPUT_FILE="../Data/Pretrain/cancer_150_1500_h5_x.npy"
 OUTPUT_DIR="../Results/kmeans"
-COORDS="../Data/Cancer/cancer-150-1500-coords.npy"
+COORDS="../Data/Pretrain/cancer_150_1500_h5_x.npy_coords.npy"
 ENCODER="../Models/AE/encoder_250_dropout_wmse.keras"
-JOB_NAME="cancer_wmse_imzml"
+JOB_NAME="cancer_wmse_h5"
 K_CLUSTERS=2
 
 
