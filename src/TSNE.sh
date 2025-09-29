@@ -12,7 +12,7 @@ INPUT_FILE="../Data/Cancer/cancer_150-1500_x.npy"
 OUTPUT_DIR="../Results/tsne"
 COORDS="../Data/Cancer/cancer-150-1500-coords.npy"
 ENCODER="../Models/AE/encoder_250_dropout_wmse.keras"
-NAME="cancer_imzml_wmse_centroided"
+NAME="cancer_imzml_wmse_centroided_100"
 CENTROIDS="../Results/kmeans/cancer_wmse_imzml_centroids_k3.npy"
 
 

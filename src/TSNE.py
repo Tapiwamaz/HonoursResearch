@@ -51,7 +51,7 @@ cluster_labels = np.argmin(distances, axis=1)
 print(f"Cluster assignment completed. Found {len(np.unique(cluster_labels))} clusters.")
 
 print("Running t-SNE...")
-tsne = TSNE(n_components=2, perplexity=30, max_iter=2000, random_state=42)
+tsne = TSNE(n_components=2, perplexity=100, max_iter=2000, random_state=42)
 latent_tsne = tsne.fit_transform(latent_vectors_scaled)
 print("t-SNE completed.")
 
