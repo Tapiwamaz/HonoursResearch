@@ -10,8 +10,10 @@
 
 INPUT_ONE="../Data/LPS/sal-plasma-150-1500_x.npy"
 INPUT_TWO="../Data/LPS/lps_plasma-150-1500_x.npy"
-OUTPUT_DIR="../Data/Pretrain"
+OUTPUT_DIR="../Data/Mixed"
 MIXED_NAME="sal-lps-150-1500(labeled)_fulltest"
+LABELED=0
+PARTS=2
 
 mkdir -p "$OUTPUT_DIR"
 
@@ -22,7 +24,9 @@ python MixingData.py \
     --inputOne "$INPUT_ONE" \
 	--inputTwo "$INPUT_TWO" \
     --output "$OUTPUT_DIR" \
-    --name "$MIXED_NAME"
+    --name "$MIXED_NAME" \
+    --labeled "$LABELED" \
+    --parts "$PARTS"
 
 END_TIME=$(date)
 echo "Mixing data finished at: $END_TIME"

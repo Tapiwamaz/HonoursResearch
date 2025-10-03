@@ -7,6 +7,9 @@ parser.add_argument("--inputOne", required=True, help="Path to the input prerpoc
 parser.add_argument("--inputTwo", required=True, help="Path to the input prerpocessed npy file.")
 parser.add_argument("--output", required=True, help="Directory to save the result.")
 parser.add_argument("--name", required=True, help="Name to save output")
+parser.add_argument("--labeled", required=True, help="Labeling")
+parser.add_argument("--parts",required=True,help="Number of parts")
+
 
 
 args = parser.parse_args()
@@ -34,35 +37,43 @@ def mix_npy_files_with_labels(file1_path, file2_path, output_data_path=None, out
         print(f"Labels saved to {output_label_path}")
     return combined_data, combined_labels
 
-def mix_npy_files_without(file1_path, file2_path, output_data_path=None):
+def mix_npy_files_without(file1_path, file2_path, parts, output_data_path=None):
     """
-    Load two .npy files, combine them, shuffle the data, and optionally save.
+    Load two .npy files, combine them, shuffle the data, divide into parts, and optionally save.
     
     Args:
         file1_path (str): Path to first .npy file
         file2_path (str): Path to second .npy file
-        output_path (str, optional): Path to save the mixed data
+        parts (int): Number of divisions for the combined data
+        output_data_path (str, optional): Base path to save the divided data parts
     
     Returns:
-        numpy.ndarray: Combined and shuffled data
+        list of numpy.ndarray: List of divided and shuffled data parts
     """
     data1 = np.load(file1_path)
-    print(f'length of first is {len(data1)}')
+    print(f'Length of first is {len(data1)}')
     data2 = np.load(file2_path)
-    print(f'length of second is {len(data2)}')
+    print(f'Length of second is {len(data2)}')
 
     combined_data = np.concatenate([data1, data2], axis=0)
     np.random.shuffle(combined_data)
     print(f"Length of combined is {len(combined_data)}")
     
+    # Divide the data into `parts` subsets
+    divided_data = np.array_split(combined_data, parts)
+    
     if output_data_path:
-        np.save(output_data_path, combined_data)
-        print(f"File save to {output_data_path}")
-   
-    return combined_data
+        for i, part in enumerate(divided_data):
+            part_path = f"{output_data_path}_part{i+1}.npy"
+            np.save(part_path, part)
+            print(f"Part {i+1} saved to {part_path}")
+    
+    return divided_data
 
 
 output_data_path = os.path.join(args.output, f"{args.name}_data.npy")
 output_label_path = os.path.join(args.output, f"{args.name}_labels.npy")
-mix_npy_files_with_labels(args.inputOne, args.inputTwo, output_data_path, output_label_path)
-# mix_npy_files_without(args.inputOne, args.inputTwo, output_data_path)
+if int(args.labeled) == 1:
+    mix_npy_files_with_labels(args.inputOne, args.inputTwo, output_data_path, output_label_path)
+else:    
+    mix_npy_files_without(args.inputOne, args.inputTwo,int(args.parts), output_data_path)
