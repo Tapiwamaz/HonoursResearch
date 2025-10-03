@@ -8,9 +8,9 @@
 #SBATCH --partition=biggpu 
 #SBATCH --time=3-00:00:00      # 3 days max runtime 
 
-INPUT_FILE="../../mass_spec_data/Cancer biopsy/5 June/5 June tumour test 2_1-327482_SN0p0_profile.h5"
+INPUT_FILE="../../mass_spec_data/"
 OUTPUT_DIR="../Data/Pretrain"
-NAME="cancer_150_1500_h5"
+NAME="hiv_150_1500_h5"
 
 
 
