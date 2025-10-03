@@ -38,15 +38,15 @@ def plot_image( file: h5py.File ,sorted_keys: list[int],mz : float,name: str ,sh
     print(f"Found: {count}") 
 
 
-def prepare_data(file: h5py.File, name :str , output_dir: str,shape,sorted_keys: list[str]) -> None:
+def prepare_data(file: h5py.File, name :str , output_dir: str,sorted_keys: list[str]) -> None:
     my_spectra = []
-    coords = []
-    for idx, key in enumerate(sorted_keys):
-        mzs = file[str(key)]["x"][:]
-        intensities =file[str(key)]["y"][:]
-        my_spectra.append([mzs, intensities])
-        row,col = divmod(idx,shape[1])
-        coords.append((row,col))
+    # coords = []
+    # for idx, key in enumerate(sorted_keys):
+    #     mzs = file[str(key)]["x"][:]
+    #     intensities =file[str(key)]["y"][:]
+    #     my_spectra.append([mzs, intensities])
+    #     row,col = divmod(idx,shape[1])
+    #     coords.append((row,col))
 
     max_mz = -float('inf')
     min_mz = float('inf')
@@ -90,9 +90,9 @@ def prepare_data(file: h5py.File, name :str , output_dir: str,shape,sorted_keys:
     output = os.path.join(output_dir, name)
     np.save(output, X)
 
-    name = f"{name}_coords.npy"
-    output = os.path.join(output_dir, name)
-    np.save(output, coords)
+    # name = f"{name}_coords.npy"
+    # output = os.path.join(output_dir, name)
+    # np.save(output, coords)
 
 parser = argparse.ArgumentParser(description="Generate ion image plot.")
 parser.add_argument("--input", required=True, help="Path to the input HDF5 file.")
@@ -110,10 +110,10 @@ sorted_keys = sorted([int(key) for key in f.keys()])
 # print(sorted_keys)
 # print("\n")
 
-target_mzs = [271,390]
-tolerance = 100
-width = 400
-height = 400
+# target_mzs = [271,390]
+# tolerance = 100
+# width = 400
+# height = 400
 
 # for mz in target_mzs:
 #     plot_image(file=f,sorted_keys=sorted_keys,shape=(width,height),output_dir=args.output,mz=mz,name=args.name)
@@ -122,7 +122,7 @@ height = 400
 
 
 
-prepare_data(shape=(width,height),sorted_keys=sorted_keys,output_dir=args.output,name=args.name,file=f)
+prepare_data(sorted_keys=sorted_keys,output_dir=args.output,name=args.name,file=f)
 
 print("Done creating data")
 
