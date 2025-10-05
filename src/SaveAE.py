@@ -89,7 +89,7 @@ def weighted_mse_loss(y_true, y_pred):
     """
     # Create a weight tensor: 10.0 for non-zero values, 1.0 for zeros.
     # The factor (10 here) is a hyperparameter you can tune.
-    weight = 1.0 + 9.0 * tf.cast(y_true > 0, tf.float32)
+    weight = 1.0 + 19.0 * tf.cast(y_true > 0, tf.float32)
     
     # Calculate the squared error
     squared_error = tf.square(y_true - y_pred)
