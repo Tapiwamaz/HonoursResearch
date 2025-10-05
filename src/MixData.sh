@@ -13,7 +13,7 @@ INPUT_TWO="../Data/Pretrain/cancer_150_1500_h5_x.npy"
 OUTPUT_DIR="../Data/Mixed"
 MIXED_NAME="hiv-cancer-150-1500-h5-bigb"
 LABELED=0
-PARTS=2
+PARTS=1
 
 mkdir -p "$OUTPUT_DIR"
 

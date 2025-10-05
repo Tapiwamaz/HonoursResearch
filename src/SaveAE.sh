@@ -8,10 +8,10 @@
 #SBATCH --partition=bigbatch
 #SBATCH --time=3-00:00:00
 
-INPUT_FILE="../Data/Mixed/hiv-cancer-150-1500-h5-bigb_data.npy_part1.npy"
+INPUT_FILE="../Data/Mixed/hiv-cancer-150-1500-h5_data.npy_part1.npy"
 OUTPUT_DIR="../Models/Decoder/"
 PARTITIONS=1
-NAME="encoder_h5"
+NAME="encoder_h5_wmse20"
 
 mkdir -p "$OUTPUT_DIR"
 

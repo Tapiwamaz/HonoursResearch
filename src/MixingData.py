@@ -64,7 +64,7 @@ def mix_npy_files_without(file1_path, file2_path, parts, output_data_path=None):
     
     if output_data_path:
         for i, part in enumerate(divided_data):
-            part_path = f"{output_data_path}_part{i+1}.npy"
+            part_path = f"{output_data_path}_part{i}.npy"
             np.save(part_path, part)
             print(f"Part {i+1} saved to {part_path}")
     
