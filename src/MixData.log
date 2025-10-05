@@ -1,5 +1,8 @@
-Mixing data started at: Thu Sep 18 10:36:40 AM SAST 2025
-Data saved to ../Data/Pretrain/sal-lps-150-1500(labeled)_fulltest_data.npy
-Labels saved to ../Data/Pretrain/sal-lps-150-1500(labeled)_fulltest_labels.npy
-Mixing data finished at: Thu Sep 18 10:37:00 AM SAST 2025
+Mixing data started at: Sun Oct  5 01:23:16 PM SAST 2025
+Length of first is 56679
+Length of second is 160000
+Length of combined is 216679
+Part 1 saved to ../Data/Mixed/hiv-cancer-150-1500-h5_data.npy_part1.npy
+Part 2 saved to ../Data/Mixed/hiv-cancer-150-1500-h5_data.npy_part2.npy
+Mixing data finished at: Sun Oct  5 01:52:09 PM SAST 2025
 Done!

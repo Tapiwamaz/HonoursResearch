@@ -50,9 +50,9 @@ def mix_npy_files_without(file1_path, file2_path, parts, output_data_path=None):
     Returns:
         list of numpy.ndarray: List of divided and shuffled data parts
     """
-    data1 = np.load(file1_path)
+    data1 = np.load(file1_path,mmap_mode="r")
     print(f'Length of first is {len(data1)}')
-    data2 = np.load(file2_path)
+    data2 = np.load(file2_path,mmap_mode="r")
     print(f'Length of second is {len(data2)}')
 
     combined_data = np.concatenate([data1, data2], axis=0)

@@ -5,14 +5,14 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=16      # Using more cores for biggpu            
-#SBATCH --partition=biggpu
+#SBATCH --partition=bigbatch
 #SBATCH --time=3-00:00:00      # 3 days max runtime 
 
-INPUT_FILE="../Data/Pretrain/hiv_cancer_150-1500.npy"
+INPUT_FILE="../Data/Mixed/hiv-cancer-150-1500-h5-bigb_data.npy_part2.npy"
 OUTPUT_DIR="../Models/Decoder/"
-PARTITIONS=10
-ENCODER_PATH="../Models/Decoder/encoder.keras"
-DECODER_PATH="../Models/Decoder/decoder.keras"
+PARTITIONS=1
+ENCODER_PATH="../Models/Decoder/encoder_h5.keras"
+DECODER_PATH="../Models/Decoder/decoder_h5.keras"
 
 
 mkdir -p "$OUTPUT_DIR"

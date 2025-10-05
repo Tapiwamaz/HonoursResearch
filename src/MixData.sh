@@ -8,10 +8,10 @@
 #SBATCH --partition=bigbatch
 #SBATCH --time=1-00:00:00
 
-INPUT_ONE="../Data/LPS/sal-plasma-150-1500_x.npy"
-INPUT_TWO="../Data/LPS/lps_plasma-150-1500_x.npy"
+INPUT_ONE="../Data/Pretrain/hiv_150_1500_h5_x.npy"
+INPUT_TWO="../Data/Pretrain/cancer_150_1500_h5_x.npy"
 OUTPUT_DIR="../Data/Mixed"
-MIXED_NAME="sal-lps-150-1500(labeled)_fulltest"
+MIXED_NAME="hiv-cancer-150-1500-h5-bigb"
 LABELED=0
 PARTS=2
 

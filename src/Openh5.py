@@ -41,12 +41,12 @@ def plot_image( file: h5py.File ,sorted_keys: list[int],mz : float,name: str ,sh
 def prepare_data(file: h5py.File, name :str , output_dir: str,sorted_keys: list[str]) -> None:
     my_spectra = []
     # coords = []
-    # for idx, key in enumerate(sorted_keys):
-    #     mzs = file[str(key)]["x"][:]
-    #     intensities =file[str(key)]["y"][:]
-    #     my_spectra.append([mzs, intensities])
-    #     row,col = divmod(idx,shape[1])
-    #     coords.append((row,col))
+    for idx, key in enumerate(sorted_keys):
+        mzs = file[str(key)]["x"][:]
+        intensities =file[str(key)]["y"][:]
+        my_spectra.append([mzs, intensities])
+    # row,col = divmod(idx,shape[1])
+    # coords.append((row,col))
 
     max_mz = -float('inf')
     min_mz = float('inf')
