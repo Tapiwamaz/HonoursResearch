@@ -55,20 +55,31 @@ class SpectrumAutoencoder(Model):
         self.latent_dim = latent_dim
         self.n_peaks = n_peaks
         
+        kernel_initializer = tf.keras.initializers.RandomNormal(mean=0.0, stddev=0.001)
+        bias_initializer = tf.keras.initializers.Zeros()
+        
         self.encoder = tf.keras.Sequential([
-            layers.Dense(2000, activation='tanh'),
-            layers.Dropout(0.3),
-            layers.Dense(1000, activation='tanh'),
-            layers.Dropout(0.3),
-            layers.Dense(latent_dim, activation='tanh'),
+            layers.Dense(2000, activation='tanh', 
+                        kernel_initializer=kernel_initializer,
+                        bias_initializer=bias_initializer),
+            layers.Dense(1000, activation='tanh',
+                        kernel_initializer=kernel_initializer,
+                        bias_initializer=bias_initializer),
+            layers.Dense(latent_dim, activation='tanh',
+                        kernel_initializer=kernel_initializer,
+                        bias_initializer=bias_initializer),
         ])
 
         self.decoder = tf.keras.Sequential([
-            layers.Dense(1000, activation='tanh'),
-            layers.Dropout(0.3),
-            layers.Dense(2000, activation='tanh'),
-            layers.Dropout(0.3),
-            layers.Dense(n_peaks, activation='relu'),  
+            layers.Dense(1000, activation='tanh',
+                        kernel_initializer=kernel_initializer,
+                        bias_initializer=bias_initializer),
+            layers.Dense(2000, activation='tanh',
+                        kernel_initializer=kernel_initializer,
+                        bias_initializer=bias_initializer),
+            layers.Dense(n_peaks, activation='relu',
+                        kernel_initializer=kernel_initializer,
+                        bias_initializer=bias_initializer),
         ])
 
     def call(self, intensities):
@@ -78,9 +89,9 @@ class SpectrumAutoencoder(Model):
 
 
 lr_schedule = tf.keras.optimizers.schedules.ExponentialDecay(
-    initial_learning_rate=0.0015,
-    decay_steps=1000,
-    decay_rate=0.96,
+    initial_learning_rate=0.002,
+    decay_steps=900,
+    decay_rate=0.97,
     staircase=True
 )
 def weighted_mse_loss(y_true, y_pred):
