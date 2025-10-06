@@ -11,7 +11,7 @@
 INPUT_FILE="../Data/Mixed/hiv-cancer-150-1500-h5_data.npy_part1.npy"
 OUTPUT_DIR="../Models/Decoder/"
 PARTITIONS=1
-NAME="sencoder_h5_wmse20"
+NAME="encoder_h5_wmse20"
 
 mkdir -p "$OUTPUT_DIR"
 
