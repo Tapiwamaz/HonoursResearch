@@ -5,13 +5,13 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=16
-#SBATCH --partition=bigbatch
+#SBATCH --partition=biggpu
 #SBATCH --time=3-00:00:00
 
 INPUT_FILE="../Data/Mixed/hiv-cancer-150-1500-h5_data.npy_part1.npy"
 OUTPUT_DIR="../Models/Decoder/"
 PARTITIONS=1
-NAME="encoder_h5_wmse20"
+NAME="sencoder_h5_wmse20"
 
 mkdir -p "$OUTPUT_DIR"
 
