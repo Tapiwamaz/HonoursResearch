@@ -6,6 +6,7 @@ from sklearn.decomposition import NMF
 from sklearn.metrics import mean_squared_error,root_mean_squared_error,mean_absolute_error
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import train_test_split
+from sklearn.externals import joblib
 
 
 parser = argparse.ArgumentParser(description="Generate ion image plot.")
@@ -22,16 +23,24 @@ X = np.load(args.input)
 X_temp, X_test = train_test_split(X, test_size=0.2, random_state=42)
 X_train, X_val = train_test_split(X_temp, test_size=0.125, random_state=42)
 
+print(f"Shape of X_train: {X_train.shape}")
+print(f"Shape of X_val: {X_val.shape}")
+print(f"Shape of X_test: {X_test.shape}")
 
 
 
-n_components = 500  # Choose number of components
-
-nmf = NMF(n_components=n_components, random_state=42, max_iter=50)
-W = nmf.fit_transform(X) 
+n_components = 200  
 print(f"Number of components: {n_components}")
-W_train = nmf.fit_transform(X_train)  
-H = nmf.components_  
+nmf = NMF(n_components=n_components, random_state=42, max_iter=50)
+W = nmf.fit_transform(X)
+
+W_train = nmf.fit_transform(X_train)
+H = nmf.components_
+
+# Save the NMF model
+model_path = os.path.join(args.output, f"{args.name}_nmf_model.pkl")
+joblib.dump(nmf, model_path)
+print(f"NMF model saved to {model_path}")
 
 # Reconstruct training set
 X_train_reconstructed = np.dot(W_train, H)

@@ -5,13 +5,14 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=16      # Using more cores for biggpu            
-#SBATCH --partition=bigbatch 
+#SBATCH --partition=biggpu 
 #SBATCH --time=3-00:00:00      # 3 days max runtime 
 
 # Define input files and output directory
-INPUT_FILES=("../Data/LPS/lps_st_x_x.npy" "../Data/LPS/lps_lt_x_x.npy" "../Data/LPS/sal_st_x_x.npy" "../Data/LPS/sal_lt_plasma_x_x.npy")
-OUTPUT_DIR="../Results/NMF/LPS"
-MZS_FILE="../Data/LPS/sal_st_x_mzs.npy"  # Add mzs file path
+INPUT_FILES=("../Data/Cancer/cancer-150-1500-h5-data.npy")
+OUTPUT_DIR="../Models/NMF"
+MZS_FILE="../Data/Cancer/cancer-150-1500-mzs.npy" 
+JOB_NAME="cancer-h5-200" 
 
 # Create output directory if it doesn't exist
 mkdir -p "$OUTPUT_DIR"
@@ -19,7 +20,6 @@ mkdir -p "$OUTPUT_DIR"
 # Iterate over input files
 for INPUT_FILE in "${INPUT_FILES[@]}"; do
     # Extract job name from input file
-    JOB_NAME=$(basename "$INPUT_FILE" .npy)
 
     # Check if input file exists
     if [ ! -f "$INPUT_FILE" ]; then

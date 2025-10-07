@@ -9,10 +9,13 @@
 #SBATCH --time=1-00:00:00      # 1 day max runtime 
 
 
-INPUT_FILES=("../Data/LPS/lps_st_x_x.npy" "../Data/LPS/lps_lt_x_x.npy" "../Data/LPS/sal_lt_plasma_x_x.npy" "../Data/LPS/sal_st_x_x.npy")
-OUTPUT_DIR="../Results/PCA/LPS/"
+INPUT_FILES=("../Data/Cancer/cancer-150-1500-h5-data.npy")
+OUTPUT_DIR="../Models/PCA"
+MZS_FILE="../Data/Cancer/cancer-150-1500-mzs.npy" 
+JOB_NAME="cancer-h5-200" 
 
-echo "Scaled Data"
+
+
 # Create output directory if it doesn't exist
 mkdir -p "$OUTPUT_DIR"
 
@@ -33,7 +36,7 @@ for INPUT_FILE in "${INPUT_FILES[@]}"; do
     echo "Output directory: $OUTPUT_DIR"
     echo "SLURM Job ID: $SLURM_JOB_ID"
 
-    python PCA.py --input "$INPUT_FILE" --output "$OUTPUT_DIR" --name "$JOB_NAME"
+    python PCA.py --input "$INPUT_FILE" --output "$OUTPUT_DIR" --name "$JOB_NAME" --mzs "$MZS_FILE"
 
     echo "PCA analysis for $JOB_NAME completed at $(date)"
     echo "Results saved to $OUTPUT_DIR"
