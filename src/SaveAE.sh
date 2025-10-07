@@ -4,14 +4,14 @@
 #SBATCH --error=SaveAE_%j_err.log
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
-#SBATCH --cpus-per-task=16
+#SBATCH --cpus-per-task=14
 #SBATCH --partition=biggpu
 #SBATCH --time=3-00:00:00
 
 INPUT_FILE="../Data/Mixed/hiv-cancer-150-1500-h5_data.npy_part1.npy"
 OUTPUT_DIR="../Models/Decoder/"
-PARTITIONS=2
-NAME="encoder_h5_wmse_200_init"
+PARTITIONS=3
+NAME="encoder_h5_wmse_200_no_drop"
 
 mkdir -p "$OUTPUT_DIR"
 

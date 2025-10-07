@@ -41,6 +41,7 @@ end = math.ceil(len(X)*(part_num/partitions))
 print(f'Strat to end indices: ({start},{end})')
 X_subset = X[math.floor(len(X)*((part_num-1)/partitions)):math.ceil(len(X)*(part_num/partitions))]
 # print(f"Dataset partitioned into {partitions} number of chunks\nPartition: {part_num}")
+del X
 
 # Load the existing encoder
 encoder = load_model(args.encoder)
@@ -53,8 +54,8 @@ print(f"Input dimension: {input_dim}")
 
 lr_schedule = tf.keras.optimizers.schedules.ExponentialDecay(
     initial_learning_rate=0.002,
-    decay_steps=500,
-    decay_rate=0.96,
+    decay_steps=600,
+    decay_rate=0.97,
     staircase=True
 )
 
@@ -77,7 +78,7 @@ wandb.init(
     project="NewPre",
     # track hyperparameters and run metadata with wandb.config
     config={
-        "latent_dim": 250,
+        "latent_dim": 200,
         "encoder_layer_1": 2000,
         "encoder_layer_2": 1000,
         "decoder_layer_1": 1000,
@@ -114,8 +115,11 @@ autoencoder.compile(
     metrics=['mae', 'mse']
 )
 
+
 X_temp, X_test = train_test_split(X_subset, test_size=0.2, random_state=42)
 X_train, X_val = train_test_split(X_temp, test_size=0.125, random_state=42)
+del X_subset
+del X_temp
 
 print(f"Training set shape: {X_train.shape}")
 print(f"Validation set shape: {X_val.shape}")
@@ -137,6 +141,7 @@ history = autoencoder.fit(
     verbose=0
 )
 print("Training completed!")
+autoencoder.summary()
 
 # Evaluate and print metrics
 test_loss, test_mae, test_mse = autoencoder.evaluate(X_test, X_test, verbose=0)

@@ -1,0 +1,59 @@
+2025-10-06 20:29:46.440961: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-10-06 20:29:49.246279: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/attr_value.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
+  warnings.warn(
+/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/tensor.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
+  warnings.warn(
+/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/resource_handle.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
+  warnings.warn(
+/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/tensor_shape.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
+  warnings.warn(
+/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/types.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
+  warnings.warn(
+/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/full_type.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
+  warnings.warn(
+/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/function.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
+  warnings.warn(
+/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/node_def.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
+  warnings.warn(
+/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/op_def.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
+  warnings.warn(
+/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/graph.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
+  warnings.warn(
+/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/graph_debug_info.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
+  warnings.warn(
+/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/versions.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
+  warnings.warn(
+/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/protobuf/config.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
+  warnings.warn(
+/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at xla/tsl/protobuf/coordination_config.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
+  warnings.warn(
+/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/cost_graph.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
+  warnings.warn(
+/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/step_stats.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
+  warnings.warn(
+/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/allocation_description.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
+  warnings.warn(
+/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/tensor_description.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
+  warnings.warn(
+/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/protobuf/cluster.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
+  warnings.warn(
+/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/protobuf/debug.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
+  warnings.warn(
+2025-10-06 20:30:10.817896: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-10-06 20:30:42.761377: E external/local_xla/xla/stream_executor/cuda/cuda_platform.cc:51] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: CUDA_ERROR_UNKNOWN: unknown error
+2025-10-06 20:30:42.761457: I external/local_xla/xla/stream_executor/cuda/cuda_diagnostics.cc:171] verbose logging is disabled. Rerun with verbose logging (usually --v=1 or --vmodule=cuda_diagnostics=1) to get more diagnostic output from this module
+2025-10-06 20:30:42.761470: I external/local_xla/xla/stream_executor/cuda/cuda_diagnostics.cc:176] retrieving CUDA diagnostic information for host: mscluster65.ms.wits.ac.za
+2025-10-06 20:30:42.761478: I external/local_xla/xla/stream_executor/cuda/cuda_diagnostics.cc:183] hostname: mscluster65.ms.wits.ac.za
+2025-10-06 20:30:42.761696: I external/local_xla/xla/stream_executor/cuda/cuda_diagnostics.cc:190] libcuda reported version is: 565.57.1
+2025-10-06 20:30:42.761729: I external/local_xla/xla/stream_executor/cuda/cuda_diagnostics.cc:194] kernel reported version is: 565.57.1
+2025-10-06 20:30:42.761737: I external/local_xla/xla/stream_executor/cuda/cuda_diagnostics.cc:284] kernel version seems to match DSO: 565.57.1
+wandb: Currently logged in as: trapezium (trapezium-wits-university) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: creating run
+wandb: Tracking run with wandb version 0.21.4
+wandb: Run data is saved locally in /home-mscluster/tmazarura/HonoursResearch/src/wandb/run-20251006_203043-rrh5s52w
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run dandy-waterfall-13
+wandb: ⭐️ View project at https://wandb.ai/trapezium-wits-university/Autoencoder%20Training
+wandb: 🚀 View run at https://wandb.ai/trapezium-wits-university/Autoencoder%20Training/runs/rrh5s52w

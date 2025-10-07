@@ -43,6 +43,7 @@ start = 0
 end = math.ceil(len(X)*(part_num/partitions))
 print(f'Start to end indices: ({start},{end})')
 X_subset = X[math.floor(len(X)*((part_num-1)/partitions)):math.ceil(len(X)*(part_num/partitions))]
+del X
 # intensities of each spectrum
 print(f"Dataset partitioned into {partitions} number of chunks\nPartition: {part_num}")
 
@@ -55,31 +56,19 @@ class SpectrumAutoencoder(Model):
         self.latent_dim = latent_dim
         self.n_peaks = n_peaks
         
-        kernel_initializer = tf.keras.initializers.RandomNormal(mean=0.0, stddev=0.001)
-        bias_initializer = tf.keras.initializers.Zeros()
+        #kernel_initializer = tf.keras.initializers.RandomNormal(mean=0.0, stddev=0.001)
+        #bias_initializer = tf.keras.initializers.Zeros()
         
         self.encoder = tf.keras.Sequential([
-            layers.Dense(2000, activation='tanh', 
-                        kernel_initializer=kernel_initializer,
-                        bias_initializer=bias_initializer),
-            layers.Dense(1000, activation='tanh',
-                        kernel_initializer=kernel_initializer,
-                        bias_initializer=bias_initializer),
-            layers.Dense(latent_dim, activation='tanh',
-                        kernel_initializer=kernel_initializer,
-                        bias_initializer=bias_initializer),
+            layers.Dense(2000, activation='tanh'),
+            layers.Dense(1000, activation='tanh'),
+            layers.Dense(latent_dim, activation='tanh'),
         ])
 
         self.decoder = tf.keras.Sequential([
-            layers.Dense(1000, activation='tanh',
-                        kernel_initializer=kernel_initializer,
-                        bias_initializer=bias_initializer),
-            layers.Dense(2000, activation='tanh',
-                        kernel_initializer=kernel_initializer,
-                        bias_initializer=bias_initializer),
-            layers.Dense(n_peaks, activation='relu',
-                        kernel_initializer=kernel_initializer,
-                        bias_initializer=bias_initializer),
+            layers.Dense(1000, activation='tanh'),
+            layers.Dense(2000, activation='tanh'),
+            layers.Dense(n_peaks, activation='relu'),
         ])
 
     def call(self, intensities):
@@ -89,10 +78,10 @@ class SpectrumAutoencoder(Model):
 
 
 lr_schedule = tf.keras.optimizers.schedules.ExponentialDecay(
-    initial_learning_rate=0.002,
-    decay_steps=900,
-    decay_rate=0.97,
-    staircase=True
+    initial_learning_rate=0.0015,
+    decay_steps=100,
+    decay_rate=0.95,
+    staircase=False
 )
 def weighted_mse_loss(y_true, y_pred):
     """
@@ -135,6 +124,7 @@ config = wandb.config
 # Split data into train, validation, and test sets (70% train, 10% val, 20% test)
 X_temp, X_test = train_test_split(X_subset, test_size=0.2, random_state=42)
 X_train, X_val = train_test_split(X_temp, test_size=0.125, random_state=42)  # 0.125 * 0.8 = 0.1
+del X_subset
 
 print(f"Training set shape: {X_train.shape}")
 print(f"Validation set shape: {X_val.shape}")
