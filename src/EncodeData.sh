@@ -8,16 +8,16 @@
 #SBATCH --partition=biggpu
 #SBATCH --time=3-00:00:00      # 3 days max runtime 
 
-INPUT_FILE="../Data/Pretrain/hiv_cancer_150-1500.npy"
+INPUT_FILE="../Data/Cancer/cancer-150-1500-h5-data.npy  "
 OUTPUT_DIR="../Data/Encoded"
-ENCODER_PATH="../Models/AE/encoder_250_dropout_wmse.keras"
+ENCODER_PATH="../Models/Decoder/encoder_h5_wmse_200.keras"
 
 mkdir -p "$OUTPUT_DIR"
 
 START_TIME=$(date)
 echo "Started at: $START_TIME"
 
-JOB_NAME="hiv-cancer-encoded"
+JOB_NAME="cancer-h5-200"
 
 if [ ! -f "$INPUT_FILE" ]; then
     echo "Error: Input file not found at $INPUT_FILE"

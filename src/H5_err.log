@@ -1,2 +1,0 @@
-/home-mscluster/tmazarura/HonoursResearch/src/Openh5.py:70: RuntimeWarning: invalid value encountered in divide
-  X = binned / tic
