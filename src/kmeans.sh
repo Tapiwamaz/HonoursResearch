@@ -8,12 +8,12 @@
 #SBATCH --partition=bigbatch
 #SBATCH --time=3-00:00:00      # 3 days max runtime 
 
-INPUT_FILE="../Data/HIV/hiv-150-1500_x.npy"
-OUTPUT_DIR="../Models/Decoder/kmeans"
-COORDS="../Data/HIV/hiv-150-1500_coords.npy"
-ENCODER="../Models/Decoder/encoder_classifier.keras"
-JOB_NAME="hiv_classified"
-K_CLUSTERS=3
+INPUT_FILE="../Data/Encoded/cancer-h5-200.npy"
+OUTPUT_DIR="../kmeans"
+COORDS="../Data/Cancer/cancer-150-1500-h5-coords.npy"
+# ENCODER="../Models/Decoder/encoder_classifier.keras"
+JOB_NAME="cancer-h5"
+K_CLUSTERS=2
 
 
 mkdir -p "$OUTPUT_DIR"
@@ -28,10 +28,6 @@ if [ ! -f "$INPUT_FILE" ]; then
     exit 1
 fi
 
-if [ ! -f "$ENCODER" ]; then
-    echo "Error: Encoder file not found at $ENCODER"
-    exit 1
-fi
 
 if [ ! -f "$COORDS" ]; then
     echo "Error: Coordinates file not found at $COORDS"
@@ -41,7 +37,6 @@ fi
 python Kmeans.py --input "$INPUT_FILE" \
         --output "$OUTPUT_DIR" \
         --coords "$COORDS" \
-        --encoder "$ENCODER" \
         --name "$JOB_NAME" \
         --k "$K_CLUSTERS"
 

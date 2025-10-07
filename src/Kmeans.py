@@ -66,30 +66,30 @@ parser = argparse.ArgumentParser(description="Kmeans")
 parser.add_argument("--input", required=True, help="X to the input preprocess npy.")
 parser.add_argument("--output", required=True, help="Directory to save plot.")
 parser.add_argument("--coords", required=True, help="Coordinates")
-parser.add_argument("--encoder", required=True, help="Path to the existing encoder .keras file")
+# parser.add_argument("--encoder", required=True, help="Path to the existing encoder .keras file")
 parser.add_argument("--name",required=True,help="Job name")
 parser.add_argument("--k",required=True,help="number of clusters")
 
 args = parser.parse_args()
 
-encoder = load_model(args.encoder)
-print(f"Loaded encoder")
+# encoder = load_model(args.encoder)
+# print(f"Loaded encoder")
 X = np.load(args.input,mmap_mode="r")
 print(f"Loaded data")
 
 
-latent_vectors = encoder.predict(X,verbose=0)
-print(f"Shape: {latent_vectors.shape}")
+#latent_vectors = encoder.predict(X,verbose=0)
+print(f"Shape: {X.shape}")
 
-del X
-del encoder
+# del X
+# del encoder
 
-# inertias = get_optimal_k(data=latent_vectors,max_k=10)
+inertias = get_optimal_k(data=X,max_k=10)
 # print(f"Inertias: {inertias}")
 
 optimal_k = int(args.k)
 kmeans = KMeans(n_clusters=optimal_k, n_init=10, random_state=42)
-cluster_labels = kmeans.fit_predict(latent_vectors)
+cluster_labels = kmeans.fit_predict(X)
 
 coords = np.load(args.coords)  
 print(f"Coordinates shape: {coords.shape}")
