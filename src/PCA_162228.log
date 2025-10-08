@@ -1,7 +1,0 @@
-Starting PCA analysis for cancer-h5-200 at Wed Oct  8 05:25:09 PM SAST 2025
-Using input file: ../Data/Encoded/cancer-h5-200.npy
-Output directory: ../pca
-SLURM Job ID: 162228
-PCA analysis for cancer-h5-200 completed at Wed Oct  8 05:25:43 PM SAST 2025
-Results saved to ../pca
-Tapedza!!! Mwari Ngaakudzwe!

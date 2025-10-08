@@ -5,12 +5,12 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=16      # Using more cores for biggpu            
-#SBATCH --partition=stampede
+#SBATCH --partition=biggpu
 #SBATCH --time=1-00:00:00      # 1 day max runtime 
 
 
-INPUT_FILES=("../Data/Encoded/cancer-h5-200.npy")
-OUTPUT_DIR="../pca"
+INPUT_FILES=("../Data/Pretrain/hiv_cancer_150-1500.npy ")
+OUTPUT_DIR="../Models/pca"
 MZS_FILE="../Data/Cancer/cancer-150-1500-mzs.npy" 
 JOB_NAME="cancer-h5-200" 
 

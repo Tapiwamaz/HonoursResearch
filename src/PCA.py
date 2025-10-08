@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import mean_squared_error,root_mean_squared_error,mean_absolute_error
+import joblib  # Import joblib for saving/loading models
 from sklearn.model_selection import train_test_split
 
 
@@ -21,8 +22,6 @@ args = parser.parse_args()
 X = np.load(args.input)
 
 
-
-from sklearn.externals import joblib  # Import joblib for saving/loading models
 
 scaler = StandardScaler()
 X_scaled = scaler.fit_transform(X)

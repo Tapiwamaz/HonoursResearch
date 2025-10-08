@@ -6,7 +6,7 @@ from sklearn.decomposition import NMF
 from sklearn.metrics import mean_squared_error,root_mean_squared_error,mean_absolute_error
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import train_test_split
-from sklearn.externals import joblib
+import joblib
 
 
 parser = argparse.ArgumentParser(description="Generate ion image plot.")
