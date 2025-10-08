@@ -8,12 +8,12 @@
 #SBATCH --partition=biggpu
 #SBATCH --time=3-00:00:00      # 3 days max runtime 
 
-INPUT_FILE="../Data/HIV/hiv-150-1500_x.npy"
-OUTPUT_DIR="../Results/tsne"
-COORDS="../Data/HIV/hiv-150-1500_coords.npy"
-ENCODER="../Models/AE/encoder_250_dropout_wmse.keras"
-NAME="hiv_wmse_centroided_100"
-CENTROIDS="../Results/kmeans/hiv_wmse_centroids_k3.npy"
+INPUT_FILE="../Data/Encoded/cancer-h5-200"
+OUTPUT_DIR="../tsne"
+# COORDS="../Data/HIV/hiv-150-1500_coords.npy"
+# ENCODER="../Models/AE/encoder_250_dropout_wmse.keras"
+NAME="cancer-h5"
+CENTROIDS="../kmeans/cancer-h5_centroids_k2.npy"
 
 
 mkdir -p "$OUTPUT_DIR"
@@ -28,9 +28,13 @@ if [ ! -f "$INPUT_FILE" ]; then
     exit 1
 fi
 
+# python TSNE.py --input "$INPUT_FILE" \
+#         --output "$OUTPUT_DIR" \
+#         --encoder "$ENCODER" \
+# 		--name "$NAME"\
+# 		--centroids "$CENTROIDS"
 python TSNE.py --input "$INPUT_FILE" \
         --output "$OUTPUT_DIR" \
-        --encoder "$ENCODER" \
 		--name "$NAME"\
 		--centroids "$CENTROIDS"
 

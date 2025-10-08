@@ -11,14 +11,14 @@ parser.add_argument("--input", required=True, help="X to the input preprocess np
 parser.add_argument("--output", required=True, help="Directory to save plot.")
 # parser.add_argument("--coords", required=True, help="Coordinates")
 parser.add_argument("--name", required=True, help="Name")
-parser.add_argument("--encoder", required=True, help="Path to the existing encoder .keras file")
+# parser.add_argument("--encoder", required=True, help="Path to the existing encoder .keras file")
 parser.add_argument("--centroids", required=True, help="Path to the K-means centroids .npy file")
 
 args = parser.parse_args()
 
-print(f"Loading encoder from {args.encoder}")
-encoder = load_model(args.encoder)
-print("Encoder loaded.")
+# print(f"Loading encoder from {args.encoder}")
+# encoder = load_model(args.encoder)
+# print("Encoder loaded.")
 
 print(f"Loading input data from {args.input}")
 X = np.load(args.input, mmap_mode="r")
@@ -34,19 +34,19 @@ print(f"Centroids loaded. Shape: {centroids.shape}")
 
 from sklearn.preprocessing import StandardScaler
 
-print("Encoding input data...")
-latent_vectors = encoder.predict(X, verbose=1)
-print(f"Latent vectors shape: {latent_vectors.shape}")
-del encoder
+# print("Encoding input data...")
+# latent_vectors = encoder.predict(X, verbose=1)
+# print(f"Latent vectors shape: {latent_vectors.shape}")
+# del encoder
 
 print("Scaling latent vectors...")
 scaler = StandardScaler()
-latent_vectors_scaled = scaler.fit_transform(latent_vectors)
+latent_vectors_scaled = scaler.fit_transform(X)
 print("Latent vectors scaled.")
 
 # Assign cluster labels based on centroids
 print("Assigning cluster labels based on centroids...")
-distances = euclidean_distances(latent_vectors, centroids)
+distances = euclidean_distances(X, centroids)
 cluster_labels = np.argmin(distances, axis=1)
 print(f"Cluster assignment completed. Found {len(np.unique(cluster_labels))} clusters.")
 
