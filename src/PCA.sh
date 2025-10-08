@@ -5,12 +5,12 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=16      # Using more cores for biggpu            
-#SBATCH --partition=bigbatch
+#SBATCH --partition=stampede
 #SBATCH --time=1-00:00:00      # 1 day max runtime 
 
 
-INPUT_FILES=("../Data/Cancer/cancer-150-1500-h5-data.npy")
-OUTPUT_DIR="../Models/PCA"
+INPUT_FILES=("../Data/Encoded/cancer-h5-200.npy")
+OUTPUT_DIR="../pca"
 MZS_FILE="../Data/Cancer/cancer-150-1500-mzs.npy" 
 JOB_NAME="cancer-h5-200" 
 
@@ -22,7 +22,6 @@ mkdir -p "$OUTPUT_DIR"
 # Iterate over input files
 for INPUT_FILE in "${INPUT_FILES[@]}"; do
     # Extract job name from input file
-    JOB_NAME=$(basename "$INPUT_FILE" .npy)
 
     # Check if input file exists
     if [ ! -f "$INPUT_FILE" ]; then

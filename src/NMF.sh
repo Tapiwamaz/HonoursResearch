@@ -9,7 +9,7 @@
 #SBATCH --time=3-00:00:00      # 3 days max runtime 
 
 # Define input files and output directory
-INPUT_FILES=("../Data/Cancer/cancer-150-1500-h5-data.npy")
+INPUT_FILES=("../Data/Encoded/cancer-h5-200.npy")
 OUTPUT_DIR="../Models/NMF"
 MZS_FILE="../Data/Cancer/cancer-150-1500-mzs.npy" 
 JOB_NAME="cancer-h5-200" 

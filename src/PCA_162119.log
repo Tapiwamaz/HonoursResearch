@@ -1,0 +1,7 @@
+Starting PCA analysis for cancer-150-1500-h5-data at Wed Oct  8 01:30:05 AM SAST 2025
+Using input file: ../Data/Cancer/cancer-150-1500-h5-data.npy
+Output directory: ../Models/PCA
+SLURM Job ID: 162119
+PCA analysis for cancer-150-1500-h5-data completed at Wed Oct  8 01:38:58 AM SAST 2025
+Results saved to ../Models/PCA
+Tapedza!!! Mwari Ngaakudzwe!
