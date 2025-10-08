@@ -5,10 +5,10 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=16      # Using more cores for biggpu            
-#SBATCH --partition=biggpu
+#SBATCH --partition=bigbatch
 #SBATCH --time=3-00:00:00      # 3 days max runtime 
 
-INPUT_FILE="../Data/Cancer/cancer-150-1500-h5-data.npy"
+INPUT_FILE="../Data/HIV/hiv-150-1500-h5-data.npy"
 OUTPUT_DIR="../Data/Encoded"
 ENCODER_PATH="../Models/Decoder/encoder_h5_wmse_200.keras"
 
@@ -17,7 +17,7 @@ mkdir -p "$OUTPUT_DIR"
 START_TIME=$(date)
 echo "Started at: $START_TIME"
 
-JOB_NAME="cancer-h5-200"
+JOB_NAME="hiv-h5-200"
 
 if [ ! -f "$INPUT_FILE" ]; then
     echo "Error: Input file not found at $INPUT_FILE"
