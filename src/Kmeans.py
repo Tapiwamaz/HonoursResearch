@@ -74,8 +74,11 @@ args = parser.parse_args()
 
 # encoder = load_model(args.encoder)
 # print(f"Loaded encoder")
-X = np.load(args.input,mmap_mode="r")
+X = np.load(args.input)
 print(f"Loaded data")
+if np.isnan(X).any():
+    print("Dataset contains NaN values. Please preprocess the data.\n")
+    print(f"{X}\n")
 
 
 #latent_vectors = encoder.predict(X,verbose=0)
