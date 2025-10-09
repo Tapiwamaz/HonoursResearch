@@ -9,7 +9,7 @@
 #SBATCH --time=1-00:00:00      # 1 day max runtime 
 
 
-INPUT_FILES=("../Data/Pretrain/hiv_cancer_150-1500.npy ")
+INPUT_FILES=("../Data/Pretrain/hiv_cancer_150-1500.npy")
 OUTPUT_DIR="../Models/pca"
 MZS_FILE="../Data/Cancer/cancer-150-1500-mzs.npy" 
 JOB_NAME="cancer-h5-200" 

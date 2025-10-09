@@ -9,7 +9,7 @@
 #SBATCH --time=3-00:00:00
 
 INPUT_FILE="../Data/Mixed/hiv-cancer-150-1500-h5_data.npy_part1.npy"
-OUTPUT_DIR="../Models/CNNzz/"
+OUTPUT_DIR="../Models/CNN/"
 PARTITIONS=3
 NAME="cnn-mse"
 
