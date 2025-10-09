@@ -52,9 +52,9 @@ class SpectrumAutoencoder(Model):
 
     def call(self, inputs):
         encoded = self.encoder(inputs)
-        print(f"Encoded shape: {encoded.shape}")
+        # print(f"Encoded shape: {encoded.shape}")
         decoded = self.decoder(encoded)
-        print(f"Decoded shape: {decoded.shape}")
+        # print(f"Decoded shape: {decoded.shape}")
         return decoded
 
 parser = argparse.ArgumentParser(description="Saving the AE encoder.")
@@ -81,7 +81,7 @@ print(f"Dataset partitioned into {partitions} number of chunks\nPartition: {part
 
 lr_schedule = tf.keras.optimizers.schedules.ExponentialDecay(
     initial_learning_rate=0.001,
-    decay_steps=500,
+    decay_steps=900,
     decay_rate=0.96,
     staircase=True
 )

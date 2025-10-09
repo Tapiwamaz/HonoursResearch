@@ -10,7 +10,7 @@
 
 INPUT_FILE="../Data/Pretrain/hiv-cancer-h5-data1.npy"
 OUTPUT_DIR="../Models/CNN/"
-PARTITIONS=4
+PARTITIONS=6
 NAME="cnn-mse"
 
 mkdir -p "$OUTPUT_DIR"
