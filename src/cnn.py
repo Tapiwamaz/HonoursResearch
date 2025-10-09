@@ -46,12 +46,15 @@ class SpectrumAutoencoder(Model):
             layers.Conv1DTranspose(64, kernel_size=3, activation='relu', padding='same'),
             layers.UpSampling1D(size=2),  # Reverse of MaxPooling1D
             layers.Conv1DTranspose(32, kernel_size=3, activation='relu', padding='same'),
-            layers.Conv1DTranspose(input_shape[1], kernel_size=3, activation='sigmoid', padding='same')  # Final layer
+            layers.Conv1DTranspose(input_shape[1], kernel_size=3, activation='sigmoid', padding='same'),  # Final layer
+            layers.ZeroPadding1D(padding=(0, input_shape[0] - 67496))
         ])
 
     def call(self, inputs):
         encoded = self.encoder(inputs)
+        print(f"Encoded shape: {encoded.shape}")
         decoded = self.decoder(encoded)
+        print(f"Decoded shape: {decoded.shape}")
         return decoded
 
 parser = argparse.ArgumentParser(description="Saving the AE encoder.")
