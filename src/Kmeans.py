@@ -74,7 +74,7 @@ args = parser.parse_args()
 
 # encoder = load_model(args.encoder)
 # print(f"Loaded encoder")
-X = np.load(args.input)[1:]
+X = np.load(args.input,mmap_mode='r')
 
 print(f"Loaded data")
 if np.isnan(X).any():

@@ -5,15 +5,16 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=16      # Using more cores for biggpu            
-#SBATCH --partition=bigbatch
+#SBATCH --partition=stampede
 #SBATCH --time=3-00:00:00      # 3 days max runtime 
 
-INPUT_FILE="../Data/Encoded/cancer-h5-200.npy"
+INPUT_FILE="../Data/Encoded/hiv-h5-200.npy"
+
 OUTPUT_DIR="../tsne"
 # COORDS="../Data/HIV/hiv-150-1500_coords.npy"
 # ENCODER="../Models/AE/encoder_250_dropout_wmse.keras"
-NAME="cancer-h5"
-CENTROIDS="../kmeans/cancer-h5_centroids_k2.npy"
+NAME="hiv-h5"
+CENTROIDS="../kmeans/hiv-h5_centroids_k3.npy"
 
 
 mkdir -p "$OUTPUT_DIR"
