@@ -30,31 +30,25 @@ class SpectrumAutoencoder(Model):
         # Encoder: CNN layers
         self.encoder = tf.keras.Sequential([
             layers.InputLayer(input_shape=input_shape),
-            layers.Conv1D(32, kernel_size=3, activation='tanh', padding='same'),
-            layers.MaxPooling1D(pool_size=2, padding='same'),
-            layers.Conv1D(64, kernel_size=3, activation='tanh', padding='same'),
+            layers.Conv1D(32, kernel_size=3, activation='sigmoid', padding='same'),
             layers.MaxPooling1D(pool_size=2, padding='same'),
             layers.Flatten(),
-            layers.Dense(latent_dim, activation='tanh')  # Latent representation
+            layers.Dense(latent_dim, activation='sigmoid')  # Latent representation
         ])
 
         # Decoder: Reverse of the encoder
         self.decoder = tf.keras.Sequential([
-            layers.Dense((input_shape[0] // 4) * 64, activation='tanh'),  # Reverse of Flatten
-            layers.Reshape((input_shape[0] // 4, 64)),  # Reshape to match the last Conv1D layer
+            layers.Dense((input_shape[0] // 2) * 32, activation='sigmoid'),  # Reverse of Flatten
+            layers.Reshape((input_shape[0] // 2, 32)),  # Reshape to match the last Conv1D layer
             layers.UpSampling1D(size=2),  # Reverse of MaxPooling1D
-            layers.Conv1DTranspose(64, kernel_size=3, activation='tanh', padding='same'),
-            layers.UpSampling1D(size=2),  # Reverse of MaxPooling1D
-            layers.Conv1DTranspose(32, kernel_size=3, activation='tanh', padding='same'),
-            layers.Conv1DTranspose(input_shape[1], kernel_size=3, activation='relu', padding='same'),  # Final layer
-            layers.ZeroPadding1D(padding=(0, input_shape[0] - 67496))
+            layers.Conv1DTranspose(input_shape[1], kernel_size=3, activation='sigmoid', padding='same')  # Final layer
         ])
 
     def call(self, inputs):
         encoded = self.encoder(inputs)
         # print(f"Encoded shape: {encoded.shape}")
         decoded = self.decoder(encoded)
-        # print(f"Decoded shape: {decoded.shape}")
+        print(f"Decoded shape: {decoded.shape}")
         return decoded
 
 parser = argparse.ArgumentParser(description="Saving the AE encoder.")
@@ -80,7 +74,7 @@ print(f"Dataset partitioned into {partitions} number of chunks\nPartition: {part
 
 
 lr_schedule = tf.keras.optimizers.schedules.ExponentialDecay(
-    initial_learning_rate=0.001,
+    initial_learning_rate=0.0015,
     decay_steps=900,
     decay_rate=0.96,
     staircase=True
@@ -154,7 +148,11 @@ history = autoencoder.fit(
 
 print("Training completed!\n")
 
-autoencoder.summary()
+autoencoder.encoder.summary()
+print("\n")
+
+autoencoder.decoder.summary()
+
 print("\n")
 
 test_loss, test_mae,test_mse = autoencoder.evaluate(X_test, X_test, verbose=0)
