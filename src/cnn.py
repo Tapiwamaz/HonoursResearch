@@ -30,23 +30,23 @@ class SpectrumAutoencoder(Model):
         # Encoder: CNN layers
         self.encoder = tf.keras.Sequential([
             layers.InputLayer(input_shape=input_shape),
-            layers.Conv1D(32, kernel_size=3, activation='relu', padding='same'),
+            layers.Conv1D(32, kernel_size=3, activation='tanh', padding='same'),
             layers.MaxPooling1D(pool_size=2, padding='same'),
-            layers.Conv1D(64, kernel_size=3, activation='relu', padding='same'),
+            layers.Conv1D(64, kernel_size=3, activation='tanh', padding='same'),
             layers.MaxPooling1D(pool_size=2, padding='same'),
             layers.Flatten(),
-            layers.Dense(latent_dim, activation='relu')  # Latent representation
+            layers.Dense(latent_dim, activation='tanh')  # Latent representation
         ])
 
         # Decoder: Reverse of the encoder
         self.decoder = tf.keras.Sequential([
-            layers.Dense((input_shape[0] // 4) * 64, activation='relu'),  # Reverse of Flatten
+            layers.Dense((input_shape[0] // 4) * 64, activation='tanh'),  # Reverse of Flatten
             layers.Reshape((input_shape[0] // 4, 64)),  # Reshape to match the last Conv1D layer
             layers.UpSampling1D(size=2),  # Reverse of MaxPooling1D
-            layers.Conv1DTranspose(64, kernel_size=3, activation='relu', padding='same'),
+            layers.Conv1DTranspose(64, kernel_size=3, activation='tanh', padding='same'),
             layers.UpSampling1D(size=2),  # Reverse of MaxPooling1D
-            layers.Conv1DTranspose(32, kernel_size=3, activation='relu', padding='same'),
-            layers.Conv1DTranspose(input_shape[1], kernel_size=3, activation='sigmoid', padding='same'),  # Final layer
+            layers.Conv1DTranspose(32, kernel_size=3, activation='tanh', padding='same'),
+            layers.Conv1DTranspose(input_shape[1], kernel_size=3, activation='relu', padding='same'),  # Final layer
             layers.ZeroPadding1D(padding=(0, input_shape[0] - 67496))
         ])
 
