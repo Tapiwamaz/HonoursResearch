@@ -6,5 +6,6 @@
 !*_Coordinates.npy
 *.keras
 wandb
-./src/wandbModels/NMF/hiv-cancer_nmf_model.joblib
-Models/NMF/hiv-cancer_nmf_model.joblib
+*.joblib
+*.pkl
+
