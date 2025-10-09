@@ -5,12 +5,12 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=14
-#SBATCH --partition=biggpu
+#SBATCH --partition=bigbatch
 #SBATCH --time=3-00:00:00
 
-INPUT_FILE="../Data/Mixed/hiv-cancer-150-1500-h5_data.npy_part1.npy"
+INPUT_FILE="../Data/Pretrain/hiv-cancer-h5-data1.npy"
 OUTPUT_DIR="../Models/CNN/"
-PARTITIONS=3
+PARTITIONS=4
 NAME="cnn-mse"
 
 mkdir -p "$OUTPUT_DIR"
