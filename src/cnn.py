@@ -124,7 +124,7 @@ input_dim = X_train.shape[1:]
 autoencoder = SpectrumAutoencoder(latent_dim=latent_dim, input_shape=input_dim)
 
 autoencoder.compile(
-    optimizer=tf.keras.optimizers.Adam(learning_rate=config.learning_rate),
+    optimizer=tf.keras.optimizers.Adam(learning_rate=lr_schedule),
     loss=config.loss,
     metrics=config.metrics
 )
