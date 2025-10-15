@@ -56,18 +56,19 @@ class SpectrumAutoencoder(Model):
         self.latent_dim = latent_dim
         self.n_peaks = n_peaks
         
-        #kernel_initializer = tf.keras.initializers.RandomNormal(mean=0.0, stddev=0.001)
-        #bias_initializer = tf.keras.initializers.Zeros()
-        
         self.encoder = tf.keras.Sequential([
             layers.Dense(2000, activation='tanh'),
+            layers.Dropout(0.3),
             layers.Dense(1000, activation='tanh'),
+            layers.Dropout(0.3),
             layers.Dense(latent_dim, activation='tanh'),
         ])
 
         self.decoder = tf.keras.Sequential([
             layers.Dense(1000, activation='tanh'),
+            layers.Dropout(0.3),
             layers.Dense(2000, activation='tanh'),
+            layers.Dropout(0.3),
             layers.Dense(n_peaks, activation='relu'),
         ])
 
@@ -107,6 +108,7 @@ wandb.init(
         "encoder_layer_2": 1000,
         "decoder_layer_1": 1000,
         "decoder_layer_2": 2000,
+        "dropout":0.3,
         "activation": "tanh",
         "output_activation": "relu",
         "optimizer": "adam",
