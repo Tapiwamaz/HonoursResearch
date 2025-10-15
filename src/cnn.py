@@ -75,7 +75,7 @@ print(f"Dataset partitioned into {partitions} number of chunks\nPartition: {part
 
 lr_schedule = tf.keras.optimizers.schedules.ExponentialDecay(
     initial_learning_rate=0.0015,
-    decay_steps=900,
+    decay_steps=500,
     decay_rate=0.96,
     staircase=True
 )
