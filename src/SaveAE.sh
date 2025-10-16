@@ -8,7 +8,7 @@
 #SBATCH --partition=biggpu
 #SBATCH --time=3-00:00:00
 
-INPUT_FILE="../Data/Cancer/cancer-150-1500-h5.npy"
+INPUT_FILE="../Data/Cancer/cancer-150-1500-h5-data.npy"
 OUTPUT_DIR="../Models/Decoder/"
 PARTITIONS=3
 NAME="cancer_encoder_h5_wmse_200"

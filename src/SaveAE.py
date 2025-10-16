@@ -80,9 +80,9 @@ class SpectrumAutoencoder(Model):
 
 lr_schedule = tf.keras.optimizers.schedules.ExponentialDecay(
     initial_learning_rate=0.0015,
-    decay_steps=100,
-    decay_rate=0.95,
-    staircase=False
+    decay_steps=900,
+    decay_rate=0.97,
+    staircase=True
 )
 def weighted_mse_loss(y_true, y_pred):
     """
