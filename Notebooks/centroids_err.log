@@ -39,9 +39,7 @@
 /home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/protobuf/debug.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
   warnings.warn(
 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
-I0000 00:00:1760992864.749045    9102 gpu_device.cc:2020] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 5499 MB memory:  -> device: 0, name: NVIDIA GeForce GTX 1060 6GB, pci bus id: 0000:03:00.0, compute capability: 6.1
-2025-10-20 22:41:15.512062: I external/local_xla/xla/service/service.cc:163] XLA service 0x7f0d08007190 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
-2025-10-20 22:41:15.512144: I external/local_xla/xla/service/service.cc:171]   StreamExecutor device (0): NVIDIA GeForce GTX 1060 6GB, Compute Capability 6.1
-2025-10-20 22:41:15.808656: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:269] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
-2025-10-20 22:41:16.064268: I external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:473] Loaded cuDNN version 91002
-I0000 00:00:1760992877.343293    9239 device_compiler.h:196] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+I0000 00:00:1760993709.804305    9442 gpu_device.cc:2020] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 5499 MB memory:  -> device: 0, name: NVIDIA GeForce GTX 1060 6GB, pci bus id: 0000:03:00.0, compute capability: 6.1
+2025-10-20 22:55:20.621865: W external/local_xla/xla/tsl/framework/cpu_allocator_impl.cc:84] Allocation of 539992000 exceeds 10% of free system memory.
+2025-10-20 22:56:00.034314: W external/local_xla/xla/tsl/framework/cpu_allocator_impl.cc:84] Allocation of 15302833288 exceeds 10% of free system memory.
+/var/lib/slurm/slurmd/job163926/slurm_script: line 12:  9442 Killed                  python centroids.py
