@@ -8,11 +8,11 @@
 #SBATCH --partition=biggpu
 #SBATCH --time=3-00:00:00      # 3 days max runtime 
 
-INPUT_FILE="../Data/Mixed/hiv-cancer-150-1500-h5_data.npy_part2.npy"
+INPUT_FILE="../Data/Cancer/cancer-150-1500-h5-data.npy"
 OUTPUT_DIR="../Models/Decoder/"
 PARTITIONS=3
-ENCODER_PATH="../Models/Decoder/encoder_h5_wmse_200.keras"
-DECODER_PATH="../Models/Decoder/encoder_h5_wmse_200_decoder.keras"
+ENCODER_PATH="../Models/Decoder/cancer_encoder_h5_wmse_200.keras"
+DECODER_PATH="../Models/Decoder/cancer_encoder_h5_wmse_200_decoder.keras"
 
 
 mkdir -p "$OUTPUT_DIR"
@@ -28,7 +28,7 @@ if [ ! -f "$INPUT_FILE" ]; then
 fi
 
 # Loop over all partitions
-for (( PART_NUM=1; PART_NUM<=PARTITIONS; PART_NUM++ )); do
+for (( PART_NUM=2; PART_NUM<=PARTITIONS; PART_NUM++ )); do
     echo "Starting partition $PART_NUM of $PARTITIONS at $(date)"
     python PretrainAE.py \
         --input "$INPUT_FILE" \

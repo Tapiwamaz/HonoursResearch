@@ -1,11 +1,11 @@
 import numpy as np
-from tensorflow.keras.models import  load_model
+import tensorflow as tf
 
 centroids = np.load("../kmeans/hiv-h5_centroids_k3.npy")
 # centroids = np.array([np.round(mz, 4) for mz in centroids])
 # mzs = np.load("../Data/HIV/mzs.npy")
 
-decoder = load_model("../Models/Decoder/encoder_h5_wmse_200_decoder.keras")
+decoder = tf.keras.models.load_model("../Models/Decoder/encoder_h5_wmse_200_decoder.keras")
 out = decoder.predict(centroids)
 del decoder
 del centroids
