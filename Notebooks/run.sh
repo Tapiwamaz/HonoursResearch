@@ -9,7 +9,7 @@
 #SBATCH --time=3-00:00:00      # 3 days max runtime 
 
 
-python random.py
+python centroids.py
 
 
 echo "Tapedza!!! Mwari Ngaakudzwe!"
