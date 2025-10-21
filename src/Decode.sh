@@ -9,9 +9,9 @@
 #SBATCH --time=3-00:00:00      # 3 days max runtime 
 
 # Define input files and output directory
-CENTROIDS_PATH=""
-DECODER_PATH="/"
-OUTPUT_DIR=""
+CENTROIDS_PATH="../kmeans/hiv-h5_centroids_k3.npy"
+DECODER_PATH="../Models/Decoder/encoder_h5_wmse_200_decoder.keras"
+OUTPUT_DIR="../Centroids/"
 
 python Decode.py --centroids "$CENTROIDS_PATH" --decoder "$DECODER_PATH" --output_dir "$OUTPUT_DIR"
 
