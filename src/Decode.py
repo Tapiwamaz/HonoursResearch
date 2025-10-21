@@ -3,6 +3,7 @@ import numpy as np
 import tensorflow as tf
 from tensorflow.keras.models import load_model
 import os
+import matplotlib.pyplot as plt
 
 def main():
     parser = argparse.ArgumentParser(description="Decode centroids using a Keras decoder model.")
@@ -25,6 +26,23 @@ def main():
         output_path = os.path.join(args.output_dir, fname)
         np.savetxt(output_path, Y[i], fmt='%.4f')
         print(f"Decoded {i+1}/{len(Y)} saved to {output_path}")
+
+    # plot the first three decoded centroids (blue, green, red) and save as graph.png
+    
+    num_to_plot = min(3, len(Y))
+    colors = ['blue', 'green', 'red']
+    plt.figure()
+    for idx in range(num_to_plot):
+        vec = np.squeeze(Y[idx]).reshape(-1)
+        plt.plot(vec, color=colors[idx], label=f'centroid {idx}')
+    plt.legend()
+    plt.title('Decoded centroids')
+    plt.xlabel('Index')
+    plt.ylabel('Value')
+    out_img = os.path.join(args.output_dir, 'graph.png')
+    plt.savefig(out_img)
+    plt.close()
+    print(f"Saved plot to {out_img}")
 
 if __name__ == "__main__":
     main()
