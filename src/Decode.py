@@ -22,7 +22,7 @@ def main():
 
     os.makedirs(args.output_dir, exist_ok=True)
     for i in range(len(Y)):
-        fname = f"c{i}.txt"
+        fname = f"c{i+1}y.txt"
         output_path = os.path.join(args.output_dir, fname)
         np.savetxt(output_path, Y[i], fmt='%.4f')
         print(f"Decoded {i+1}/{len(Y)} saved to {output_path}")
@@ -31,17 +31,23 @@ def main():
     
     num_to_plot = min(3, len(Y))
     colors = ['blue', 'green', 'red']
-    plt.figure()
+    fig, axs = plt.subplots(num_to_plot, 1, figsize=(8, 3 * num_to_plot), sharex=True)
+    if num_to_plot == 1:
+        axs = [axs]
     for idx in range(num_to_plot):
         vec = np.squeeze(Y[idx]).reshape(-1)
-        plt.plot(vec, color=colors[idx], label=f'centroid {idx}')
-    plt.legend()
-    plt.title('Decoded centroids')
-    plt.xlabel('Index')
-    plt.ylabel('Value')
+        x = np.linspace(150, 1500, len(vec))
+        axs[idx].plot(x, vec, color=colors[idx], label=f'centroid {idx}')
+        axs[idx].set_xlim(150, 1500)
+        axs[idx].set_ylabel('Label intensity')
+        axs[idx].legend()
+        axs[idx].grid(True, linestyle='--', alpha=0.3)
+    axs[-1].set_xlabel('Range')
+    fig.suptitle('Decoded centroids')
+    plt.tight_layout(rect=[0, 0, 1, 0.96])
     out_img = os.path.join(args.output_dir, 'graph.png')
-    plt.savefig(out_img)
-    plt.close()
+    plt.savefig(out_img, dpi=300, bbox_inches='tight')
+    plt.close(fig)
     print(f"Saved plot to {out_img}")
 
 if __name__ == "__main__":
