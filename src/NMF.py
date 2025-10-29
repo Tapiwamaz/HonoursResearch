@@ -9,11 +9,11 @@ from sklearn.model_selection import train_test_split
 import joblib
 
 
-parser = argparse.ArgumentParser(description="Generate ion image plot.")
+parser = argparse.ArgumentParser(description="NMF full")
 parser.add_argument("--input", required=True, help="Path to the input imzml and ibd files.")
 parser.add_argument("--output", required=True, help="Directory to save the plot.")
 parser.add_argument("--name", required=True, help="Name to save output")
-parser.add_argument("--mzs", required=True, help="common mz channels")
+parser.add_argument("--encode", required=True,help="Data to encode and return e.g cancer-h5")
 
 
 args = parser.parse_args()
@@ -37,15 +37,8 @@ W = nmf.fit_transform(X)
 W_train = nmf.fit_transform(X_train)
 H = nmf.components_
 
-# Save the NMF model
-model_path = os.path.join(args.output, f"{args.name}_nmf_model.pkl")
-joblib.dump(nmf, model_path)
-print(f"NMF model saved to {model_path}")
-
-# Reconstruct training set
 X_train_reconstructed = np.dot(W_train, H)
 
-# Calculate metrics for training set
 mae_train = mean_absolute_error(X_train, X_train_reconstructed)
 rmse_train = root_mean_squared_error(X_train, X_train_reconstructed)
 mse_train = mean_squared_error(X_train, X_train_reconstructed)
@@ -69,61 +62,25 @@ print(f"MSE: {mse_test:.8f}")
 print(f"MAE: {mae_test:.8f}")
 print(f"RMSE: {rmse_test:.8f}")
 
-# Combine reconstructed training and test sets for further analysis
-X_reconstructed = np.vstack((X_train_reconstructed, X_test_reconstructed))
+
+
+print("Freeing some memory...")
+del X,X_temp,X_test,X_train,X_train_reconstructed,X_val
+print("Done\n")
+print("Loading data to encode...")
+
+X = np.load(args.encode)
+print(f"Encoding data with shape: {X.shape}")
+
+# Transform the data using the trained NMF model
+W_encoded = nmf.transform(X)
+print(f"Encoded data shape: {W_encoded.shape}")
+
+# Save the encoded data
+output_path = os.path.join(args.output, f'{args.name}_nmf.npy')
+np.save(output_path, W_encoded)
+print(f"Encoded data saved to: {output_path}")
 
 
 
-plt.figure(figsize=(15, 10))
-sample_indices = [0,1,2]
-
-# Calculate metrics for each sample
-sample_mae = []
-sample_rmse = []
-sample_mse = []
-
-for i in range(3):
-    # Calculate metrics for this specific sample
-    mae = mean_absolute_error(X[i], X_reconstructed[i])
-    rmse = root_mean_squared_error(X[i], X_reconstructed[i])
-    mse = mean_squared_error(X[i], X_reconstructed[i])
-    
-    sample_mae.append(mae)
-    sample_rmse.append(rmse)
-    sample_mse.append(mse)
-    
-    plt.subplot(2, 3, i+1)
-    plt.plot(X[i], label='Original', alpha=0.8)
-    plt.plot(X_reconstructed[i], label='Reconstructed', alpha=0.8, linestyle='--')
-    plt.title(f'Sample {i}\nMAE: {mae:.2e}, RMSE: {rmse:.2e}')
-    plt.xlabel('m/z channel')
-    plt.ylabel('Intensity')
-    plt.legend()
-    plt.grid(True, alpha=0.3)
-
-plt.tight_layout()
-plt.savefig(os.path.join(args.output, f'{args.name}_original_vs_reconstructed.png'), dpi=300)
-plt.close()
-
-
-
-mzs = np.load(args.mzs)  # Load mzs from npy file
-
-plt.figure(figsize=(15, 8))
-n_top_components = min(5, n_components)
-for i in range(n_top_components):
-    # Find top m/z channels for this component
-    top_mz_indices = np.argsort(H[i])[-20:]  # Top 20 m/z channels
-    top_mz_values = mzs[top_mz_indices]      # Get actual m/z values
-
-    plt.subplot(2, 3, i+1)
-    plt.bar(range(len(top_mz_indices)), H[i][top_mz_indices])
-    plt.title(f'Component {i+1} - Top m/z Channels')
-    plt.xlabel('m/z')
-    plt.ylabel('Loading')
-    plt.xticks(range(len(top_mz_indices)), [f"{mz:.2f}" for mz in top_mz_values], rotation=45)
-    plt.grid(True, alpha=0.3)
-plt.tight_layout()
-plt.savefig(os.path.join(args.output, f'{args.name}_component_loadings.png'), dpi=300)
-plt.close()
 
