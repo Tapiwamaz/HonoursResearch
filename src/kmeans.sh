@@ -11,7 +11,6 @@
 INPUT_FILE="../Data/Cancer/cancer-150-1500-h5-data.npy"
 OUTPUT_DIR="../kmeans"
 COORDS="../Data/Cancer/cancer-150-1500-h5-coords.npy"
-# ENCODER="../Models/Decoder/encoder_classifier.keras"
 JOB_NAME="cancer-h5"
 K_CLUSTERS=2
 
