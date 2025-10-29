@@ -10,9 +10,9 @@
 
 
 INPUT_FILES=("../Data/Pretrain/hiv_cancer_150-1500.npy")
-OUTPUT_DIR="../Models/pca"
-MZS_FILE="../Data/Cancer/cancer-150-1500-mzs.npy" 
-JOB_NAME="cancer-h5-200" 
+OUTPUT_DIR="../Results/PCA/Cancer"
+JOB_NAME="pca_cancer" 
+ENCODE="../Data/Cancer/cancer-150-1500-h5-data.npy"
 
 
 
@@ -35,7 +35,7 @@ for INPUT_FILE in "${INPUT_FILES[@]}"; do
     echo "Output directory: $OUTPUT_DIR"
     echo "SLURM Job ID: $SLURM_JOB_ID"
 
-    python PCA.py --input "$INPUT_FILE" --output "$OUTPUT_DIR" --name "$JOB_NAME" --mzs "$MZS_FILE"
+    python PCA.py --input "$INPUT_FILE" --output "$OUTPUT_DIR" --name "$JOB_NAME" --encode "$ENCODE"
 
     echo "PCA analysis for $JOB_NAME completed at $(date)"
     echo "Results saved to $OUTPUT_DIR"
