@@ -16,12 +16,12 @@ Model: "sequential_1"
  Total params: 137,268,499 (523.64 MB)
  Trainable params: 137,268,499 (523.64 MB)
  Non-trainable params: 0 (0.00 B)
-[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 538ms/step[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m1s[0m 554ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 566ms/step[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m1s[0m 595ms/step
 [[0. 0. 0. ... 0. 0. 0.]
  [0. 0. 0. ... 0. 0. 0.]
  [0. 0. 0. ... 0. 0. 0.]]
-Decoded 1/3 saved to ../Centroids/c0.txt
-Decoded 2/3 saved to ../Centroids/c1.txt
-Decoded 3/3 saved to ../Centroids/c2.txt
+Decoded 1/3 saved to ../Centroids/c1y.txt
+Decoded 2/3 saved to ../Centroids/c2y.txt
+Decoded 3/3 saved to ../Centroids/c3y.txt
 Saved plot to ../Centroids/graph.png
 Tapedza!!! Mwari Ngaakudzwe!

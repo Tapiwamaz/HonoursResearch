@@ -1,0 +1,3 @@
+usage: PCA.py [-h] --input INPUT --output OUTPUT --name NAME --mzs MZS
+              --encode ENCODE
+PCA.py: error: the following arguments are required: --mzs

@@ -13,7 +13,6 @@ parser = argparse.ArgumentParser(description="PCA")
 parser.add_argument("--input", required=True, help="Path to the input")
 parser.add_argument("--output", required=True, help="Directory to save output")
 parser.add_argument("--name", required=True, help="Name to save output")
-parser.add_argument("--mzs", required=True, help="common mz channels")
 parser.add_argument("--encode", required=True, help="Data to encode")
 
 

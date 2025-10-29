@@ -39,9 +39,9 @@
 /home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/protobuf/debug.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
   warnings.warn(
 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
-I0000 00:00:1761056099.827346   10249 gpu_device.cc:2020] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 5499 MB memory:  -> device: 0, name: NVIDIA GeForce GTX 1060 6GB, pci bus id: 0000:03:00.0, compute capability: 6.1
-2025-10-21 16:15:02.627671: I external/local_xla/xla/service/service.cc:163] XLA service 0x7f2aa00065e0 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
-2025-10-21 16:15:02.627713: I external/local_xla/xla/service/service.cc:171]   StreamExecutor device (0): NVIDIA GeForce GTX 1060 6GB, Compute Capability 6.1
-2025-10-21 16:15:02.634170: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:269] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
-2025-10-21 16:15:02.658989: I external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:473] Loaded cuDNN version 91002
-I0000 00:00:1761056103.083705   10381 device_compiler.h:196] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+I0000 00:00:1761056659.709745   10639 gpu_device.cc:2020] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 5499 MB memory:  -> device: 0, name: NVIDIA GeForce GTX 1060 6GB, pci bus id: 0000:03:00.0, compute capability: 6.1
+2025-10-21 16:24:22.544665: I external/local_xla/xla/service/service.cc:163] XLA service 0x7eff44005490 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2025-10-21 16:24:22.544708: I external/local_xla/xla/service/service.cc:171]   StreamExecutor device (0): NVIDIA GeForce GTX 1060 6GB, Compute Capability 6.1
+2025-10-21 16:24:22.552431: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:269] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+2025-10-21 16:24:22.593494: I external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:473] Loaded cuDNN version 91002
+I0000 00:00:1761056663.027251   10775 device_compiler.h:196] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.

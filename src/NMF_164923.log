@@ -1,0 +1,28 @@
+Starting NMF analysis for nmf at Wed Oct 29 06:17:20 PM SAST 2025
+Using input file: ../Data/Pretrain/hiv_cancer_150-1500.npy
+Output directory: ../Results/NMF/Cancer
+SLURM Job ID: 164923
+Shape of X_train: (151674, 67499)
+Shape of X_val: (21668, 67499)
+Shape of X_test: (43336, 67499)
+Number of components: 200
+Training Set Metrics:
+MSE: 0.00000221
+MAE: 0.00009399
+RMSE: 0.00119141
+Test Set Metrics:
+MSE: 0.00000225
+MAE: 0.00009427
+RMSE: 0.00113999
+Freeing some memory...
+Done
+
+Loading data to encode...
+Encoding data with shape: (160000, 67499)
+Encoded data shape: (160000, 200)
+Encoded data saved to: ../Results/NMF/Cancer/nmf_nmf.npy
+Model saved to: ../Results/NMF/Cancer/nmf_nmf_model.pkl
+NMF analysis for nmf completed at Wed Oct 29 06:56:55 PM SAST 2025
+Results saved to ../Results/NMF/Cancer
+============================================================================
+Tapedza!!! Mwari Ngaakudzwe!
