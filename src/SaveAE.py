@@ -59,8 +59,6 @@ class SpectrumAutoencoder(Model):
         self.encoder = tf.keras.Sequential([
             layers.Dense(10000, activation='tanh'),
             layers.Dropout(0.3),
-            layers.Dense(2000, activation='tanh'),
-            layers.Dropout(0.3),
             layers.Dense(1000, activation='tanh'),
             layers.Dropout(0.3),
             layers.Dense(latent_dim, activation='tanh'),
@@ -68,8 +66,6 @@ class SpectrumAutoencoder(Model):
 
         self.decoder = tf.keras.Sequential([
             layers.Dense(1000, activation='tanh'),
-            layers.Dropout(0.3),
-            layers.Dense(2000, activation='tanh'),
             layers.Dropout(0.3),
             layers.Dense(10000, activation='tanh'),
             layers.Dropout(0.3),
@@ -108,12 +104,10 @@ wandb.init(
     # track hyperparameters and run metadata with wandb.config
     config={
         "latent_dim": 200,
-        "encoder_layer_3": 10000,
-        "encoder_layer_1": 2000,
+        "encoder_layer_1": 10000,
         "encoder_layer_2": 1000,
         "decoder_layer_1": 1000,
-        "decoder_layer_2": 2000,
-        "decoder_layer_3": 2000,
+        "decoder_layer_2": 10000,
         "dropout":0.3,
         "activation": "tanh",
         "output_activation": "tanh",
@@ -121,7 +115,7 @@ wandb.init(
         "learning_rate": lr_schedule,
         "loss": "weighted_mse_loss",
         "metrics": ["mae", "mse"],
-        "epochs": 25,
+        "epochs": 30,
         "batch_size": 32,
         "early_stopping_patience": 5
     }
@@ -162,7 +156,7 @@ early_stopping = EarlyStopping(
 print("Starting training...")
 history = autoencoder.fit(
     X_train, X_train,  
-    epochs=25,  
+    epochs=30,  
     batch_size=32,
     validation_data=(X_val, X_val),
     callbacks=[early_stopping,
