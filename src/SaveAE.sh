@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=SaveAE
-#SBATCH --output=SaveAE_%j.log
+#SBATCH --output=SaveAE.log
 #SBATCH --error=SaveAE_%j_err.log
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
@@ -8,10 +8,10 @@
 #SBATCH --partition=biggpu
 #SBATCH --time=3-00:00:00
 
-INPUT_FILE="../Data/Cancer/cancer-150-1500-h5-data.npy"
+INPUT_FILE="../Data/Pretrain/hiv-cancer-h5-data1.npy"
 OUTPUT_DIR="../Models/Decoder/"
 PARTITIONS=3
-NAME="cancer_encoder_h5_wmse_200"
+NAME="large"
 
 mkdir -p "$OUTPUT_DIR"
 
