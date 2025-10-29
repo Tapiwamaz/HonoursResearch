@@ -81,6 +81,10 @@ output_path = os.path.join(args.output, f'{args.name}_nmf.npy')
 np.save(output_path, W_encoded)
 print(f"Encoded data saved to: {output_path}")
 
+# Save the trained NMF model
+model_path = os.path.join(args.output, f'{args.name}_nmf_model.pkl')
+joblib.dump(nmf, model_path)
+print(f"Model saved to: {model_path}")
 
 
 

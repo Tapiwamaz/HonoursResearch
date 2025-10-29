@@ -11,7 +11,7 @@
 # Define input files and output directory
 INPUT_FILES=("../Data/Pretrain/hiv_cancer_150-1500.npy")
 OUTPUT_DIR="../Results/NMF/Cancer"
-JOB_NAME="cancer-h5-200" 
+JOB_NAME="nmf" 
 ENCODE="../Data/Cancer/cancer-150-1500-h5-data.npy"
 
 # Create output directory if it doesn't exist
