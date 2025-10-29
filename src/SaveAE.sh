@@ -11,7 +11,7 @@
 INPUT_FILE="../Data/Pretrain/hiv-cancer-h5-data1.npy"
 OUTPUT_DIR="../Models/Decoder/"
 PARTITIONS=3
-NAME="large"
+NAME="l-10k"
 
 mkdir -p "$OUTPUT_DIR"
 
