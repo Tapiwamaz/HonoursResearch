@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=SaveAE
-#SBATCH --output=SaveAE.log
+#SBATCH --output=SaveAE_%j.log
 #SBATCH --error=SaveAE_%j_err.log
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
@@ -11,7 +11,7 @@
 INPUT_FILE="../Data/Pretrain/hiv-cancer-h5-data1.npy"
 OUTPUT_DIR="../Models/Decoder/"
 PARTITIONS=3
-NAME="l-10k"
+NAME="l-20k"
 
 mkdir -p "$OUTPUT_DIR"
 
