@@ -8,11 +8,11 @@
 #SBATCH --partition=biggpu
 #SBATCH --time=3-00:00:00      # 3 days max runtime 
 
-INPUT_FILE="../Data/Cancer/cancer-150-1500-h5-data.npy"
+INPUT_FILE="../Data/Pretrain/hiv-cancer-h5-data1.npy"
 OUTPUT_DIR="../Models/Decoder/"
 PARTITIONS=3
-ENCODER_PATH="../Models/Decoder/cancer_encoder_h5_wmse_200.keras"
-DECODER_PATH="../Models/Decoder/cancer_encoder_h5_wmse_200_decoder.keras"
+ENCODER_PATH="../Models/Decoder/l-10k.keras"
+DECODER_PATH="../Models/Decoder/l-10k_decoder.keras"
 
 
 mkdir -p "$OUTPUT_DIR"

@@ -79,17 +79,17 @@ wandb.init(
     # track hyperparameters and run metadata with wandb.config
     config={
         "latent_dim": 200,
-        "encoder_layer_1": 2000,
+        "encoder_layer_1": 10000,
         "encoder_layer_2": 1000,
         "decoder_layer_1": 1000,
-        "decoder_layer_2": 2000,
+        "decoder_layer_2": 10000,
         "activation": "tanh",
-        "output_activation": "relu",
+        "output_activation": "tanh",
         "optimizer": "adam",
         "learning_rate": lr_schedule,
         "loss": "wmse",
         "metrics": ["mae", "mse"],
-        "epochs": 20,
+        "epochs": 30,
         "batch_size": 32,
         "early_stopping_patience": 5
     }
@@ -127,14 +127,14 @@ print(f"Test set shape: {X_test.shape}")
 
 early_stopping = EarlyStopping(
     monitor='val_loss',
-    patience=20,
+    patience=9,
     restore_best_weights=True
 )
 
 print("Starting training...")
 history = autoencoder.fit(
     X_train, X_train,
-    epochs=25,
+    epochs=30,
     batch_size=32,
     validation_data=(X_val, X_val),
     callbacks=[early_stopping,WandbMetricsLogger()],
@@ -142,6 +142,7 @@ history = autoencoder.fit(
 )
 print("Training completed!")
 autoencoder.summary()
+del X_train,X_val
 
 # Evaluate and print metrics
 test_loss, test_mae, test_mse = autoencoder.evaluate(X_test, X_test, verbose=0)
