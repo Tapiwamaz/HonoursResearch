@@ -8,8 +8,8 @@
 #SBATCH --partition=biggpu
 #SBATCH --time=1-00:00:00
 
-INPUT_ONE="../Data/Pretrain/hiv-cancer-h5-data1.npy"
-INPUT_TWO="../Data/Pretrain/hiv-cancer-h5-data2.npy"
+INPUT_ONE="../Data/Cancer/cancer-h5_x.npy"
+INPUT_TWO="../Data/HIV/hiv-h5_x.npy"
 OUTPUT_DIR="../Data/Pretrain/"
 MIXED_NAME="large"
 LABELED=0

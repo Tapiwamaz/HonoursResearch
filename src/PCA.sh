@@ -12,7 +12,7 @@
 INPUT_FILES=("../Data/Pretrain/large_data.npy_part0.npy")
 OUTPUT_DIR="../Results/PCA/Cancer"
 JOB_NAME="pca_cancer" 
-ENCODE="../Data/Cancer/cancer-150-1500-h5-data.npy"
+ENCODE="../Data/Cancer/cancer-h5_x.npy"
 
 
 

@@ -1,0 +1,28 @@
+Starting PCA analysis for pca_cancer at Fri Oct 31 10:56:24 PM SAST 2025
+Using input file: ../Data/Pretrain/large_data.npy_part0.npy
+Output directory: ../Results/PCA/Cancer
+SLURM Job ID: 165351
+Shape of X_train: (151675, 67499)
+Shape of X_val: (21668, 67499)
+Shape of X_test: (43336, 67499)
+Number of components: 200
+
+Test set reconstruction statistics:
+Non-zero elements: 2925136658 out of 2925136664 (100.00%)
+Total variance explained by 200 components: 0.054978 (5.50%)
+
+Training Data Metrics:
+MSE: 0.9473044276237488
+MAE: 0.06073269993066788
+RMSE: 0.9665032029151917
+Test Data Metrics:
+MSE: 0.9663147926330566
+MAE: 0.052836012095212936
+RMSE: 0.9318958520889282
+PCA model saved to ../Results/PCA/Cancer/pca_cancer_pca_model.joblib
+Scaler model saved to ../Results/PCA/Cancer/pca_cancer_scaler_model.joblib
+Encoded data saved to ../Results/PCA/Cancer/pca_cancer_encoded_pca.npy
+Encoded data shape: (160000, 200)
+PCA analysis for pca_cancer completed at Fri Oct 31 11:32:35 PM SAST 2025
+Results saved to ../Results/PCA/Cancer
+Tapedza!!! Mwari Ngaakudzwe!

@@ -1,0 +1,4 @@
+Starting NMF analysis for nmf-h5 at Fri Oct 31 10:56:19 PM SAST 2025
+Using input file: ../Data/Pretrain/large_data.npy_part0.npy
+Output directory: ../Results/NMF/Cancer/
+SLURM Job ID: 165350

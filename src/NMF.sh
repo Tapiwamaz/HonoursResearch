@@ -12,7 +12,7 @@
 INPUT_FILES=("../Data/Pretrain/large_data.npy_part0.npy")
 OUTPUT_DIR="../Results/NMF/Cancer/"
 JOB_NAME="nmf-h5" 
-ENCODE="../Data/Cancer/cancer-150-1500-h5-data.npy"
+ENCODE="../Data/Cancer/cancer-h5_x.npy"
 
 # Create output directory if it doesn't exist
 mkdir -p "$OUTPUT_DIR"
