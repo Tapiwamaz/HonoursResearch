@@ -1,0 +1,11 @@
+Starting PCA analysis for pca_cancer at Fri Oct 31 07:27:40 PM SAST 2025
+Using input file: ../Data/Pretrain/large_data.npy_part0.npy
+Output directory: ../Results/PCA/Cancer
+SLURM Job ID: 165318
+Shape of X_train: (151675, 67499)
+Shape of X_val: (21668, 67499)
+Shape of X_test: (43336, 67499)
+Number of components: 200
+PCA analysis for pca_cancer completed at Fri Oct 31 07:32:50 PM SAST 2025
+Results saved to ../Results/PCA/Cancer
+Tapedza!!! Mwari Ngaakudzwe!

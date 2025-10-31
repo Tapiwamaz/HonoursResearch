@@ -10,7 +10,7 @@
 
 INPUT_FILE="../Data/Pretrain/hiv-cancer-h5-data2.npy"
 OUTPUT_DIR="../Models/Decoder/"
-PARTITIONS=3
+PARTITIONS=4
 ENCODER_PATH="../Models/Decoder/l-10k.keras"
 DECODER_PATH="../Models/Decoder/l-10k_decoder.keras"
 

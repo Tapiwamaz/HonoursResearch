@@ -5,13 +5,13 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=16
-#SBATCH --partition=bigbatch
+#SBATCH --partition=biggpu
 #SBATCH --time=1-00:00:00
 
-INPUT_ONE="../Data/Pretrain/hiv_150_1500_h5_x.npy"
-INPUT_TWO="../Data/Pretrain/cancer_150_1500_h5_x.npy"
-OUTPUT_DIR="../Data/Mixed"
-MIXED_NAME="hiv-cancer-150-1500-h5-bigb"
+INPUT_ONE="../Data/Pretrain/hiv-cancer-h5-data1.npy"
+INPUT_TWO="../Data/Pretrain/hiv-cancer-h5-data2.npy"
+OUTPUT_DIR="../Data/Pretrain/"
+MIXED_NAME="large"
 LABELED=0
 PARTS=1
 

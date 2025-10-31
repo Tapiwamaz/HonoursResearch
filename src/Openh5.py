@@ -67,7 +67,7 @@ def prepare_data(file: h5py.File, name :str , output_dir: str,sorted_keys: list[
 
 
     tic = binned.sum(axis=1, keepdims=True)
-    X = binned / tic
+    X = binned / (tic + 1e-10)
 
     del binned
 
