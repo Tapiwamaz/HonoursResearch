@@ -19,7 +19,7 @@ parser.add_argument("--encode", required=True,help="Data to encode and return e.
 args = parser.parse_args()
 
 
-X = np.load(args.input)
+X = np.load(args.input,mmap_mode="r")
 X_temp, X_test = train_test_split(X, test_size=0.2, random_state=42)
 X_train, X_val = train_test_split(X_temp, test_size=0.125, random_state=42)
 
@@ -32,7 +32,6 @@ print(f"Shape of X_test: {X_test.shape}")
 n_components = 200  
 print(f"Number of components: {n_components}")
 nmf = NMF(n_components=n_components, random_state=42, max_iter=50)
-W = nmf.fit_transform(X)
 
 W_train = nmf.fit_transform(X_train)
 H = nmf.components_

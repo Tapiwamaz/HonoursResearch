@@ -20,7 +20,7 @@ parser.add_argument("--encode", required=True, help="Data to encode")
 args = parser.parse_args()
 
 
-X = np.load(args.input)
+X = np.load(args.input,mmap_mode="r")
 
 
 
