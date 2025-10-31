@@ -8,11 +8,11 @@
 #SBATCH --partition=biggpu
 #SBATCH --time=3-00:00:00      # 3 days max runtime 
 
-INPUT_FILE="../Data/Pretrain/hiv-cancer-h5-data2.npy"
-OUTPUT_DIR="../Models/Decoder/"
-PARTITIONS=4
-ENCODER_PATH="../Models/Decoder/l-10k.keras"
-DECODER_PATH="../Models/Decoder/l-10k_decoder.keras"
+INPUT_FILE="../Data/Pretrain/large_data.npy_part0.npy"
+OUTPUT_DIR="../Models/AE/"
+PARTITIONS=8
+ENCODER_PATH="../Models/AE/10k-encoder.keras"
+DECODER_PATH="../Models/AE/10k-decoder.keras"
 
 
 mkdir -p "$OUTPUT_DIR"
@@ -20,7 +20,7 @@ mkdir -p "$OUTPUT_DIR"
 START_TIME=$(date)
 echo "Autoencoder training started at: $START_TIME"
 
-JOB_NAME=$(basename "$INPUT_FILE" .npy)
+JOB_NAME="10k"
 
 if [ ! -f "$INPUT_FILE" ]; then
     echo "Error: Input file not found at $INPUT_FILE"

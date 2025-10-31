@@ -26,8 +26,8 @@ parser.add_argument("--output", required=True, help="Directory to save the encod
 parser.add_argument("--name", required=True, help="Name to save output")
 parser.add_argument("--partitions", required=True, help="Number of partitions")
 parser.add_argument("--partNum", required=True, help="The number of the partition we are on")
-parser.add_argument("--encoder", required=True, help="Path to the existing encoder .keras file")
-parser.add_argument("--decoder", required=True, help="Path to the existing decoder .keras file")
+parser.add_argument("--encoder", required=False, default=None, help="Path to the existing encoder .keras file")
+parser.add_argument("--decoder", required=False, default=None, help="Path to the existing decoder .keras file")
 
 
 args = parser.parse_args()
@@ -39,22 +39,69 @@ X = np.load(args.input, mmap_mode='r')
 start = math.floor(len(X)*((part_num-1)/partitions))
 end = math.ceil(len(X)*(part_num/partitions))
 print(f'Strat to end indices: ({start},{end})')
-X_subset = X[math.floor(len(X)*((part_num-1)/partitions)):math.ceil(len(X)*(part_num/partitions))]
+X_subset = X[start:end]
 # print(f"Dataset partitioned into {partitions} number of chunks\nPartition: {part_num}")
 del X
 
-# Load the existing encoder
-encoder = load_model(args.encoder)
-decoder = load_model(args.decoder)
+encoder_path = args.encoder
+decoder_path = args.decoder
 
-latent_dim = encoder.output_shape[-1]
-input_dim = encoder.input_shape[-1]
+class SpectrumAutoencoder(Model):
+    def __init__(self, latent_dim, n_peaks):
+        super(SpectrumAutoencoder, self).__init__()
+        self.latent_dim = latent_dim
+        self.n_peaks = n_peaks
+        
+        self.encoder = tf.keras.Sequential([
+            layers.Dense(5000, activation='tanh'),
+            layers.Dropout(0.3),
+            layers.Dense(1000, activation='tanh'),
+            layers.Dropout(0.3),
+            layers.Dense(latent_dim, activation='tanh'),
+        ])
+
+        self.decoder = tf.keras.Sequential([
+            layers.Dense(1000, activation='tanh'),
+            layers.Dropout(0.3),
+            layers.Dense(5000, activation='tanh'),
+            layers.Dropout(0.3),
+            layers.Dense(n_peaks, activation='relu'),
+        ])
+
+    def call(self, intensities):
+        encoded = self.encoder(intensities)
+        decoded_intensities = self.decoder(encoded)
+        return decoded_intensities
+
+class PretrainedAE(Model):
+    def __init__(self, encoder, decoder):
+        super(PretrainedAE, self).__init__()
+        self.encoder = encoder
+        self.decoder = decoder
+
+    def call(self, intensities):
+        encoded = self.encoder(intensities)
+        decoded_intensities = self.decoder(encoded)
+        return decoded_intensities
+
+if encoder_path and decoder_path and os.path.exists(encoder_path) and os.path.exists(decoder_path):
+    print("Loading existing encoder and decoder.")
+    encoder = load_model(encoder_path)
+    decoder = load_model(decoder_path)
+    autoencoder = PretrainedAE(encoder, decoder)
+    latent_dim = encoder.output_shape[-1]
+    input_dim = encoder.input_shape[-1]
+else:
+    print("Creating a new SpectrumAutoencoder.")
+    latent_dim = 200 
+    input_dim = X_subset.shape[1]
+    autoencoder = SpectrumAutoencoder(latent_dim, input_dim)
 print(f"Latent dimension: {latent_dim}")
 print(f"Input dimension: {input_dim}")
 
 lr_schedule = tf.keras.optimizers.schedules.ExponentialDecay(
-    initial_learning_rate=0.002,
-    decay_steps=600,
+    initial_learning_rate=0.0015,
+    decay_steps=900,
     decay_rate=0.97,
     staircase=True
 )
@@ -75,14 +122,14 @@ def weighted_mse_loss(y_true, y_pred):
     return tf.reduce_mean(weighted_squared_error)
 
 wandb.init(
-    project="NewPre",
+    project="CorrectAE",
     # track hyperparameters and run metadata with wandb.config
     config={
         "latent_dim": 200,
-        "encoder_layer_1": 10000,
+        "encoder_layer_1": 5000,
         "encoder_layer_2": 1000,
         "decoder_layer_1": 1000,
-        "decoder_layer_2": 10000,
+        "decoder_layer_2": 5000,
         "activation": "tanh",
         "output_activation": "tanh",
         "optimizer": "adam",
@@ -95,20 +142,6 @@ wandb.init(
     }
 )
 
-
-# Build the full autoencoder model
-class SpectrumAutoencoder(Model):
-    def __init__(self, encoder, decoder):
-        super(SpectrumAutoencoder, self).__init__()
-        self.encoder = encoder
-        self.decoder = decoder
-
-    def call(self, intensities):
-        encoded = self.encoder(intensities)
-        decoded_intensities = self.decoder(encoded)
-        return decoded_intensities
-
-autoencoder = SpectrumAutoencoder(encoder, decoder)
 autoencoder.compile(
     optimizer=tf.keras.optimizers.Adam(learning_rate=lr_schedule),
     loss=weighted_mse_loss,
@@ -158,11 +191,11 @@ print(f"Mean Absolute Error (MAE) on Test Data: {mae_test:.10f}")
 print(f"Root Mean Squared Error (RMSE) on Test Data: {rmse_test:.10f}")
 print(f"Mean Squared Error (MSE) on Test Data: {mse_test:.10f}")
 
-# Overwrite the encoder file with the updated encoder
-encoder_save_path = args.encoder
+# Save the updated encoder and decoder
+encoder_save_path = os.path.join(args.output, f"{args.name}-encoder.keras")
 autoencoder.encoder.save(encoder_save_path)
 print(f"Encoder updated and saved to {encoder_save_path}")
 
-decoder_save_path = args.decoder
+decoder_save_path = os.path.join(args.output, f"{args.name}-decoder.keras")
 autoencoder.decoder.save(decoder_save_path)
 print(f"Decoder updated and saved to {decoder_save_path}")
