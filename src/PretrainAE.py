@@ -53,7 +53,7 @@ class SpectrumAutoencoder(Model):
         self.n_peaks = n_peaks
         
         self.encoder = tf.keras.Sequential([
-            layers.Dense(5000, activation='tanh'),
+            layers.Dense(10000, activation='tanh'),
             layers.Dropout(0.3),
             layers.Dense(1000, activation='tanh'),
             layers.Dropout(0.3),
@@ -63,7 +63,7 @@ class SpectrumAutoencoder(Model):
         self.decoder = tf.keras.Sequential([
             layers.Dense(1000, activation='tanh'),
             layers.Dropout(0.3),
-            layers.Dense(5000, activation='tanh'),
+            layers.Dense(10000, activation='tanh'),
             layers.Dropout(0.3),
             layers.Dense(n_peaks, activation='relu'),
         ])
@@ -126,25 +126,25 @@ wandb.init(
     # track hyperparameters and run metadata with wandb.config
     config={
         "latent_dim": 200,
-        "encoder_layer_1": 5000,
+        "encoder_layer_1": 10000,
         "encoder_layer_2": 1000,
         "decoder_layer_1": 1000,
-        "decoder_layer_2": 5000,
+        "decoder_layer_2": 10000,
         "activation": "tanh",
         "output_activation": "tanh",
         "optimizer": "adam",
         "learning_rate": lr_schedule,
-        "loss": "wmse",
+        "loss": "mse",
         "metrics": ["mae", "mse"],
         "epochs": 30,
         "batch_size": 32,
-        "early_stopping_patience": 5
+        "early_stopping_patience": 9
     }
 )
 
 autoencoder.compile(
     optimizer=tf.keras.optimizers.Adam(learning_rate=lr_schedule),
-    loss=weighted_mse_loss,
+    loss="mse",
     metrics=['mae', 'mse']
 )
 
