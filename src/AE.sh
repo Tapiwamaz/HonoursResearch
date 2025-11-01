@@ -1,51 +1,47 @@
 #!/bin/bash
-#SBATCH --job-name=AE-tanh
-#SBATCH --output=AE_tanh.log
-#SBATCH --error=AE__tanh_err.log
+#SBATCH --job-name=PretrainAE
+#SBATCH --output=PretrainAE_%j.log
+#SBATCH --error=PretrainAE_err_%j.log
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=16      # Using more cores for biggpu            
-#SBATCH --partition=bigbatch
+#SBATCH --partition=biggpu
 #SBATCH --time=3-00:00:00      # 3 days max runtime 
 
-# Define input files and output directory
-INPUT_FILES=("../Data/LPS/lps_st_x_x.npy" "../Data/LPS/lps_lt_x_x.npy" "../Data/LPS/sal_st_x_x.npy" "../Data/LPS/sal_lt_plasma_x_x.npy" )
-MZS="../Data/LPS/sal_st_x_mzs.npy"
-OUTPUT_DIR="../Results/AE/LPS/"
+INPUT_FILE="../Data/Pretrain/large_data.npy_part0.npy"
+OUTPUT_DIR="../Models/AE/"
+PARTITIONS=8
+ENCODER_PATH="../Models/AE/10kmse-cosine-encoder.keras"
+DECODER_PATH="../Models/AE/10kmse-cosine-decoder.keras"
 
-echo "tanh levol"
-# Check if mzs file exists
-if [ ! -f "$MZS" ]; then
-    echo "Error: MZS file not found at $MZS"
+
+mkdir -p "$OUTPUT_DIR"
+
+START_TIME=$(date)
+echo "Autoencoder training started at: $START_TIME"
+
+JOB_NAME="10kmse-cosine"
+
+if [ ! -f "$INPUT_FILE" ]; then
+    echo "Error: Input file not found at $INPUT_FILE"
     exit 1
 fi
 
-# Create output directory if it doesn't exist
-mkdir -p "$OUTPUT_DIR"
-
-# Iterate over input files
-for INPUT_FILE in "${INPUT_FILES[@]}"; do
-    # Extract job name from input file
-    JOB_NAME=$(basename "$INPUT_FILE" .npy)
-
-    # Check if input file exists
-    if [ ! -f "$INPUT_FILE" ]; then
-        echo "Error: Input file not found at $INPUT_FILE"
-        continue
-    fi
-
-    # Run the Python script
-    echo "Starting Autoencoder analysis for $JOB_NAME at $(date)"
-    echo "Using input file: $INPUT_FILE"
-    echo "Using mzs file: $MZS"
-    echo "Output directory: $OUTPUT_DIR"
-    echo "SLURM Job ID: $SLURM_JOB_ID"
-
-    python AE.py --input "$INPUT_FILE" --output "$OUTPUT_DIR" --name "$JOB_NAME" --mzs "$MZS"
-
-    echo "Autoencoder analysis for $JOB_NAME completed at $(date)"
-    echo "Results saved to $OUTPUT_DIR"
+# Loop over all partitions
+for (( PART_NUM=1; PART_NUM<=PARTITIONS; PART_NUM++ )); do
+    echo "Starting partition $PART_NUM of $PARTITIONS at $(date)"
+    python PretrainAE.py \
+        --input "$INPUT_FILE" \
+        --output "$OUTPUT_DIR" \
+        --name "$JOB_NAME" \
+        --partitions "$PARTITIONS" \
+        --partNum "$PART_NUM" \
+        --encoder "$ENCODER_PATH" \
+        --decoder "$DECODER_PATH"
+    echo "Partition $PART_NUM completed at $(date)"
     echo "============================================================================"
 done
 
+END_TIME=$(date)
+echo "Autoencoder training finished at: $END_TIME"
 echo "Tapedza!!! Mwari Ngaakudzwe!"
