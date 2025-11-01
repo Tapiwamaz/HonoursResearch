@@ -53,7 +53,7 @@ class SpectrumAutoencoder(Model):
         self.n_peaks = n_peaks
         
         self.encoder = tf.keras.Sequential([
-            layers.Dense(2500, activation='tanh'),
+            layers.Dense(10000, activation='tanh'),
             layers.Dropout(0.3),
             layers.Dense(1000, activation='tanh'),
             layers.Dropout(0.3),
@@ -63,7 +63,7 @@ class SpectrumAutoencoder(Model):
         self.decoder = tf.keras.Sequential([
             layers.Dense(1000, activation='tanh'),
             layers.Dropout(0.3),
-            layers.Dense(2500, activation='tanh'),
+            layers.Dense(10000, activation='tanh'),
             layers.Dropout(0.3),
             layers.Dense(n_peaks, activation='relu'),
         ])
@@ -128,7 +128,7 @@ def combined_loss(y_true, y_pred):
     Combines Mean Squared Error with Cosine Similarity.
     The lambda hyperparameter balances the two loss components.
     """
-    lambda_val = 0.1 # Hyperparameter to tune
+    lambda_val = 0.9 # Hyperparameter to tune
     
     mse = tf.reduce_mean(tf.square(y_true - y_pred))
     cosine_loss = cosine_similarity_loss(y_true, y_pred)
@@ -153,10 +153,10 @@ wandb.init(
     # track hyperparameters and run metadata with wandb.config
     config={
         "latent_dim": 200,
-        "encoder_layer_1": 2500,
+        "encoder_layer_1": 10000,
         "encoder_layer_2": 1000,
         "decoder_layer_1": 1000,
-        "decoder_layer_2": 2500,
+        "decoder_layer_2": 10000,
         "activation": "tanh",
         "output_activation": "tanh",
         "optimizer": "adam",
@@ -171,7 +171,7 @@ wandb.init(
 
 autoencoder.compile(
     optimizer=tf.keras.optimizers.Adam(learning_rate=lr_schedule),
-    loss=combined_loss,
+    loss=weighted_mse_loss,
     metrics=['mae', 'mse']
 )
 
