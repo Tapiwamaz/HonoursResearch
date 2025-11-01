@@ -121,6 +121,33 @@ def weighted_mse_loss(y_true, y_pred):
     weighted_squared_error = weight * squared_error
     return tf.reduce_mean(weighted_squared_error)
 
+cosine_similarity_loss = tf.keras.losses.CosineSimilarity(axis=-1)
+
+def combined_loss(y_true, y_pred):
+    """
+    Combines Mean Squared Error with Cosine Similarity.
+    The lambda hyperparameter balances the two loss components.
+    """
+    lambda_val = 0.9 # Hyperparameter to tune
+    
+    mse = tf.reduce_mean(tf.square(y_true - y_pred))
+    cosine_loss = cosine_similarity_loss(y_true, y_pred)
+    
+    return mse + lambda_val * cosine_loss
+
+def intensity_weighted_mse_loss(y_true, y_pred):
+    """
+    Custom loss function that assigns more weight based on the intensity of the true signal.
+    The alpha hyperparameter controls how much to penalize errors on high-intensity peaks.
+    """
+    alpha = 10.0  # Hyperparameter to tune
+    # Weight is scaled by the true intensity. Using log1p for stability.
+    weight = 1.0 + alpha * tf.math.log1p(y_true * 100) # Scale y_true if intensities are small
+    
+    squared_error = tf.square(y_true - y_pred)
+    weighted_squared_error = weight * squared_error
+    return tf.reduce_mean(weighted_squared_error)
+
 wandb.init(
     project="CorrectAE",
     # track hyperparameters and run metadata with wandb.config
@@ -134,7 +161,7 @@ wandb.init(
         "output_activation": "tanh",
         "optimizer": "adam",
         "learning_rate": lr_schedule,
-        "loss": "wmse",
+        "loss": "mse-cosine",
         "metrics": ["mae", "mse"],
         "epochs": 30,
         "batch_size": 32,
