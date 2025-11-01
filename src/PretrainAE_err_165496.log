@@ -114,3 +114,10 @@ wandb: Run `wandb offline` to turn off syncing.
 wandb: Syncing run worthy-sun-21
 wandb: ⭐️ View project at https://wandb.ai/trapezium-wits-university/CorrectAE
 wandb: 🚀 View run at https://wandb.ai/trapezium-wits-university/CorrectAE/runs/01f4au9f
+2025-11-01 23:30:50.986633: I external/local_xla/xla/service/service.cc:163] XLA service 0x7fd8ac01ef80 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2025-11-01 23:30:50.987162: I external/local_xla/xla/service/service.cc:171]   StreamExecutor device (0): Quadro RTX 8000, Compute Capability 7.5
+2025-11-01 23:30:50.987170: I external/local_xla/xla/service/service.cc:171]   StreamExecutor device (1): Quadro RTX 8000, Compute Capability 7.5
+2025-11-01 23:30:51.163583: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:269] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+2025-11-01 23:30:51.366423: I external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:473] Loaded cuDNN version 91002
+I0000 00:00:1762032654.766974 3884412 device_compiler.h:196] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+slurmstepd-mscluster108: error: *** JOB 165496 ON mscluster108 CANCELLED AT 2025-11-01T23:37:47 ***
