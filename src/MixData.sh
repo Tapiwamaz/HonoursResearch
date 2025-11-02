@@ -8,10 +8,10 @@
 #SBATCH --partition=bigbatch
 #SBATCH --time=1-00:00:00
 
-INPUT_ONE="../Data/LPS/sal-lt-h5_x.npy"
-INPUT_TWO="../Data/LPS/lps-lt-h5_x.npy"
+INPUT_ONE="../Data/EMPA/sglt2-only-h5_x.npy"
+INPUT_TWO="../Data/EMPA/sglt2-lanme-h5_x.npy"
 OUTPUT_DIR="../Data/Pretrain/"
-MIXED_NAME="lps-cls1"
+MIXED_NAME="empa-cls"
 LABELED=1
 PARTS=1
 
