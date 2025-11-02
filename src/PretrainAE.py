@@ -153,19 +153,19 @@ wandb.init(
     # track hyperparameters and run metadata with wandb.config
     config={
         "latent_dim": 200,
-        "encoder_layer_1": 10000,
+        "encoder_layer_1": 2000,
         "encoder_layer_2": 1000,
         "decoder_layer_1": 1000,
-        "decoder_layer_2": 10000,
-        "activation": "tanh",
-        "output_activation": "tanh",
+        "decoder_layer_2": 2000,
+        "activation": "sigmoid",
+        "output_activation": "relu",
         "optimizer": "adam",
         "learning_rate": lr_schedule,
         "loss": "mse",
         "metrics": ["mae", "mse"],
         "epochs": 30,
         "batch_size": 32,
-        "early_stopping_patience": 9
+        "early_stopping_patience": 5
     }
 )
 
@@ -187,7 +187,7 @@ print(f"Test set shape: {X_test.shape}")
 
 early_stopping = EarlyStopping(
     monitor='val_loss',
-    patience=9,
+    patience=5,
     restore_best_weights=True
 )
 

@@ -11,8 +11,8 @@
 INPUT_FILE="../Data/Pretrain/large_data.npy_part0.npy"
 OUTPUT_DIR="../Models/AE/"
 PARTITIONS=8
-ENCODER_PATH="../Models/AE/2.5mse-cosine-encoder.keras"
-DECODER_PATH="../Models/AE/2.5mse-cosine-decoder.keras"
+ENCODER_PATH="../Models/AE/200-sig-encoder.keras"
+DECODER_PATH="../Models/AE/200-sig-decoder.keras"
 
 
 mkdir -p "$OUTPUT_DIR"
@@ -20,7 +20,7 @@ mkdir -p "$OUTPUT_DIR"
 START_TIME=$(date)
 echo "Autoencoder training started at: $START_TIME"
 
-JOB_NAME="2.5mse-cosine"
+JOB_NAME="200-sig"
 
 if [ ! -f "$INPUT_FILE" ]; then
     echo "Error: Input file not found at $INPUT_FILE"
