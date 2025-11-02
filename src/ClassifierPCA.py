@@ -50,7 +50,7 @@ class MLPClassifier(tf.keras.Model):
         x = self.dropout(x)
         return self.classifier(x)
     
-X_train, X_temp, y_train, y_temp = train_test_split(data, Y, test_size=0.3, random_state=42, stratify=Y)
+X_train, X_temp, y_train, y_temp = train_test_split(X, Y, test_size=0.3, random_state=42, stratify=Y)
 X_val, X_test, y_val, y_test = train_test_split(X_temp, y_temp, test_size=2/3, random_state=42, stratify=y_temp)
 print(f'Training data shape: {X_train.shape}')
 print(f'Val data shape: {X_val.shape}')
