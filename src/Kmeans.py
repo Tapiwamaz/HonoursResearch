@@ -58,7 +58,7 @@ def get_optimal_k(data: np.ndarray, max_k: int = 10):
     plt.close()
 
     print("Inspect the elbow plot to determine the optimal k.")
-    return inertias
+    return inertias,silhouette_scores
 
 
 parser = argparse.ArgumentParser(description="Kmeans")
@@ -83,7 +83,10 @@ if np.isnan(X).any():
 print(f"Shape: {X.shape}")
 
 
-inertias = get_optimal_k(data=X,max_k=3)
+inertias, sils = get_optimal_k(data=X,max_k=3)
+print(f"Inertias: {inertias}")
+print(f"Silhouette: {sils}")
+
 
 optimal_k = int(args.k)
 kmeans = KMeans(n_clusters=optimal_k, n_init=10, random_state=42)

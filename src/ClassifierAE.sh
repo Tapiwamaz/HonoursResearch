@@ -5,14 +5,14 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=16
-#SBATCH --partition=biggpu
+#SBATCH --partition=bigbatch
 #SBATCH --time=3-00:00:00
 
-INPUT_DATA="../Data/Pretrain/sal-lps-150-1500(labeled)_data.npy"
-INPUT_LABELS="../Data/Pretrain/sal-lps-150-1500(labeled)_labels.npy"
-AE_ENCODER="../Models/AE/encoder_250_dropout_wmse.keras"
+INPUT_DATA="../Data/Pretrain/lps-cls_data.npy"
+INPUT_LABELS="../Data/Pretrain/lps-cls_labels.npy"
+AE_ENCODER="../Models/AE/10k-encoder.keras"
 OUTPUT_DIR="../Output/AE"
-NAME="rand"
+NAME="10k"
 
 mkdir -p "$OUTPUT_DIR"
 

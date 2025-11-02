@@ -24,7 +24,7 @@ Y = np.load(args.y)
 print(f'Shape of input data: {X.shape}')
 
 lr_schedule = tf.keras.optimizers.schedules.ExponentialDecay(
-    initial_learning_rate=0.002,
+    initial_learning_rate=0.0015,
     decay_steps=500,
     decay_rate=0.96,
     staircase=True
@@ -35,7 +35,7 @@ class MLPClassifier(tf.keras.Model):
         super().__init__()
         self.encoder = encoder
         self.encoder.trainable = False  # Freeze encoder
-        self.hidden = layers.Dense(hidden_size, activation='relu')
+        self.hidden = layers.Dense(hidden_size, activation='tanh')
         self.dropout = layers.Dropout(dropout_rate)
         self.classifier = layers.Dense(num_classes, activation='softmax')
 

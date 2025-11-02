@@ -8,11 +8,11 @@
 #SBATCH --partition=bigbatch
 #SBATCH --time=3-00:00:00
 
-INPUT_DATA="../Data/Pretrain/sal-lps-150-1500(labeled)_data.npy"
-INPUT_LABELS="../Data/Pretrain/sal-lps-150-1500(labeled)_labels.npy"
-NMF_ENCODER="../Models/NMF/hiv-cancer_nmf_model.joblib"
+INPUT_DATA="../Data/Pretrain/lps-cls_data.npy"
+INPUT_LABELS="../Data/Pretrain/lps-cls_labels.npy"
+NMF_ENCODER="../Results/NMF/Cancer/nmf-h5_nmf_model.pkl"
 OUTPUT_DIR="../Output/NMF"
-NAME="nmf-classifier"
+NAME="nmf"
 
 mkdir -p "$OUTPUT_DIR"
 
@@ -40,7 +40,7 @@ python ClassifierNMF.py \
     --input_data "$INPUT_DATA" \
     --input_lables "$INPUT_LABELS" \
     --output "$OUTPUT_DIR" \
-    --nmf_encoder "$NMF_ENCODER" \
+    --encoder "$NMF_ENCODER" \
     --name "$NAME"
 
 END_TIME=$(date)
