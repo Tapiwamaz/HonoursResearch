@@ -78,8 +78,8 @@ def prepare_data(file: h5py.File, name :str , output_dir: str,sorted_keys: list[
     # Filter to only include m/z values between 150 and 1500
     mz_mask = (common_mzs >= 150) & (common_mzs <= 1500)
     X = X[:, mz_mask]
-    if len(X[0]) == 67500:
-        X = X[:,:len(X[0])-1]
+    if len(X[0]) >= 67500:
+        X = X[:, :67499]
     common_mzs = common_mzs[mz_mask]
 
     X = X.astype(np.float32)
