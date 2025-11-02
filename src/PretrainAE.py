@@ -161,7 +161,7 @@ wandb.init(
         "output_activation": "tanh",
         "optimizer": "adam",
         "learning_rate": lr_schedule,
-        "loss": "mse-cosine",
+        "loss": "mse",
         "metrics": ["mae", "mse"],
         "epochs": 30,
         "batch_size": 32,
@@ -171,7 +171,7 @@ wandb.init(
 
 autoencoder.compile(
     optimizer=tf.keras.optimizers.Adam(learning_rate=lr_schedule),
-    loss=weighted_mse_loss,
+    loss="mse",
     metrics=['mae', 'mse']
 )
 

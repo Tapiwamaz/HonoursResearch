@@ -52,7 +52,7 @@ def get_optimal_k(data: np.ndarray, max_k: int = 10):
     plt.tight_layout()
     
     # Save the plot
-    plot_path = os.path.join(args.output, f"{args.name}_elbow_silhouette_analysis.png")
+    plot_path = os.path.join(args.output, f"{args.name}_silhouette.png")
     plt.savefig(plot_path, dpi=300, bbox_inches='tight')
     print(f"Saved elbow analysis plot to: {plot_path}")
     plt.close()
@@ -83,7 +83,7 @@ if np.isnan(X).any():
 print(f"Shape: {X.shape}")
 
 
-inertias = get_optimal_k(data=X,max_k=10)
+inertias = get_optimal_k(data=X,max_k=3)
 
 optimal_k = int(args.k)
 kmeans = KMeans(n_clusters=optimal_k, n_init=10, random_state=42)
