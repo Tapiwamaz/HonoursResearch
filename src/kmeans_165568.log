@@ -1,1 +1,21 @@
 K-Means clustering started at: Sun Nov  2 09:40:21 AM SAST 2025
+Loaded data
+Shape: (160000, 200)
+Saved elbow analysis plot to: ../kmeans/cancer-10k_silhouette.png
+Inspect the elbow plot to determine the optimal k.
+Coordinates shape: (160000, 2)
+Image dimensions: 400 x 400
+
+Cluster Statistics:
+Total number of pixels: 160000
+Cluster 0: 130676 pixels (81.67%)
+Cluster 1: 29324 pixels (18.33%)
+Saved joint plot to: ../kmeans/cancer-10k_kmeans_k2_joint.png
+Saved individual clusters subplot to: ../kmeans/cancer-10k_kmeans_k2_individual_clusters.png
+Saved centroids to: ../kmeans/cancer-10k_centroids_k2.npy
+Centroids shape: (2, 200)
+
+All plots saved to: ../kmeans
+Job 'cancer-10k' completed successfully!
+K-Means clustering finished at: Sun Nov  2 09:48:37 AM SAST 2025
+Tapedza!!! Mwari Ngaakudzwe!
