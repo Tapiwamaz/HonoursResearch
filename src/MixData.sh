@@ -5,14 +5,14 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=16
-#SBATCH --partition=biggpu
+#SBATCH --partition=bigbatch
 #SBATCH --time=1-00:00:00
 
-INPUT_ONE="../Data/Cancer/cancer-h5_x.npy"
-INPUT_TWO="../Data/HIV/hiv-h5_x.npy"
+INPUT_ONE="../Data/LPS/lps-st-h5_x.npy"
+INPUT_TWO="../Data/LPS/sal-st-h5_x.npy"
 OUTPUT_DIR="../Data/Pretrain/"
-MIXED_NAME="large"
-LABELED=0
+MIXED_NAME="lps-cls"
+LABELED=1
 PARTS=1
 
 mkdir -p "$OUTPUT_DIR"

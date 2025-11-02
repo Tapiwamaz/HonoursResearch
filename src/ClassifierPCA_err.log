@@ -1,5 +1,5 @@
-2025-11-02 14:48:30.987321: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
-2025-11-02 14:48:37.103337: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+2025-11-02 14:54:07.678681: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-11-02 14:54:07.739932: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
 To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
 /home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/attr_value.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
   warnings.warn(
@@ -41,26 +41,8 @@ To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other ope
   warnings.warn(
 /home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/protobuf/debug.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
   warnings.warn(
-2025-11-02 14:49:04.160988: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
-WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
-I0000 00:00:1762087779.945272  509617 gpu_device.cc:2020] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 22239 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 3090, pci bus id: 0000:17:00.0, compute capability: 8.6
+2025-11-02 14:54:15.904280: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
 Traceback (most recent call last):
-  File "/home-mscluster/tmazarura/HonoursResearch/src/ClassifierAE.py", line 88, in <module>
-    history = model.fit(
-        X_train, y_train,
-    ...<3 lines>...
-        callbacks=[early_stopping]
-    )
-  File "/home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/keras/src/utils/traceback_utils.py", line 122, in error_handler
-    raise e.with_traceback(filtered_tb) from None
-  File "/home-mscluster/tmazarura/HonoursResearch/src/ClassifierAE.py", line 43, in call
-    x = self.encoder(inputs)
-ValueError: Exception encountered when calling Sequential.call().
-
-[1mInput 0 of layer "dense" is incompatible with the layer: expected axis -1 of input shape to have value 67499, but received input with shape (None, 67501)[0m
-
-Arguments received by Sequential.call():
-  • inputs=tf.Tensor(shape=(None, 67501), dtype=float32)
-  • training=None
-  • mask=None
-  • kwargs=<class 'inspect._empty'>
+  File "/home-mscluster/tmazarura/HonoursResearch/src/ClassifierPCA.py", line 60, in <module>
+    model = MLPClassifier(input_dim=input_dim)
+TypeError: MLPClassifier.__init__() got an unexpected keyword argument 'input_dim'

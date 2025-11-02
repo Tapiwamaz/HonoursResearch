@@ -1,7 +1,5 @@
-Mixing data started at: Fri Oct 31 10:28:07 PM SAST 2025
-Length of first is 160000
-Length of second is 56679
-Length of combined is 216679
-Part 1 saved to ../Data/Pretrain/large_data.npy_part0.npy
-Mixing data finished at: Fri Oct 31 10:56:05 PM SAST 2025
+Mixing data started at: Sun Nov  2 02:19:05 PM SAST 2025
+Data saved to ../Data/Pretrain/lps-cls_data.npy
+Labels saved to ../Data/Pretrain/lps-cls_labels.npy
+Mixing data finished at: Sun Nov  2 02:19:18 PM SAST 2025
 Done!

@@ -1,12 +1,12 @@
-Starting OpenH5.py for cancer-h5 at Fri Oct 31 10:02:45 PM SAST 2025
-Using input file: ../../mass_spec_data/Cancer biopsy/5 June/5 June tumour test 2_1-327482_SN0p0_profile.h5
-Output directory: ../Data/Cancer/
-SLURM Job ID: 165344
+Starting OpenH5.py for sal-st-h5 at Sun Nov  2 02:15:25 PM SAST 2025
+Using input file: ../../mass_spec_data/LPS/09102024_Leandrie_LPS_plasma test/09102024_Leandrie_LPS_plasma test/h5 files/091024_39_SAL_ST.h5
+Output directory: ../Data/LPS/
+SLURM Job ID: 165582
 File loaded
-Range of mz values: (100, 1500)
+Range of mz values: (0, 2000)
 Matrix created!
-Matrix has dimensions of (160000, 67499)
+Matrix has dimensions of (1657, 67501)
 Done creating data
-cancer-h5 completed at Fri Oct 31 10:27:41 PM SAST 2025
-Results saved to ../Data/Cancer/
+sal-st-h5 completed at Sun Nov  2 02:15:50 PM SAST 2025
+Results saved to ../Data/LPS/
 Tapedza!!! Mwari Ngaakudzwe!

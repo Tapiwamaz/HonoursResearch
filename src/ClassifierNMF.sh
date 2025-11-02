@@ -37,8 +37,8 @@ echo "ClassifierNMF training started at: $START_TIME"
 
 
 python ClassifierNMF.py \
-    --input_data "$INPUT_DATA" \
-    --input_lables "$INPUT_LABELS" \
+    --x "$INPUT_DATA" \
+    --y "$INPUT_LABELS" \
     --output "$OUTPUT_DIR" \
     --encoder "$NMF_ENCODER" \
     --name "$NAME"

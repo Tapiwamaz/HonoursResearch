@@ -8,8 +8,8 @@
 #SBATCH --partition=bigbatch
 #SBATCH --time=3-00:00:00
 
-INPUT_DATA="../Models/PCA/pca-classifier-train-data.npy"
-INPUT_LABELS="../Data/Pretrain/sal-lps-150-1500(labeled)_labels.npy"
+INPUT_DATA="../Data/Pretrain/lps-cls_data.npy"
+INPUT_LABELS="../Data/Pretrain/lps-cls_labels.npy"
 ENCODER="../Results/PCA/Cancer/pca_cancer_pca_model.joblib"
 SCALER="../Results/PCA/Cancer/pca_cancer_scaler_model.joblib"
 OUTPUT_DIR="../Output/PCA"
@@ -22,7 +22,7 @@ if [ ! -f "$INPUT_DATA" ]; then
     exit 1
 fi
 
-if [ ! -f "$INPUT_LABELS" ]; then
+if [ ! -f "$INPUT_LABELS" ]; then 
     echo "Error: Input labels file not found at $INPUT_LABELS"
     exit 1
 fi
@@ -31,8 +31,8 @@ START_TIME=$(date)
 echo "ClassifierPCA training started at: $START_TIME"
 
 python ClassifierPCA.py \
-    --input_data "$INPUT_DATA" \
-    --input_lables "$INPUT_LABELS" \
+    --x "$INPUT_DATA" \
+    --y "$INPUT_LABELS" \
     --output "$OUTPUT_DIR" \
     --name "$NAME" \
     --encoder "$ENCODER" \
