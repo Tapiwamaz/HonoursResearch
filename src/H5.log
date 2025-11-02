@@ -1,12 +1,12 @@
-Starting OpenH5.py for lps-st-h5 at Sun Nov  2 03:02:43 PM SAST 2025
-Using input file: ../../mass_spec_data/LPS/09102024_Leandrie_LPS_plasma test/09102024_Leandrie_LPS_plasma test/h5 files/091024_36_LPS_ST.h5
-Output directory: ../Data/LPS/
-SLURM Job ID: 165595
+Starting OpenH5.py for sglt2-lanme-h5 at Sun Nov  2 11:30:13 PM SAST 2025
+Using input file: ../../mass_spec_data/EMPA/17092024_cardiac tissues/h5 files/Sample 17_SGLT2_LANME.h5
+Output directory: ../Data/EMPA/
+SLURM Job ID: 165719
 File loaded
-Range of mz values: (0, 2000)
+Range of mz values: (0, 1500)
 Matrix created!
-Matrix has dimensions of (1658, 67499)
+Matrix has dimensions of (7500, 67499)
 Done creating data
-lps-st-h5 completed at Sun Nov  2 03:03:01 PM SAST 2025
-Results saved to ../Data/LPS/
+sglt2-lanme-h5 completed at Sun Nov  2 11:31:06 PM SAST 2025
+Results saved to ../Data/EMPA/
 Tapedza!!! Mwari Ngaakudzwe!

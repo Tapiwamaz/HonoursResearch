@@ -1,5 +1,5 @@
-Mixing data started at: Sun Nov  2 03:03:18 PM SAST 2025
-Data saved to ../Data/Pretrain/lps-cls_data.npy
-Labels saved to ../Data/Pretrain/lps-cls_labels.npy
-Mixing data finished at: Sun Nov  2 03:03:31 PM SAST 2025
+Mixing data started at: Sun Nov  2 11:26:25 PM SAST 2025
+Data saved to ../Data/Pretrain/lps-cls1_data.npy
+Labels saved to ../Data/Pretrain/lps-cls1_labels.npy
+Mixing data finished at: Sun Nov  2 11:26:38 PM SAST 2025
 Done!

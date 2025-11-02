@@ -8,11 +8,11 @@
 #SBATCH --partition=bigbatch
 #SBATCH --time=3-00:00:00
 
-INPUT_DATA="../Data/Pretrain/lps-cls_data.npy"
-INPUT_LABELS="../Data/Pretrain/lps-cls_labels.npy"
+INPUT_DATA="../Data/Pretrain/lps-cls1_data.npy"
+INPUT_LABELS="../Data/Pretrain/lps-cls1_labels.npy"
 AE_ENCODER="../Models/AE/10k-encoder.keras"
 OUTPUT_DIR="../Output/AE"
-NAME="10k"
+NAME="10k-plasma"
 
 mkdir -p "$OUTPUT_DIR"
 

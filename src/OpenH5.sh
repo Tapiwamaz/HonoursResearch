@@ -8,9 +8,9 @@
 #SBATCH --partition=bigbatch
 #SBATCH --time=3-00:00:00      # 3 days max runtime 
 
-INPUT_FILE="../../mass_spec_data/LPS/09102024_Leandrie_LPS_plasma test/09102024_Leandrie_LPS_plasma test/h5 files/091024_36_LPS_ST.h5"
-OUTPUT_DIR="../Data/LPS/"
-NAME="lps-st-h5"
+INPUT_FILE="../../mass_spec_data/EMPA/17092024_cardiac tissues/h5 files/Sample 17_SGLT2_LANME.h5"
+OUTPUT_DIR="../Data/EMPA/"
+NAME="sglt2-lanme-h5"
 
 
 

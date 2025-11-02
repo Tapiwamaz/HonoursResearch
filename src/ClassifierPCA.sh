@@ -8,12 +8,12 @@
 #SBATCH --partition=bigbatch
 #SBATCH --time=3-00:00:00
 
-INPUT_DATA="../Data/Pretrain/lps-cls_data.npy"
-INPUT_LABELS="../Data/Pretrain/lps-cls_labels.npy"
+INPUT_DATA="../Data/Pretrain/lps-cls1_data.npy"
+INPUT_LABELS="../Data/Pretrain/lps-cls1_labels.npy"
 ENCODER="../Results/PCA/Cancer/pca_cancer_pca_model.joblib"
 SCALER="../Results/PCA/Cancer/pca_cancer_scaler_model.joblib"
 OUTPUT_DIR="../Output/PCA"
-NAME="pca"
+NAME="pca-plasma"
 
 mkdir -p "$OUTPUT_DIR"
 

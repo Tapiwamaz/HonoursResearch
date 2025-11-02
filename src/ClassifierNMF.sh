@@ -8,11 +8,11 @@
 #SBATCH --partition=bigbatch
 #SBATCH --time=3-00:00:00
 
-INPUT_DATA="../Data/Pretrain/lps-cls_data.npy"
-INPUT_LABELS="../Data/Pretrain/lps-cls_labels.npy"
+INPUT_DATA="../Data/Pretrain/lps-cls1_data.npy"
+INPUT_LABELS="../Data/Pretrain/lps-cls1_labels.npy"
 NMF_ENCODER="../Results/NMF/Cancer/nmf-h5_nmf_model.pkl"
 OUTPUT_DIR="../Output/NMF"
-NAME="nmf"
+NAME="nmf-plasma"
 
 mkdir -p "$OUTPUT_DIR"
 
