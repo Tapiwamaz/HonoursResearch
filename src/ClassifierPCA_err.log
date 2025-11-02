@@ -60,3 +60,6 @@ I0000 00:00:1762119188.631151   41375 gpu_device.cc:2020] Created device /job:lo
 
 I0000 00:00:1762119192.554827   41498 device_compiler.h:196] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
 2025-11-02 23:33:12.838029: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-11-02 23:33:14.977596: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_26', 8 bytes spill stores, 8 bytes spill loads
+
+2025-11-02 23:33:32.037987: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
