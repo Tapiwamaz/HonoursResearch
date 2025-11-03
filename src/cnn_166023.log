@@ -1,0 +1,43 @@
+Autoencoder training started at: Mon Nov  3 10:48:02 PM SAST 2025
+Starting partition 1 of 8 at Mon Nov  3 10:48:02 PM SAST 2025
+Start to end indices: (0,27085)
+Creating a new SpectrumCNNAutoencoder.
+Partition 1 completed at Mon Nov  3 10:48:29 PM SAST 2025
+============================================================================
+Starting partition 2 of 8 at Mon Nov  3 10:48:29 PM SAST 2025
+Start to end indices: (27084,54170)
+Creating a new SpectrumCNNAutoencoder.
+Partition 2 completed at Mon Nov  3 10:48:34 PM SAST 2025
+============================================================================
+Starting partition 3 of 8 at Mon Nov  3 10:48:34 PM SAST 2025
+Start to end indices: (54169,81255)
+Creating a new SpectrumCNNAutoencoder.
+Partition 3 completed at Mon Nov  3 10:48:38 PM SAST 2025
+============================================================================
+Starting partition 4 of 8 at Mon Nov  3 10:48:38 PM SAST 2025
+Start to end indices: (81254,108340)
+Creating a new SpectrumCNNAutoencoder.
+Partition 4 completed at Mon Nov  3 10:48:43 PM SAST 2025
+============================================================================
+Starting partition 5 of 8 at Mon Nov  3 10:48:43 PM SAST 2025
+Start to end indices: (108339,135425)
+Creating a new SpectrumCNNAutoencoder.
+Partition 5 completed at Mon Nov  3 10:48:48 PM SAST 2025
+============================================================================
+Starting partition 6 of 8 at Mon Nov  3 10:48:48 PM SAST 2025
+Start to end indices: (135424,162510)
+Creating a new SpectrumCNNAutoencoder.
+Partition 6 completed at Mon Nov  3 10:48:52 PM SAST 2025
+============================================================================
+Starting partition 7 of 8 at Mon Nov  3 10:48:52 PM SAST 2025
+Start to end indices: (162509,189595)
+Creating a new SpectrumCNNAutoencoder.
+Partition 7 completed at Mon Nov  3 10:48:57 PM SAST 2025
+============================================================================
+Starting partition 8 of 8 at Mon Nov  3 10:48:57 PM SAST 2025
+Start to end indices: (189594,216679)
+Creating a new SpectrumCNNAutoencoder.
+Partition 8 completed at Mon Nov  3 10:49:01 PM SAST 2025
+============================================================================
+Autoencoder training finished at: Mon Nov  3 10:49:01 PM SAST 2025
+Tapedza!!! Mwari Ngaakudzwe!
