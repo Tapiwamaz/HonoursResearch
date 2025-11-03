@@ -54,34 +54,32 @@ class SpectrumCNNAutoencoder(Model):
         self.latent_dim = latent_dim
         self.input_shape_cnn = input_shape
 
-        self.encoder = tf.keras.Sequential([
-            layers.Input(shape=self.input_shape_cnn),
-            layers.Conv1D(32, kernel_size=3, activation='relu', padding='same'),
-            layers.MaxPooling1D(pool_size=2, padding='same'),
-            layers.Conv1D(64, kernel_size=3, activation='relu', padding='same'),
-            layers.MaxPooling1D(pool_size=2, padding='same'),
-            layers.Conv1D(128, kernel_size=3, activation='relu', padding='same'),
-            layers.MaxPooling1D(pool_size=2, padding='same'),
-            layers.Flatten(),
-            layers.Dense(latent_dim, activation='relu')
-        ])
+        # --- Encoder using Functional API ---
+        encoder_input = layers.Input(shape=self.input_shape_cnn)
+        x = layers.Conv1D(32, kernel_size=3, activation='relu', padding='same')(encoder_input)
+        x = layers.MaxPooling1D(pool_size=2, padding='same')(x)
+        x = layers.Conv1D(64, kernel_size=3, activation='relu', padding='same')(x)
+        x = layers.MaxPooling1D(pool_size=2, padding='same')(x)
+        x = layers.Conv1D(128, kernel_size=3, activation='relu', padding='same')(x)
+        pre_flatten_output = layers.MaxPooling1D(pool_size=2, padding='same')(x)
+        x = layers.Flatten()(pre_flatten_output)
+        encoder_output = layers.Dense(latent_dim, activation='relu')(x)
+        self.encoder = Model(encoder_input, encoder_output, name="encoder")
 
-        # Create a temporary model to get the shape before the flatten layer
-        pre_flatten_model = Model(inputs=self.encoder.input, outputs=self.encoder.layers[-3].output)
-        pre_flatten_shape = pre_flatten_model.output_shape[1:]
+        pre_flatten_shape = pre_flatten_output.shape[1:]
 
-        self.decoder = tf.keras.Sequential([
-            layers.Input(shape=(latent_dim,)),
-            layers.Dense(np.prod(pre_flatten_shape), activation='relu'),
-            layers.Reshape(pre_flatten_shape),
-            layers.Conv1DTranspose(128, kernel_size=3, activation='relu', padding='same'),
-            layers.UpSampling1D(size=2),
-            layers.Conv1DTranspose(64, kernel_size=3, activation='relu', padding='same'),
-            layers.UpSampling1D(size=2),
-            layers.Conv1DTranspose(32, kernel_size=3, activation='relu', padding='same'),
-            layers.UpSampling1D(size=2),
-            layers.Conv1DTranspose(1, kernel_size=3, activation='relu', padding='same'),
-        ])
+        # --- Decoder using Functional API ---
+        decoder_input = layers.Input(shape=(latent_dim,))
+        x = layers.Dense(np.prod(pre_flatten_shape), activation='relu')(decoder_input)
+        x = layers.Reshape(pre_flatten_shape)(x)
+        x = layers.Conv1DTranspose(128, kernel_size=3, activation='relu', padding='same')(x)
+        x = layers.UpSampling1D(size=2)(x)
+        x = layers.Conv1DTranspose(64, kernel_size=3, activation='relu', padding='same')(x)
+        x = layers.UpSampling1D(size=2)(x)
+        x = layers.Conv1DTranspose(32, kernel_size=3, activation='relu', padding='same')(x)
+        x = layers.UpSampling1D(size=2)(x)
+        decoder_output = layers.Conv1DTranspose(1, kernel_size=3, activation='relu', padding='same')(x)
+        self.decoder = Model(decoder_input, decoder_output, name="decoder")
 
     def call(self, intensities):
         encoded = self.encoder(intensities)
