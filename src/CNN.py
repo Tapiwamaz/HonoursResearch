@@ -66,9 +66,9 @@ class SpectrumCNNAutoencoder(Model):
             layers.Dense(latent_dim, activation='relu')
         ])
 
-        # Build the encoder to access the output shape
-        self.encoder.build(input_shape=(None, *self.input_shape_cnn))
-        pre_flatten_shape = self.encoder.layers[-3].output_shape[1:]
+        # Create a temporary model to get the shape before the flatten layer
+        pre_flatten_model = Model(inputs=self.encoder.input, outputs=self.encoder.layers[-3].output)
+        pre_flatten_shape = pre_flatten_model.output_shape[1:]
 
         self.decoder = tf.keras.Sequential([
             layers.Input(shape=(latent_dim,)),
