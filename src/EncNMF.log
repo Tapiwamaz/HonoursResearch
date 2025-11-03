@@ -1,0 +1,6 @@
+EncNMF training started at: Mon Nov  3 08:35:56 PM SAST 2025
+Data shape: (56679, 67499)
+X shape: (56679, 200)
+Saved data to ../Data/Encoded/hiv-nmf.npy
+EncNMF training finished at: Mon Nov  3 08:42:58 PM SAST 2025
+Tapedza!!! Mwari Ngaakudzwe!

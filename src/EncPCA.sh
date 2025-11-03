@@ -1,7 +1,7 @@
 #!/bin/bash
-#SBATCH --job-name=EncNMF
-#SBATCH --output=EncNMF.log
-#SBATCH --error=EncNMF_err.log
+#SBATCH --job-name=Encpca
+#SBATCH --output=Encpca.log
+#SBATCH --error=Encpca_err.log
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=16

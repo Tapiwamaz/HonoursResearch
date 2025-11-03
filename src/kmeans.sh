@@ -8,11 +8,11 @@
 #SBATCH --partition=bigbatch
 #SBATCH --time=3-00:00:00      # 3 days max runtime 
 
-INPUT_FILE="../Results/PCA/Cancer/pca_cancer_encoded_pca.npy"
+INPUT_FILE="../Data/Encoded/hiv-nmf.npy"
 OUTPUT_DIR="../kmeans"
-COORDS="../Data/Cancer/cancer-150-1500-h5-coords.npy"
-JOB_NAME="pca-cancer"
-K_CLUSTERS=2
+COORDS="../Data/HIV/hiv-150-1500_coords.npy"
+JOB_NAME="nmf-hiv"
+K_CLUSTERS=3
 
 
 mkdir -p "$OUTPUT_DIR"

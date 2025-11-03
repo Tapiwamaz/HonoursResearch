@@ -20,7 +20,6 @@ args = parser.parse_args()
 pca = joblib.load(args.encoder)
 pca_scaler = joblib.load(args.scaler)
 data = np.load(args.x)
-Y = np.load(args.y)
 
 
 
