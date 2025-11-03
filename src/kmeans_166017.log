@@ -1,0 +1,23 @@
+K-Means clustering started at: Mon Nov  3 09:01:59 PM SAST 2025
+Loaded data
+Shape: (56679, 200)
+Saved elbow analysis plot to: ../kmeans/nmf-hiv_silhouette.png
+Inspect the elbow plot to determine the optimal k.
+Inertias: [96.41722869873047, 88.01598358154297, 82.183349609375, 78.88387298583984]
+Silhouette: [0.5370378494262695, 0.2864415645599365, 0.2901020646095276, 0.29091131687164307]
+Coordinates shape: (56678, 3)
+Image dimensions: 335 x 460
+
+Cluster Statistics:
+Total number of pixels: 56679
+Cluster 0: 50685 pixels (89.42%)
+Cluster 1: 5994 pixels (10.58%)
+Saved joint plot to: ../kmeans/nmf-hiv_kmeans_k2_joint.png
+Saved individual clusters subplot to: ../kmeans/nmf-hiv_kmeans_k2_individual_clusters.png
+Saved centroids to: ../kmeans/nmf-hiv_centroids_k2.npy
+Centroids shape: (2, 200)
+
+All plots saved to: ../kmeans
+Job 'nmf-hiv' completed successfully!
+K-Means clustering finished at: Mon Nov  3 09:04:36 PM SAST 2025
+Tapedza!!! Mwari Ngaakudzwe!
