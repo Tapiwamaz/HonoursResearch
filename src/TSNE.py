@@ -1,4 +1,4 @@
-from tensorflow.keras.models import load_model
+
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.manifold import TSNE
@@ -55,41 +55,41 @@ tsne = TSNE(n_components=2, perplexity=100, max_iter=2000, random_state=42)
 latent_tsne = tsne.fit_transform(latent_vectors_scaled)
 print("t-SNE completed.")
 
-# Define colors for clusters
-colors = [
-    'blue', 'green', 'red', 'orange', 'purple', 
-    'brown', 'pink', 'gray', 'olive', 'cyan',
-    'magenta', 'yellow', 'black', 'navy', 'lime'
-]
+# # Define colors for clusters
+# colors = [
+#     'blue', 'green', 'red', 'orange', 'purple', 
+#     'brown', 'pink', 'gray', 'olive', 'cyan',
+#     'magenta', 'yellow', 'black', 'navy', 'lime'
+# ]
 
-plt.figure(figsize=(12, 8))
-unique_clusters = np.unique(cluster_labels)
-for i, cluster_id in enumerate(unique_clusters):
-    cluster_mask = cluster_labels == cluster_id
-    plt.scatter(latent_tsne[cluster_mask, 0], latent_tsne[cluster_mask, 1],
-                c=colors[i % len(colors)], alpha=0.6, s=10, 
-                label=f'Cluster {cluster_id}')
+# plt.figure(figsize=(12, 8))
+# unique_clusters = np.unique(cluster_labels)
+# for i, cluster_id in enumerate(unique_clusters):
+#     cluster_mask = cluster_labels == cluster_id
+#     plt.scatter(latent_tsne[cluster_mask, 0], latent_tsne[cluster_mask, 1],
+#                 c=colors[i % len(colors)], alpha=0.6, s=10, 
+#                 label=f'Cluster {cluster_id}')
 
-plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
-plt.title(f't-SNE of Latent Space Colored by K-means Clusters - {args.name}')
-plt.xlabel('t-SNE 1')
-plt.ylabel('t-SNE 2')
+# plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
+# plt.title(f't-SNE of Latent Space Colored by K-means Clusters - {args.name}')
+# plt.xlabel('t-SNE 1')
+# plt.ylabel('t-SNE 2')
 
-output_path = os.path.join(args.output, f"tsne_kmeans_clusters_{args.name}.png")
-plt.savefig(output_path, bbox_inches='tight', dpi=300)
-print(f"t-SNE plot with K-means clusters saved to {output_path}")
-plt.close()
+# output_path = os.path.join(args.output, f"tsne_kmeans_clusters_{args.name}.png")
+# plt.savefig(output_path, bbox_inches='tight', dpi=300)
+# print(f"t-SNE plot with K-means clusters saved to {output_path}")
+# plt.close()
 
 # Also create a version with continuous color mapping
 plt.figure(figsize=(10, 8))
 scatter = plt.scatter(latent_tsne[:, 0], latent_tsne[:, 1],
-                      c=cluster_labels, alpha=0.6, s=10, cmap='tab10')
+                      c=cluster_labels, alpha=0.6, s=10, cmap='viridis')
 plt.colorbar(scatter, label='Cluster ID')
 plt.title(f't-SNE of Latent Space with K-means Cluster Colors - {args.name}')
 plt.xlabel('t-SNE 1')
 plt.ylabel('t-SNE 2')
 
 output_path_continuous = os.path.join(args.output, f"tsne_kmeans_continuous_{args.name}.png")
-plt.savefig(output_path_continuous, dpi=300)
+plt.savefig(output_path_continuous, dpi=500)
 print(f"t-SNE plot with continuous cluster colors saved to {output_path_continuous}")
 plt.close()
