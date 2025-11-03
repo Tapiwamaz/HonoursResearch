@@ -46,7 +46,7 @@ print("Latent vectors scaled.")
 
 # Assign cluster labels based on centroids
 print("Assigning cluster labels based on centroids...")
-distances = euclidean_distances(X, centroids)
+distances = euclidean_distances(X, centroids[::-1])
 cluster_labels = np.argmin(distances, axis=1)
 print(f"Cluster assignment completed. Found {len(np.unique(cluster_labels))} clusters.")
 

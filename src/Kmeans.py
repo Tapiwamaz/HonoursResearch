@@ -83,9 +83,9 @@ if np.isnan(X).any():
 print(f"Shape: {X.shape}")
 
 
-# inertias, sils = get_optimal_k(data=X,max_k=5)
-# print(f"Inertias: {inertias}")
-# print(f"Silhouette: {sils}")
+inertias, sils = get_optimal_k(data=X,max_k=5)
+print(f"Inertias: {inertias}")
+print(f"Silhouette: {sils}")
 
 
 optimal_k = int(args.k)
