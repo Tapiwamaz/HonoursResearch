@@ -78,7 +78,15 @@ class SpectrumCNNAutoencoder(Model):
         x = layers.UpSampling1D(size=2)(x)
         x = layers.Conv1DTranspose(32, kernel_size=3, activation='relu', padding='same')(x)
         x = layers.UpSampling1D(size=2)(x)
-        decoder_output = layers.Conv1DTranspose(1, kernel_size=3, activation='relu', padding='same')(x)
+        x = layers.Conv1DTranspose(1, kernel_size=3, activation='relu', padding='same')(x)
+        
+        # Crop the output to match the input shape
+        output_cropping = x.shape[1] - self.input_shape_cnn[0]
+        if output_cropping > 0:
+            cropping_size = output_cropping // 2
+            x = layers.Cropping1D((cropping_size, output_cropping - cropping_size))(x)
+        
+        decoder_output = x
         self.decoder = Model(decoder_input, decoder_output, name="decoder")
 
     def call(self, intensities):
