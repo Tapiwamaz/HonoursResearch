@@ -10,9 +10,9 @@
 
 INPUT_DATA="../Data/Pretrain/lps-cls1_data.npy"
 INPUT_LABELS="../Data/Pretrain/lps-cls1_labels.npy"
-AE_ENCODER="../Models/AE/10k-encoder.keras"
+AE_ENCODER="../Models/AE/200-sig-encoder.keras"
 OUTPUT_DIR="../Output/AE"
-NAME="10k-plasma"
+NAME="sig-plasma"
 
 mkdir -p "$OUTPUT_DIR"
 
