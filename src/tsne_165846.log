@@ -1,0 +1,15 @@
+TSNE training started at: Mon Nov  3 10:57:00 AM SAST 2025
+Loading input data from ../Results/PCA/Cancer/pca_cancer_encoded_pca.npy
+Input data loaded. Shape: (160000, 200)
+Loading K-means centroids from ../kmeans/pca-cancer_centroids_k2.npy
+Centroids loaded. Shape: (2, 200)
+Scaling latent vectors...
+Latent vectors scaled.
+Assigning cluster labels based on centroids...
+Cluster assignment completed. Found 2 clusters.
+Running t-SNE...
+t-SNE completed.
+t-SNE plot with K-means clusters saved to ../tsne/tsne_kmeans_clusters_cancer-pca.png
+t-SNE plot with continuous cluster colors saved to ../tsne/tsne_kmeans_continuous_cancer-pca.png
+T-SNE training finished at: Mon Nov  3 11:17:15 AM SAST 2025
+Tapedza!!! Mwari Ngaakudzwe!
