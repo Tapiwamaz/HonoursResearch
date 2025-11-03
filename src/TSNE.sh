@@ -8,13 +8,13 @@
 #SBATCH --partition=bigbatch
 #SBATCH --time=3-00:00:00      # 3 days max runtime 
 
-INPUT_FILE="../Results/PCA/Cancer/pca_cancer_encoded_pca.npy"
+INPUT_FILE="../Data/Encoded/cancer-10k.npy"
 
 OUTPUT_DIR="../tsne"
 # COORDS="../Data/HIV/hiv-150-1500_coords.npy"
 # ENCODER="../Models/AE/encoder_250_dropout_wmse.keras"
-NAME="cancer-pca"
-CENTROIDS="../kmeans/pca-cancer_centroids_k2.npy"
+NAME="cancer-10k"
+CENTROIDS="../kmeans/cancer-10k_centroids_k2.npy"
 
 
 mkdir -p "$OUTPUT_DIR"

@@ -1,0 +1,18 @@
+K-Means clustering started at: Mon Nov  3 10:30:41 PM SAST 2025
+Loaded data
+Shape: (160000, 200)
+Coordinates shape: (160000, 2)
+Image dimensions: 400 x 400
+
+Cluster Statistics:
+Total number of pixels: 160000
+Cluster 0: 29985 pixels (18.74%)
+Cluster 1: 130015 pixels (81.26%)
+Saved individual clusters subplot to: ../kmeans/nmf-cancer_kmeans_k2_individual_clusters.png
+Saved centroids to: ../kmeans/nmf-cancer_centroids_k2.npy
+Centroids shape: (2, 200)
+
+All plots saved to: ../kmeans
+Job 'nmf-cancer' completed successfully!
+K-Means clustering finished at: Mon Nov  3 10:30:51 PM SAST 2025
+Tapedza!!! Mwari Ngaakudzwe!

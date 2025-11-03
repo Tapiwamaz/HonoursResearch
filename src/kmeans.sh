@@ -8,10 +8,10 @@
 #SBATCH --partition=bigbatch
 #SBATCH --time=3-00:00:00      # 3 days max runtime 
 
-INPUT_FILE="../Data/Encoded/hiv-pca.npy"
+INPUT_FILE="../Results/NMF/Cancer/nmf-h5_nmf.npy"
 OUTPUT_DIR="../kmeans"
-COORDS="../Data/HIV/hiv-150-1500_coords.npy"
-JOB_NAME="pca-hiv"
+COORDS="../Data/Cancer/cancer-150-1500-h5-coords.npy"
+JOB_NAME="nmf-cancer"
 K_CLUSTERS=2
 
 
