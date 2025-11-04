@@ -1,1 +1,6 @@
 EncNMF training started at: Tue Nov  4 08:37:32 PM SAST 2025
+Data shape: (160000, 67499)
+X shape: (160000, 200)
+Saved data to ../Data/Encoded/nmf-h5_nmf.npy
+EncNMF training finished at: Tue Nov  4 08:55:59 PM SAST 2025
+Tapedza!!! Mwari Ngaakudzwe!

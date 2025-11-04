@@ -9,7 +9,7 @@
 #SBATCH --time=3-00:00:00      # 3 days max runtime 
 
 # Define input files and output directory
-X="../Results/NMF/Cancer/nmf-h5_nmf.npy"
+X="../Data/Encoded/nmf-h5_nmf.npy"
 DECODER_PATH="../Results/NMF/Cancer/nmf-h5_nmf_model.pkl"
 OUTPUT_DIR="../Results/NMF"
 COORDS="../Data/Cancer/cancer-150-1500-h5-coords.npy"
