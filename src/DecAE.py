@@ -47,7 +47,7 @@ def main():
 
     # Create the spatial map
     plt.figure(figsize=(10, 8))
-    plt.scatter(coords[:, 0], coords[:, 1], c=intensities_sum, cmap='cividis')
+    plt.scatter(coords[:, 0], coords[:, 1], c=intensities_sum, cmap='hot')
     plt.colorbar(label='Intensity')
     plt.xlabel('X Coordinate')
     plt.ylabel('Y Coordinate')
@@ -56,7 +56,7 @@ def main():
     
     # Save the figure
     os.makedirs(args.output, exist_ok=True)
-    output_path = os.path.join(args.output, 'ae_390.png')
+    output_path = os.path.join(args.output, 'ae_cancer.png')
     plt.savefig(output_path, dpi=500, bbox_inches='tight')
     print(f"Image saved to: {output_path}")
     plt.close()
