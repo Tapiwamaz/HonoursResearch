@@ -56,27 +56,27 @@ class SpectrumCNNAutoencoder(Model):
 
         # --- Encoder using Functional API ---
         encoder_input = layers.Input(shape=self.input_shape_cnn)
-        x = layers.Conv1D(32, kernel_size=3, activation='relu', padding='same')(encoder_input)
+        x = layers.Conv1D(32, kernel_size=3, activation='tanh', padding='same')(encoder_input)
         x = layers.MaxPooling1D(pool_size=2, padding='same')(x)
-        x = layers.Conv1D(64, kernel_size=3, activation='relu', padding='same')(x)
+        x = layers.Conv1D(64, kernel_size=3, activation='tanh', padding='same')(x)
         x = layers.MaxPooling1D(pool_size=2, padding='same')(x)
-        x = layers.Conv1D(128, kernel_size=3, activation='relu', padding='same')(x)
+        x = layers.Conv1D(128, kernel_size=3, activation='tanh', padding='same')(x)
         pre_flatten_output = layers.MaxPooling1D(pool_size=2, padding='same')(x)
         x = layers.Flatten()(pre_flatten_output)
-        encoder_output = layers.Dense(latent_dim, activation='relu')(x)
+        encoder_output = layers.Dense(latent_dim, activation='tanh')(x)
         self.encoder = Model(encoder_input, encoder_output, name="encoder")
 
         pre_flatten_shape = pre_flatten_output.shape[1:]
 
         # --- Decoder using Functional API ---
         decoder_input = layers.Input(shape=(latent_dim,))
-        x = layers.Dense(np.prod(pre_flatten_shape), activation='relu')(decoder_input)
+        x = layers.Dense(np.prod(pre_flatten_shape), activation='tanh')(decoder_input)
         x = layers.Reshape(pre_flatten_shape)(x)
-        x = layers.Conv1DTranspose(128, kernel_size=3, activation='relu', padding='same')(x)
+        x = layers.Conv1DTranspose(128, kernel_size=3, activation='tanh', padding='same')(x)
         x = layers.UpSampling1D(size=2)(x)
-        x = layers.Conv1DTranspose(64, kernel_size=3, activation='relu', padding='same')(x)
+        x = layers.Conv1DTranspose(64, kernel_size=3, activation='tanh', padding='same')(x)
         x = layers.UpSampling1D(size=2)(x)
-        x = layers.Conv1DTranspose(32, kernel_size=3, activation='relu', padding='same')(x)
+        x = layers.Conv1DTranspose(32, kernel_size=3, activation='tanh', padding='same')(x)
         x = layers.UpSampling1D(size=2)(x)
         x = layers.Conv1DTranspose(1, kernel_size=3, activation='relu', padding='same')(x)
         

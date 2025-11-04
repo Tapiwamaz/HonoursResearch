@@ -11,8 +11,8 @@
 INPUT_FILE="../Data/Pretrain/large_data.npy_part0.npy"
 OUTPUT_DIR="../Models/AE/"
 PARTITIONS=8
-ENCODER_PATH="../Models/AE/cnn-encoder.keras"
-DECODER_PATH="../Models/AE/cnn-decoder.keras"
+ENCODER_PATH="../Models/AE/cnn-tanh-encoder.keras"
+DECODER_PATH="../Models/AE/cnn-tanh-decoder.keras"
 
 
 mkdir -p "$OUTPUT_DIR"
