@@ -26,8 +26,8 @@ data = np.load(args.x)
 # data = data.astype(np.float32)
 print(f"Data before transform: {data.shape}")
 
-X = pca_scaler.fit_transform(data)
-X = pca.fit_transform(X)
+X = pca_scaler.transform(data)
+X = pca.transform(X)
 print(X.shape)
 print(f"Transformed  data: {X.shape}")
 

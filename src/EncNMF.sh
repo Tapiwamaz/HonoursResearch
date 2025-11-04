@@ -8,10 +8,10 @@
 #SBATCH --partition=bigbatch
 #SBATCH --time=3-00:00:00
 
-INPUT_DATA="../Data/HIV/hiv-h5_x.npy"
+INPUT_DATA="../Data/HIV/cancer-h5_x.npy"
 NMF_ENCODER="../Results/NMF/Cancer/nmf-h5_nmf_model.pkl"
 OUTPUT_DIR="../Data/Encoded"
-NAME="hiv-nmf"
+NAME="nmf-h5_nmf"
 
 mkdir -p "$OUTPUT_DIR"
 

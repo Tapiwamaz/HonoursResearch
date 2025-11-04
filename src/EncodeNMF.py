@@ -17,7 +17,7 @@ X = np.load(args.x)
 
 print(f"Data shape: {X.shape}")
 
-X = nmf.fit_transform(X)
+X = nmf.transform(X)
 
 print(f"X shape: {X.shape}")
 
