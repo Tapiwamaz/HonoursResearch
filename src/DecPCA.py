@@ -24,7 +24,7 @@ def main():
 
     print(f"Decoding data in batches...")
     num_samples = X.shape[0]
-    batch_size = 400
+    batch_size = 1000
     
     # Initialize array to store only the m/z range we need (11999:12001)
     intensities_sum = np.zeros(num_samples)
@@ -38,8 +38,7 @@ def main():
         # Then inverse transform the scaler
         decoded_batch = scaler.inverse_transform(X_reconstructed)
         
-        # Extract and sum intensities at m/z ~390 (indices 11999:12001)
-        intensities_sum[i:end_idx] = decoded_batch[:, 0:12000].sum(axis=1)
+        intensities_sum[i:end_idx] = decoded_batch[:, :].sum(axis=1)
         
         print(f"Processed {end_idx}/{num_samples} samples", end='\r')
     

@@ -22,7 +22,7 @@ def main():
 
     print(f"Decoding data in batches...")
     num_samples = X.shape[0]
-    batch_size = 200
+    batch_size = 100
     
     # Initialize array to store only the m/z range we need (11999:12001)
     intensities_sum = np.zeros(num_samples)
@@ -36,7 +36,7 @@ def main():
         decoded_batch = decoder.predict(batch, verbose=0)
         
         # Extract and sum intensities at m/z ~390 (indices 11999:12001)
-        intensities_sum[i:end_idx] = decoded_batch[:, :12000].sum(axis=1)
+        intensities_sum[i:end_idx] = decoded_batch[:, :].sum(axis=1)
         
         print(f"Processed {end_idx}/{num_samples} samples", end='\r')
     
