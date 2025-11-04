@@ -1,0 +1,22 @@
+K-Means clustering started at: Tue Nov  4 02:54:34 PM SAST 2025
+Loaded data
+Shape: (160000, 200)
+Saved elbow analysis plot to: ../kmeans/cnn-cancer_silhouette.png
+Inspect the elbow plot to determine the optimal k.
+Inertias: [1.922790288925171, 1.7530497312545776, 1.6505203247070312, 1.590882658958435]
+Silhouette: [0.514516294002533, 0.40132206678390503, 0.15819478034973145, 0.13238461315631866]
+Coordinates shape: (160000, 2)
+Image dimensions: 400 x 400
+
+Cluster Statistics:
+Total number of pixels: 160000
+Cluster 0: 27295 pixels (17.06%)
+Cluster 1: 132705 pixels (82.94%)
+Saved individual clusters subplot to: ../kmeans/cnn-cancer_kmeans_k2_individual_clusters.png
+Saved centroids to: ../kmeans/cnn-cancer_centroids_k2.npy
+Centroids shape: (2, 200)
+
+All plots saved to: ../kmeans
+Job 'cnn-cancer' completed successfully!
+K-Means clustering finished at: Tue Nov  4 03:10:22 PM SAST 2025
+Tapedza!!! Mwari Ngaakudzwe!

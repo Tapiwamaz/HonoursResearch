@@ -44,3 +44,8 @@ To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other ope
 2025-11-04 14:35:10.190586: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
 I0000 00:00:1762259730.503465  754608 gpu_device.cc:2020] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 22342 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 3090, pci bus id: 0000:17:00.0, compute capability: 8.6
+2025-11-04 14:38:51.941133: I external/local_xla/xla/service/service.cc:163] XLA service 0x7feb900162e0 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2025-11-04 14:38:51.941599: I external/local_xla/xla/service/service.cc:171]   StreamExecutor device (0): NVIDIA GeForce RTX 3090, Compute Capability 8.6
+2025-11-04 14:38:52.165128: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:269] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+2025-11-04 14:38:52.470939: I external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:473] Loaded cuDNN version 91002
+I0000 00:00:1762259936.461141  754727 device_compiler.h:196] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
