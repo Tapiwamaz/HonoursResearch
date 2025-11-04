@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=DecNMF
-#SBATCH --output=decode.log
-#SBATCH --error=decode_err.log
+#SBATCH --output=decodeNMF.log
+#SBATCH --error=decode_nmf_err.log
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=16      # Using more cores for biggpu            
