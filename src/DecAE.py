@@ -11,6 +11,7 @@ def main():
     parser.add_argument('--coords', type=str, required=True, help='Coordinates')
     parser.add_argument('--decoder', type=str, required=True, help='Path to decoder .keras model')
     parser.add_argument('--output', type=str, required=True, help='Directory to save output')
+    parser.add_argument('--cnn', type=bool,default=False, help='Set this flag if using a CNN decoder (outputs 3D tensors)')
     args = parser.parse_args()
 
     X = np.load(args.x)
@@ -36,7 +37,11 @@ def main():
         decoded_batch = decoder.predict(batch, verbose=0)
         
         # Extract and sum intensities at m/z ~390 (indices 11999:12001)
-        intensities_sum[i:end_idx] = decoded_batch[:, :].sum(axis=1)
+        if args.cnn and len(decoded_batch.shape) == 3:
+            decoded_batch = decoded_batch.squeeze(-1)  # Remove last dimension
+        
+        # Extract and sum intensities at m/z ~390 (indices 11999:12001)
+        intensities_sum[i:end_idx] = decoded_batch[:, 11999:12001].sum(axis=1)
         
         print(f"Processed {end_idx}/{num_samples} samples", end='\r')
     

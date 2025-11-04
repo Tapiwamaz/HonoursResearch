@@ -13,10 +13,11 @@ X="../Data/Encoded/cancer-cnn.npy"
 DECODER_PATH="../Models/AE/cnn-decoder.keras"
 OUTPUT_DIR="../Results/AE/"
 COORDS="../Data/Cancer/cancer-150-1500-h5-coords.npy"
+CNN=1
 
 START_TIME=$(date)
 echo "Started at: $START_TIME"
-python DecAE.py --x "$X" --decoder "$DECODER_PATH" --output "$OUTPUT_DIR" --coords "$COORDS"
+python DecAE.py --x "$X" --decoder "$DECODER_PATH" --output "$OUTPUT_DIR" --coords "$COORDS" --cnn "$CNN"
 
 START_TIME=$(date)
 echo "Ended at: $START_TIME"
