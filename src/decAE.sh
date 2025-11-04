@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=DecAE
-#SBATCH --output=decode.log
-#SBATCH --error=decode_err.log
+#SBATCH --output=decode_ae.log
+#SBATCH --error=decode_ae_err.log
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=16      # Using more cores for biggpu            

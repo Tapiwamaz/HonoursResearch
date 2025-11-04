@@ -20,25 +20,38 @@ def main():
     print(f"Decoder loaded")
     decoder.summary()
 
-    print(f"Decoding data...")
-    X = decoder(X)
-    print(f"Decoded data: {X.shape}")
+    print(f"Decoding data in batches...")
+    num_samples = X.shape[0]
+    batch_size = 1000
+    
+    # Initialize array to store only the m/z range we need (11999:12001)
+    intensities_sum = np.zeros(num_samples)
+    
+    # Process in batches
+    for i in range(0, num_samples, batch_size):
+        end_idx = min(i + batch_size, num_samples)
+        batch = X[i:end_idx]
+        
+        # Decode batch
+        decoded_batch = decoder.predict(batch, verbose=0)
+        
+        # Extract and sum intensities at m/z ~390 (indices 11999:12001)
+        intensities_sum[i:end_idx] = decoded_batch[:, 11999:12001].sum(axis=1)
+        
+        print(f"Processed {end_idx}/{num_samples} samples", end='\r')
+    
+    print(f"\nDecoding complete!")
 
     del decoder
     coords = np.load(args.coords)
 
-    # The data from X is the intentities per spectrum for a range of mz 150-1500
-    # X.shape = (num_spectra,67499)
-    # I want to plot the resultant image at the mz range 0.02 +- 390 which  would correspond to X[:,11999:12001]
-    intensities = X[:, 11999:12001].sum(axis=1)  # Sum across the m/z window
-    
     # Create the spatial map
     plt.figure(figsize=(10, 8))
-    plt.scatter(coords[:, 0], coords[:, 1], c=intensities, cmap='cividis', origin='lower')
+    plt.scatter(coords[:, 0], coords[:, 1], c=intensities_sum, cmap='cividis')
     plt.colorbar(label='Intensity')
     plt.xlabel('X Coordinate')
     plt.ylabel('Y Coordinate')
-    plt.title('Tissue Sample - m/z ~390 (±0.02)')
+    plt.title('AE Reconstruction - m/z ~390 (±0.02)')
     plt.tight_layout()
     
     # Save the figure

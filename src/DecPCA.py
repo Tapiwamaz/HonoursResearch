@@ -21,28 +21,39 @@ def main():
     print(f"PCA model loaded")
     print(f"Components shape: {pca.components_.shape}")
 
-    print(f"Decoding data...")
-    # For PCA reconstruction: inverse_transform back to original space
-    X_reconstructed = pca.inverse_transform(X)
-    # Then inverse transform the scaler
-    X_reconstructed = scaler.inverse_transform(X_reconstructed)
-    print(f"Decoded data: {X_reconstructed.shape}")
+    print(f"Decoding data in batches...")
+    num_samples = X.shape[0]
+    batch_size = 1000
+    
+    # Initialize array to store only the m/z range we need (11999:12001)
+    intensities_sum = np.zeros(num_samples)
+    
+    # Process in batches
+    for i in range(0, num_samples, batch_size):
+        end_idx = min(i + batch_size, num_samples)
+        batch = X[i:end_idx]
+        
+        X_reconstructed = pca.inverse_transform(batch)
+        # Then inverse transform the scaler
+        decoded_batch = scaler.inverse_transform(X_reconstructed)
+        
+        # Extract and sum intensities at m/z ~390 (indices 11999:12001)
+        intensities_sum[i:end_idx] = decoded_batch[:, 11999:12001].sum(axis=1)
+        
+        print(f"Processed {end_idx}/{num_samples} samples", end='\r')
+    
+    print(f"\nDecoding complete!")
 
-    del pca, scaler
+    del pca ,scaler
     coords = np.load(args.coords)
 
-    # The data from X is the intensities per spectrum for a range of mz 150-1500
-    # X.shape = (num_spectra,67499)
-    # I want to plot the resultant image at the mz range 0.02 +- 390 which would correspond to X[:,11999:12001]
-    intensities = X_reconstructed[:, 11999:12001].sum(axis=1)  # Sum across the m/z window
-    
     # Create the spatial map
     plt.figure(figsize=(10, 8))
-    plt.scatter(coords[:, 0], coords[:, 1], c=intensities, cmap='cividis',origin='lower')
+    plt.scatter(coords[:, 0], coords[:, 1], c=intensities_sum, cmap='cividis')
     plt.colorbar(label='Intensity')
     plt.xlabel('X Coordinate')
     plt.ylabel('Y Coordinate')
-    plt.title('PCA Reconstruction - m/z ~390 (±0.02)')
+    plt.title('NMF Reconstruction - m/z ~390 (±0.02)')
     plt.tight_layout()
     
     # Save the figure
