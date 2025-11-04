@@ -13,7 +13,7 @@ X="../Results/PCA/Cancer/pca_cancer_encoded_pca.npy"
 DECODER_PATH="../Results/PCA/Cancer/pca_cancer_pca_model.joblib"
 OUTPUT_DIR="../Results/PCA"
 COORDS="../Data/Cancer/cancer-150-1500-h5-coords.npy"
-SCALER="../Results/PCA/Cancer/pca_cancer_pca_model.joblib"
+SCALER="../Results/PCA/Cancer/pca_cancer_scaler_model.joblib"
 
 START_TIME=$(date)
 echo "Started at: $START_TIME"

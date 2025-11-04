@@ -18,12 +18,13 @@ def main():
 
     pca = joblib.load(args.decoder)
     scaler = joblib.load(args.scaler)
+    print(f"Scaler type: {type(scaler)}")
     print(f"PCA model loaded")
     print(f"Components shape: {pca.components_.shape}")
 
     print(f"Decoding data in batches...")
     num_samples = X.shape[0]
-    batch_size = 1000
+    batch_size = 400
     
     # Initialize array to store only the m/z range we need (11999:12001)
     intensities_sum = np.zeros(num_samples)
@@ -38,7 +39,7 @@ def main():
         decoded_batch = scaler.inverse_transform(X_reconstructed)
         
         # Extract and sum intensities at m/z ~390 (indices 11999:12001)
-        intensities_sum[i:end_idx] = decoded_batch[:, 11999:12001].sum(axis=1)
+        intensities_sum[i:end_idx] = decoded_batch[:, 0:12000].sum(axis=1)
         
         print(f"Processed {end_idx}/{num_samples} samples", end='\r')
     
