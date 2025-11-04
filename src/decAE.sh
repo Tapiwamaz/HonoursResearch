@@ -9,9 +9,9 @@
 #SBATCH --time=3-00:00:00      # 3 days max runtime 
 
 # Define input files and output directory
-X="../Data/Encoded/cancer-10k.npy"
-DECODER_PATH="../Models/AE/10k-decoder.keras"
-OUTPUT_DIR="../Results/AE"
+X="../Data/Encoded/cancer-sig.npy"
+DECODER_PATH="../Models/AE/200-sig-decoder.keras"
+OUTPUT_DIR="../Results/AE/"
 COORDS="../Data/Cancer/cancer-150-1500-h5-coords.npy"
 
 START_TIME=$(date)
