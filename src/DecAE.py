@@ -49,7 +49,8 @@ def main():
 
     del decoder
     coords = np.load(args.coords)
-
+    print(f"Coordinates shape: {coords.shape}")
+    print(f"Intensity stats - min: {intensities_sum.min()}, max: {intensities_sum.max()}, mean: {intensities_sum.mean()}")
     # Create the spatial map
     plt.figure(figsize=(10, 8))
     plt.scatter(coords[:, 0], coords[:, 1], c=intensities_sum, cmap='hot')
@@ -61,7 +62,7 @@ def main():
     
     # Save the figure
     os.makedirs(args.output, exist_ok=True)
-    output_path = os.path.join(args.output, 'ae_cancer.png')
+    output_path = os.path.join(args.output, 'cnn_cancer.png')
     plt.savefig(output_path, dpi=500, bbox_inches='tight')
     print(f"Image saved to: {output_path}")
     plt.close()
