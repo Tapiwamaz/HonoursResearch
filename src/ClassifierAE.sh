@@ -12,7 +12,7 @@ INPUT_DATA="../Data/Pretrain/lps-cls1_data.npy"
 INPUT_LABELS="../Data/Pretrain/lps-cls1_labels.npy"
 AE_ENCODER="../Models/AE/cnn-encoder.keras"
 OUTPUT_DIR="../Output/AE"
-NAME="cnn-plasma"
+NAME="cnn-plasma-tanh"
 
 mkdir -p "$OUTPUT_DIR"
 

@@ -17,7 +17,7 @@ mkdir -p "$OUTPUT_DIR"
 START_TIME=$(date)
 echo "Started at: $START_TIME"
 
-JOB_NAME="cancer-cnn"
+JOB_NAME="cancer-cnn-tanh"
 
 if [ ! -f "$INPUT_FILE" ]; then
     echo "Error: Input file not found at $INPUT_FILE"
