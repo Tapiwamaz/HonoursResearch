@@ -1,0 +1,1645 @@
+Started at: Mon Nov 10 07:42:15 PM SAST 2025
+Latent embeddings: (160000, 200)
+Decoder loaded
+Model: "decoder"
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┓
+┃ Layer (type)                    ┃ Output Shape           ┃       Param # ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━┩
+│ input_layer_1 (InputLayer)      │ (None, 200)            │             0 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dense_1 (Dense)                 │ (None, 1080064)        │   217,092,864 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ reshape (Reshape)               │ (None, 8438, 128)      │             0 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ conv1d_transpose                │ (None, 8438, 128)      │        49,280 │
+│ (Conv1DTranspose)               │                        │               │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ up_sampling1d (UpSampling1D)    │ (None, 16876, 128)     │             0 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ conv1d_transpose_1              │ (None, 16876, 64)      │        24,640 │
+│ (Conv1DTranspose)               │                        │               │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ up_sampling1d_1 (UpSampling1D)  │ (None, 33752, 64)      │             0 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ conv1d_transpose_2              │ (None, 33752, 32)      │         6,176 │
+│ (Conv1DTranspose)               │                        │               │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ up_sampling1d_2 (UpSampling1D)  │ (None, 67504, 32)      │             0 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ conv1d_transpose_3              │ (None, 67504, 1)       │            97 │
+│ (Conv1DTranspose)               │                        │               │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ cropping1d (Cropping1D)         │ (None, 67499, 1)       │             0 │
+└─────────────────────────────────┴────────────────────────┴───────────────┘
+ Total params: 217,173,057 (828.45 MB)
+ Trainable params: 217,173,057 (828.45 MB)
+ Non-trainable params: 0 (0.00 B)
+Decoding data in batches...
+Processed 100/160000 samplesIntensity stats - min: 0.0, max: 0.8675446510314941, mean: 5.341529686120339e-05
+Processed 200/160000 samplesIntensity stats - min: 0.0, max: 0.9362478852272034, mean: 5.302667341311462e-05
+Processed 300/160000 samplesIntensity stats - min: 0.0, max: 0.9402095675468445, mean: 5.7868568546837196e-05
+Processed 400/160000 samplesIntensity stats - min: 0.0, max: 0.9283940196037292, mean: 5.696551670553163e-05
+Processed 500/160000 samplesIntensity stats - min: 0.0, max: 0.9296137094497681, mean: 5.293756476021372e-05
+Processed 600/160000 samplesIntensity stats - min: 0.0, max: 0.9470179080963135, mean: 5.882929326617159e-05
+Processed 700/160000 samplesIntensity stats - min: 0.0, max: 0.9763104915618896, mean: 6.144362123450264e-05
+Processed 800/160000 samplesIntensity stats - min: 0.0, max: 0.9521546959877014, mean: 6.114403367973864e-05
+Processed 900/160000 samplesIntensity stats - min: 0.0, max: 0.9598477482795715, mean: 5.482546839630231e-05
+Processed 1000/160000 samplesIntensity stats - min: 0.0, max: 0.95664381980896, mean: 5.960285125183873e-05
+Processed 1100/160000 samplesIntensity stats - min: 0.0, max: 0.9409282207489014, mean: 5.92989927099552e-05
+Processed 1200/160000 samplesIntensity stats - min: 0.0, max: 0.9641935229301453, mean: 6.76423151162453e-05
+Processed 1300/160000 samplesIntensity stats - min: 0.0, max: 0.9445289969444275, mean: 5.715716179111041e-05
+Processed 1400/160000 samplesIntensity stats - min: 0.0, max: 0.9639716148376465, mean: 6.0710543039022014e-05
+Processed 1500/160000 samplesIntensity stats - min: 0.0, max: 0.9725866913795471, mean: 6.444473547162488e-05
+Processed 1600/160000 samplesIntensity stats - min: 0.0, max: 0.9685609936714172, mean: 5.729364056605846e-05
+Processed 1700/160000 samplesIntensity stats - min: 0.0, max: 0.9508113861083984, mean: 5.7527373428456485e-05
+Processed 1800/160000 samplesIntensity stats - min: 0.0, max: 0.9456581473350525, mean: 6.129546818556264e-05
+Processed 1900/160000 samplesIntensity stats - min: 0.0, max: 0.9490828514099121, mean: 6.11512950854376e-05
+Processed 2000/160000 samplesIntensity stats - min: 0.0, max: 0.9795082211494446, mean: 5.842395330546424e-05
+Processed 2100/160000 samplesIntensity stats - min: 0.0, max: 0.9192016124725342, mean: 6.183802179293707e-05
+Processed 2200/160000 samplesIntensity stats - min: 0.0, max: 0.9513723254203796, mean: 5.810686343465932e-05
+Processed 2300/160000 samplesIntensity stats - min: 0.0, max: 0.9640802145004272, mean: 5.882247205590829e-05
+Processed 2400/160000 samplesIntensity stats - min: 0.0, max: 0.9166288375854492, mean: 5.867818617844023e-05
+Processed 2500/160000 samplesIntensity stats - min: 0.0, max: 0.9499400854110718, mean: 5.755946403951384e-05
+Processed 2600/160000 samplesIntensity stats - min: 0.0, max: 0.9820420145988464, mean: 5.9996651543769985e-05
+Processed 2700/160000 samplesIntensity stats - min: 0.0, max: 0.9875850677490234, mean: 6.359627150231972e-05
+Processed 2800/160000 samplesIntensity stats - min: 0.0, max: 0.9617190361022949, mean: 6.283244874794036e-05
+Processed 2900/160000 samplesIntensity stats - min: 0.0, max: 0.910878598690033, mean: 6.085244967835024e-05
+Processed 3000/160000 samplesIntensity stats - min: 0.0, max: 0.9274889826774597, mean: 6.090447277529165e-05
+Processed 3100/160000 samplesIntensity stats - min: 0.0, max: 0.9538659453392029, mean: 6.248542194953188e-05
+Processed 3200/160000 samplesIntensity stats - min: 0.0, max: 1.0004656314849854, mean: 5.3856943850405514e-05
+Processed 3300/160000 samplesIntensity stats - min: 0.0, max: 0.847657322883606, mean: 5.957917892374098e-05
+Processed 3400/160000 samplesIntensity stats - min: 0.0, max: 0.9078261852264404, mean: 5.369037535274401e-05
+Processed 3500/160000 samplesIntensity stats - min: 0.0, max: 0.9616949558258057, mean: 5.696384687325917e-05
+Processed 3600/160000 samplesIntensity stats - min: 0.0, max: 0.9828565716743469, mean: 5.8205099776387215e-05
+Processed 3700/160000 samplesIntensity stats - min: 0.0, max: 0.9462379813194275, mean: 5.7690827816259116e-05
+Processed 3800/160000 samplesIntensity stats - min: 0.0, max: 0.9607176184654236, mean: 5.7863690017256886e-05
+Processed 3900/160000 samplesIntensity stats - min: 0.0, max: 0.9886531233787537, mean: 6.515085260616615e-05
+Processed 4000/160000 samplesIntensity stats - min: 0.0, max: 0.9685781002044678, mean: 5.8797464589588344e-05
+Processed 4100/160000 samplesIntensity stats - min: 0.0, max: 0.9350553154945374, mean: 6.021675653755665e-05
+Processed 4200/160000 samplesIntensity stats - min: 0.0, max: 0.8979059457778931, mean: 5.8466001064516604e-05
+Processed 4300/160000 samplesIntensity stats - min: 0.0, max: 0.9779655337333679, mean: 6.206083344295621e-05
+Processed 4400/160000 samplesIntensity stats - min: 0.0, max: 0.9298405647277832, mean: 6.373646465362981e-05
+Processed 4500/160000 samplesIntensity stats - min: 0.0, max: 0.8158217668533325, mean: 6.126722291810438e-05
+Processed 4600/160000 samplesIntensity stats - min: 0.0, max: 0.9336667656898499, mean: 5.5798293033149093e-05
+Processed 4700/160000 samplesIntensity stats - min: 0.0, max: 0.959804117679596, mean: 5.956856330158189e-05
+Processed 4800/160000 samplesIntensity stats - min: 0.0, max: 0.9348495006561279, mean: 6.133113492978737e-05
+Processed 4900/160000 samplesIntensity stats - min: 0.0, max: 0.9246487021446228, mean: 5.974560554022901e-05
+Processed 5000/160000 samplesIntensity stats - min: 0.0, max: 0.9315409064292908, mean: 6.158971518743783e-05
+Processed 5100/160000 samplesIntensity stats - min: 0.0, max: 0.9480797052383423, mean: 5.55065598746296e-05
+Processed 5200/160000 samplesIntensity stats - min: 0.0, max: 0.9750810265541077, mean: 5.8136902225669473e-05
+Processed 5300/160000 samplesIntensity stats - min: 0.0, max: 0.9214640855789185, mean: 5.7998400734504685e-05
+Processed 5400/160000 samplesIntensity stats - min: 0.0, max: 0.9873807430267334, mean: 6.356252561090514e-05
+Processed 5500/160000 samplesIntensity stats - min: 0.0, max: 0.9815003275871277, mean: 5.727138704969548e-05
+Processed 5600/160000 samplesIntensity stats - min: 0.0, max: 0.977562427520752, mean: 6.073992699384689e-05
+Processed 5700/160000 samplesIntensity stats - min: 0.0, max: 0.9341636300086975, mean: 5.9023524954682216e-05
+Processed 5800/160000 samplesIntensity stats - min: 0.0, max: 0.9735227227210999, mean: 5.630688610835932e-05
+Processed 5900/160000 samplesIntensity stats - min: 0.0, max: 0.9893887639045715, mean: 6.0485690482892096e-05
+Processed 6000/160000 samplesIntensity stats - min: 0.0, max: 0.9118297696113586, mean: 5.595345646725036e-05
+Processed 6100/160000 samplesIntensity stats - min: 0.0, max: 0.9319376349449158, mean: 5.6333086831727996e-05
+Processed 6200/160000 samplesIntensity stats - min: 0.0, max: 0.93732088804245, mean: 5.565500396187417e-05
+Processed 6300/160000 samplesIntensity stats - min: 0.0, max: 0.9551764130592346, mean: 6.33671588730067e-05
+Processed 6400/160000 samplesIntensity stats - min: 0.0, max: 0.9437791109085083, mean: 6.573738937731832e-05
+Processed 6500/160000 samplesIntensity stats - min: 0.0, max: 0.9399303793907166, mean: 5.609938671113923e-05
+Processed 6600/160000 samplesIntensity stats - min: 0.0, max: 0.9217621088027954, mean: 5.52577075723093e-05
+Processed 6700/160000 samplesIntensity stats - min: 0.0, max: 0.9645196199417114, mean: 6.207828846527264e-05
+Processed 6800/160000 samplesIntensity stats - min: 0.0, max: 0.928864598274231, mean: 5.645407145493664e-05
+Processed 6900/160000 samplesIntensity stats - min: 0.0, max: 0.9284833669662476, mean: 5.35449871676974e-05
+Processed 7000/160000 samplesIntensity stats - min: 0.0, max: 0.9853915572166443, mean: 5.6182077969424427e-05
+Processed 7100/160000 samplesIntensity stats - min: 0.0, max: 0.9646463394165039, mean: 5.643201438942924e-05
+Processed 7200/160000 samplesIntensity stats - min: 0.0, max: 0.9295462369918823, mean: 5.7255903811892495e-05
+Processed 7300/160000 samplesIntensity stats - min: 0.0, max: 0.9128527641296387, mean: 5.580710421781987e-05
+Processed 7400/160000 samplesIntensity stats - min: 0.0, max: 0.9777435660362244, mean: 5.43552559975069e-05
+Processed 7500/160000 samplesIntensity stats - min: 0.0, max: 0.9831841588020325, mean: 6.227358971955255e-05
+Processed 7600/160000 samplesIntensity stats - min: 0.0, max: 0.9868638515472412, mean: 6.041126835043542e-05
+Processed 7700/160000 samplesIntensity stats - min: 0.0, max: 0.9554953575134277, mean: 5.7227305660489947e-05
+Processed 7800/160000 samplesIntensity stats - min: 0.0, max: 0.9456857442855835, mean: 6.0640591982519254e-05
+Processed 7900/160000 samplesIntensity stats - min: 0.0, max: 0.9704530835151672, mean: 5.7133413065457717e-05
+Processed 8000/160000 samplesIntensity stats - min: 0.0, max: 0.9361864924430847, mean: 5.7969315093941987e-05
+Processed 8100/160000 samplesIntensity stats - min: 0.0, max: 0.943491518497467, mean: 5.423125548986718e-05
+Processed 8200/160000 samplesIntensity stats - min: 0.0, max: 0.9764150381088257, mean: 5.4004285630071536e-05
+Processed 8300/160000 samplesIntensity stats - min: 0.0, max: 0.9525105357170105, mean: 5.683419658453204e-05
+Processed 8400/160000 samplesIntensity stats - min: 0.0, max: 0.9448719620704651, mean: 5.806131593999453e-05
+Processed 8500/160000 samplesIntensity stats - min: 0.0, max: 0.9387601017951965, mean: 5.92188625887502e-05
+Processed 8600/160000 samplesIntensity stats - min: 0.0, max: 0.9160767197608948, mean: 6.104094791226089e-05
+Processed 8700/160000 samplesIntensity stats - min: 0.0, max: 0.9531461596488953, mean: 6.137438322184607e-05
+Processed 8800/160000 samplesIntensity stats - min: 0.0, max: 0.9282651543617249, mean: 5.7329933042638004e-05
+Processed 8900/160000 samplesIntensity stats - min: 0.0, max: 0.9119373559951782, mean: 5.525202868739143e-05
+Processed 9000/160000 samplesIntensity stats - min: 0.0, max: 0.9409246444702148, mean: 5.739779589930549e-05
+Processed 9100/160000 samplesIntensity stats - min: 0.0, max: 0.9558917880058289, mean: 6.110581307439134e-05
+Processed 9200/160000 samplesIntensity stats - min: 0.0, max: 0.9385772943496704, mean: 5.594252434093505e-05
+Processed 9300/160000 samplesIntensity stats - min: 0.0, max: 0.9118271470069885, mean: 5.470223186421208e-05
+Processed 9400/160000 samplesIntensity stats - min: 0.0, max: 0.9476144313812256, mean: 5.91045172768645e-05
+Processed 9500/160000 samplesIntensity stats - min: 0.0, max: 0.9926745295524597, mean: 6.434933311538771e-05
+Processed 9600/160000 samplesIntensity stats - min: 0.0, max: 0.9536947011947632, mean: 6.217151531018317e-05
+Processed 9700/160000 samplesIntensity stats - min: 0.0, max: 0.9103142023086548, mean: 6.045626287232153e-05
+Processed 9800/160000 samplesIntensity stats - min: 0.0, max: 0.8600752353668213, mean: 5.7700624893186614e-05
+Processed 9900/160000 samplesIntensity stats - min: 0.0, max: 0.9528182744979858, mean: 5.8087276556761935e-05
+Processed 10000/160000 samplesIntensity stats - min: 0.0, max: 0.8991616368293762, mean: 5.604277612292208e-05
+Processed 10100/160000 samplesIntensity stats - min: 0.0, max: 0.951865553855896, mean: 5.378872810979374e-05
+Processed 10200/160000 samplesIntensity stats - min: 0.0, max: 0.9858537316322327, mean: 5.923432036070153e-05
+Processed 10300/160000 samplesIntensity stats - min: 0.0, max: 0.9307184219360352, mean: 5.668798621627502e-05
+Processed 10400/160000 samplesIntensity stats - min: 0.0, max: 0.9424958825111389, mean: 5.7139295677188784e-05
+Processed 10500/160000 samplesIntensity stats - min: 0.0, max: 0.9588530659675598, mean: 5.921908814343624e-05
+Processed 10600/160000 samplesIntensity stats - min: 0.0, max: 0.9963216185569763, mean: 5.476658043335192e-05
+Processed 10700/160000 samplesIntensity stats - min: 0.0, max: 0.9833759069442749, mean: 5.657937072101049e-05
+Processed 10800/160000 samplesIntensity stats - min: 0.0, max: 0.9427171945571899, mean: 6.185993697727099e-05
+Processed 10900/160000 samplesIntensity stats - min: 0.0, max: 0.9328287243843079, mean: 5.992503065499477e-05
+Processed 11000/160000 samplesIntensity stats - min: 0.0, max: 0.9587879776954651, mean: 5.675917418557219e-05
+Processed 11100/160000 samplesIntensity stats - min: 0.0, max: 0.9591712355613708, mean: 5.761430657003075e-05
+Processed 11200/160000 samplesIntensity stats - min: 0.0, max: 0.9538912773132324, mean: 5.7439723605057225e-05
+Processed 11300/160000 samplesIntensity stats - min: 0.0, max: 0.9176067113876343, mean: 5.665366552420892e-05
+Processed 11400/160000 samplesIntensity stats - min: 0.0, max: 0.9385050535202026, mean: 5.189000876271166e-05
+Processed 11500/160000 samplesIntensity stats - min: 0.0, max: 0.9448876976966858, mean: 6.311621109489352e-05
+Processed 11600/160000 samplesIntensity stats - min: 0.0, max: 0.9914830923080444, mean: 6.33192466921173e-05
+Processed 11700/160000 samplesIntensity stats - min: 0.0, max: 0.9474040865898132, mean: 5.7342953368788585e-05
+Processed 11800/160000 samplesIntensity stats - min: 0.0, max: 0.8732576966285706, mean: 5.236617289483547e-05
+Processed 11900/160000 samplesIntensity stats - min: 0.0, max: 0.9664165377616882, mean: 5.661062823492102e-05
+Processed 12000/160000 samplesIntensity stats - min: 0.0, max: 0.8675549030303955, mean: 5.990381760057062e-05
+Processed 12100/160000 samplesIntensity stats - min: 0.0, max: 0.9125047922134399, mean: 5.329566920408979e-05
+Processed 12200/160000 samplesIntensity stats - min: 0.0, max: 0.9588176608085632, mean: 5.372654413804412e-05
+Processed 12300/160000 samplesIntensity stats - min: 0.0, max: 0.9591122269630432, mean: 5.95239907852374e-05
+Processed 12400/160000 samplesIntensity stats - min: 0.0, max: 0.9791725873947144, mean: 5.603069075732492e-05
+Processed 12500/160000 samplesIntensity stats - min: 0.0, max: 0.9017755389213562, mean: 5.2235798648325726e-05
+Processed 12600/160000 samplesIntensity stats - min: 0.0, max: 1.0017726421356201, mean: 6.242599192773923e-05
+Processed 12700/160000 samplesIntensity stats - min: 0.0, max: 0.9937523007392883, mean: 5.765892274212092e-05
+Processed 12800/160000 samplesIntensity stats - min: 0.0, max: 1.0109931230545044, mean: 5.975352178211324e-05
+Processed 12900/160000 samplesIntensity stats - min: 0.0, max: 0.9443766474723816, mean: 5.282165511744097e-05
+Processed 13000/160000 samplesIntensity stats - min: 0.0, max: 0.9573714733123779, mean: 5.4707306844647974e-05
+Processed 13100/160000 samplesIntensity stats - min: 0.0, max: 0.9739649891853333, mean: 5.6742206652415916e-05
+Processed 13200/160000 samplesIntensity stats - min: 0.0, max: 0.9284105896949768, mean: 5.851320383953862e-05
+Processed 13300/160000 samplesIntensity stats - min: 0.0, max: 0.876643717288971, mean: 5.010989116271958e-05
+Processed 13400/160000 samplesIntensity stats - min: 0.0, max: 0.9680261015892029, mean: 5.740078995586373e-05
+Processed 13500/160000 samplesIntensity stats - min: 0.0, max: 0.9675074219703674, mean: 5.8800953411264345e-05
+Processed 13600/160000 samplesIntensity stats - min: 0.0, max: 0.949834406375885, mean: 6.122193008195609e-05
+Processed 13700/160000 samplesIntensity stats - min: 0.0, max: 0.9325475096702576, mean: 5.567261905525811e-05
+Processed 13800/160000 samplesIntensity stats - min: 0.0, max: 1.0089432001113892, mean: 5.74854711885564e-05
+Processed 13900/160000 samplesIntensity stats - min: 0.0, max: 0.9684125781059265, mean: 5.599971700576134e-05
+Processed 14000/160000 samplesIntensity stats - min: 0.0, max: 0.9862071871757507, mean: 5.7049077440751716e-05
+Processed 14100/160000 samplesIntensity stats - min: 0.0, max: 0.9154590368270874, mean: 5.356161273084581e-05
+Processed 14200/160000 samplesIntensity stats - min: 0.0, max: 0.9409984946250916, mean: 5.698092354577966e-05
+Processed 14300/160000 samplesIntensity stats - min: 0.0, max: 0.9584339261054993, mean: 5.985433017485775e-05
+Processed 14400/160000 samplesIntensity stats - min: 0.0, max: 0.9504679441452026, mean: 5.7358538469998166e-05
+Processed 14500/160000 samplesIntensity stats - min: 0.0, max: 0.9696502685546875, mean: 5.840683661517687e-05
+Processed 14600/160000 samplesIntensity stats - min: 0.0, max: 0.9732875227928162, mean: 5.357384725357406e-05
+Processed 14700/160000 samplesIntensity stats - min: 0.0, max: 0.9653422832489014, mean: 5.960631096968427e-05
+Processed 14800/160000 samplesIntensity stats - min: 0.0, max: 0.9252742528915405, mean: 5.980415517115034e-05
+Processed 14900/160000 samplesIntensity stats - min: 0.0, max: 0.9714855551719666, mean: 5.555342067964375e-05
+Processed 15000/160000 samplesIntensity stats - min: 0.0, max: 0.9512349963188171, mean: 6.011568257235922e-05
+Processed 15100/160000 samplesIntensity stats - min: 0.0, max: 0.9590230584144592, mean: 5.733319994760677e-05
+Processed 15200/160000 samplesIntensity stats - min: 0.0, max: 0.9541339874267578, mean: 5.648300430038944e-05
+Processed 15300/160000 samplesIntensity stats - min: 0.0, max: 0.9181607365608215, mean: 5.5153501307358965e-05
+Processed 15400/160000 samplesIntensity stats - min: 0.0, max: 0.9401630163192749, mean: 5.763199442299083e-05
+Processed 15500/160000 samplesIntensity stats - min: 0.0, max: 0.9458817839622498, mean: 5.912553388043307e-05
+Processed 15600/160000 samplesIntensity stats - min: 0.0, max: 0.9572018980979919, mean: 5.608569335890934e-05
+Processed 15700/160000 samplesIntensity stats - min: 0.0, max: 0.9556770920753479, mean: 5.5244941904675215e-05
+Processed 15800/160000 samplesIntensity stats - min: 0.0, max: 0.9284565448760986, mean: 5.876681098015979e-05
+Processed 15900/160000 samplesIntensity stats - min: 0.0, max: 0.9731507897377014, mean: 6.044788096914999e-05
+Processed 16000/160000 samplesIntensity stats - min: 0.0, max: 0.9433199763298035, mean: 6.496641435660422e-05
+Processed 16100/160000 samplesIntensity stats - min: 0.0, max: 0.9273946285247803, mean: 5.700424298993312e-05
+Processed 16200/160000 samplesIntensity stats - min: 0.0, max: 0.9411424994468689, mean: 5.215655983192846e-05
+Processed 16300/160000 samplesIntensity stats - min: 0.0, max: 0.9619835019111633, mean: 5.5915799748618156e-05
+Processed 16400/160000 samplesIntensity stats - min: 0.0, max: 0.9588233828544617, mean: 5.783138840342872e-05
+Processed 16500/160000 samplesIntensity stats - min: 0.0, max: 0.9222160577774048, mean: 5.751770731876604e-05
+Processed 16600/160000 samplesIntensity stats - min: 0.0, max: 0.9697650074958801, mean: 5.930767292738892e-05
+Processed 16700/160000 samplesIntensity stats - min: 0.0, max: 0.9817831516265869, mean: 5.734926162404008e-05
+Processed 16800/160000 samplesIntensity stats - min: 0.0, max: 1.014660358428955, mean: 6.049276271369308e-05
+Processed 16900/160000 samplesIntensity stats - min: 0.0, max: 0.9077416062355042, mean: 5.715373481507413e-05
+Processed 17000/160000 samplesIntensity stats - min: 0.0, max: 0.9731435179710388, mean: 5.577017509494908e-05
+Processed 17100/160000 samplesIntensity stats - min: 0.0, max: 0.9899915456771851, mean: 6.50595102342777e-05
+Processed 17200/160000 samplesIntensity stats - min: 0.0, max: 0.9559805989265442, mean: 5.8196317695546895e-05
+Processed 17300/160000 samplesIntensity stats - min: 0.0, max: 0.9446583390235901, mean: 5.132699152454734e-05
+Processed 17400/160000 samplesIntensity stats - min: 0.0, max: 0.990934431552887, mean: 5.6396886066067964e-05
+Processed 17500/160000 samplesIntensity stats - min: 0.0, max: 0.9587290287017822, mean: 5.915012661716901e-05
+Processed 17600/160000 samplesIntensity stats - min: 0.0, max: 0.9619261622428894, mean: 6.0714595747413114e-05
+Processed 17700/160000 samplesIntensity stats - min: 0.0, max: 0.9358094930648804, mean: 5.434796548797749e-05
+Processed 17800/160000 samplesIntensity stats - min: 0.0, max: 0.9930921196937561, mean: 6.383608706528321e-05
+Processed 17900/160000 samplesIntensity stats - min: 0.0, max: 0.8910669684410095, mean: 6.0829614085378125e-05
+Processed 18000/160000 samplesIntensity stats - min: 0.0, max: 0.9403632283210754, mean: 5.653078915202059e-05
+Processed 18100/160000 samplesIntensity stats - min: 0.0, max: 0.961089551448822, mean: 5.225777204032056e-05
+Processed 18200/160000 samplesIntensity stats - min: 0.0, max: 0.967129647731781, mean: 6.162631325423717e-05
+Processed 18300/160000 samplesIntensity stats - min: 0.0, max: 0.9531828761100769, mean: 6.140423647593707e-05
+Processed 18400/160000 samplesIntensity stats - min: 0.0, max: 0.9528385996818542, mean: 6.423966988222674e-05
+Processed 18500/160000 samplesIntensity stats - min: 0.0, max: 0.976122260093689, mean: 6.153285357868299e-05
+Processed 18600/160000 samplesIntensity stats - min: 0.0, max: 0.9752920269966125, mean: 5.9544887335505337e-05
+Processed 18700/160000 samplesIntensity stats - min: 0.0, max: 0.9375125765800476, mean: 6.298763764789328e-05
+Processed 18800/160000 samplesIntensity stats - min: 0.0, max: 0.9786195158958435, mean: 6.109291280154139e-05
+Processed 18900/160000 samplesIntensity stats - min: 0.0, max: 0.9273846745491028, mean: 5.457852239487693e-05
+Processed 19000/160000 samplesIntensity stats - min: 0.0, max: 0.9653621315956116, mean: 6.163049692986533e-05
+Processed 19100/160000 samplesIntensity stats - min: 0.0, max: 0.9582829475402832, mean: 6.60923687973991e-05
+Processed 19200/160000 samplesIntensity stats - min: 0.0, max: 0.9867710471153259, mean: 6.199340714374557e-05
+Processed 19300/160000 samplesIntensity stats - min: 0.0, max: 0.9397286772727966, mean: 5.57418679818511e-05
+Processed 19400/160000 samplesIntensity stats - min: 0.0, max: 0.9615117907524109, mean: 5.9356116253184155e-05
+Processed 19500/160000 samplesIntensity stats - min: 0.0, max: 0.9890778064727783, mean: 6.10424904152751e-05
+Processed 19600/160000 samplesIntensity stats - min: 0.0, max: 0.8913032412528992, mean: 5.590458385995589e-05
+Processed 19700/160000 samplesIntensity stats - min: 0.0, max: 0.9567167162895203, mean: 5.822214006911963e-05
+Processed 19800/160000 samplesIntensity stats - min: 0.0, max: 0.9742379784584045, mean: 5.781525396741927e-05
+Processed 19900/160000 samplesIntensity stats - min: 0.0, max: 0.9785057902336121, mean: 5.820226579089649e-05
+Processed 20000/160000 samplesIntensity stats - min: 0.0, max: 0.98489910364151, mean: 6.739781383657828e-05
+Processed 20100/160000 samplesIntensity stats - min: 0.0, max: 0.9448383450508118, mean: 5.807464913232252e-05
+Processed 20200/160000 samplesIntensity stats - min: 0.0, max: 0.9576444625854492, mean: 6.0047899751225486e-05
+Processed 20300/160000 samplesIntensity stats - min: 0.0, max: 0.9865221977233887, mean: 5.916128066019155e-05
+Processed 20400/160000 samplesIntensity stats - min: 0.0, max: 0.9842102527618408, mean: 6.12141375313513e-05
+Processed 20500/160000 samplesIntensity stats - min: 0.0, max: 0.9336866736412048, mean: 6.1032122175674886e-05
+Processed 20600/160000 samplesIntensity stats - min: 0.0, max: 0.9566145539283752, mean: 6.106119690230116e-05
+Processed 20700/160000 samplesIntensity stats - min: 0.0, max: 0.9513130784034729, mean: 6.227362609934062e-05
+Processed 20800/160000 samplesIntensity stats - min: 0.0, max: 0.9898927807807922, mean: 6.18966223555617e-05
+Processed 20900/160000 samplesIntensity stats - min: 0.0, max: 0.9477571249008179, mean: 6.345551082631573e-05
+Processed 21000/160000 samplesIntensity stats - min: 0.0, max: 0.9614323973655701, mean: 5.7132299843942747e-05
+Processed 21100/160000 samplesIntensity stats - min: 0.0, max: 0.9836696982383728, mean: 6.348797614919022e-05
+Processed 21200/160000 samplesIntensity stats - min: 0.0, max: 0.9545225501060486, mean: 5.5887841881485656e-05
+Processed 21300/160000 samplesIntensity stats - min: 0.0, max: 0.9784582853317261, mean: 6.131182453827932e-05
+Processed 21400/160000 samplesIntensity stats - min: 0.0, max: 0.979221522808075, mean: 5.735827289754525e-05
+Processed 21500/160000 samplesIntensity stats - min: 0.0, max: 0.9730663299560547, mean: 6.893682439113036e-05
+Processed 21600/160000 samplesIntensity stats - min: 0.0, max: 0.9427165389060974, mean: 5.816010889247991e-05
+Processed 21700/160000 samplesIntensity stats - min: 0.0, max: 0.9274857044219971, mean: 5.568221604335122e-05
+Processed 21800/160000 samplesIntensity stats - min: 0.0, max: 1.0158677101135254, mean: 6.044790643500164e-05
+Processed 21900/160000 samplesIntensity stats - min: 0.0, max: 0.9706264138221741, mean: 6.34568787063472e-05
+Processed 22000/160000 samplesIntensity stats - min: 0.0, max: 1.0062142610549927, mean: 5.982572474749759e-05
+Processed 22100/160000 samplesIntensity stats - min: 0.0, max: 0.9534589648246765, mean: 6.477174611063674e-05
+Processed 22200/160000 samplesIntensity stats - min: 0.0, max: 1.0015411376953125, mean: 6.516869325423613e-05
+Processed 22300/160000 samplesIntensity stats - min: 0.0, max: 0.931453287601471, mean: 6.241485243663192e-05
+Processed 22400/160000 samplesIntensity stats - min: 0.0, max: 0.9824841022491455, mean: 6.22326260781847e-05
+Processed 22500/160000 samplesIntensity stats - min: 0.0, max: 0.9540459513664246, mean: 6.143609061837196e-05
+Processed 22600/160000 samplesIntensity stats - min: 0.0, max: 0.9593026041984558, mean: 6.282732647377998e-05
+Processed 22700/160000 samplesIntensity stats - min: 0.0, max: 0.949565589427948, mean: 6.775251677026972e-05
+Processed 22800/160000 samplesIntensity stats - min: 0.0, max: 0.9471033811569214, mean: 6.1613398429472e-05
+Processed 22900/160000 samplesIntensity stats - min: 0.0, max: 0.9361438751220703, mean: 5.923295611864887e-05
+Processed 23000/160000 samplesIntensity stats - min: 0.0, max: 0.9727709293365479, mean: 6.158922769827768e-05
+Processed 23100/160000 samplesIntensity stats - min: 0.0, max: 0.9713737368583679, mean: 6.644715904258192e-05
+Processed 23200/160000 samplesIntensity stats - min: 0.0, max: 0.961374819278717, mean: 6.0884816775796935e-05
+Processed 23300/160000 samplesIntensity stats - min: 0.0, max: 0.9424372315406799, mean: 5.8225126849720255e-05
+Processed 23400/160000 samplesIntensity stats - min: 0.0, max: 0.9831801652908325, mean: 6.353827484417707e-05
+Processed 23500/160000 samplesIntensity stats - min: 0.0, max: 0.9738413691520691, mean: 6.639050843659788e-05
+Processed 23600/160000 samplesIntensity stats - min: 0.0, max: 0.9507575035095215, mean: 6.068645598134026e-05
+Processed 23700/160000 samplesIntensity stats - min: 0.0, max: 0.7897178530693054, mean: 5.48478274140507e-05
+Processed 23800/160000 samplesIntensity stats - min: 0.0, max: 0.8973184823989868, mean: 5.8455654652789235e-05
+Processed 23900/160000 samplesIntensity stats - min: 0.0, max: 0.9916520118713379, mean: 5.913924178457819e-05
+Processed 24000/160000 samplesIntensity stats - min: 0.0, max: 0.9663088917732239, mean: 6.514681444969028e-05
+Processed 24100/160000 samplesIntensity stats - min: 0.0, max: 0.920816957950592, mean: 6.016088809701614e-05
+Processed 24200/160000 samplesIntensity stats - min: 0.0, max: 0.9797810912132263, mean: 6.0626531194429845e-05
+Processed 24300/160000 samplesIntensity stats - min: 0.0, max: 0.9521751999855042, mean: 6.543101335410029e-05
+Processed 24400/160000 samplesIntensity stats - min: 0.0, max: 0.9308605790138245, mean: 5.9633213822962716e-05
+Processed 24500/160000 samplesIntensity stats - min: 0.0, max: 0.9115623831748962, mean: 5.7406712585361674e-05
+Processed 24600/160000 samplesIntensity stats - min: 0.0, max: 0.9463464617729187, mean: 5.872699694009498e-05
+Processed 24700/160000 samplesIntensity stats - min: 0.0, max: 0.9325225949287415, mean: 6.16100151091814e-05
+Processed 24800/160000 samplesIntensity stats - min: 0.0, max: 0.9313645958900452, mean: 6.156567542348057e-05
+Processed 24900/160000 samplesIntensity stats - min: 0.0, max: 0.9376364946365356, mean: 6.037234197719954e-05
+Processed 25000/160000 samplesIntensity stats - min: 0.0, max: 0.962710976600647, mean: 5.788472481071949e-05
+Processed 25100/160000 samplesIntensity stats - min: 0.0, max: 0.9829109311103821, mean: 6.505030614789575e-05
+Processed 25200/160000 samplesIntensity stats - min: 0.0, max: 0.9015561938285828, mean: 5.936126399319619e-05
+Processed 25300/160000 samplesIntensity stats - min: 0.0, max: 0.9351909160614014, mean: 6.192176078911871e-05
+Processed 25400/160000 samplesIntensity stats - min: 0.0, max: 0.9306884407997131, mean: 6.336881051538512e-05
+Processed 25500/160000 samplesIntensity stats - min: 0.0, max: 0.9326907992362976, mean: 5.927890015300363e-05
+Processed 25600/160000 samplesIntensity stats - min: 0.0, max: 0.9642249941825867, mean: 5.569452332565561e-05
+Processed 25700/160000 samplesIntensity stats - min: 0.0, max: 0.938367486000061, mean: 6.421573925763369e-05
+Processed 25800/160000 samplesIntensity stats - min: 0.0, max: 0.9848308563232422, mean: 6.147239764686674e-05
+Processed 25900/160000 samplesIntensity stats - min: 0.0, max: 0.9753081798553467, mean: 6.357734673656523e-05
+Processed 26000/160000 samplesIntensity stats - min: 0.0, max: 0.9878733158111572, mean: 6.754034984624013e-05
+Processed 26100/160000 samplesIntensity stats - min: 0.0, max: 0.9683904051780701, mean: 5.456742292153649e-05
+Processed 26200/160000 samplesIntensity stats - min: 0.0, max: 0.9550938010215759, mean: 5.8704546972876415e-05
+Processed 26300/160000 samplesIntensity stats - min: 0.0, max: 0.9451561570167542, mean: 5.8372395869810134e-05
+Processed 26400/160000 samplesIntensity stats - min: 0.0, max: 0.9655308723449707, mean: 6.637859769398347e-05
+Processed 26500/160000 samplesIntensity stats - min: 0.0, max: 0.9390487670898438, mean: 5.3944891988066956e-05
+Processed 26600/160000 samplesIntensity stats - min: 0.0, max: 0.9781008362770081, mean: 6.339580431813374e-05
+Processed 26700/160000 samplesIntensity stats - min: 0.0, max: 0.9777123928070068, mean: 5.743188739870675e-05
+Processed 26800/160000 samplesIntensity stats - min: 0.0, max: 0.9508306980133057, mean: 6.341143307508901e-05
+Processed 26900/160000 samplesIntensity stats - min: 0.0, max: 0.8910691738128662, mean: 6.53022580081597e-05
+Processed 27000/160000 samplesIntensity stats - min: 0.0, max: 0.9247338175773621, mean: 5.877626972505823e-05
+Processed 27100/160000 samplesIntensity stats - min: 0.0, max: 1.0400636196136475, mean: 6.256336200749502e-05
+Processed 27200/160000 samplesIntensity stats - min: 0.0, max: 1.0015075206756592, mean: 6.539655441883951e-05
+Processed 27300/160000 samplesIntensity stats - min: 0.0, max: 0.8861679434776306, mean: 6.203421071404591e-05
+Processed 27400/160000 samplesIntensity stats - min: 0.0, max: 0.9361862540245056, mean: 6.116274744272232e-05
+Processed 27500/160000 samplesIntensity stats - min: 0.0, max: 0.9541810154914856, mean: 6.3036430219654e-05
+Processed 27600/160000 samplesIntensity stats - min: 0.0, max: 0.9968211054801941, mean: 6.253639730857685e-05
+Processed 27700/160000 samplesIntensity stats - min: 0.0, max: 0.941726803779602, mean: 5.96104800933972e-05
+Processed 27800/160000 samplesIntensity stats - min: 0.0, max: 0.984375536441803, mean: 5.8676050684880465e-05
+Processed 27900/160000 samplesIntensity stats - min: 0.0, max: 0.9424833655357361, mean: 6.589929398614913e-05
+Processed 28000/160000 samplesIntensity stats - min: 0.0, max: 0.9679502844810486, mean: 6.258770736167207e-05
+Processed 28100/160000 samplesIntensity stats - min: 0.0, max: 0.9812370538711548, mean: 5.809655340272002e-05
+Processed 28200/160000 samplesIntensity stats - min: 0.0, max: 0.9669200778007507, mean: 5.96039644733537e-05
+Processed 28300/160000 samplesIntensity stats - min: 0.0, max: 0.9570053219795227, mean: 5.9102709201397374e-05
+Processed 28400/160000 samplesIntensity stats - min: 0.0, max: 0.9919657111167908, mean: 6.04407541686669e-05
+Processed 28500/160000 samplesIntensity stats - min: 0.0, max: 0.9453586935997009, mean: 6.021988156135194e-05
+Processed 28600/160000 samplesIntensity stats - min: 0.0, max: 0.9818981289863586, mean: 6.65982806822285e-05
+Processed 28700/160000 samplesIntensity stats - min: 0.0, max: 0.9439665675163269, mean: 6.059254155843519e-05
+Processed 28800/160000 samplesIntensity stats - min: 0.0, max: 0.9822787642478943, mean: 6.191030843183398e-05
+Processed 28900/160000 samplesIntensity stats - min: 0.0, max: 0.9604836702346802, mean: 6.007865886203945e-05
+Processed 29000/160000 samplesIntensity stats - min: 0.0, max: 0.9242302179336548, mean: 5.460160173242912e-05
+Processed 29100/160000 samplesIntensity stats - min: 0.0, max: 0.9655040502548218, mean: 6.387129542417824e-05
+Processed 29200/160000 samplesIntensity stats - min: 0.0, max: 0.9710409045219421, mean: 6.870176730444655e-05
+Processed 29300/160000 samplesIntensity stats - min: 0.0, max: 0.9623874425888062, mean: 6.053087781765498e-05
+Processed 29400/160000 samplesIntensity stats - min: 0.0, max: 0.9346921443939209, mean: 6.036778722773306e-05
+Processed 29500/160000 samplesIntensity stats - min: 0.0, max: 0.9898106455802917, mean: 6.491963722510263e-05
+Processed 29600/160000 samplesIntensity stats - min: 0.0, max: 0.9976759552955627, mean: 6.220419891178608e-05
+Processed 29700/160000 samplesIntensity stats - min: 0.0, max: 0.9539592266082764, mean: 6.239102367544547e-05
+Processed 29800/160000 samplesIntensity stats - min: 0.0, max: 0.95501708984375, mean: 6.168700201669708e-05
+Processed 29900/160000 samplesIntensity stats - min: 0.0, max: 0.9686782956123352, mean: 5.7424960687058046e-05
+Processed 30000/160000 samplesIntensity stats - min: 0.0, max: 0.9908458590507507, mean: 6.31019429420121e-05
+Processed 30100/160000 samplesIntensity stats - min: 0.0, max: 0.9686986804008484, mean: 5.8367655583424494e-05
+Processed 30200/160000 samplesIntensity stats - min: 0.0, max: 0.967316210269928, mean: 6.322544504655525e-05
+Processed 30300/160000 samplesIntensity stats - min: 0.0, max: 0.9824456572532654, mean: 6.333123019430786e-05
+Processed 30400/160000 samplesIntensity stats - min: 0.0, max: 0.9954076409339905, mean: 5.986415999359451e-05
+Processed 30500/160000 samplesIntensity stats - min: 0.0, max: 1.0483731031417847, mean: 5.9431571571622044e-05
+Processed 30600/160000 samplesIntensity stats - min: 0.0, max: 0.9453395009040833, mean: 6.0445050621638075e-05
+Processed 30700/160000 samplesIntensity stats - min: 0.0, max: 0.9731464982032776, mean: 5.9779744333354756e-05
+Processed 30800/160000 samplesIntensity stats - min: 0.0, max: 0.9766537547111511, mean: 5.94745906710159e-05
+Processed 30900/160000 samplesIntensity stats - min: 0.0, max: 0.9515143036842346, mean: 5.466705988510512e-05
+Processed 31000/160000 samplesIntensity stats - min: 0.0, max: 0.9952031970024109, mean: 5.887899169465527e-05
+Processed 31100/160000 samplesIntensity stats - min: 0.0, max: 0.9337095022201538, mean: 5.538163532037288e-05
+Processed 31200/160000 samplesIntensity stats - min: 0.0, max: 0.9678952097892761, mean: 6.537092849612236e-05
+Processed 31300/160000 samplesIntensity stats - min: 0.0, max: 0.9034749269485474, mean: 6.526856304844841e-05
+Processed 31400/160000 samplesIntensity stats - min: 0.0, max: 1.0138599872589111, mean: 6.227231642697006e-05
+Processed 31500/160000 samplesIntensity stats - min: 0.0, max: 0.9889418482780457, mean: 6.146392843220383e-05
+Processed 31600/160000 samplesIntensity stats - min: 0.0, max: 0.9825217127799988, mean: 6.904089241288602e-05
+Processed 31700/160000 samplesIntensity stats - min: 0.0, max: 0.9911472201347351, mean: 5.6554774346295744e-05
+Processed 31800/160000 samplesIntensity stats - min: 0.0, max: 0.9799231290817261, mean: 6.13287411397323e-05
+Processed 31900/160000 samplesIntensity stats - min: 0.0, max: 1.003666877746582, mean: 6.494917761301622e-05
+Processed 32000/160000 samplesIntensity stats - min: 0.0, max: 0.9898120760917664, mean: 6.469385698437691e-05
+Processed 32100/160000 samplesIntensity stats - min: 0.0, max: 0.9879014492034912, mean: 6.235967157408595e-05
+Processed 32200/160000 samplesIntensity stats - min: 0.0, max: 0.9536005258560181, mean: 6.11521682003513e-05
+Processed 32300/160000 samplesIntensity stats - min: 0.0, max: 0.9783602356910706, mean: 6.204673991305754e-05
+Processed 32400/160000 samplesIntensity stats - min: 0.0, max: 0.9827086329460144, mean: 6.823690637247637e-05
+Processed 32500/160000 samplesIntensity stats - min: 0.0, max: 0.9636167883872986, mean: 6.490023952210322e-05
+Processed 32600/160000 samplesIntensity stats - min: 0.0, max: 0.9411067366600037, mean: 5.443378540803678e-05
+Processed 32700/160000 samplesIntensity stats - min: 0.0, max: 0.9757388234138489, mean: 6.365208537317812e-05
+Processed 32800/160000 samplesIntensity stats - min: 0.0, max: 0.9681488871574402, mean: 6.471267261076719e-05
+Processed 32900/160000 samplesIntensity stats - min: 0.0, max: 0.9712802171707153, mean: 6.382200081134215e-05
+Processed 33000/160000 samplesIntensity stats - min: 0.0, max: 0.9653721451759338, mean: 5.790076102130115e-05
+Processed 33100/160000 samplesIntensity stats - min: 0.0, max: 0.9699074029922485, mean: 5.826651613460854e-05
+Processed 33200/160000 samplesIntensity stats - min: 0.0, max: 0.934135377407074, mean: 5.8540779718896374e-05
+Processed 33300/160000 samplesIntensity stats - min: 0.0, max: 0.9690273404121399, mean: 6.167743413243443e-05
+Processed 33400/160000 samplesIntensity stats - min: 0.0, max: 0.9508591294288635, mean: 5.784695895272307e-05
+Processed 33500/160000 samplesIntensity stats - min: 0.0, max: 0.9727579951286316, mean: 5.9944202803308144e-05
+Processed 33600/160000 samplesIntensity stats - min: 0.0, max: 0.9643043875694275, mean: 5.855715062352829e-05
+Processed 33700/160000 samplesIntensity stats - min: 0.0, max: 0.9557031393051147, mean: 5.5723889090586454e-05
+Processed 33800/160000 samplesIntensity stats - min: 0.0, max: 0.9349251985549927, mean: 6.140421464806423e-05
+Processed 33900/160000 samplesIntensity stats - min: 0.0, max: 0.9685994386672974, mean: 6.01078245381359e-05
+Processed 34000/160000 samplesIntensity stats - min: 0.0, max: 0.9668967127799988, mean: 6.785974983358756e-05
+Processed 34100/160000 samplesIntensity stats - min: 0.0, max: 0.9576231837272644, mean: 5.965646414551884e-05
+Processed 34200/160000 samplesIntensity stats - min: 0.0, max: 0.941665530204773, mean: 5.8075893321074545e-05
+Processed 34300/160000 samplesIntensity stats - min: 0.0, max: 0.9880687594413757, mean: 5.67890347156208e-05
+Processed 34400/160000 samplesIntensity stats - min: 0.0, max: 0.9937728047370911, mean: 6.989450048422441e-05
+Processed 34500/160000 samplesIntensity stats - min: 0.0, max: 0.9470570087432861, mean: 6.655490869889036e-05
+Processed 34600/160000 samplesIntensity stats - min: 0.0, max: 0.9570258259773254, mean: 5.337496622814797e-05
+Processed 34700/160000 samplesIntensity stats - min: 0.0, max: 0.907703697681427, mean: 5.85486923228018e-05
+Processed 34800/160000 samplesIntensity stats - min: 0.0, max: 0.9449256062507629, mean: 6.22292936895974e-05
+Processed 34900/160000 samplesIntensity stats - min: 0.0, max: 0.9265989065170288, mean: 5.784821405541152e-05
+Processed 35000/160000 samplesIntensity stats - min: 0.0, max: 0.9572053551673889, mean: 5.834025432704948e-05
+Processed 35100/160000 samplesIntensity stats - min: 0.0, max: 1.009049654006958, mean: 5.6658209359738976e-05
+Processed 35200/160000 samplesIntensity stats - min: 0.0, max: 0.9700376391410828, mean: 6.0620499425567687e-05
+Processed 35300/160000 samplesIntensity stats - min: 0.0, max: 0.9992545247077942, mean: 5.7597862905822694e-05
+Processed 35400/160000 samplesIntensity stats - min: 0.0, max: 0.9602698683738708, mean: 6.062384636607021e-05
+Processed 35500/160000 samplesIntensity stats - min: 0.0, max: 0.9530899524688721, mean: 6.0126647440483794e-05
+Processed 35600/160000 samplesIntensity stats - min: 0.0, max: 0.9524568915367126, mean: 6.579530599992722e-05
+Processed 35700/160000 samplesIntensity stats - min: 0.0, max: 1.0225926637649536, mean: 6.401001883205026e-05
+Processed 35800/160000 samplesIntensity stats - min: 0.0, max: 0.9762204885482788, mean: 6.601426866836846e-05
+Processed 35900/160000 samplesIntensity stats - min: 0.0, max: 1.0005583763122559, mean: 6.300379027379677e-05
+Processed 36000/160000 samplesIntensity stats - min: 0.0, max: 0.9506403803825378, mean: 6.683774699922651e-05
+Processed 36100/160000 samplesIntensity stats - min: 0.0, max: 0.9401472806930542, mean: 6.455655966419727e-05
+Processed 36200/160000 samplesIntensity stats - min: 0.0, max: 0.9656895399093628, mean: 6.110846879892051e-05
+Processed 36300/160000 samplesIntensity stats - min: 0.0, max: 0.9289442300796509, mean: 5.817140845465474e-05
+Processed 36400/160000 samplesIntensity stats - min: 0.0, max: 0.9787068367004395, mean: 6.27787594567053e-05
+Processed 36500/160000 samplesIntensity stats - min: 0.0, max: 1.0879108905792236, mean: 5.786132169305347e-05
+Processed 36600/160000 samplesIntensity stats - min: 0.0, max: 0.9673411846160889, mean: 5.433150727185421e-05
+Processed 36700/160000 samplesIntensity stats - min: 0.0, max: 0.9815211892127991, mean: 6.472857785411179e-05
+Processed 36800/160000 samplesIntensity stats - min: 0.0, max: 1.017848014831543, mean: 6.476779526565224e-05
+Processed 36900/160000 samplesIntensity stats - min: 0.0, max: 0.9527732729911804, mean: 6.676385964965448e-05
+Processed 37000/160000 samplesIntensity stats - min: 0.0, max: 0.9862442016601562, mean: 5.817580677103251e-05
+Processed 37100/160000 samplesIntensity stats - min: 0.0, max: 0.939810574054718, mean: 6.296547508100048e-05
+Processed 37200/160000 samplesIntensity stats - min: 0.0, max: 0.9649232625961304, mean: 6.468423816841096e-05
+Processed 37300/160000 samplesIntensity stats - min: 0.0, max: 0.9409956932067871, mean: 6.759345706086606e-05
+Processed 37400/160000 samplesIntensity stats - min: 0.0, max: 0.999270498752594, mean: 6.159957411000505e-05
+Processed 37500/160000 samplesIntensity stats - min: 0.0, max: 0.9616279006004333, mean: 6.73587346682325e-05
+Processed 37600/160000 samplesIntensity stats - min: 0.0, max: 0.9502905011177063, mean: 7.224919681902975e-05
+Processed 37700/160000 samplesIntensity stats - min: 0.0, max: 0.9671548008918762, mean: 6.524704804178327e-05
+Processed 37800/160000 samplesIntensity stats - min: 0.0, max: 0.9578038454055786, mean: 6.564071372849867e-05
+Processed 37900/160000 samplesIntensity stats - min: 0.0, max: 0.9861279129981995, mean: 6.625743117183447e-05
+Processed 38000/160000 samplesIntensity stats - min: 0.0, max: 0.9773162007331848, mean: 6.893486715853214e-05
+Processed 38100/160000 samplesIntensity stats - min: 0.0, max: 0.9522172212600708, mean: 6.29547648713924e-05
+Processed 38200/160000 samplesIntensity stats - min: 0.0, max: 0.979173481464386, mean: 6.426199979614466e-05
+Processed 38300/160000 samplesIntensity stats - min: 0.0, max: 0.9771022200584412, mean: 7.104176620487124e-05
+Processed 38400/160000 samplesIntensity stats - min: 0.0, max: 0.9278826117515564, mean: 6.638892227783799e-05
+Processed 38500/160000 samplesIntensity stats - min: 0.0, max: 0.9534088373184204, mean: 6.283255788730457e-05
+Processed 38600/160000 samplesIntensity stats - min: 0.0, max: 0.958299994468689, mean: 5.8792022173292935e-05
+Processed 38700/160000 samplesIntensity stats - min: 0.0, max: 0.9908232092857361, mean: 6.458722054958344e-05
+Processed 38800/160000 samplesIntensity stats - min: 0.0, max: 0.9806817173957825, mean: 7.064999226713553e-05
+Processed 38900/160000 samplesIntensity stats - min: 0.0, max: 0.9079415798187256, mean: 6.823262810939923e-05
+Processed 39000/160000 samplesIntensity stats - min: 0.0, max: 1.0096408128738403, mean: 5.9081143263028935e-05
+Processed 39100/160000 samplesIntensity stats - min: 0.0, max: 0.9663739204406738, mean: 6.320371176116168e-05
+Processed 39200/160000 samplesIntensity stats - min: 0.0, max: 0.9729542136192322, mean: 6.624063826166093e-05
+Processed 39300/160000 samplesIntensity stats - min: 0.0, max: 0.9703378677368164, mean: 6.388257315848023e-05
+Processed 39400/160000 samplesIntensity stats - min: 0.0, max: 0.927639365196228, mean: 6.0056245274608955e-05
+Processed 39500/160000 samplesIntensity stats - min: 0.0, max: 0.9170681238174438, mean: 5.958556357654743e-05
+Processed 39600/160000 samplesIntensity stats - min: 0.0, max: 0.9970832467079163, mean: 6.644796667387709e-05
+Processed 39700/160000 samplesIntensity stats - min: 0.0, max: 0.9168137907981873, mean: 6.370664777932689e-05
+Processed 39800/160000 samplesIntensity stats - min: 0.0, max: 0.9887852668762207, mean: 6.09302514931187e-05
+Processed 39900/160000 samplesIntensity stats - min: 0.0, max: 0.9613540768623352, mean: 6.398637196980417e-05
+Processed 40000/160000 samplesIntensity stats - min: 0.0, max: 0.9918784499168396, mean: 7.238831312861294e-05
+Processed 40100/160000 samplesIntensity stats - min: 0.0, max: 0.9608530402183533, mean: 6.809373007854447e-05
+Processed 40200/160000 samplesIntensity stats - min: 0.0, max: 0.9330546259880066, mean: 6.62718593957834e-05
+Processed 40300/160000 samplesIntensity stats - min: 0.0, max: 0.9690099358558655, mean: 6.558695167768747e-05
+Processed 40400/160000 samplesIntensity stats - min: 0.0, max: 0.9755211472511292, mean: 6.809320620959625e-05
+Processed 40500/160000 samplesIntensity stats - min: 0.0, max: 0.9039826989173889, mean: 6.096939978306182e-05
+Processed 40600/160000 samplesIntensity stats - min: 0.0, max: 0.9889745116233826, mean: 6.806274905102327e-05
+Processed 40700/160000 samplesIntensity stats - min: 0.0, max: 0.9673435091972351, mean: 7.22465556464158e-05
+Processed 40800/160000 samplesIntensity stats - min: 0.0, max: 0.9633737802505493, mean: 6.550209945999086e-05
+Processed 40900/160000 samplesIntensity stats - min: 0.0, max: 0.9427184462547302, mean: 6.594337901333347e-05
+Processed 41000/160000 samplesIntensity stats - min: 0.0, max: 0.8963661193847656, mean: 5.875925126019865e-05
+Processed 41100/160000 samplesIntensity stats - min: 0.0, max: 0.9778737425804138, mean: 6.16199104115367e-05
+Processed 41200/160000 samplesIntensity stats - min: 0.0, max: 0.9537850022315979, mean: 7.076554902596399e-05
+Processed 41300/160000 samplesIntensity stats - min: 0.0, max: 0.946116030216217, mean: 6.458587449742481e-05
+Processed 41400/160000 samplesIntensity stats - min: 0.0, max: 0.9547465443611145, mean: 6.211008440004662e-05
+Processed 41500/160000 samplesIntensity stats - min: 0.0, max: 0.9886623024940491, mean: 6.42201048322022e-05
+Processed 41600/160000 samplesIntensity stats - min: 0.0, max: 1.0013777017593384, mean: 7.51956322346814e-05
+Processed 41700/160000 samplesIntensity stats - min: 0.0, max: 1.0141732692718506, mean: 6.789831968490034e-05
+Processed 41800/160000 samplesIntensity stats - min: 0.0, max: 0.9704646468162537, mean: 6.053891047486104e-05
+Processed 41900/160000 samplesIntensity stats - min: 0.0, max: 1.0040457248687744, mean: 6.28377529210411e-05
+Processed 42000/160000 samplesIntensity stats - min: 0.0, max: 0.9723150730133057, mean: 7.134885527193546e-05
+Processed 42100/160000 samplesIntensity stats - min: 0.0, max: 0.9651999473571777, mean: 6.35524993413128e-05
+Processed 42200/160000 samplesIntensity stats - min: 0.0, max: 0.9506798386573792, mean: 5.9847232478205115e-05
+Processed 42300/160000 samplesIntensity stats - min: 0.0, max: 0.9543060064315796, mean: 6.842925358796492e-05
+Processed 42400/160000 samplesIntensity stats - min: 0.0, max: 0.9821093082427979, mean: 6.351616320898756e-05
+Processed 42500/160000 samplesIntensity stats - min: 0.0, max: 0.990929901599884, mean: 6.369216862367466e-05
+Processed 42600/160000 samplesIntensity stats - min: 0.0, max: 0.9708786606788635, mean: 6.353232311084867e-05
+Processed 42700/160000 samplesIntensity stats - min: 0.0, max: 0.9254103302955627, mean: 6.84967526467517e-05
+Processed 42800/160000 samplesIntensity stats - min: 0.0, max: 1.0182018280029297, mean: 7.036294846329838e-05
+Processed 42900/160000 samplesIntensity stats - min: 0.0, max: 0.9531984329223633, mean: 5.816018529003486e-05
+Processed 43000/160000 samplesIntensity stats - min: 0.0, max: 0.9895173907279968, mean: 6.425927858799696e-05
+Processed 43100/160000 samplesIntensity stats - min: 0.0, max: 0.9354410171508789, mean: 6.927135109435767e-05
+Processed 43200/160000 samplesIntensity stats - min: 0.0, max: 0.9688528180122375, mean: 6.503964686999097e-05
+Processed 43300/160000 samplesIntensity stats - min: 0.0, max: 0.9197553396224976, mean: 5.9314959798939526e-05
+Processed 43400/160000 samplesIntensity stats - min: 0.0, max: 0.8899679183959961, mean: 6.054277764633298e-05
+Processed 43500/160000 samplesIntensity stats - min: 0.0, max: 0.9519542455673218, mean: 6.871510413475335e-05
+Processed 43600/160000 samplesIntensity stats - min: 0.0, max: 0.9762980341911316, mean: 6.991164991632104e-05
+Processed 43700/160000 samplesIntensity stats - min: 0.0, max: 0.9994791150093079, mean: 6.173480505822226e-05
+Processed 43800/160000 samplesIntensity stats - min: 0.0, max: 1.031213641166687, mean: 6.729289452778175e-05
+Processed 43900/160000 samplesIntensity stats - min: 0.0, max: 0.9741292595863342, mean: 6.437169940909371e-05
+Processed 44000/160000 samplesIntensity stats - min: 0.0, max: 0.9894854426383972, mean: 7.189917960204184e-05
+Processed 44100/160000 samplesIntensity stats - min: 0.0, max: 0.9439078569412231, mean: 6.418762495741248e-05
+Processed 44200/160000 samplesIntensity stats - min: 0.0, max: 0.9596559405326843, mean: 6.620834756176919e-05
+Processed 44300/160000 samplesIntensity stats - min: 0.0, max: 0.9709286093711853, mean: 7.161094981711358e-05
+Processed 44400/160000 samplesIntensity stats - min: 0.0, max: 0.9947050213813782, mean: 7.035696035018191e-05
+Processed 44500/160000 samplesIntensity stats - min: 0.0, max: 1.0177260637283325, mean: 6.613652658415958e-05
+Processed 44600/160000 samplesIntensity stats - min: 0.0, max: 0.9536917805671692, mean: 6.029678843333386e-05
+Processed 44700/160000 samplesIntensity stats - min: 0.0, max: 0.9110669493675232, mean: 6.913818651810288e-05
+Processed 44800/160000 samplesIntensity stats - min: 0.0, max: 0.9593201279640198, mean: 7.035359158180654e-05
+Processed 44900/160000 samplesIntensity stats - min: 0.0, max: 0.8978138566017151, mean: 5.910101754125208e-05
+Processed 45000/160000 samplesIntensity stats - min: 0.0, max: 0.9741916060447693, mean: 6.5295746026095e-05
+Processed 45100/160000 samplesIntensity stats - min: 0.0, max: 0.9536661505699158, mean: 6.551307160407305e-05
+Processed 45200/160000 samplesIntensity stats - min: 0.0, max: 0.9953457713127136, mean: 6.78824435453862e-05
+Processed 45300/160000 samplesIntensity stats - min: 0.0, max: 0.9106813073158264, mean: 5.8704084949567914e-05
+Processed 45400/160000 samplesIntensity stats - min: 0.0, max: 0.9064282774925232, mean: 6.453628157032654e-05
+Processed 45500/160000 samplesIntensity stats - min: 0.0, max: 0.966050922870636, mean: 6.151891284389421e-05
+Processed 45600/160000 samplesIntensity stats - min: 0.0, max: 0.9904474020004272, mean: 6.75263800076209e-05
+Processed 45700/160000 samplesIntensity stats - min: 0.0, max: 0.9569949507713318, mean: 6.37889388599433e-05
+Processed 45800/160000 samplesIntensity stats - min: 0.0, max: 0.9663697481155396, mean: 6.22965962975286e-05
+Processed 45900/160000 samplesIntensity stats - min: 0.0, max: 0.9527904391288757, mean: 6.094027776271105e-05
+Processed 46000/160000 samplesIntensity stats - min: 0.0, max: 0.9637780785560608, mean: 7.12940891389735e-05
+Processed 46100/160000 samplesIntensity stats - min: 0.0, max: 0.9436344504356384, mean: 6.101768303778954e-05
+Processed 46200/160000 samplesIntensity stats - min: 0.0, max: 0.9553897380828857, mean: 6.359587860060856e-05
+Processed 46300/160000 samplesIntensity stats - min: 0.0, max: 0.9973141551017761, mean: 7.017597818048671e-05
+Processed 46400/160000 samplesIntensity stats - min: 0.0, max: 0.9252126812934875, mean: 6.917551945662126e-05
+Processed 46500/160000 samplesIntensity stats - min: 0.0, max: 0.9525159597396851, mean: 6.334901991067454e-05
+Processed 46600/160000 samplesIntensity stats - min: 0.0, max: 0.9746723175048828, mean: 5.895401773159392e-05
+Processed 46700/160000 samplesIntensity stats - min: 0.0, max: 0.9706100821495056, mean: 6.828349432907999e-05
+Processed 46800/160000 samplesIntensity stats - min: 0.0, max: 1.00875985622406, mean: 7.606880535604432e-05
+Processed 46900/160000 samplesIntensity stats - min: 0.0, max: 0.9683199524879456, mean: 6.0496899095596746e-05
+Processed 47000/160000 samplesIntensity stats - min: 0.0, max: 0.9237025380134583, mean: 6.165655941003934e-05
+Processed 47100/160000 samplesIntensity stats - min: 0.0, max: 0.9819450378417969, mean: 7.143527909647673e-05
+Processed 47200/160000 samplesIntensity stats - min: 0.0, max: 0.9736163020133972, mean: 6.838097760919482e-05
+Processed 47300/160000 samplesIntensity stats - min: 0.0, max: 0.9525467157363892, mean: 6.340727850329131e-05
+Processed 47400/160000 samplesIntensity stats - min: 0.0, max: 0.9312857985496521, mean: 6.262010720092803e-05
+Processed 47500/160000 samplesIntensity stats - min: 0.0, max: 0.9614859223365784, mean: 6.804926670156419e-05
+Processed 47600/160000 samplesIntensity stats - min: 0.0, max: 0.9871830344200134, mean: 6.501568714156747e-05
+Processed 47700/160000 samplesIntensity stats - min: 0.0, max: 0.9740065932273865, mean: 6.387896428350359e-05
+Processed 47800/160000 samplesIntensity stats - min: 0.0, max: 0.9861199855804443, mean: 6.956494326004758e-05
+Processed 47900/160000 samplesIntensity stats - min: 0.0, max: 0.937138020992279, mean: 6.305763963609934e-05
+Processed 48000/160000 samplesIntensity stats - min: 0.0, max: 0.9627529978752136, mean: 6.983712228247896e-05
+Processed 48100/160000 samplesIntensity stats - min: 0.0, max: 0.9437646865844727, mean: 5.9325495385564864e-05
+Processed 48200/160000 samplesIntensity stats - min: 0.0, max: 0.9720460176467896, mean: 6.290093006100506e-05
+Processed 48300/160000 samplesIntensity stats - min: 0.0, max: 0.9426566958427429, mean: 6.28918714937754e-05
+Processed 48400/160000 samplesIntensity stats - min: 0.0, max: 1.0259791612625122, mean: 7.085767720127478e-05
+Processed 48500/160000 samplesIntensity stats - min: 0.0, max: 0.9616748094558716, mean: 6.802847201470286e-05
+Processed 48600/160000 samplesIntensity stats - min: 0.0, max: 0.9176871180534363, mean: 6.316106737358496e-05
+Processed 48700/160000 samplesIntensity stats - min: 0.0, max: 0.9530067443847656, mean: 6.15131066297181e-05
+Processed 48800/160000 samplesIntensity stats - min: 0.0, max: 0.9543716907501221, mean: 7.295715477084741e-05
+Processed 48900/160000 samplesIntensity stats - min: 0.0, max: 0.9527829885482788, mean: 6.266701529966667e-05
+Processed 49000/160000 samplesIntensity stats - min: 0.0, max: 0.9327653050422668, mean: 6.22846491751261e-05
+Processed 49100/160000 samplesIntensity stats - min: 0.0, max: 0.9329814314842224, mean: 6.097776349633932e-05
+Processed 49200/160000 samplesIntensity stats - min: 0.0, max: 0.9251807928085327, mean: 6.583244248759001e-05
+Processed 49300/160000 samplesIntensity stats - min: 0.0, max: 0.9891918897628784, mean: 6.224279059097171e-05
+Processed 49400/160000 samplesIntensity stats - min: 0.0, max: 0.987835705280304, mean: 6.430781650124118e-05
+Processed 49500/160000 samplesIntensity stats - min: 0.0, max: 0.9601419568061829, mean: 6.723478145431727e-05
+Processed 49600/160000 samplesIntensity stats - min: 0.0, max: 0.9647777080535889, mean: 6.602334906347096e-05
+Processed 49700/160000 samplesIntensity stats - min: 0.0, max: 0.9424494504928589, mean: 6.542677147081122e-05
+Processed 49800/160000 samplesIntensity stats - min: 0.0, max: 0.9809266924858093, mean: 6.63490136503242e-05
+Processed 49900/160000 samplesIntensity stats - min: 0.0, max: 0.9930759072303772, mean: 6.320527609204873e-05
+Processed 50000/160000 samplesIntensity stats - min: 0.0, max: 0.9663680791854858, mean: 6.683200626866892e-05
+Processed 50100/160000 samplesIntensity stats - min: 0.0, max: 0.9654725193977356, mean: 6.0664409829769284e-05
+Processed 50200/160000 samplesIntensity stats - min: 0.0, max: 0.9628349542617798, mean: 6.838801346020773e-05
+Processed 50300/160000 samplesIntensity stats - min: 0.0, max: 0.9909975528717041, mean: 6.852405203972012e-05
+Processed 50400/160000 samplesIntensity stats - min: 0.0, max: 1.0072139501571655, mean: 7.2591079515405e-05
+Processed 50500/160000 samplesIntensity stats - min: 0.0, max: 0.9586807489395142, mean: 6.108564411988482e-05
+Processed 50600/160000 samplesIntensity stats - min: 0.0, max: 0.9350898265838623, mean: 6.430641224142164e-05
+Processed 50700/160000 samplesIntensity stats - min: 0.0, max: 0.9767643809318542, mean: 6.411380309145898e-05
+Processed 50800/160000 samplesIntensity stats - min: 0.0, max: 0.9945147633552551, mean: 6.927415961399674e-05
+Processed 50900/160000 samplesIntensity stats - min: 0.0, max: 0.998939573764801, mean: 6.464637408498675e-05
+Processed 51000/160000 samplesIntensity stats - min: 0.0, max: 0.9876295924186707, mean: 6.959075835766271e-05
+Processed 51100/160000 samplesIntensity stats - min: 0.0, max: 0.9771381616592407, mean: 7.080713112372905e-05
+Processed 51200/160000 samplesIntensity stats - min: 0.0, max: 0.9853441119194031, mean: 6.537362787639722e-05
+Processed 51300/160000 samplesIntensity stats - min: 0.0, max: 0.8928641676902771, mean: 6.396145181497559e-05
+Processed 51400/160000 samplesIntensity stats - min: 0.0, max: 0.9361880421638489, mean: 6.495615525636822e-05
+Processed 51500/160000 samplesIntensity stats - min: 0.0, max: 0.9201688766479492, mean: 6.514707638416439e-05
+Processed 51600/160000 samplesIntensity stats - min: 0.0, max: 0.9270390868186951, mean: 6.840358400950208e-05
+Processed 51700/160000 samplesIntensity stats - min: 0.0, max: 0.9589295983314514, mean: 5.896202856092714e-05
+Processed 51800/160000 samplesIntensity stats - min: 0.0, max: 0.953524649143219, mean: 6.875440158182755e-05
+Processed 51900/160000 samplesIntensity stats - min: 0.0, max: 0.9343120455741882, mean: 6.394798401743174e-05
+Processed 52000/160000 samplesIntensity stats - min: 0.0, max: 0.9871687293052673, mean: 6.730225868523121e-05
+Processed 52100/160000 samplesIntensity stats - min: 0.0, max: 0.9467567205429077, mean: 6.586822564713657e-05
+Processed 52200/160000 samplesIntensity stats - min: 0.0, max: 0.928945779800415, mean: 6.932768155820668e-05
+Processed 52300/160000 samplesIntensity stats - min: 0.0, max: 1.0152446031570435, mean: 6.835540261818096e-05
+Processed 52400/160000 samplesIntensity stats - min: 0.0, max: 0.9535397291183472, mean: 6.811537605244666e-05
+Processed 52500/160000 samplesIntensity stats - min: 0.0, max: 0.959185779094696, mean: 6.0275804571574554e-05
+Processed 52600/160000 samplesIntensity stats - min: 0.0, max: 0.9414190053939819, mean: 6.321878026938066e-05
+Processed 52700/160000 samplesIntensity stats - min: 0.0, max: 0.9446691870689392, mean: 6.147748354123905e-05
+Processed 52800/160000 samplesIntensity stats - min: 0.0, max: 0.9548559188842773, mean: 7.249660848174244e-05
+Processed 52900/160000 samplesIntensity stats - min: 0.0, max: 0.968137800693512, mean: 6.064344051992521e-05
+Processed 53000/160000 samplesIntensity stats - min: 0.0, max: 0.9359542727470398, mean: 6.4773004851304e-05
+Processed 53100/160000 samplesIntensity stats - min: 0.0, max: 0.9689710140228271, mean: 7.156005449360237e-05
+Processed 53200/160000 samplesIntensity stats - min: 0.0, max: 0.9810301661491394, mean: 6.755065260222182e-05
+Processed 53300/160000 samplesIntensity stats - min: 0.0, max: 0.8886221647262573, mean: 6.177166505949572e-05
+Processed 53400/160000 samplesIntensity stats - min: 0.0, max: 0.9518519043922424, mean: 6.91282912157476e-05
+Processed 53500/160000 samplesIntensity stats - min: 0.0, max: 0.9329288601875305, mean: 6.411020149243996e-05
+Processed 53600/160000 samplesIntensity stats - min: 0.0, max: 0.9504010677337646, mean: 6.640602077823132e-05
+Processed 53700/160000 samplesIntensity stats - min: 0.0, max: 0.9110706448554993, mean: 6.720466626575217e-05
+Processed 53800/160000 samplesIntensity stats - min: 0.0, max: 0.9453700184822083, mean: 6.465895421570167e-05
+Processed 53900/160000 samplesIntensity stats - min: 0.0, max: 0.9452705383300781, mean: 6.586363451788202e-05
+Processed 54000/160000 samplesIntensity stats - min: 0.0, max: 0.9550409913063049, mean: 6.651466537732631e-05
+Processed 54100/160000 samplesIntensity stats - min: 0.0, max: 0.9453522562980652, mean: 6.49494759272784e-05
+Processed 54200/160000 samplesIntensity stats - min: 0.0, max: 0.9575992226600647, mean: 6.19697748334147e-05
+Processed 54300/160000 samplesIntensity stats - min: 0.0, max: 0.948436439037323, mean: 6.72284368192777e-05
+Processed 54400/160000 samplesIntensity stats - min: 0.0, max: 0.9468916058540344, mean: 6.695109914289787e-05
+Processed 54500/160000 samplesIntensity stats - min: 0.0, max: 0.9245715737342834, mean: 5.6142052926588804e-05
+Processed 54600/160000 samplesIntensity stats - min: 0.0, max: 0.957661509513855, mean: 6.25064130872488e-05
+Processed 54700/160000 samplesIntensity stats - min: 0.0, max: 0.9577291011810303, mean: 6.582144123967737e-05
+Processed 54800/160000 samplesIntensity stats - min: 0.0, max: 0.9619338512420654, mean: 7.148927397793159e-05
+Processed 54900/160000 samplesIntensity stats - min: 0.0, max: 0.9455381035804749, mean: 6.010726428939961e-05
+Processed 55000/160000 samplesIntensity stats - min: 0.0, max: 1.0237165689468384, mean: 7.024580554571003e-05
+Processed 55100/160000 samplesIntensity stats - min: 0.0, max: 0.9435465335845947, mean: 6.579959153896198e-05
+Processed 55200/160000 samplesIntensity stats - min: 0.0, max: 0.9400607943534851, mean: 6.158713949844241e-05
+Processed 55300/160000 samplesIntensity stats - min: 0.0, max: 0.9533351063728333, mean: 6.163691432448104e-05
+Processed 55400/160000 samplesIntensity stats - min: 0.0, max: 0.9359506964683533, mean: 5.930884799454361e-05
+Processed 55500/160000 samplesIntensity stats - min: 0.0, max: 0.9298033714294434, mean: 6.336346996249631e-05
+Processed 55600/160000 samplesIntensity stats - min: 0.0, max: 0.9615391492843628, mean: 6.573220161953941e-05
+Processed 55700/160000 samplesIntensity stats - min: 0.0, max: 0.967043936252594, mean: 6.202995427884161e-05
+Processed 55800/160000 samplesIntensity stats - min: 0.0, max: 0.9470521807670593, mean: 6.779584509786218e-05
+Processed 55900/160000 samplesIntensity stats - min: 0.0, max: 0.9283865690231323, mean: 6.129070243332535e-05
+Processed 56000/160000 samplesIntensity stats - min: 0.0, max: 0.9771044850349426, mean: 6.963688065297902e-05
+Processed 56100/160000 samplesIntensity stats - min: 0.0, max: 0.9241021275520325, mean: 5.6100932852132246e-05
+Processed 56200/160000 samplesIntensity stats - min: 0.0, max: 0.9574024081230164, mean: 6.752288027200848e-05
+Processed 56300/160000 samplesIntensity stats - min: 0.0, max: 0.9242159724235535, mean: 6.365818990161642e-05
+Processed 56400/160000 samplesIntensity stats - min: 0.0, max: 0.9470435380935669, mean: 6.96782226441428e-05
+Processed 56500/160000 samplesIntensity stats - min: 0.0, max: 0.9348063468933105, mean: 6.498401489807293e-05
+Processed 56600/160000 samplesIntensity stats - min: 0.0, max: 0.9783511757850647, mean: 6.771024345653132e-05
+Processed 56700/160000 samplesIntensity stats - min: 0.0, max: 0.9595072865486145, mean: 6.967051740502939e-05
+Processed 56800/160000 samplesIntensity stats - min: 0.0, max: 0.9546396136283875, mean: 6.69973815092817e-05
+Processed 56900/160000 samplesIntensity stats - min: 0.0, max: 0.9321839213371277, mean: 5.6578715884825215e-05
+Processed 57000/160000 samplesIntensity stats - min: 0.0, max: 0.946285605430603, mean: 6.617189501412213e-05
+Processed 57100/160000 samplesIntensity stats - min: 0.0, max: 0.9561734795570374, mean: 6.387961911968887e-05
+Processed 57200/160000 samplesIntensity stats - min: 0.0, max: 0.9467992782592773, mean: 6.826639582868665e-05
+Processed 57300/160000 samplesIntensity stats - min: 0.0, max: 0.9528366923332214, mean: 6.114983989391476e-05
+Processed 57400/160000 samplesIntensity stats - min: 0.0, max: 0.9777178764343262, mean: 6.617879262194037e-05
+Processed 57500/160000 samplesIntensity stats - min: 0.0, max: 0.9624523520469666, mean: 6.465980550274253e-05
+Processed 57600/160000 samplesIntensity stats - min: 0.0, max: 0.9683303833007812, mean: 6.588796532014385e-05
+Processed 57700/160000 samplesIntensity stats - min: 0.0, max: 0.9939106106758118, mean: 6.0512786149047315e-05
+Processed 57800/160000 samplesIntensity stats - min: 0.0, max: 0.9305728077888489, mean: 6.800072878831998e-05
+Processed 57900/160000 samplesIntensity stats - min: 0.0, max: 0.9612640142440796, mean: 6.872307130834088e-05
+Processed 58000/160000 samplesIntensity stats - min: 0.0, max: 0.9886987805366516, mean: 7.084581011440605e-05
+Processed 58100/160000 samplesIntensity stats - min: 0.0, max: 0.9467310309410095, mean: 6.385945744113997e-05
+Processed 58200/160000 samplesIntensity stats - min: 0.0, max: 0.9401353597640991, mean: 6.183906953083351e-05
+Processed 58300/160000 samplesIntensity stats - min: 0.0, max: 0.9360622763633728, mean: 6.833938095951453e-05
+Processed 58400/160000 samplesIntensity stats - min: 0.0, max: 0.9292686581611633, mean: 6.587469397345558e-05
+Processed 58500/160000 samplesIntensity stats - min: 0.0, max: 0.9324028491973877, mean: 6.202582881087437e-05
+Processed 58600/160000 samplesIntensity stats - min: 0.0, max: 0.9745902419090271, mean: 7.073679444147274e-05
+Processed 58700/160000 samplesIntensity stats - min: 0.0, max: 0.9857342839241028, mean: 6.82920654071495e-05
+Processed 58800/160000 samplesIntensity stats - min: 0.0, max: 0.955763041973114, mean: 6.93670372129418e-05
+Processed 58900/160000 samplesIntensity stats - min: 0.0, max: 0.9614535570144653, mean: 6.602028588531539e-05
+Processed 59000/160000 samplesIntensity stats - min: 0.0, max: 0.9845007061958313, mean: 6.866673356853426e-05
+Processed 59100/160000 samplesIntensity stats - min: 0.0, max: 0.9426217079162598, mean: 5.769293784396723e-05
+Processed 59200/160000 samplesIntensity stats - min: 0.0, max: 0.9307827353477478, mean: 7.150115561671555e-05
+Processed 59300/160000 samplesIntensity stats - min: 0.0, max: 0.9524766206741333, mean: 6.655303877778351e-05
+Processed 59400/160000 samplesIntensity stats - min: 0.0, max: 0.911491334438324, mean: 6.233822932699695e-05
+Processed 59500/160000 samplesIntensity stats - min: 0.0, max: 0.9241992235183716, mean: 6.393790681613609e-05
+Processed 59600/160000 samplesIntensity stats - min: 0.0, max: 0.9475545883178711, mean: 6.900855805724859e-05
+Processed 59700/160000 samplesIntensity stats - min: 0.0, max: 0.9384240508079529, mean: 5.949853948550299e-05
+Processed 59800/160000 samplesIntensity stats - min: 0.0, max: 0.955105721950531, mean: 6.735789065714926e-05
+Processed 59900/160000 samplesIntensity stats - min: 0.0, max: 0.9767271280288696, mean: 6.854021194158122e-05
+Processed 60000/160000 samplesIntensity stats - min: 0.0, max: 0.9730884432792664, mean: 6.144520739326254e-05
+Processed 60100/160000 samplesIntensity stats - min: 0.0, max: 0.9483090043067932, mean: 6.041018423275091e-05
+Processed 60200/160000 samplesIntensity stats - min: 0.0, max: 0.9561270475387573, mean: 6.474558176705614e-05
+Processed 60300/160000 samplesIntensity stats - min: 0.0, max: 0.9576988816261292, mean: 7.23534103599377e-05
+Processed 60400/160000 samplesIntensity stats - min: 0.0, max: 0.9422003626823425, mean: 6.743659469066188e-05
+Processed 60500/160000 samplesIntensity stats - min: 0.0, max: 0.9399356245994568, mean: 6.358833343256265e-05
+Processed 60600/160000 samplesIntensity stats - min: 0.0, max: 0.9509866833686829, mean: 6.145091901998967e-05
+Processed 60700/160000 samplesIntensity stats - min: 0.0, max: 0.9630628824234009, mean: 6.659081554971635e-05
+Processed 60800/160000 samplesIntensity stats - min: 0.0, max: 0.9540614485740662, mean: 6.821424176450819e-05
+Processed 60900/160000 samplesIntensity stats - min: 0.0, max: 0.9710127115249634, mean: 6.681240483885631e-05
+Processed 61000/160000 samplesIntensity stats - min: 0.0, max: 0.9478371143341064, mean: 6.240366928977892e-05
+Processed 61100/160000 samplesIntensity stats - min: 0.0, max: 0.9794728755950928, mean: 6.802195275668055e-05
+Processed 61200/160000 samplesIntensity stats - min: 0.0, max: 0.9399687051773071, mean: 7.417768938466907e-05
+Processed 61300/160000 samplesIntensity stats - min: 0.0, max: 0.9615024924278259, mean: 6.404025771189481e-05
+Processed 61400/160000 samplesIntensity stats - min: 0.0, max: 0.9255433678627014, mean: 6.322545232251287e-05
+Processed 61500/160000 samplesIntensity stats - min: 0.0, max: 0.9639315009117126, mean: 6.79697041050531e-05
+Processed 61600/160000 samplesIntensity stats - min: 0.0, max: 0.9579381346702576, mean: 6.868360651424155e-05
+Processed 61700/160000 samplesIntensity stats - min: 0.0, max: 0.970762312412262, mean: 6.421793659683317e-05
+Processed 61800/160000 samplesIntensity stats - min: 0.0, max: 0.9347488284111023, mean: 6.216648034751415e-05
+Processed 61900/160000 samplesIntensity stats - min: 0.0, max: 1.015881896018982, mean: 6.099666279624216e-05
+Processed 62000/160000 samplesIntensity stats - min: 0.0, max: 0.9696834683418274, mean: 7.657962123630568e-05
+Processed 62100/160000 samplesIntensity stats - min: 0.0, max: 0.9636961817741394, mean: 6.32500959909521e-05
+Processed 62200/160000 samplesIntensity stats - min: 0.0, max: 0.9767878651618958, mean: 6.736814248142764e-05
+Processed 62300/160000 samplesIntensity stats - min: 0.0, max: 0.9381209015846252, mean: 6.457424751715735e-05
+Processed 62400/160000 samplesIntensity stats - min: 0.0, max: 0.974859893321991, mean: 7.132247992558405e-05
+Processed 62500/160000 samplesIntensity stats - min: 0.0, max: 0.9605964422225952, mean: 6.299008964560926e-05
+Processed 62600/160000 samplesIntensity stats - min: 0.0, max: 0.9640635848045349, mean: 6.42327795503661e-05
+Processed 62700/160000 samplesIntensity stats - min: 0.0, max: 0.9945009350776672, mean: 7.04182602930814e-05
+Processed 62800/160000 samplesIntensity stats - min: 0.0, max: 0.9393661618232727, mean: 6.978817691560835e-05
+Processed 62900/160000 samplesIntensity stats - min: 0.0, max: 0.9520766139030457, mean: 6.448216299759224e-05
+Processed 63000/160000 samplesIntensity stats - min: 0.0, max: 1.0641120672225952, mean: 6.805175507906824e-05
+Processed 63100/160000 samplesIntensity stats - min: 0.0, max: 0.9711350798606873, mean: 6.952066905796528e-05
+Processed 63200/160000 samplesIntensity stats - min: 0.0, max: 0.971498429775238, mean: 6.96129136485979e-05
+Processed 63300/160000 samplesIntensity stats - min: 0.0, max: 0.9365066885948181, mean: 6.499834853457287e-05
+Processed 63400/160000 samplesIntensity stats - min: 0.0, max: 0.8947681188583374, mean: 6.233415479073301e-05
+Processed 63500/160000 samplesIntensity stats - min: 0.0, max: 0.9688273072242737, mean: 7.279566489160061e-05
+Processed 63600/160000 samplesIntensity stats - min: 0.0, max: 0.9475422501564026, mean: 6.929734081495553e-05
+Processed 63700/160000 samplesIntensity stats - min: 0.0, max: 0.9755164384841919, mean: 6.287049473030493e-05
+Processed 63800/160000 samplesIntensity stats - min: 0.0, max: 0.947145938873291, mean: 6.290820601861924e-05
+Processed 63900/160000 samplesIntensity stats - min: 0.0, max: 0.9610680341720581, mean: 6.667361594736576e-05
+Processed 64000/160000 samplesIntensity stats - min: 0.0, max: 0.9842149615287781, mean: 6.866969488328323e-05
+Processed 64100/160000 samplesIntensity stats - min: 0.0, max: 0.9576452970504761, mean: 6.839255365775898e-05
+Processed 64200/160000 samplesIntensity stats - min: 0.0, max: 0.9490118622779846, mean: 6.142247002571821e-05
+Processed 64300/160000 samplesIntensity stats - min: 0.0, max: 0.9666110277175903, mean: 6.660994404228404e-05
+Processed 64400/160000 samplesIntensity stats - min: 0.0, max: 0.9392691254615784, mean: 6.61775775370188e-05
+Processed 64500/160000 samplesIntensity stats - min: 0.0, max: 0.9189621806144714, mean: 6.429474160540849e-05
+Processed 64600/160000 samplesIntensity stats - min: 0.0, max: 0.9896494746208191, mean: 6.50045185466297e-05
+Processed 64700/160000 samplesIntensity stats - min: 0.0, max: 0.9544594883918762, mean: 7.28511149645783e-05
+Processed 64800/160000 samplesIntensity stats - min: 0.0, max: 0.9386556148529053, mean: 6.509313971037045e-05
+Processed 64900/160000 samplesIntensity stats - min: 0.0, max: 1.005620002746582, mean: 6.656582263531163e-05
+Processed 65000/160000 samplesIntensity stats - min: 0.0, max: 0.9481659531593323, mean: 6.345982546918094e-05
+Processed 65100/160000 samplesIntensity stats - min: 0.0, max: 0.9707879424095154, mean: 6.857592961750925e-05
+Processed 65200/160000 samplesIntensity stats - min: 0.0, max: 0.9289714694023132, mean: 6.742430559825152e-05
+Processed 65300/160000 samplesIntensity stats - min: 0.0, max: 0.959516704082489, mean: 6.388703332049772e-05
+Processed 65400/160000 samplesIntensity stats - min: 0.0, max: 0.8920435309410095, mean: 6.138649041531608e-05
+Processed 65500/160000 samplesIntensity stats - min: 0.0, max: 0.9141574501991272, mean: 6.450367072829977e-05
+Processed 65600/160000 samplesIntensity stats - min: 0.0, max: 0.9970512986183167, mean: 7.298737909877673e-05
+Processed 65700/160000 samplesIntensity stats - min: 0.0, max: 0.9628399014472961, mean: 6.978450255701318e-05
+Processed 65800/160000 samplesIntensity stats - min: 0.0, max: 0.9274600148200989, mean: 5.919237082707696e-05
+Processed 65900/160000 samplesIntensity stats - min: 0.0, max: 0.9666469693183899, mean: 6.235073669813573e-05
+Processed 66000/160000 samplesIntensity stats - min: 0.0, max: 0.9571276307106018, mean: 7.274546078406274e-05
+Processed 66100/160000 samplesIntensity stats - min: 0.0, max: 0.9609918594360352, mean: 6.43606690573506e-05
+Processed 66200/160000 samplesIntensity stats - min: 0.0, max: 0.9482847452163696, mean: 6.705156556563452e-05
+Processed 66300/160000 samplesIntensity stats - min: 0.0, max: 0.92621248960495, mean: 6.739022501278669e-05
+Processed 66400/160000 samplesIntensity stats - min: 0.0, max: 0.9395901560783386, mean: 6.33813178865239e-05
+Processed 66500/160000 samplesIntensity stats - min: 0.0, max: 0.9664525389671326, mean: 6.090927854529582e-05
+Processed 66600/160000 samplesIntensity stats - min: 0.0, max: 0.9602928757667542, mean: 6.410911009879783e-05
+Processed 66700/160000 samplesIntensity stats - min: 0.0, max: 0.9313579201698303, mean: 6.573151767952368e-05
+Processed 66800/160000 samplesIntensity stats - min: 0.0, max: 0.9662759900093079, mean: 6.199488416314125e-05
+Processed 66900/160000 samplesIntensity stats - min: 0.0, max: 0.9768336415290833, mean: 7.008849934209138e-05
+Processed 67000/160000 samplesIntensity stats - min: 0.0, max: 0.9834219813346863, mean: 6.241998926270753e-05
+Processed 67100/160000 samplesIntensity stats - min: 0.0, max: 0.978049099445343, mean: 6.591595592908561e-05
+Processed 67200/160000 samplesIntensity stats - min: 0.0, max: 0.9849356412887573, mean: 7.180401735240594e-05
+Processed 67300/160000 samplesIntensity stats - min: 0.0, max: 0.9602505564689636, mean: 6.68485663481988e-05
+Processed 67400/160000 samplesIntensity stats - min: 0.0, max: 0.9925327897071838, mean: 6.574606231879443e-05
+Processed 67500/160000 samplesIntensity stats - min: 0.0, max: 0.9413257241249084, mean: 6.016905535943806e-05
+Processed 67600/160000 samplesIntensity stats - min: 0.0, max: 0.960491955280304, mean: 7.011832349235192e-05
+Processed 67700/160000 samplesIntensity stats - min: 0.0, max: 0.9618197083473206, mean: 6.277222564676777e-05
+Processed 67800/160000 samplesIntensity stats - min: 0.0, max: 0.971620500087738, mean: 6.002301597618498e-05
+Processed 67900/160000 samplesIntensity stats - min: 0.0, max: 0.9649680256843567, mean: 6.352770287776366e-05
+Processed 68000/160000 samplesIntensity stats - min: 0.0, max: 0.9469487071037292, mean: 6.541898619616404e-05
+Processed 68100/160000 samplesIntensity stats - min: 0.0, max: 0.911971390247345, mean: 6.287392898229882e-05
+Processed 68200/160000 samplesIntensity stats - min: 0.0, max: 0.9658879041671753, mean: 6.411549111362547e-05
+Processed 68300/160000 samplesIntensity stats - min: 0.0, max: 0.938188374042511, mean: 6.754724017810076e-05
+Processed 68400/160000 samplesIntensity stats - min: 0.0, max: 0.9737875461578369, mean: 6.293805927271023e-05
+Processed 68500/160000 samplesIntensity stats - min: 0.0, max: 0.9596889019012451, mean: 5.899088137084618e-05
+Processed 68600/160000 samplesIntensity stats - min: 0.0, max: 0.910442054271698, mean: 5.879403033759445e-05
+Processed 68700/160000 samplesIntensity stats - min: 0.0, max: 0.9253975749015808, mean: 6.687588029308245e-05
+Processed 68800/160000 samplesIntensity stats - min: 0.0, max: 0.9295945763587952, mean: 6.35257238172926e-05
+Processed 68900/160000 samplesIntensity stats - min: 0.0, max: 0.9263494610786438, mean: 6.272951577557251e-05
+Processed 69000/160000 samplesIntensity stats - min: 0.0, max: 0.9657113552093506, mean: 5.896922084502876e-05
+Processed 69100/160000 samplesIntensity stats - min: 0.0, max: 0.9577468633651733, mean: 6.850976933492348e-05
+Processed 69200/160000 samplesIntensity stats - min: 0.0, max: 0.9480370879173279, mean: 7.290998473763466e-05
+Processed 69300/160000 samplesIntensity stats - min: 0.0, max: 0.9685936570167542, mean: 6.437192496377975e-05
+Processed 69400/160000 samplesIntensity stats - min: 0.0, max: 0.9719776511192322, mean: 6.591087731067091e-05
+Processed 69500/160000 samplesIntensity stats - min: 0.0, max: 0.9661349654197693, mean: 7.047496183076873e-05
+Processed 69600/160000 samplesIntensity stats - min: 0.0, max: 0.9555788636207581, mean: 6.64813705952838e-05
+Processed 69700/160000 samplesIntensity stats - min: 0.0, max: 0.9480158686637878, mean: 6.197673792485148e-05
+Processed 69800/160000 samplesIntensity stats - min: 0.0, max: 0.9614657163619995, mean: 6.162827048683539e-05
+Processed 69900/160000 samplesIntensity stats - min: 0.0, max: 0.9563277363777161, mean: 6.433407543227077e-05
+Processed 70000/160000 samplesIntensity stats - min: 0.0, max: 0.9791540503501892, mean: 7.436591840814799e-05
+Processed 70100/160000 samplesIntensity stats - min: 0.0, max: 0.9538010954856873, mean: 6.273835606407374e-05
+Processed 70200/160000 samplesIntensity stats - min: 0.0, max: 0.9574950337409973, mean: 6.352776108542457e-05
+Processed 70300/160000 samplesIntensity stats - min: 0.0, max: 0.9456120729446411, mean: 6.696007039863616e-05
+Processed 70400/160000 samplesIntensity stats - min: 0.0, max: 0.9332917332649231, mean: 6.352538912324235e-05
+Processed 70500/160000 samplesIntensity stats - min: 0.0, max: 0.9490538239479065, mean: 6.201162614161149e-05
+Processed 70600/160000 samplesIntensity stats - min: 0.0, max: 0.9061567783355713, mean: 5.7793164160102606e-05
+Processed 70700/160000 samplesIntensity stats - min: 0.0, max: 0.9282384514808655, mean: 6.820885755587369e-05
+Processed 70800/160000 samplesIntensity stats - min: 0.0, max: 0.9418337941169739, mean: 6.918626604601741e-05
+Processed 70900/160000 samplesIntensity stats - min: 0.0, max: 0.9636447429656982, mean: 6.5399166487623e-05
+Processed 71000/160000 samplesIntensity stats - min: 0.0, max: 0.9542768001556396, mean: 6.079902232158929e-05
+Processed 71100/160000 samplesIntensity stats - min: 0.0, max: 0.9737384915351868, mean: 6.721474346704781e-05
+Processed 71200/160000 samplesIntensity stats - min: 0.0, max: 0.9599010944366455, mean: 6.761881377315149e-05
+Processed 71300/160000 samplesIntensity stats - min: 0.0, max: 0.9578853249549866, mean: 6.383729487424716e-05
+Processed 71400/160000 samplesIntensity stats - min: 0.0, max: 0.9389329552650452, mean: 6.048972863936797e-05
+Processed 71500/160000 samplesIntensity stats - min: 0.0, max: 0.9682170152664185, mean: 6.385784945450723e-05
+Processed 71600/160000 samplesIntensity stats - min: 0.0, max: 0.9512743353843689, mean: 6.528195808641613e-05
+Processed 71700/160000 samplesIntensity stats - min: 0.0, max: 0.9533929228782654, mean: 6.636339821852744e-05
+Processed 71800/160000 samplesIntensity stats - min: 0.0, max: 0.9542946219444275, mean: 5.916815280215815e-05
+Processed 71900/160000 samplesIntensity stats - min: 0.0, max: 0.9548172354698181, mean: 6.186569225974381e-05
+Processed 72000/160000 samplesIntensity stats - min: 0.0, max: 0.989208459854126, mean: 6.266429409151897e-05
+Processed 72100/160000 samplesIntensity stats - min: 0.0, max: 0.9884945750236511, mean: 6.070342715247534e-05
+Processed 72200/160000 samplesIntensity stats - min: 0.0, max: 0.9557885527610779, mean: 6.186688551679254e-05
+Processed 72300/160000 samplesIntensity stats - min: 0.0, max: 0.9384156465530396, mean: 6.796423258492723e-05
+Processed 72400/160000 samplesIntensity stats - min: 0.0, max: 0.970620334148407, mean: 6.576231680810452e-05
+Processed 72500/160000 samplesIntensity stats - min: 0.0, max: 0.9645648002624512, mean: 5.724100265069865e-05
+Processed 72600/160000 samplesIntensity stats - min: 0.0, max: 0.9290242195129395, mean: 5.773162411060184e-05
+Processed 72700/160000 samplesIntensity stats - min: 0.0, max: 0.9479575157165527, mean: 6.78567957947962e-05
+Processed 72800/160000 samplesIntensity stats - min: 0.0, max: 0.9358619451522827, mean: 6.818738620495424e-05
+Processed 72900/160000 samplesIntensity stats - min: 0.0, max: 0.9312933087348938, mean: 6.477106217062101e-05
+Processed 73000/160000 samplesIntensity stats - min: 0.0, max: 0.9415993094444275, mean: 5.953123763902113e-05
+Processed 73100/160000 samplesIntensity stats - min: 0.0, max: 0.9683801531791687, mean: 6.357556412694976e-05
+Processed 73200/160000 samplesIntensity stats - min: 0.0, max: 0.9686294198036194, mean: 6.521750765386969e-05
+Processed 73300/160000 samplesIntensity stats - min: 0.0, max: 0.9869012236595154, mean: 6.621159991482273e-05
+Processed 73400/160000 samplesIntensity stats - min: 0.0, max: 0.9444575905799866, mean: 6.482165917987004e-05
+Processed 73500/160000 samplesIntensity stats - min: 0.0, max: 0.9650371670722961, mean: 7.012239075265825e-05
+Processed 73600/160000 samplesIntensity stats - min: 0.0, max: 0.9735751748085022, mean: 6.97871291777119e-05
+Processed 73700/160000 samplesIntensity stats - min: 0.0, max: 0.9812710881233215, mean: 6.493002729257569e-05
+Processed 73800/160000 samplesIntensity stats - min: 0.0, max: 0.9016392827033997, mean: 5.857837822986767e-05
+Processed 73900/160000 samplesIntensity stats - min: 0.0, max: 0.9283576011657715, mean: 6.24713720753789e-05
+Processed 74000/160000 samplesIntensity stats - min: 0.0, max: 0.9481716752052307, mean: 6.871572259115055e-05
+Processed 74100/160000 samplesIntensity stats - min: 0.0, max: 0.9667972922325134, mean: 6.898837455082685e-05
+Processed 74200/160000 samplesIntensity stats - min: 0.0, max: 0.9650910496711731, mean: 6.174712325446308e-05
+Processed 74300/160000 samplesIntensity stats - min: 0.0, max: 0.9947255253791809, mean: 7.200299296528101e-05
+Processed 74400/160000 samplesIntensity stats - min: 0.0, max: 0.954917848110199, mean: 6.859397399239242e-05
+Processed 74500/160000 samplesIntensity stats - min: 0.0, max: 0.9707080721855164, mean: 6.226947152754292e-05
+Processed 74600/160000 samplesIntensity stats - min: 0.0, max: 0.9812620878219604, mean: 5.9935246099485084e-05
+Processed 74700/160000 samplesIntensity stats - min: 0.0, max: 0.9537163376808167, mean: 6.69611690682359e-05
+Processed 74800/160000 samplesIntensity stats - min: 0.0, max: 0.9272294044494629, mean: 6.517690053442493e-05
+Processed 74900/160000 samplesIntensity stats - min: 0.0, max: 0.9472793936729431, mean: 6.1599443142768e-05
+Processed 75000/160000 samplesIntensity stats - min: 0.0, max: 0.961022675037384, mean: 6.147649401100352e-05
+Processed 75100/160000 samplesIntensity stats - min: 0.0, max: 0.926299512386322, mean: 6.200108327902853e-05
+Processed 75200/160000 samplesIntensity stats - min: 0.0, max: 0.9476085305213928, mean: 6.812340143369511e-05
+Processed 75300/160000 samplesIntensity stats - min: 0.0, max: 0.9631218910217285, mean: 6.324561400106177e-05
+Processed 75400/160000 samplesIntensity stats - min: 0.0, max: 0.9536241292953491, mean: 6.583600770682096e-05
+Processed 75500/160000 samplesIntensity stats - min: 0.0, max: 0.9657685160636902, mean: 6.38383935438469e-05
+Processed 75600/160000 samplesIntensity stats - min: 0.0, max: 0.9478870630264282, mean: 7.015618029981852e-05
+Processed 75700/160000 samplesIntensity stats - min: 0.0, max: 0.9564910531044006, mean: 6.54738541925326e-05
+Processed 75800/160000 samplesIntensity stats - min: 0.0, max: 0.9632523655891418, mean: 6.362527346936986e-05
+Processed 75900/160000 samplesIntensity stats - min: 0.0, max: 0.9353828430175781, mean: 6.355876394081861e-05
+Processed 76000/160000 samplesIntensity stats - min: 0.0, max: 0.9337500929832458, mean: 6.41060687485151e-05
+Processed 76100/160000 samplesIntensity stats - min: 0.0, max: 0.9107920527458191, mean: 6.146154919406399e-05
+Processed 76200/160000 samplesIntensity stats - min: 0.0, max: 0.8586994409561157, mean: 6.175126327434555e-05
+Processed 76300/160000 samplesIntensity stats - min: 0.0, max: 0.9173241257667542, mean: 6.311226024990901e-05
+Processed 76400/160000 samplesIntensity stats - min: 0.0, max: 0.9038427472114563, mean: 6.32624578429386e-05
+Processed 76500/160000 samplesIntensity stats - min: 0.0, max: 0.9946457743644714, mean: 6.467194180004299e-05
+Processed 76600/160000 samplesIntensity stats - min: 0.0, max: 1.029335856437683, mean: 5.7329245464643463e-05
+Processed 76700/160000 samplesIntensity stats - min: 0.0, max: 0.9412817358970642, mean: 7.029109838185832e-05
+Processed 76800/160000 samplesIntensity stats - min: 0.0, max: 0.9748267531394958, mean: 6.872016820125282e-05
+Processed 76900/160000 samplesIntensity stats - min: 0.0, max: 0.9446083307266235, mean: 6.550335820065811e-05
+Processed 77000/160000 samplesIntensity stats - min: 0.0, max: 0.944140613079071, mean: 6.593242869712412e-05
+Processed 77100/160000 samplesIntensity stats - min: 0.0, max: 1.000143051147461, mean: 6.656727055087686e-05
+Processed 77200/160000 samplesIntensity stats - min: 0.0, max: 0.9315493702888489, mean: 6.792955537093803e-05
+Processed 77300/160000 samplesIntensity stats - min: 0.0, max: 0.9456002116203308, mean: 6.414017116185278e-05
+Processed 77400/160000 samplesIntensity stats - min: 0.0, max: 0.9435929656028748, mean: 6.321941327769309e-05
+Processed 77500/160000 samplesIntensity stats - min: 0.0, max: 0.9623091816902161, mean: 6.530434620799497e-05
+Processed 77600/160000 samplesIntensity stats - min: 0.0, max: 1.002709150314331, mean: 6.95148337399587e-05
+Processed 77700/160000 samplesIntensity stats - min: 0.0, max: 0.9720603227615356, mean: 6.569178367499262e-05
+Processed 77800/160000 samplesIntensity stats - min: 0.0, max: 0.9743236303329468, mean: 6.17179975961335e-05
+Processed 77900/160000 samplesIntensity stats - min: 0.0, max: 0.9476917386054993, mean: 6.392750219674781e-05
+Processed 78000/160000 samplesIntensity stats - min: 0.0, max: 0.9468300938606262, mean: 6.65694460622035e-05
+Processed 78100/160000 samplesIntensity stats - min: 0.0, max: 0.9170401692390442, mean: 6.171924906084314e-05
+Processed 78200/160000 samplesIntensity stats - min: 0.0, max: 0.9326350092887878, mean: 6.266572745516896e-05
+Processed 78300/160000 samplesIntensity stats - min: 0.0, max: 0.9257071614265442, mean: 6.165661761770025e-05
+Processed 78400/160000 samplesIntensity stats - min: 0.0, max: 0.9664488434791565, mean: 6.504602788481861e-05
+Processed 78500/160000 samplesIntensity stats - min: 0.0, max: 0.9596505761146545, mean: 6.273168401094154e-05
+Processed 78600/160000 samplesIntensity stats - min: 0.0, max: 0.9747455716133118, mean: 5.783576489193365e-05
+Processed 78700/160000 samplesIntensity stats - min: 0.0, max: 0.9965681433677673, mean: 6.897618004586548e-05
+Processed 78800/160000 samplesIntensity stats - min: 0.0, max: 0.9538043141365051, mean: 7.18159499228932e-05
+Processed 78900/160000 samplesIntensity stats - min: 0.0, max: 0.9355213642120361, mean: 5.864250488230027e-05
+Processed 79000/160000 samplesIntensity stats - min: 0.0, max: 0.9644399881362915, mean: 6.409818161046132e-05
+Processed 79100/160000 samplesIntensity stats - min: 0.0, max: 0.9943215250968933, mean: 6.541426409967244e-05
+Processed 79200/160000 samplesIntensity stats - min: 0.0, max: 0.952235758304596, mean: 6.472368841059506e-05
+Processed 79300/160000 samplesIntensity stats - min: 0.0, max: 0.9562841057777405, mean: 6.412032234948128e-05
+Processed 79400/160000 samplesIntensity stats - min: 0.0, max: 0.9579740166664124, mean: 6.341283005895093e-05
+Processed 79500/160000 samplesIntensity stats - min: 0.0, max: 0.9301034808158875, mean: 6.800538540119305e-05
+Processed 79600/160000 samplesIntensity stats - min: 0.0, max: 0.9384857416152954, mean: 6.477811984950677e-05
+Processed 79700/160000 samplesIntensity stats - min: 0.0, max: 0.9328957200050354, mean: 6.272816244745627e-05
+Processed 79800/160000 samplesIntensity stats - min: 0.0, max: 0.997384250164032, mean: 6.476301496149972e-05
+Processed 79900/160000 samplesIntensity stats - min: 0.0, max: 0.9523358345031738, mean: 6.526770448544994e-05
+Processed 80000/160000 samplesIntensity stats - min: 0.0, max: 0.967120349407196, mean: 6.813334039179608e-05
+Processed 80100/160000 samplesIntensity stats - min: 0.0, max: 0.943821132183075, mean: 6.223345553735271e-05
+Processed 80200/160000 samplesIntensity stats - min: 0.0, max: 0.9280110001564026, mean: 6.344906432786956e-05
+Processed 80300/160000 samplesIntensity stats - min: 0.0, max: 0.9124941825866699, mean: 6.715915515087545e-05
+Processed 80400/160000 samplesIntensity stats - min: 0.0, max: 0.9270958304405212, mean: 6.597558967769146e-05
+Processed 80500/160000 samplesIntensity stats - min: 0.0, max: 0.9577049612998962, mean: 5.785009125247598e-05
+Processed 80600/160000 samplesIntensity stats - min: 0.0, max: 0.9631171822547913, mean: 5.952512947260402e-05
+Processed 80700/160000 samplesIntensity stats - min: 0.0, max: 0.9212960600852966, mean: 6.138194294180721e-05
+Processed 80800/160000 samplesIntensity stats - min: 0.0, max: 0.9428924322128296, mean: 6.447364285122603e-05
+Processed 80900/160000 samplesIntensity stats - min: 0.0, max: 0.9610742330551147, mean: 5.960321504971944e-05
+Processed 81000/160000 samplesIntensity stats - min: 0.0, max: 0.8954420685768127, mean: 5.9521298680920154e-05
+Processed 81100/160000 samplesIntensity stats - min: 0.0, max: 0.9679257273674011, mean: 6.53205715934746e-05
+Processed 81200/160000 samplesIntensity stats - min: 0.0, max: 0.9562079906463623, mean: 6.629102426813915e-05
+Processed 81300/160000 samplesIntensity stats - min: 0.0, max: 0.9490633606910706, mean: 5.823660467285663e-05
+Processed 81400/160000 samplesIntensity stats - min: 0.0, max: 0.9448035359382629, mean: 6.284107075771317e-05
+Processed 81500/160000 samplesIntensity stats - min: 0.0, max: 0.921564519405365, mean: 6.15271128481254e-05
+Processed 81600/160000 samplesIntensity stats - min: 0.0, max: 0.914372980594635, mean: 6.573703285539523e-05
+Processed 81700/160000 samplesIntensity stats - min: 0.0, max: 0.9523270726203918, mean: 6.22592560830526e-05
+Processed 81800/160000 samplesIntensity stats - min: 0.0, max: 0.9788095355033875, mean: 6.3038693042472e-05
+Processed 81900/160000 samplesIntensity stats - min: 0.0, max: 0.939479410648346, mean: 6.364472938003018e-05
+Processed 82000/160000 samplesIntensity stats - min: 0.0, max: 0.9725171327590942, mean: 6.893743557156995e-05
+Processed 82100/160000 samplesIntensity stats - min: 0.0, max: 0.9752782583236694, mean: 6.492421380244195e-05
+Processed 82200/160000 samplesIntensity stats - min: 0.0, max: 0.9454609155654907, mean: 6.134534487500787e-05
+Processed 82300/160000 samplesIntensity stats - min: 0.0, max: 0.9260213375091553, mean: 6.543046765727922e-05
+Processed 82400/160000 samplesIntensity stats - min: 0.0, max: 0.952721893787384, mean: 6.665462569799274e-05
+Processed 82500/160000 samplesIntensity stats - min: 0.0, max: 0.9173562526702881, mean: 6.291417957982048e-05
+Processed 82600/160000 samplesIntensity stats - min: 0.0, max: 0.9686611294746399, mean: 6.118091550888494e-05
+Processed 82700/160000 samplesIntensity stats - min: 0.0, max: 0.9238739609718323, mean: 6.469809886766598e-05
+Processed 82800/160000 samplesIntensity stats - min: 0.0, max: 0.9249661564826965, mean: 6.285194103838876e-05
+Processed 82900/160000 samplesIntensity stats - min: 0.0, max: 0.9325675368309021, mean: 6.158761243568733e-05
+Processed 83000/160000 samplesIntensity stats - min: 0.0, max: 0.9864050149917603, mean: 6.177795148687437e-05
+Processed 83100/160000 samplesIntensity stats - min: 0.0, max: 0.9473650455474854, mean: 6.617227336391807e-05
+Processed 83200/160000 samplesIntensity stats - min: 0.0, max: 0.9303838610649109, mean: 6.303456757450476e-05
+Processed 83300/160000 samplesIntensity stats - min: 0.0, max: 0.9848953485488892, mean: 6.185773963807151e-05
+Processed 83400/160000 samplesIntensity stats - min: 0.0, max: 0.9458182454109192, mean: 5.9294306993251666e-05
+Processed 83500/160000 samplesIntensity stats - min: 0.0, max: 0.9344093203544617, mean: 6.0170063079567626e-05
+Processed 83600/160000 samplesIntensity stats - min: 0.0, max: 0.9387220740318298, mean: 6.547607335960492e-05
+Processed 83700/160000 samplesIntensity stats - min: 0.0, max: 0.953914225101471, mean: 6.328601011773571e-05
+Processed 83800/160000 samplesIntensity stats - min: 0.0, max: 0.9230456948280334, mean: 6.14243108429946e-05
+Processed 83900/160000 samplesIntensity stats - min: 0.0, max: 0.9420444369316101, mean: 6.417728582164273e-05
+Processed 84000/160000 samplesIntensity stats - min: 0.0, max: 0.9743400812149048, mean: 6.362995191011578e-05
+Processed 84100/160000 samplesIntensity stats - min: 0.0, max: 0.9429478645324707, mean: 6.890518852742389e-05
+Processed 84200/160000 samplesIntensity stats - min: 0.0, max: 0.964540421962738, mean: 5.824175605084747e-05
+Processed 84300/160000 samplesIntensity stats - min: 0.0, max: 0.9725578427314758, mean: 6.828033656347543e-05
+Processed 84400/160000 samplesIntensity stats - min: 0.0, max: 0.988678514957428, mean: 6.377599493134767e-05
+Processed 84500/160000 samplesIntensity stats - min: 0.0, max: 0.9446154236793518, mean: 6.363452121149749e-05
+Processed 84600/160000 samplesIntensity stats - min: 0.0, max: 0.9224098920822144, mean: 6.2219551182352e-05
+Processed 84700/160000 samplesIntensity stats - min: 0.0, max: 0.9390556216239929, mean: 6.376048986567184e-05
+Processed 84800/160000 samplesIntensity stats - min: 0.0, max: 0.9357216358184814, mean: 6.883591413497925e-05
+Processed 84900/160000 samplesIntensity stats - min: 0.0, max: 0.9122138619422913, mean: 5.857627547811717e-05
+Processed 85000/160000 samplesIntensity stats - min: 0.0, max: 0.9362124800682068, mean: 6.168327672639862e-05
+Processed 85100/160000 samplesIntensity stats - min: 0.0, max: 0.9895270466804504, mean: 6.6661938035395e-05
+Processed 85200/160000 samplesIntensity stats - min: 0.0, max: 0.9379233717918396, mean: 6.752390618203208e-05
+Processed 85300/160000 samplesIntensity stats - min: 0.0, max: 0.9620794653892517, mean: 6.301446410361677e-05
+Processed 85400/160000 samplesIntensity stats - min: 0.0, max: 1.0009084939956665, mean: 5.866158608114347e-05
+Processed 85500/160000 samplesIntensity stats - min: 0.0, max: 0.9508090615272522, mean: 6.359886174323037e-05
+Processed 85600/160000 samplesIntensity stats - min: 0.0, max: 0.9398410320281982, mean: 6.438155833166093e-05
+Processed 85700/160000 samplesIntensity stats - min: 0.0, max: 0.9618707299232483, mean: 6.39782301732339e-05
+Processed 85800/160000 samplesIntensity stats - min: 0.0, max: 0.9341022968292236, mean: 6.5285072196275e-05
+Processed 85900/160000 samplesIntensity stats - min: 0.0, max: 0.9438900351524353, mean: 6.177222530823201e-05
+Processed 86000/160000 samplesIntensity stats - min: 0.0, max: 0.9245365262031555, mean: 6.275751366047189e-05
+Processed 86100/160000 samplesIntensity stats - min: 0.0, max: 0.9537583589553833, mean: 5.88514594710432e-05
+Processed 86200/160000 samplesIntensity stats - min: 0.0, max: 0.9775359034538269, mean: 6.0061247495468706e-05
+Processed 86300/160000 samplesIntensity stats - min: 0.0, max: 1.002594232559204, mean: 6.38682977296412e-05
+Processed 86400/160000 samplesIntensity stats - min: 0.0, max: 1.0061014890670776, mean: 6.353323988150805e-05
+Processed 86500/160000 samplesIntensity stats - min: 0.0, max: 0.9711872935295105, mean: 5.594329195446335e-05
+Processed 86600/160000 samplesIntensity stats - min: 0.0, max: 0.9441474080085754, mean: 5.879150558030233e-05
+Processed 86700/160000 samplesIntensity stats - min: 0.0, max: 0.9630619287490845, mean: 6.561249756487086e-05
+Processed 86800/160000 samplesIntensity stats - min: 0.0, max: 0.9405413269996643, mean: 6.109704554546624e-05
+Processed 86900/160000 samplesIntensity stats - min: 0.0, max: 0.9270251393318176, mean: 6.275996565818787e-05
+Processed 87000/160000 samplesIntensity stats - min: 0.0, max: 0.9658570289611816, mean: 6.513793778140098e-05
+Processed 87100/160000 samplesIntensity stats - min: 0.0, max: 0.9353939890861511, mean: 6.323855632217601e-05
+Processed 87200/160000 samplesIntensity stats - min: 0.0, max: 0.9454343318939209, mean: 6.768024468328804e-05
+Processed 87300/160000 samplesIntensity stats - min: 0.0, max: 0.9267217516899109, mean: 5.9553545725066215e-05
+Processed 87400/160000 samplesIntensity stats - min: 0.0, max: 1.0083287954330444, mean: 6.199776544235647e-05
+Processed 87500/160000 samplesIntensity stats - min: 0.0, max: 0.9136474132537842, mean: 6.132321868790314e-05
+Processed 87600/160000 samplesIntensity stats - min: 0.0, max: 0.9462123513221741, mean: 6.770644540665671e-05
+Processed 87700/160000 samplesIntensity stats - min: 0.0, max: 0.9544081091880798, mean: 6.28263660473749e-05
+Processed 87800/160000 samplesIntensity stats - min: 0.0, max: 0.949964165687561, mean: 6.0260528698563576e-05
+Processed 87900/160000 samplesIntensity stats - min: 0.0, max: 0.9373102188110352, mean: 6.616945029236376e-05
+Processed 88000/160000 samplesIntensity stats - min: 0.0, max: 0.9325575828552246, mean: 6.194149318616837e-05
+Processed 88100/160000 samplesIntensity stats - min: 0.0, max: 0.9227250218391418, mean: 6.695928459521383e-05
+Processed 88200/160000 samplesIntensity stats - min: 0.0, max: 0.962165892124176, mean: 6.257204222492874e-05
+Processed 88300/160000 samplesIntensity stats - min: 0.0, max: 0.9564169645309448, mean: 6.329977622954175e-05
+Processed 88400/160000 samplesIntensity stats - min: 0.0, max: 0.9408054351806641, mean: 6.229447171790525e-05
+Processed 88500/160000 samplesIntensity stats - min: 0.0, max: 0.9466135501861572, mean: 6.579789624083787e-05
+Processed 88600/160000 samplesIntensity stats - min: 0.0, max: 0.9293864369392395, mean: 5.784973836853169e-05
+Processed 88700/160000 samplesIntensity stats - min: 0.0, max: 0.9575132727622986, mean: 6.153021968202665e-05
+Processed 88800/160000 samplesIntensity stats - min: 0.0, max: 0.9426766037940979, mean: 6.743513949913904e-05
+Processed 88900/160000 samplesIntensity stats - min: 0.0, max: 0.9233623743057251, mean: 6.440131983254105e-05
+Processed 89000/160000 samplesIntensity stats - min: 0.0, max: 0.9317514300346375, mean: 5.591285662376322e-05
+Processed 89100/160000 samplesIntensity stats - min: 0.0, max: 0.9693506360054016, mean: 6.46981643512845e-05
+Processed 89200/160000 samplesIntensity stats - min: 0.0, max: 0.9827660918235779, mean: 6.588467658730224e-05
+Processed 89300/160000 samplesIntensity stats - min: 0.0, max: 0.9645323157310486, mean: 6.110515096224844e-05
+Processed 89400/160000 samplesIntensity stats - min: 0.0, max: 0.9724380970001221, mean: 6.095906428527087e-05
+Processed 89500/160000 samplesIntensity stats - min: 0.0, max: 0.9688961505889893, mean: 6.572077836608514e-05
+Processed 89600/160000 samplesIntensity stats - min: 0.0, max: 0.9432867169380188, mean: 6.140638288343325e-05
+Processed 89700/160000 samplesIntensity stats - min: 0.0, max: 0.9488337635993958, mean: 6.467665662057698e-05
+Processed 89800/160000 samplesIntensity stats - min: 0.0, max: 0.95814448595047, mean: 6.352650962071493e-05
+Processed 89900/160000 samplesIntensity stats - min: 0.0, max: 0.9268689751625061, mean: 6.319906970020384e-05
+Processed 90000/160000 samplesIntensity stats - min: 0.0, max: 0.9579966068267822, mean: 6.365237641148269e-05
+Processed 90100/160000 samplesIntensity stats - min: 0.0, max: 0.9331271052360535, mean: 6.086995927034877e-05
+Processed 90200/160000 samplesIntensity stats - min: 0.0, max: 0.9673871994018555, mean: 5.8226403780281544e-05
+Processed 90300/160000 samplesIntensity stats - min: 0.0, max: 0.9339594841003418, mean: 5.970316851744428e-05
+Processed 90400/160000 samplesIntensity stats - min: 0.0, max: 0.959590494632721, mean: 6.781125557608902e-05
+Processed 90500/160000 samplesIntensity stats - min: 0.0, max: 0.98357754945755, mean: 6.453914102166891e-05
+Processed 90600/160000 samplesIntensity stats - min: 0.0, max: 0.9570829272270203, mean: 6.104778003646061e-05
+Processed 90700/160000 samplesIntensity stats - min: 0.0, max: 0.9108635187149048, mean: 5.649865488521755e-05
+Processed 90800/160000 samplesIntensity stats - min: 0.0, max: 0.9116422533988953, mean: 6.325259892037138e-05
+Processed 90900/160000 samplesIntensity stats - min: 0.0, max: 0.8630450367927551, mean: 6.154280708869919e-05
+Processed 91000/160000 samplesIntensity stats - min: 0.0, max: 0.9212568402290344, mean: 5.751169373979792e-05
+Processed 91100/160000 samplesIntensity stats - min: 0.0, max: 0.9205325245857239, mean: 6.09821145189926e-05
+Processed 91200/160000 samplesIntensity stats - min: 0.0, max: 0.9308068156242371, mean: 6.117569864727557e-05
+Processed 91300/160000 samplesIntensity stats - min: 0.0, max: 0.9626593589782715, mean: 5.8087927754968405e-05
+Processed 91400/160000 samplesIntensity stats - min: 0.0, max: 0.9000181555747986, mean: 5.4913267376832664e-05
+Processed 91500/160000 samplesIntensity stats - min: 0.0, max: 0.9609084725379944, mean: 6.92518733558245e-05
+Processed 91600/160000 samplesIntensity stats - min: 0.0, max: 0.9793147444725037, mean: 6.597789615625516e-05
+Processed 91700/160000 samplesIntensity stats - min: 0.0, max: 0.9223495125770569, mean: 6.168273830553517e-05
+Processed 91800/160000 samplesIntensity stats - min: 0.0, max: 0.96241694688797, mean: 6.193248555064201e-05
+Processed 91900/160000 samplesIntensity stats - min: 0.0, max: 0.9222801923751831, mean: 6.712056347168982e-05
+Processed 92000/160000 samplesIntensity stats - min: 0.0, max: 0.9602810740470886, mean: 6.497214053524658e-05
+Processed 92100/160000 samplesIntensity stats - min: 0.0, max: 0.9317747950553894, mean: 6.307693547569215e-05
+Processed 92200/160000 samplesIntensity stats - min: 0.0, max: 0.9412611126899719, mean: 6.268413562793285e-05
+Processed 92300/160000 samplesIntensity stats - min: 0.0, max: 0.9387699365615845, mean: 6.053121978766285e-05
+Processed 92400/160000 samplesIntensity stats - min: 0.0, max: 0.9312967658042908, mean: 6.546884833369404e-05
+Processed 92500/160000 samplesIntensity stats - min: 0.0, max: 0.9580886363983154, mean: 6.834873056504875e-05
+Processed 92600/160000 samplesIntensity stats - min: 0.0, max: 0.9852051138877869, mean: 6.287334690568969e-05
+Processed 92700/160000 samplesIntensity stats - min: 0.0, max: 1.0189465284347534, mean: 6.45894106128253e-05
+Processed 92800/160000 samplesIntensity stats - min: 0.0, max: 0.9631913304328918, mean: 5.943183714407496e-05
+Processed 92900/160000 samplesIntensity stats - min: 0.0, max: 0.9138244986534119, mean: 6.115951691754162e-05
+Processed 93000/160000 samplesIntensity stats - min: 0.0, max: 0.9396200180053711, mean: 5.5626642279094085e-05
+Processed 93100/160000 samplesIntensity stats - min: 0.0, max: 0.9328609108924866, mean: 6.050562660675496e-05
+Processed 93200/160000 samplesIntensity stats - min: 0.0, max: 0.9148688316345215, mean: 6.237145862542093e-05
+Processed 93300/160000 samplesIntensity stats - min: 0.0, max: 0.9217298626899719, mean: 6.521891918964684e-05
+Processed 93400/160000 samplesIntensity stats - min: 0.0, max: 0.9590510725975037, mean: 5.8904151956085116e-05
+Processed 93500/160000 samplesIntensity stats - min: 0.0, max: 0.9571151733398438, mean: 6.513889093184844e-05
+Processed 93600/160000 samplesIntensity stats - min: 0.0, max: 0.9714325666427612, mean: 6.399973790394142e-05
+Processed 93700/160000 samplesIntensity stats - min: 0.0, max: 0.9557660222053528, mean: 6.182282231748104e-05
+Processed 93800/160000 samplesIntensity stats - min: 0.0, max: 0.9504863619804382, mean: 5.835294723510742e-05
+Processed 93900/160000 samplesIntensity stats - min: 0.0, max: 0.9586410522460938, mean: 6.674199539702386e-05
+Processed 94000/160000 samplesIntensity stats - min: 0.0, max: 0.91819167137146, mean: 6.0888851294294e-05
+Processed 94100/160000 samplesIntensity stats - min: 0.0, max: 0.9627565145492554, mean: 7.01545795891434e-05
+Processed 94200/160000 samplesIntensity stats - min: 0.0, max: 0.8949717283248901, mean: 6.175298767630011e-05
+Processed 94300/160000 samplesIntensity stats - min: 0.0, max: 0.9284383654594421, mean: 5.9593850892269984e-05
+Processed 94400/160000 samplesIntensity stats - min: 0.0, max: 0.9475804567337036, mean: 5.9636855439748615e-05
+Processed 94500/160000 samplesIntensity stats - min: 0.0, max: 1.0266586542129517, mean: 6.579716864507645e-05
+Processed 94600/160000 samplesIntensity stats - min: 0.0, max: 0.955735981464386, mean: 5.8950834500137717e-05
+Processed 94700/160000 samplesIntensity stats - min: 0.0, max: 0.9832764863967896, mean: 6.933433178346604e-05
+Processed 94800/160000 samplesIntensity stats - min: 0.0, max: 0.9817565083503723, mean: 6.482726894319057e-05
+Processed 94900/160000 samplesIntensity stats - min: 0.0, max: 0.8381094932556152, mean: 6.520372699014843e-05
+Processed 95000/160000 samplesIntensity stats - min: 0.0, max: 0.961388885974884, mean: 6.038243736838922e-05
+Processed 95100/160000 samplesIntensity stats - min: 0.0, max: 0.928300678730011, mean: 6.23614905634895e-05
+Processed 95200/160000 samplesIntensity stats - min: 0.0, max: 0.9533963799476624, mean: 5.9521760704228655e-05
+Processed 95300/160000 samplesIntensity stats - min: 0.0, max: 0.910577118396759, mean: 5.9590158343780786e-05
+Processed 95400/160000 samplesIntensity stats - min: 0.0, max: 0.9341272711753845, mean: 6.320555985439569e-05
+Processed 95500/160000 samplesIntensity stats - min: 0.0, max: 0.9650424122810364, mean: 5.887427323614247e-05
+Processed 95600/160000 samplesIntensity stats - min: 0.0, max: 0.9889883995056152, mean: 6.036634658812545e-05
+Processed 95700/160000 samplesIntensity stats - min: 0.0, max: 1.0042678117752075, mean: 5.956363020231947e-05
+Processed 95800/160000 samplesIntensity stats - min: 0.0, max: 1.0072927474975586, mean: 5.840623998665251e-05
+Processed 95900/160000 samplesIntensity stats - min: 0.0, max: 0.9769788384437561, mean: 6.831271457485855e-05
+Processed 96000/160000 samplesIntensity stats - min: 0.0, max: 0.9312013983726501, mean: 6.428464257624e-05
+Processed 96100/160000 samplesIntensity stats - min: 0.0, max: 0.944057822227478, mean: 6.263644172577187e-05
+Processed 96200/160000 samplesIntensity stats - min: 0.0, max: 0.9202348589897156, mean: 5.848570435773581e-05
+Processed 96300/160000 samplesIntensity stats - min: 0.0, max: 0.9563785195350647, mean: 6.729303277097642e-05
+Processed 96400/160000 samplesIntensity stats - min: 0.0, max: 0.9214040637016296, mean: 6.182203651405871e-05
+Processed 96500/160000 samplesIntensity stats - min: 0.0, max: 0.9306529760360718, mean: 6.028057759976946e-05
+Processed 96600/160000 samplesIntensity stats - min: 0.0, max: 0.9621996283531189, mean: 5.804132524644956e-05
+Processed 96700/160000 samplesIntensity stats - min: 0.0, max: 0.8975468277931213, mean: 6.0205453337403014e-05
+Processed 96800/160000 samplesIntensity stats - min: 0.0, max: 0.9490086436271667, mean: 5.832764145452529e-05
+Processed 96900/160000 samplesIntensity stats - min: 0.0, max: 0.9329609274864197, mean: 6.083130938350223e-05
+Processed 97000/160000 samplesIntensity stats - min: 0.0, max: 0.9427915811538696, mean: 5.992102524032816e-05
+Processed 97100/160000 samplesIntensity stats - min: 0.0, max: 0.9307491183280945, mean: 6.337482045637444e-05
+Processed 97200/160000 samplesIntensity stats - min: 0.0, max: 0.9408249855041504, mean: 6.281562673393637e-05
+Processed 97300/160000 samplesIntensity stats - min: 0.0, max: 0.9447740912437439, mean: 5.9871988923987374e-05
+Processed 97400/160000 samplesIntensity stats - min: 0.0, max: 0.9654011726379395, mean: 6.202201620908454e-05
+Processed 97500/160000 samplesIntensity stats - min: 0.0, max: 0.9597448706626892, mean: 6.373765791067854e-05
+Processed 97600/160000 samplesIntensity stats - min: 0.0, max: 0.9535208344459534, mean: 6.215175380930305e-05
+Processed 97700/160000 samplesIntensity stats - min: 0.0, max: 0.9698235988616943, mean: 5.559625060413964e-05
+Processed 97800/160000 samplesIntensity stats - min: 0.0, max: 0.9597993493080139, mean: 6.152955029392615e-05
+Processed 97900/160000 samplesIntensity stats - min: 0.0, max: 0.9664328098297119, mean: 6.611922435695305e-05
+Processed 98000/160000 samplesIntensity stats - min: 0.0, max: 0.9302598834037781, mean: 6.295605271589011e-05
+Processed 98100/160000 samplesIntensity stats - min: 0.0, max: 0.9486732482910156, mean: 6.170215783640742e-05
+Processed 98200/160000 samplesIntensity stats - min: 0.0, max: 0.9646191596984863, mean: 6.00927414780017e-05
+Processed 98300/160000 samplesIntensity stats - min: 0.0, max: 0.9416583180427551, mean: 6.529704114655033e-05
+Processed 98400/160000 samplesIntensity stats - min: 0.0, max: 0.9064025282859802, mean: 5.711374615202658e-05
+Processed 98500/160000 samplesIntensity stats - min: 0.0, max: 0.9356539845466614, mean: 5.981646972941235e-05
+Processed 98600/160000 samplesIntensity stats - min: 0.0, max: 0.947135329246521, mean: 5.7880552049027756e-05
+Processed 98700/160000 samplesIntensity stats - min: 0.0, max: 0.9766145348548889, mean: 6.01122374064289e-05
+Processed 98800/160000 samplesIntensity stats - min: 0.0, max: 0.950993537902832, mean: 6.104771455284208e-05
+Processed 98900/160000 samplesIntensity stats - min: 0.0, max: 0.9778510928153992, mean: 6.488539656857029e-05
+Processed 99000/160000 samplesIntensity stats - min: 0.0, max: 0.9627988934516907, mean: 6.45964901195839e-05
+Processed 99100/160000 samplesIntensity stats - min: 0.0, max: 0.949325442314148, mean: 6.729372398694977e-05
+Processed 99200/160000 samplesIntensity stats - min: 0.0, max: 0.9047435522079468, mean: 6.199514609761536e-05
+Processed 99300/160000 samplesIntensity stats - min: 0.0, max: 0.9548893570899963, mean: 6.101051621953957e-05
+Processed 99400/160000 samplesIntensity stats - min: 0.0, max: 0.9534804224967957, mean: 6.33317104075104e-05
+Processed 99500/160000 samplesIntensity stats - min: 0.0, max: 0.933838427066803, mean: 5.747050454374403e-05
+Processed 99600/160000 samplesIntensity stats - min: 0.0, max: 0.9783092141151428, mean: 6.904686597408727e-05
+Processed 99700/160000 samplesIntensity stats - min: 0.0, max: 0.9607018828392029, mean: 6.410313653759658e-05
+Processed 99800/160000 samplesIntensity stats - min: 0.0, max: 0.9944277405738831, mean: 5.792635784018785e-05
+Processed 99900/160000 samplesIntensity stats - min: 0.0, max: 0.9664044976234436, mean: 6.037554339854978e-05
+Processed 100000/160000 samplesIntensity stats - min: 0.0, max: 0.9376906156539917, mean: 5.7730005210032687e-05
+Processed 100100/160000 samplesIntensity stats - min: 0.0, max: 0.9612434506416321, mean: 6.202368240337819e-05
+Processed 100200/160000 samplesIntensity stats - min: 0.0, max: 0.9414425492286682, mean: 6.157306779641658e-05
+Processed 100300/160000 samplesIntensity stats - min: 0.0, max: 0.9456611275672913, mean: 6.265382398851216e-05
+Processed 100400/160000 samplesIntensity stats - min: 0.0, max: 0.9359719157218933, mean: 6.208773265825585e-05
+Processed 100500/160000 samplesIntensity stats - min: 0.0, max: 0.9837748408317566, mean: 6.382998253684491e-05
+Processed 100600/160000 samplesIntensity stats - min: 0.0, max: 0.961139976978302, mean: 6.186930113472044e-05
+Processed 100700/160000 samplesIntensity stats - min: 0.0, max: 0.9604679346084595, mean: 6.550337275257334e-05
+Processed 100800/160000 samplesIntensity stats - min: 0.0, max: 0.9379215240478516, mean: 6.336118531180546e-05
+Processed 100900/160000 samplesIntensity stats - min: 0.0, max: 0.9963448643684387, mean: 6.194912566570565e-05
+Processed 101000/160000 samplesIntensity stats - min: 0.0, max: 1.0000640153884888, mean: 6.0588652559090406e-05
+Processed 101100/160000 samplesIntensity stats - min: 0.0, max: 0.9346850514411926, mean: 6.05775676376652e-05
+Processed 101200/160000 samplesIntensity stats - min: 0.0, max: 0.9371238350868225, mean: 6.147139356471598e-05
+Processed 101300/160000 samplesIntensity stats - min: 0.0, max: 0.9361312985420227, mean: 6.61382800899446e-05
+Processed 101400/160000 samplesIntensity stats - min: 0.0, max: 0.9361514449119568, mean: 5.6451375712640584e-05
+Processed 101500/160000 samplesIntensity stats - min: 0.0, max: 0.9467199444770813, mean: 6.131709960754961e-05
+Processed 101600/160000 samplesIntensity stats - min: 0.0, max: 0.932290256023407, mean: 5.7868757721735165e-05
+Processed 101700/160000 samplesIntensity stats - min: 0.0, max: 0.9652560353279114, mean: 5.7551154895918444e-05
+Processed 101800/160000 samplesIntensity stats - min: 0.0, max: 0.9706845283508301, mean: 6.0325477534206584e-05
+Processed 101900/160000 samplesIntensity stats - min: 0.0, max: 0.9454144239425659, mean: 6.990090332692489e-05
+Processed 102000/160000 samplesIntensity stats - min: 0.0, max: 0.9542458653450012, mean: 6.1635255406145e-05
+Processed 102100/160000 samplesIntensity stats - min: 0.0, max: 0.9537808895111084, mean: 5.744506051996723e-05
+Processed 102200/160000 samplesIntensity stats - min: 0.0, max: 0.9658657908439636, mean: 5.951538696535863e-05
+Processed 102300/160000 samplesIntensity stats - min: 0.0, max: 0.9344388842582703, mean: 5.786368637927808e-05
+Processed 102400/160000 samplesIntensity stats - min: 0.0, max: 0.9436388611793518, mean: 6.867969204904512e-05
+Processed 102500/160000 samplesIntensity stats - min: 0.0, max: 0.9238311648368835, mean: 6.336032674880698e-05
+Processed 102600/160000 samplesIntensity stats - min: 0.0, max: 0.9081922173500061, mean: 5.772589429398067e-05
+Processed 102700/160000 samplesIntensity stats - min: 0.0, max: 0.9369552135467529, mean: 5.971042992314324e-05
+Processed 102800/160000 samplesIntensity stats - min: 0.0, max: 0.9673588275909424, mean: 6.240833317860961e-05
+Processed 102900/160000 samplesIntensity stats - min: 0.0, max: 0.9422248601913452, mean: 5.6852975831134245e-05
+Processed 103000/160000 samplesIntensity stats - min: 0.0, max: 0.9680168032646179, mean: 6.149431283120066e-05
+Processed 103100/160000 samplesIntensity stats - min: 0.0, max: 0.9775514006614685, mean: 7.23712655599229e-05
+Processed 103200/160000 samplesIntensity stats - min: 0.0, max: 0.988114058971405, mean: 6.432975351344794e-05
+Processed 103300/160000 samplesIntensity stats - min: 0.0, max: 0.9578979015350342, mean: 6.180772470543161e-05
+Processed 103400/160000 samplesIntensity stats - min: 0.0, max: 0.9183623194694519, mean: 6.0137430409668013e-05
+Processed 103500/160000 samplesIntensity stats - min: 0.0, max: 0.9351121783256531, mean: 6.005737304803915e-05
+Processed 103600/160000 samplesIntensity stats - min: 0.0, max: 0.9352754950523376, mean: 5.997560947434977e-05
+Processed 103700/160000 samplesIntensity stats - min: 0.0, max: 0.9906350374221802, mean: 6.016605402692221e-05
+Processed 103800/160000 samplesIntensity stats - min: 0.0, max: 0.9752016663551331, mean: 6.113854760769755e-05
+Processed 103900/160000 samplesIntensity stats - min: 0.0, max: 0.9514192342758179, mean: 6.358710379572585e-05
+Processed 104000/160000 samplesIntensity stats - min: 0.0, max: 0.9475648403167725, mean: 6.685275002382696e-05
+Processed 104100/160000 samplesIntensity stats - min: 0.0, max: 0.9880079030990601, mean: 5.972227154416032e-05
+Processed 104200/160000 samplesIntensity stats - min: 0.0, max: 0.9471450448036194, mean: 5.8204823289997876e-05
+Processed 104300/160000 samplesIntensity stats - min: 0.0, max: 0.9335256218910217, mean: 6.43011080683209e-05
+Processed 104400/160000 samplesIntensity stats - min: 0.0, max: 0.9368790984153748, mean: 6.051833042874932e-05
+Processed 104500/160000 samplesIntensity stats - min: 0.0, max: 0.9294950366020203, mean: 6.313125049928203e-05
+Processed 104600/160000 samplesIntensity stats - min: 0.0, max: 0.9688370823860168, mean: 5.789448550785892e-05
+Processed 104700/160000 samplesIntensity stats - min: 0.0, max: 0.9844833016395569, mean: 6.276319618336856e-05
+Processed 104800/160000 samplesIntensity stats - min: 0.0, max: 0.9285200238227844, mean: 6.235039472812787e-05
+Processed 104900/160000 samplesIntensity stats - min: 0.0, max: 0.9568278193473816, mean: 7.05880083842203e-05
+Processed 105000/160000 samplesIntensity stats - min: 0.0, max: 0.9772024154663086, mean: 6.276488420553505e-05
+Processed 105100/160000 samplesIntensity stats - min: 0.0, max: 0.9712589979171753, mean: 6.656302866758779e-05
+Processed 105200/160000 samplesIntensity stats - min: 0.0, max: 0.9274178147315979, mean: 5.79557272430975e-05
+Processed 105300/160000 samplesIntensity stats - min: 0.0, max: 0.9244612455368042, mean: 5.7454944908386096e-05
+Processed 105400/160000 samplesIntensity stats - min: 0.0, max: 1.005403995513916, mean: 6.553884304594249e-05
+Processed 105500/160000 samplesIntensity stats - min: 0.0, max: 0.9079452157020569, mean: 5.602353485301137e-05
+Processed 105600/160000 samplesIntensity stats - min: 0.0, max: 0.9254345297813416, mean: 6.065882189432159e-05
+Processed 105700/160000 samplesIntensity stats - min: 0.0, max: 0.9278900623321533, mean: 6.0170852520968765e-05
+Processed 105800/160000 samplesIntensity stats - min: 0.0, max: 0.9686924815177917, mean: 5.56285995116923e-05
+Processed 105900/160000 samplesIntensity stats - min: 0.0, max: 0.9433712363243103, mean: 6.106758519308642e-05
+Processed 106000/160000 samplesIntensity stats - min: 0.0, max: 0.9692169427871704, mean: 6.145726365502924e-05
+Processed 106100/160000 samplesIntensity stats - min: 0.0, max: 0.9484791159629822, mean: 6.522931653307751e-05
+Processed 106200/160000 samplesIntensity stats - min: 0.0, max: 0.9211385846138, mean: 6.161165947560221e-05
+Processed 106300/160000 samplesIntensity stats - min: 0.0, max: 0.9368162751197815, mean: 6.086812209105119e-05
+Processed 106400/160000 samplesIntensity stats - min: 0.0, max: 0.9509677290916443, mean: 5.948809484834783e-05
+Processed 106500/160000 samplesIntensity stats - min: 0.0, max: 0.9132793545722961, mean: 6.326461880235001e-05
+Processed 106600/160000 samplesIntensity stats - min: 0.0, max: 0.9559312462806702, mean: 5.937035530223511e-05
+Processed 106700/160000 samplesIntensity stats - min: 0.0, max: 0.9498831629753113, mean: 5.700217297999188e-05
+Processed 106800/160000 samplesIntensity stats - min: 0.0, max: 0.9382434487342834, mean: 6.194275192683563e-05
+Processed 106900/160000 samplesIntensity stats - min: 0.0, max: 0.9690577387809753, mean: 6.36348850093782e-05
+Processed 107000/160000 samplesIntensity stats - min: 0.0, max: 0.9839683771133423, mean: 5.6370827223872766e-05
+Processed 107100/160000 samplesIntensity stats - min: 0.0, max: 0.9902827143669128, mean: 6.203634984558448e-05
+Processed 107200/160000 samplesIntensity stats - min: 0.0, max: 0.9243324398994446, mean: 5.6310283980565146e-05
+Processed 107300/160000 samplesIntensity stats - min: 0.0, max: 0.9462522864341736, mean: 6.0784004745073617e-05
+Processed 107400/160000 samplesIntensity stats - min: 0.0, max: 0.9243687987327576, mean: 6.178674811962992e-05
+Processed 107500/160000 samplesIntensity stats - min: 0.0, max: 0.9220291376113892, mean: 6.42816667095758e-05
+Processed 107600/160000 samplesIntensity stats - min: 0.0, max: 0.9441757798194885, mean: 5.904772115172818e-05
+Processed 107700/160000 samplesIntensity stats - min: 0.0, max: 0.9291304349899292, mean: 5.852552567375824e-05
+Processed 107800/160000 samplesIntensity stats - min: 0.0, max: 0.9230682849884033, mean: 5.734371006838046e-05
+Processed 107900/160000 samplesIntensity stats - min: 0.0, max: 0.9535819292068481, mean: 5.896342918276787e-05
+Processed 108000/160000 samplesIntensity stats - min: 0.0, max: 0.9079429507255554, mean: 5.876339491805993e-05
+Processed 108100/160000 samplesIntensity stats - min: 0.0, max: 0.9562737345695496, mean: 5.7871184253599495e-05
+Processed 108200/160000 samplesIntensity stats - min: 0.0, max: 0.9498928189277649, mean: 5.36616935278289e-05
+Processed 108300/160000 samplesIntensity stats - min: 0.0, max: 0.9709169268608093, mean: 6.168671097839251e-05
+Processed 108400/160000 samplesIntensity stats - min: 0.0, max: 0.9247859120368958, mean: 6.052943354006857e-05
+Processed 108500/160000 samplesIntensity stats - min: 0.0, max: 0.9446675181388855, mean: 6.0874321206938475e-05
+Processed 108600/160000 samplesIntensity stats - min: 0.0, max: 0.9408715963363647, mean: 6.244383985176682e-05
+Processed 108700/160000 samplesIntensity stats - min: 0.0, max: 0.9478995203971863, mean: 6.02877298661042e-05
+Processed 108800/160000 samplesIntensity stats - min: 0.0, max: 0.9526321887969971, mean: 6.468751234933734e-05
+Processed 108900/160000 samplesIntensity stats - min: 0.0, max: 0.9310819506645203, mean: 5.8617621107259765e-05
+Processed 109000/160000 samplesIntensity stats - min: 0.0, max: 0.9562920928001404, mean: 5.998945198371075e-05
+Processed 109100/160000 samplesIntensity stats - min: 0.0, max: 0.957862913608551, mean: 5.96443896938581e-05
+Processed 109200/160000 samplesIntensity stats - min: 0.0, max: 0.9387460947036743, mean: 6.245768599910662e-05
+Processed 109300/160000 samplesIntensity stats - min: 0.0, max: 0.9844897389411926, mean: 6.26149121671915e-05
+Processed 109400/160000 samplesIntensity stats - min: 0.0, max: 0.9587997794151306, mean: 6.166074308566749e-05
+Processed 109500/160000 samplesIntensity stats - min: 0.0, max: 0.9185175895690918, mean: 6.83200778439641e-05
+Processed 109600/160000 samplesIntensity stats - min: 0.0, max: 0.7827631831169128, mean: 5.645603232551366e-05
+Processed 109700/160000 samplesIntensity stats - min: 0.0, max: 0.9411019086837769, mean: 6.0230031522223726e-05
+Processed 109800/160000 samplesIntensity stats - min: 0.0, max: 0.9604965448379517, mean: 5.9255442465655506e-05
+Processed 109900/160000 samplesIntensity stats - min: 0.0, max: 0.9410452246665955, mean: 6.105875945650041e-05
+Processed 110000/160000 samplesIntensity stats - min: 0.0, max: 0.9113875031471252, mean: 6.562378985108808e-05
+Processed 110100/160000 samplesIntensity stats - min: 0.0, max: 0.9733421206474304, mean: 6.324252899503335e-05
+Processed 110200/160000 samplesIntensity stats - min: 0.0, max: 0.9586279392242432, mean: 5.9634192439261824e-05
+Processed 110300/160000 samplesIntensity stats - min: 0.0, max: 0.9655629992485046, mean: 6.154643051559106e-05
+Processed 110400/160000 samplesIntensity stats - min: 0.0, max: 0.9743125438690186, mean: 6.352831405820325e-05
+Processed 110500/160000 samplesIntensity stats - min: 0.0, max: 0.9718250632286072, mean: 6.465023034252226e-05
+Processed 110600/160000 samplesIntensity stats - min: 0.0, max: 0.961056649684906, mean: 5.596533083007671e-05
+Processed 110700/160000 samplesIntensity stats - min: 0.0, max: 0.938558042049408, mean: 5.863113983650692e-05
+Processed 110800/160000 samplesIntensity stats - min: 0.0, max: 0.9217847585678101, mean: 5.763334411312826e-05
+Processed 110900/160000 samplesIntensity stats - min: 0.0, max: 0.9539778828620911, mean: 5.4469222959596664e-05
+Processed 111000/160000 samplesIntensity stats - min: 0.0, max: 0.965751588344574, mean: 5.99529012106359e-05
+Processed 111100/160000 samplesIntensity stats - min: 0.0, max: 0.9349001049995422, mean: 5.3812171245226637e-05
+Processed 111200/160000 samplesIntensity stats - min: 0.0, max: 0.9404680132865906, mean: 5.6175726058427244e-05
+Processed 111300/160000 samplesIntensity stats - min: 0.0, max: 0.9298678636550903, mean: 5.5127718951553106e-05
+Processed 111400/160000 samplesIntensity stats - min: 0.0, max: 0.9886324405670166, mean: 6.169526750454679e-05
+Processed 111500/160000 samplesIntensity stats - min: 0.0, max: 0.9658607840538025, mean: 6.0231010138522834e-05
+Processed 111600/160000 samplesIntensity stats - min: 0.0, max: 0.9345141053199768, mean: 6.39194404357113e-05
+Processed 111700/160000 samplesIntensity stats - min: 0.0, max: 0.9226991534233093, mean: 5.90597337577492e-05
+Processed 111800/160000 samplesIntensity stats - min: 0.0, max: 0.9317134618759155, mean: 5.658898226101883e-05
+Processed 111900/160000 samplesIntensity stats - min: 0.0, max: 0.9359809756278992, mean: 5.9597539802780375e-05
+Processed 112000/160000 samplesIntensity stats - min: 0.0, max: 0.9429225921630859, mean: 6.42905943095684e-05
+Processed 112100/160000 samplesIntensity stats - min: 0.0, max: 0.9607677459716797, mean: 5.905825673835352e-05
+Processed 112200/160000 samplesIntensity stats - min: 0.0, max: 0.9088520407676697, mean: 5.642582618747838e-05
+Processed 112300/160000 samplesIntensity stats - min: 0.0, max: 0.9798865914344788, mean: 5.7012501201825216e-05
+Processed 112400/160000 samplesIntensity stats - min: 0.0, max: 0.9677972197532654, mean: 5.9854573919437826e-05
+Processed 112500/160000 samplesIntensity stats - min: 0.0, max: 0.9926751255989075, mean: 5.895659342058934e-05
+Processed 112600/160000 samplesIntensity stats - min: 0.0, max: 0.9700207114219666, mean: 6.265621050260961e-05
+Processed 112700/160000 samplesIntensity stats - min: 0.0, max: 0.9363515973091125, mean: 6.13877855357714e-05
+Processed 112800/160000 samplesIntensity stats - min: 0.0, max: 0.9507415890693665, mean: 6.350626063067466e-05
+Processed 112900/160000 samplesIntensity stats - min: 0.0, max: 0.9639513492584229, mean: 5.986152609693818e-05
+Processed 113000/160000 samplesIntensity stats - min: 0.0, max: 0.960136353969574, mean: 5.683432027581148e-05
+Processed 113100/160000 samplesIntensity stats - min: 0.0, max: 0.9577386975288391, mean: 5.463238267111592e-05
+Processed 113200/160000 samplesIntensity stats - min: 0.0, max: 0.942538321018219, mean: 6.114986899774522e-05
+Processed 113300/160000 samplesIntensity stats - min: 0.0, max: 0.9410159587860107, mean: 6.427300832001492e-05
+Processed 113400/160000 samplesIntensity stats - min: 0.0, max: 0.9115790128707886, mean: 6.154788570711389e-05
+Processed 113500/160000 samplesIntensity stats - min: 0.0, max: 0.9829344153404236, mean: 6.243322422960773e-05
+Processed 113600/160000 samplesIntensity stats - min: 0.0, max: 0.9601253867149353, mean: 6.310511525953189e-05
+Processed 113700/160000 samplesIntensity stats - min: 0.0, max: 0.9560672640800476, mean: 5.75862723053433e-05
+Processed 113800/160000 samplesIntensity stats - min: 0.0, max: 0.9653025269508362, mean: 5.9224908909527585e-05
+Processed 113900/160000 samplesIntensity stats - min: 0.0, max: 0.9627625346183777, mean: 5.741229688283056e-05
+Processed 114000/160000 samplesIntensity stats - min: 0.0, max: 0.9444876313209534, mean: 6.3757186580915e-05
+Processed 114100/160000 samplesIntensity stats - min: 0.0, max: 0.94997638463974, mean: 5.675942520610988e-05
+Processed 114200/160000 samplesIntensity stats - min: 0.0, max: 0.9606455564498901, mean: 6.0857058997498825e-05
+Processed 114300/160000 samplesIntensity stats - min: 0.0, max: 0.9359267354011536, mean: 6.291727913776413e-05
+Processed 114400/160000 samplesIntensity stats - min: 0.0, max: 0.945020854473114, mean: 6.313819903880358e-05
+Processed 114500/160000 samplesIntensity stats - min: 0.0, max: 0.9872404932975769, mean: 5.921239062445238e-05
+Processed 114600/160000 samplesIntensity stats - min: 0.0, max: 0.9683652520179749, mean: 5.977934051770717e-05
+Processed 114700/160000 samplesIntensity stats - min: 0.0, max: 0.9543808102607727, mean: 5.774843521066941e-05
+Processed 114800/160000 samplesIntensity stats - min: 0.0, max: 0.9318841099739075, mean: 6.023905734764412e-05
+Processed 114900/160000 samplesIntensity stats - min: 0.0, max: 0.9629467129707336, mean: 5.6418713938910514e-05
+Processed 115000/160000 samplesIntensity stats - min: 0.0, max: 0.9383044838905334, mean: 6.003741145832464e-05
+Processed 115100/160000 samplesIntensity stats - min: 0.0, max: 0.9271259903907776, mean: 5.460286047309637e-05
+Processed 115200/160000 samplesIntensity stats - min: 0.0, max: 0.9860967993736267, mean: 6.0892685723956674e-05
+Processed 115300/160000 samplesIntensity stats - min: 0.0, max: 0.9866302013397217, mean: 5.904402132728137e-05
+Processed 115400/160000 samplesIntensity stats - min: 0.0, max: 0.9570772647857666, mean: 5.92399992456194e-05
+Processed 115500/160000 samplesIntensity stats - min: 0.0, max: 0.9335353970527649, mean: 5.624243931379169e-05
+Processed 115600/160000 samplesIntensity stats - min: 0.0, max: 1.0149409770965576, mean: 7.569477747892961e-05
+Processed 115700/160000 samplesIntensity stats - min: 0.0, max: 1.0396356582641602, mean: 6.899766594870016e-05
+Processed 115800/160000 samplesIntensity stats - min: 0.0, max: 0.9577787518501282, mean: 5.678080560755916e-05
+Processed 115900/160000 samplesIntensity stats - min: 0.0, max: 0.9393942952156067, mean: 6.411250069504604e-05
+Processed 116000/160000 samplesIntensity stats - min: 0.0, max: 0.939716637134552, mean: 6.193948502186686e-05
+Processed 116100/160000 samplesIntensity stats - min: 0.0, max: 0.9624605774879456, mean: 5.952674109721556e-05
+Processed 116200/160000 samplesIntensity stats - min: 0.0, max: 0.9597257971763611, mean: 5.616211274173111e-05
+Processed 116300/160000 samplesIntensity stats - min: 0.0, max: 0.915716290473938, mean: 6.0091118939453736e-05
+Processed 116400/160000 samplesIntensity stats - min: 0.0, max: 0.9685357809066772, mean: 6.352209311444312e-05
+Processed 116500/160000 samplesIntensity stats - min: 0.0, max: 0.9686986804008484, mean: 5.691510523320176e-05
+Processed 116600/160000 samplesIntensity stats - min: 0.0, max: 0.9577334523200989, mean: 6.0743052017642185e-05
+Processed 116700/160000 samplesIntensity stats - min: 0.0, max: 0.957497775554657, mean: 5.557456461247057e-05
+Processed 116800/160000 samplesIntensity stats - min: 0.0, max: 0.9572733044624329, mean: 6.214302266016603e-05
+Processed 116900/160000 samplesIntensity stats - min: 0.0, max: 0.9584224820137024, mean: 5.92567739658989e-05
+Processed 117000/160000 samplesIntensity stats - min: 0.0, max: 0.9563968777656555, mean: 5.767665425082669e-05
+Processed 117100/160000 samplesIntensity stats - min: 0.0, max: 0.941987156867981, mean: 5.8451587392482907e-05
+Processed 117200/160000 samplesIntensity stats - min: 0.0, max: 0.9365891218185425, mean: 5.968540062895045e-05
+Processed 117300/160000 samplesIntensity stats - min: 0.0, max: 0.9697060585021973, mean: 6.0207341448403895e-05
+Processed 117400/160000 samplesIntensity stats - min: 0.0, max: 0.917633593082428, mean: 5.6292472436325625e-05
+Processed 117500/160000 samplesIntensity stats - min: 0.0, max: 0.9577603936195374, mean: 5.862227772013284e-05
+Processed 117600/160000 samplesIntensity stats - min: 0.0, max: 0.9563762545585632, mean: 6.176798342494294e-05
+Processed 117700/160000 samplesIntensity stats - min: 0.0, max: 0.9595637917518616, mean: 5.675683496519923e-05
+Processed 117800/160000 samplesIntensity stats - min: 0.0, max: 0.9825360774993896, mean: 5.69733019801788e-05
+Processed 117900/160000 samplesIntensity stats - min: 0.0, max: 0.9562311172485352, mean: 6.041679444024339e-05
+Processed 118000/160000 samplesIntensity stats - min: 0.0, max: 0.9646891951560974, mean: 6.122228660387918e-05
+Processed 118100/160000 samplesIntensity stats - min: 0.0, max: 0.944558322429657, mean: 5.698244785889983e-05
+Processed 118200/160000 samplesIntensity stats - min: 0.0, max: 0.9575207829475403, mean: 5.6915621826192364e-05
+Processed 118300/160000 samplesIntensity stats - min: 0.0, max: 0.9661135673522949, mean: 5.7890298194251955e-05
+Processed 118400/160000 samplesIntensity stats - min: 0.0, max: 0.9313205480575562, mean: 5.9424779465189204e-05
+Processed 118500/160000 samplesIntensity stats - min: 0.0, max: 0.9731926918029785, mean: 5.83286710025277e-05
+Processed 118600/160000 samplesIntensity stats - min: 0.0, max: 0.9968487620353699, mean: 5.904022327740677e-05
+Processed 118700/160000 samplesIntensity stats - min: 0.0, max: 0.9537846446037292, mean: 5.9254143707221374e-05
+Processed 118800/160000 samplesIntensity stats - min: 0.0, max: 1.0055614709854126, mean: 6.385756569216028e-05
+Processed 118900/160000 samplesIntensity stats - min: 0.0, max: 0.963956356048584, mean: 5.8698205975815654e-05
+Processed 119000/160000 samplesIntensity stats - min: 0.0, max: 0.9637026190757751, mean: 6.265909178182483e-05
+Processed 119100/160000 samplesIntensity stats - min: 0.0, max: 0.9562559127807617, mean: 5.717605017707683e-05
+Processed 119200/160000 samplesIntensity stats - min: 0.0, max: 0.9086166024208069, mean: 6.313972698990256e-05
+Processed 119300/160000 samplesIntensity stats - min: 0.0, max: 0.9605609774589539, mean: 5.869323285878636e-05
+Processed 119400/160000 samplesIntensity stats - min: 0.0, max: 0.9494681358337402, mean: 5.831620001117699e-05
+Processed 119500/160000 samplesIntensity stats - min: 0.0, max: 0.9126148223876953, mean: 5.9175785281695426e-05
+Processed 119600/160000 samplesIntensity stats - min: 0.0, max: 0.9694641828536987, mean: 6.31413422524929e-05
+Processed 119700/160000 samplesIntensity stats - min: 0.0, max: 0.9651336669921875, mean: 6.3363004301209e-05
+Processed 119800/160000 samplesIntensity stats - min: 0.0, max: 0.9519788026809692, mean: 5.9548805438680574e-05
+Processed 119900/160000 samplesIntensity stats - min: 0.0, max: 0.9654067754745483, mean: 6.632743316004053e-05
+Processed 120000/160000 samplesIntensity stats - min: 0.0, max: 0.938956081867218, mean: 6.16242759861052e-05
+Processed 120100/160000 samplesIntensity stats - min: 0.0, max: 0.9549909830093384, mean: 5.651974061038345e-05
+Processed 120200/160000 samplesIntensity stats - min: 0.0, max: 0.9603849053382874, mean: 5.779985440312885e-05
+Processed 120300/160000 samplesIntensity stats - min: 0.0, max: 0.9217172265052795, mean: 6.055189442122355e-05
+Processed 120400/160000 samplesIntensity stats - min: 0.0, max: 0.9694116711616516, mean: 6.174673035275191e-05
+Processed 120500/160000 samplesIntensity stats - min: 0.0, max: 0.9594212174415588, mean: 5.716167652281001e-05
+Processed 120600/160000 samplesIntensity stats - min: 0.0, max: 0.9636430144309998, mean: 5.811550363432616e-05
+Processed 120700/160000 samplesIntensity stats - min: 0.0, max: 0.969822108745575, mean: 5.779682760476135e-05
+Processed 120800/160000 samplesIntensity stats - min: 0.0, max: 0.9560230374336243, mean: 6.349270552163944e-05
+Processed 120900/160000 samplesIntensity stats - min: 0.0, max: 0.957895815372467, mean: 6.823470903327689e-05
+Processed 121000/160000 samplesIntensity stats - min: 0.0, max: 0.9532527923583984, mean: 6.199722702149302e-05
+Processed 121100/160000 samplesIntensity stats - min: 0.0, max: 0.960392415523529, mean: 6.10390561632812e-05
+Processed 121200/160000 samplesIntensity stats - min: 0.0, max: 0.9369630217552185, mean: 6.173562724143267e-05
+Processed 121300/160000 samplesIntensity stats - min: 0.0, max: 0.9589746594429016, mean: 5.9140384109923616e-05
+Processed 121400/160000 samplesIntensity stats - min: 0.0, max: 0.9204952120780945, mean: 5.8115696447202936e-05
+Processed 121500/160000 samplesIntensity stats - min: 0.0, max: 0.9355515837669373, mean: 5.338997652870603e-05
+Processed 121600/160000 samplesIntensity stats - min: 0.0, max: 0.9590281844139099, mean: 6.461355951614678e-05
+Processed 121700/160000 samplesIntensity stats - min: 0.0, max: 0.951625406742096, mean: 6.086963549023494e-05
+Processed 121800/160000 samplesIntensity stats - min: 0.0, max: 0.9665613770484924, mean: 5.8312904002377763e-05
+Processed 121900/160000 samplesIntensity stats - min: 0.0, max: 0.9582421183586121, mean: 6.164320802781731e-05
+Processed 122000/160000 samplesIntensity stats - min: 0.0, max: 0.9879752397537231, mean: 6.677764031337574e-05
+Processed 122100/160000 samplesIntensity stats - min: 0.0, max: 0.9564166069030762, mean: 6.201143696671352e-05
+Processed 122200/160000 samplesIntensity stats - min: 0.0, max: 0.9347001910209656, mean: 6.422182923415676e-05
+Processed 122300/160000 samplesIntensity stats - min: 0.0, max: 0.9631065726280212, mean: 5.928636892349459e-05
+Processed 122400/160000 samplesIntensity stats - min: 0.0, max: 0.9453175663948059, mean: 6.0675167333101854e-05
+Processed 122500/160000 samplesIntensity stats - min: 0.0, max: 0.9622036814689636, mean: 5.9345256886444986e-05
+Processed 122600/160000 samplesIntensity stats - min: 0.0, max: 0.9662511348724365, mean: 5.828548455610871e-05
+Processed 122700/160000 samplesIntensity stats - min: 0.0, max: 0.9352743029594421, mean: 5.93307449889835e-05
+Processed 122800/160000 samplesIntensity stats - min: 0.0, max: 0.9317075610160828, mean: 5.8374807849759236e-05
+Processed 122900/160000 samplesIntensity stats - min: 0.0, max: 0.9472007751464844, mean: 5.812422386952676e-05
+Processed 123000/160000 samplesIntensity stats - min: 0.0, max: 0.9608286023139954, mean: 6.300210225163028e-05
+Processed 123100/160000 samplesIntensity stats - min: 0.0, max: 0.9639841914176941, mean: 6.215050962055102e-05
+Processed 123200/160000 samplesIntensity stats - min: 0.0, max: 0.9586925506591797, mean: 6.368000322254375e-05
+Processed 123300/160000 samplesIntensity stats - min: 0.0, max: 0.9539732933044434, mean: 6.082627805881202e-05
+Processed 123400/160000 samplesIntensity stats - min: 0.0, max: 0.9286121726036072, mean: 6.518532609334216e-05
+Processed 123500/160000 samplesIntensity stats - min: 0.0, max: 0.9273955225944519, mean: 6.043951725587249e-05
+Processed 123600/160000 samplesIntensity stats - min: 0.0, max: 0.9247578978538513, mean: 6.193870649440214e-05
+Processed 123700/160000 samplesIntensity stats - min: 0.0, max: 0.9323849678039551, mean: 5.56145423615817e-05
+Processed 123800/160000 samplesIntensity stats - min: 0.0, max: 0.9526354670524597, mean: 5.890192187507637e-05
+Processed 123900/160000 samplesIntensity stats - min: 0.0, max: 0.9382577538490295, mean: 5.3718442359240726e-05
+Processed 124000/160000 samplesIntensity stats - min: 0.0, max: 0.9598132967948914, mean: 6.546480290126055e-05
+Processed 124100/160000 samplesIntensity stats - min: 0.0, max: 1.0013442039489746, mean: 6.456606206484139e-05
+Processed 124200/160000 samplesIntensity stats - min: 0.0, max: 0.9413049817085266, mean: 6.405638850992545e-05
+Processed 124300/160000 samplesIntensity stats - min: 0.0, max: 0.9080541729927063, mean: 5.8690973673947155e-05
+Processed 124400/160000 samplesIntensity stats - min: 0.0, max: 0.9318148493766785, mean: 6.275226041907445e-05
+Processed 124500/160000 samplesIntensity stats - min: 0.0, max: 0.959785521030426, mean: 5.5647484259679914e-05
+Processed 124600/160000 samplesIntensity stats - min: 0.0, max: 0.9656344056129456, mean: 5.609771324088797e-05
+Processed 124700/160000 samplesIntensity stats - min: 0.0, max: 0.9231484532356262, mean: 6.2623992562294e-05
+Processed 124800/160000 samplesIntensity stats - min: 0.0, max: 0.9331427812576294, mean: 6.242662493605167e-05
+Processed 124900/160000 samplesIntensity stats - min: 0.0, max: 0.9383766055107117, mean: 5.863744445377961e-05
+Processed 125000/160000 samplesIntensity stats - min: 0.0, max: 0.9678480625152588, mean: 6.524298805743456e-05
+Processed 125100/160000 samplesIntensity stats - min: 0.0, max: 0.9880207180976868, mean: 6.260450027184561e-05
+Processed 125200/160000 samplesIntensity stats - min: 0.0, max: 0.963775098323822, mean: 5.7511737395543605e-05
+Processed 125300/160000 samplesIntensity stats - min: 0.0, max: 0.9483745694160461, mean: 5.7998298871098086e-05
+Processed 125400/160000 samplesIntensity stats - min: 0.0, max: 0.9374437928199768, mean: 6.15940589341335e-05
+Processed 125500/160000 samplesIntensity stats - min: 0.0, max: 0.9280534386634827, mean: 6.407468754332513e-05
+Processed 125600/160000 samplesIntensity stats - min: 0.0, max: 0.9448457360267639, mean: 6.424244202207774e-05
+Processed 125700/160000 samplesIntensity stats - min: 0.0, max: 0.9464611411094666, mean: 6.1012196965748444e-05
+Processed 125800/160000 samplesIntensity stats - min: 0.0, max: 0.9496460556983948, mean: 6.137000309536234e-05
+Processed 125900/160000 samplesIntensity stats - min: 0.0, max: 0.944061279296875, mean: 6.024241884006187e-05
+Processed 126000/160000 samplesIntensity stats - min: 0.0, max: 0.9679380059242249, mean: 6.09272246947512e-05
+Processed 126100/160000 samplesIntensity stats - min: 0.0, max: 0.9692873358726501, mean: 5.518138641491532e-05
+Processed 126200/160000 samplesIntensity stats - min: 0.0, max: 0.9651685357093811, mean: 5.773504381068051e-05
+Processed 126300/160000 samplesIntensity stats - min: 0.0, max: 0.9994223713874817, mean: 5.94178018218372e-05
+Processed 126400/160000 samplesIntensity stats - min: 0.0, max: 0.9528980851173401, mean: 6.416294490918517e-05
+Processed 126500/160000 samplesIntensity stats - min: 0.0, max: 0.9257321953773499, mean: 5.83677101531066e-05
+Processed 126600/160000 samplesIntensity stats - min: 0.0, max: 0.9354979395866394, mean: 6.218233465915546e-05
+Processed 126700/160000 samplesIntensity stats - min: 0.0, max: 0.9516045451164246, mean: 5.681780385202728e-05
+Processed 126800/160000 samplesIntensity stats - min: 0.0, max: 0.9625054597854614, mean: 6.307943840511143e-05
+Processed 126900/160000 samplesIntensity stats - min: 0.0, max: 0.9492252469062805, mean: 5.9162513935007155e-05
+Processed 127000/160000 samplesIntensity stats - min: 0.0, max: 0.9888567328453064, mean: 6.569574907189235e-05
+Processed 127100/160000 samplesIntensity stats - min: 0.0, max: 0.956433117389679, mean: 6.362671410897747e-05
+Processed 127200/160000 samplesIntensity stats - min: 0.0, max: 0.9867273569107056, mean: 6.92532557877712e-05
+Processed 127300/160000 samplesIntensity stats - min: 0.0, max: 0.9608842730522156, mean: 5.966890603303909e-05
+Processed 127400/160000 samplesIntensity stats - min: 0.0, max: 0.953561007976532, mean: 6.0931539337616414e-05
+Processed 127500/160000 samplesIntensity stats - min: 0.0, max: 0.9618483185768127, mean: 6.139845936559141e-05
+Processed 127600/160000 samplesIntensity stats - min: 0.0, max: 0.9465129971504211, mean: 6.20801656623371e-05
+Processed 127700/160000 samplesIntensity stats - min: 0.0, max: 0.9752878546714783, mean: 6.222600495675579e-05
+Processed 127800/160000 samplesIntensity stats - min: 0.0, max: 0.942264974117279, mean: 6.231943552847952e-05
+Processed 127900/160000 samplesIntensity stats - min: 0.0, max: 0.9701769351959229, mean: 6.40915532130748e-05
+Processed 128000/160000 samplesIntensity stats - min: 0.0, max: 1.0206252336502075, mean: 6.228785059647635e-05
+Processed 128100/160000 samplesIntensity stats - min: 0.0, max: 0.9633490443229675, mean: 5.668826634064317e-05
+Processed 128200/160000 samplesIntensity stats - min: 0.0, max: 1.003618836402893, mean: 6.281862442847341e-05
+Processed 128300/160000 samplesIntensity stats - min: 0.0, max: 0.9559865593910217, mean: 6.340724939946085e-05
+Processed 128400/160000 samplesIntensity stats - min: 0.0, max: 0.9268776774406433, mean: 6.109270179877058e-05
+Processed 128500/160000 samplesIntensity stats - min: 0.0, max: 0.9728890061378479, mean: 5.8690711739473045e-05
+Processed 128600/160000 samplesIntensity stats - min: 0.0, max: 0.9357807040214539, mean: 6.085123823140748e-05
+Processed 128700/160000 samplesIntensity stats - min: 0.0, max: 0.9296550154685974, mean: 6.181042408570647e-05
+Processed 128800/160000 samplesIntensity stats - min: 0.0, max: 0.9312596321105957, mean: 6.135138391982764e-05
+Processed 128900/160000 samplesIntensity stats - min: 0.0, max: 0.9698660373687744, mean: 5.9511654399102554e-05
+Processed 129000/160000 samplesIntensity stats - min: 0.0, max: 0.967705249786377, mean: 6.133921851869673e-05
+Processed 129100/160000 samplesIntensity stats - min: 0.0, max: 0.9701269268989563, mean: 5.9416372096166015e-05
+Processed 129200/160000 samplesIntensity stats - min: 0.0, max: 0.9762129783630371, mean: 6.552822742378339e-05
+Processed 129300/160000 samplesIntensity stats - min: 0.0, max: 1.0004130601882935, mean: 5.7248646044172347e-05
+Processed 129400/160000 samplesIntensity stats - min: 0.0, max: 0.9909603595733643, mean: 6.160794873721898e-05
+Processed 129500/160000 samplesIntensity stats - min: 0.0, max: 0.951155960559845, mean: 6.327604205580428e-05
+Processed 129600/160000 samplesIntensity stats - min: 0.0, max: 0.9229789972305298, mean: 6.444669998018071e-05
+Processed 129700/160000 samplesIntensity stats - min: 0.0, max: 0.960172712802887, mean: 5.638355651171878e-05
+Processed 129800/160000 samplesIntensity stats - min: 0.0, max: 0.903939962387085, mean: 6.008131094858982e-05
+Processed 129900/160000 samplesIntensity stats - min: 0.0, max: 0.9689899682998657, mean: 6.149183900561184e-05
+Processed 130000/160000 samplesIntensity stats - min: 0.0, max: 0.9672535061836243, mean: 6.509396189358085e-05
+Processed 130100/160000 samplesIntensity stats - min: 0.0, max: 0.9656283259391785, mean: 5.821251033921726e-05
+Processed 130200/160000 samplesIntensity stats - min: 0.0, max: 0.9421715140342712, mean: 5.819572106702253e-05
+Processed 130300/160000 samplesIntensity stats - min: 0.0, max: 0.955720067024231, mean: 6.63243408780545e-05
+Processed 130400/160000 samplesIntensity stats - min: 0.0, max: 0.9716638326644897, mean: 6.484447658294812e-05
+Processed 130500/160000 samplesIntensity stats - min: 0.0, max: 0.9597457051277161, mean: 5.756910832133144e-05
+Processed 130600/160000 samplesIntensity stats - min: 0.0, max: 0.9433436989784241, mean: 5.845065606990829e-05
+Processed 130700/160000 samplesIntensity stats - min: 0.0, max: 0.9564017653465271, mean: 6.338847015285864e-05
+Processed 130800/160000 samplesIntensity stats - min: 0.0, max: 0.9286407828330994, mean: 6.394604133674875e-05
+Processed 130900/160000 samplesIntensity stats - min: 0.0, max: 0.9564467072486877, mean: 5.845706255058758e-05
+Processed 131000/160000 samplesIntensity stats - min: 0.0, max: 0.9395803809165955, mean: 5.991312355035916e-05
+Processed 131100/160000 samplesIntensity stats - min: 0.0, max: 0.9913319945335388, mean: 6.183715595398098e-05
+Processed 131200/160000 samplesIntensity stats - min: 0.0, max: 0.9600943922996521, mean: 5.86097376071848e-05
+Processed 131300/160000 samplesIntensity stats - min: 0.0, max: 0.9667829871177673, mean: 5.807414709124714e-05
+Processed 131400/160000 samplesIntensity stats - min: 0.0, max: 0.9569918513298035, mean: 6.43163948552683e-05
+Processed 131500/160000 samplesIntensity stats - min: 0.0, max: 0.9886796474456787, mean: 6.354248034767807e-05
+Processed 131600/160000 samplesIntensity stats - min: 0.0, max: 0.9334532022476196, mean: 6.255297194002196e-05
+Processed 131700/160000 samplesIntensity stats - min: 0.0, max: 0.956529438495636, mean: 5.733124999096617e-05
+Processed 131800/160000 samplesIntensity stats - min: 0.0, max: 0.9352973103523254, mean: 5.953417712589726e-05
+Processed 131900/160000 samplesIntensity stats - min: 0.0, max: 0.929617702960968, mean: 6.432180089177564e-05
+Processed 132000/160000 samplesIntensity stats - min: 0.0, max: 0.941788911819458, mean: 6.433593807742e-05
+Processed 132100/160000 samplesIntensity stats - min: 0.0, max: 0.9504863619804382, mean: 5.9596513892756775e-05
+Processed 132200/160000 samplesIntensity stats - min: 0.0, max: 0.8217796087265015, mean: 5.745044836658053e-05
+Processed 132300/160000 samplesIntensity stats - min: 0.0, max: 0.9914340376853943, mean: 6.698052311548963e-05
+Processed 132400/160000 samplesIntensity stats - min: 0.0, max: 0.9602003693580627, mean: 6.118634337326512e-05
+Processed 132500/160000 samplesIntensity stats - min: 0.0, max: 1.0169085264205933, mean: 5.764013985753991e-05
+Processed 132600/160000 samplesIntensity stats - min: 0.0, max: 0.9774672389030457, mean: 6.318893429124728e-05
+Processed 132700/160000 samplesIntensity stats - min: 0.0, max: 0.9443284869194031, mean: 6.313531048363075e-05
+Processed 132800/160000 samplesIntensity stats - min: 0.0, max: 0.9317616820335388, mean: 6.284422852331772e-05
+Processed 132900/160000 samplesIntensity stats - min: 0.0, max: 0.9611755013465881, mean: 5.650369348586537e-05
+Processed 133000/160000 samplesIntensity stats - min: 0.0, max: 0.9366474747657776, mean: 6.0083501011831686e-05
+Processed 133100/160000 samplesIntensity stats - min: 0.0, max: 0.9996646046638489, mean: 6.025135371601209e-05
+Processed 133200/160000 samplesIntensity stats - min: 0.0, max: 0.9884043335914612, mean: 6.217853660928085e-05
+Processed 133300/160000 samplesIntensity stats - min: 0.0, max: 1.0077710151672363, mean: 5.960390990367159e-05
+Processed 133400/160000 samplesIntensity stats - min: 0.0, max: 0.9660173058509827, mean: 6.436049443436787e-05
+Processed 133500/160000 samplesIntensity stats - min: 0.0, max: 0.9595524668693542, mean: 6.594668229809031e-05
+Processed 133600/160000 samplesIntensity stats - min: 0.0, max: 0.9638393521308899, mean: 6.226403638720512e-05
+Processed 133700/160000 samplesIntensity stats - min: 0.0, max: 0.9661412835121155, mean: 6.0785881942138076e-05
+Processed 133800/160000 samplesIntensity stats - min: 0.0, max: 0.9335327744483948, mean: 6.240497896214947e-05
+Processed 133900/160000 samplesIntensity stats - min: 0.0, max: 0.9198387861251831, mean: 5.9216927184024826e-05
+Processed 134000/160000 samplesIntensity stats - min: 0.0, max: 0.9311763644218445, mean: 6.492809188785031e-05
+Processed 134100/160000 samplesIntensity stats - min: 0.0, max: 0.9556754231452942, mean: 5.7835521147353575e-05
+Processed 134200/160000 samplesIntensity stats - min: 0.0, max: 0.9353364706039429, mean: 6.243507232284173e-05
+Processed 134300/160000 samplesIntensity stats - min: 0.0, max: 0.9652486443519592, mean: 6.274545012274757e-05
+Processed 134400/160000 samplesIntensity stats - min: 0.0, max: 0.9713988900184631, mean: 6.505507917609066e-05
+Processed 134500/160000 samplesIntensity stats - min: 0.0, max: 0.9700949192047119, mean: 5.941179551882669e-05
+Processed 134600/160000 samplesIntensity stats - min: 0.0, max: 0.9838209748268127, mean: 6.31337461527437e-05
+Processed 134700/160000 samplesIntensity stats - min: 0.0, max: 0.8956757187843323, mean: 6.680066144326702e-05
+Processed 134800/160000 samplesIntensity stats - min: 0.0, max: 0.9163232445716858, mean: 5.6800774473231286e-05
+Processed 134900/160000 samplesIntensity stats - min: 0.0, max: 0.9645863175392151, mean: 5.7890261814463884e-05
+Processed 135000/160000 samplesIntensity stats - min: 0.0, max: 0.9136314988136292, mean: 5.3959342039888725e-05
+Processed 135100/160000 samplesIntensity stats - min: 0.0, max: 0.912402331829071, mean: 6.103503255872056e-05
+Processed 135200/160000 samplesIntensity stats - min: 0.0, max: 0.9220780730247498, mean: 6.277222564676777e-05
+Processed 135300/160000 samplesIntensity stats - min: 0.0, max: 0.9639120697975159, mean: 5.7018933148356155e-05
+Processed 135400/160000 samplesIntensity stats - min: 0.0, max: 0.9513834118843079, mean: 6.0024085541954264e-05
+Processed 135500/160000 samplesIntensity stats - min: 0.0, max: 0.9433231353759766, mean: 6.167442916193977e-05
+Processed 135600/160000 samplesIntensity stats - min: 0.0, max: 0.9307125806808472, mean: 6.211334402905777e-05
+Processed 135700/160000 samplesIntensity stats - min: 0.0, max: 0.9710338115692139, mean: 5.807996785733849e-05
+Processed 135800/160000 samplesIntensity stats - min: 0.0, max: 0.9216675162315369, mean: 5.6058528571156785e-05
+Processed 135900/160000 samplesIntensity stats - min: 0.0, max: 0.9423420429229736, mean: 6.50069341645576e-05
+Processed 136000/160000 samplesIntensity stats - min: 0.0, max: 0.9325137734413147, mean: 6.556396692758426e-05
+Processed 136100/160000 samplesIntensity stats - min: 0.0, max: 0.9668712019920349, mean: 5.778108970844187e-05
+Processed 136200/160000 samplesIntensity stats - min: 0.0, max: 0.929231584072113, mean: 5.620600495603867e-05
+Processed 136300/160000 samplesIntensity stats - min: 0.0, max: 0.9632052183151245, mean: 5.9523848904063925e-05
+Processed 136400/160000 samplesIntensity stats - min: 0.0, max: 0.9412000775337219, mean: 6.493522960226983e-05
+Processed 136500/160000 samplesIntensity stats - min: 0.0, max: 0.9501594305038452, mean: 5.9731599321821705e-05
+Processed 136600/160000 samplesIntensity stats - min: 0.0, max: 0.9562098979949951, mean: 6.074553675716743e-05
+Processed 136700/160000 samplesIntensity stats - min: 0.0, max: 0.959650456905365, mean: 5.924231300014071e-05
+Processed 136800/160000 samplesIntensity stats - min: 0.0, max: 0.9346314668655396, mean: 6.092895637266338e-05
+Processed 136900/160000 samplesIntensity stats - min: 0.0, max: 0.9614368677139282, mean: 5.764489833381958e-05
+Processed 137000/160000 samplesIntensity stats - min: 0.0, max: 0.9358919858932495, mean: 5.9457088354974985e-05
+Processed 137100/160000 samplesIntensity stats - min: 0.0, max: 0.9369463920593262, mean: 6.167419633129612e-05
+Processed 137200/160000 samplesIntensity stats - min: 0.0, max: 0.9393274188041687, mean: 6.0861537349410355e-05
+Processed 137300/160000 samplesIntensity stats - min: 0.0, max: 0.9484946131706238, mean: 5.6912980653578416e-05
+Processed 137400/160000 samplesIntensity stats - min: 0.0, max: 0.9495550990104675, mean: 6.198858318384737e-05
+Processed 137500/160000 samplesIntensity stats - min: 0.0, max: 0.8958688378334045, mean: 6.17495461483486e-05
+Processed 137600/160000 samplesIntensity stats - min: 0.0, max: 0.9743735194206238, mean: 5.9814406995428726e-05
+Processed 137700/160000 samplesIntensity stats - min: 0.0, max: 0.9579525589942932, mean: 6.217988266143948e-05
+Processed 137800/160000 samplesIntensity stats - min: 0.0, max: 0.9671671986579895, mean: 5.561576836043969e-05
+Processed 137900/160000 samplesIntensity stats - min: 0.0, max: 0.9880814552307129, mean: 6.707866850774735e-05
+Processed 138000/160000 samplesIntensity stats - min: 0.0, max: 0.9840046763420105, mean: 7.063792872941121e-05
+Processed 138100/160000 samplesIntensity stats - min: 0.0, max: 0.9695395827293396, mean: 5.8401641581440344e-05
+Processed 138200/160000 samplesIntensity stats - min: 0.0, max: 0.9519133567810059, mean: 5.8044410252477974e-05
+Processed 138300/160000 samplesIntensity stats - min: 0.0, max: 0.9526986479759216, mean: 6.521898467326537e-05
+Processed 138400/160000 samplesIntensity stats - min: 0.0, max: 0.9363797307014465, mean: 6.382467836374417e-05
+Processed 138500/160000 samplesIntensity stats - min: 0.0, max: 0.9562285542488098, mean: 5.762676664744504e-05
+Processed 138600/160000 samplesIntensity stats - min: 0.0, max: 0.8914514780044556, mean: 6.283563561737537e-05
+Processed 138700/160000 samplesIntensity stats - min: 0.0, max: 0.9146822094917297, mean: 6.84580227243714e-05
+Processed 138800/160000 samplesIntensity stats - min: 0.0, max: 0.9330849051475525, mean: 6.546399526996538e-05
+Processed 138900/160000 samplesIntensity stats - min: 0.0, max: 1.0149480104446411, mean: 6.087217479944229e-05
+Processed 139000/160000 samplesIntensity stats - min: 0.0, max: 0.9619881510734558, mean: 5.9032106946688145e-05
+Processed 139100/160000 samplesIntensity stats - min: 0.0, max: 0.9274744391441345, mean: 6.387036410160363e-05
+Processed 139200/160000 samplesIntensity stats - min: 0.0, max: 0.9300883412361145, mean: 6.306133582256734e-05
+Processed 139300/160000 samplesIntensity stats - min: 0.0, max: 0.9507968425750732, mean: 5.651600076816976e-05
+Processed 139400/160000 samplesIntensity stats - min: 0.0, max: 0.9402427077293396, mean: 6.017255873302929e-05
+Processed 139500/160000 samplesIntensity stats - min: 0.0, max: 0.9396594166755676, mean: 6.023078094585799e-05
+Processed 139600/160000 samplesIntensity stats - min: 0.0, max: 0.9470953941345215, mean: 6.154744914965704e-05
+Processed 139700/160000 samplesIntensity stats - min: 0.0, max: 0.9495912194252014, mean: 6.067600043024868e-05
+Processed 139800/160000 samplesIntensity stats - min: 0.0, max: 0.9605398774147034, mean: 5.959531699772924e-05
+Processed 139900/160000 samplesIntensity stats - min: 0.0, max: 0.980806291103363, mean: 6.176568422233686e-05
+Processed 140000/160000 samplesIntensity stats - min: 0.0, max: 1.0028855800628662, mean: 6.449750799220055e-05
+Processed 140100/160000 samplesIntensity stats - min: 0.0, max: 0.9817764163017273, mean: 5.7753899454837665e-05
+Processed 140200/160000 samplesIntensity stats - min: 0.0, max: 0.911932647228241, mean: 5.921816409681924e-05
+Processed 140300/160000 samplesIntensity stats - min: 0.0, max: 0.9555496573448181, mean: 6.146157102193683e-05
+Processed 140400/160000 samplesIntensity stats - min: 0.0, max: 0.9380490183830261, mean: 6.849215424153954e-05
+Processed 140500/160000 samplesIntensity stats - min: 0.0, max: 0.9566894173622131, mean: 5.67554343433585e-05
+Processed 140600/160000 samplesIntensity stats - min: 0.0, max: 0.9631325602531433, mean: 5.8002689911518246e-05
+Processed 140700/160000 samplesIntensity stats - min: 0.0, max: 0.9531874656677246, mean: 6.703495455440134e-05
+Processed 140800/160000 samplesIntensity stats - min: 0.0, max: 0.9681910872459412, mean: 6.726240826537833e-05
+Processed 140900/160000 samplesIntensity stats - min: 0.0, max: 0.9718201756477356, mean: 6.155268056318164e-05
+Processed 141000/160000 samplesIntensity stats - min: 0.0, max: 0.9686556458473206, mean: 5.964883166598156e-05
+Processed 141100/160000 samplesIntensity stats - min: 0.0, max: 0.9670063853263855, mean: 6.63886676193215e-05
+Processed 141200/160000 samplesIntensity stats - min: 0.0, max: 0.9514317512512207, mean: 6.387753819581121e-05
+Processed 141300/160000 samplesIntensity stats - min: 0.0, max: 0.9596006274223328, mean: 6.113229028414935e-05
+Processed 141400/160000 samplesIntensity stats - min: 0.0, max: 0.9637600779533386, mean: 5.567761400016025e-05
+Processed 141500/160000 samplesIntensity stats - min: 0.0, max: 0.9307219386100769, mean: 6.091281466069631e-05
+Processed 141600/160000 samplesIntensity stats - min: 0.0, max: 0.9378657341003418, mean: 5.9513840824365616e-05
+Processed 141700/160000 samplesIntensity stats - min: 0.0, max: 0.9548171758651733, mean: 5.53919562662486e-05
+Processed 141800/160000 samplesIntensity stats - min: 0.0, max: 0.8910734057426453, mean: 5.987189069855958e-05
+Processed 141900/160000 samplesIntensity stats - min: 0.0, max: 0.9456990361213684, mean: 6.57703640172258e-05
+Processed 142000/160000 samplesIntensity stats - min: 0.0, max: 0.9883412718772888, mean: 7.062725489959121e-05
+Processed 142100/160000 samplesIntensity stats - min: 0.0, max: 0.9587204456329346, mean: 5.747287650592625e-05
+Processed 142200/160000 samplesIntensity stats - min: 0.0, max: 0.9518464207649231, mean: 6.017429041094147e-05
+Processed 142300/160000 samplesIntensity stats - min: 0.0, max: 0.92490553855896, mean: 6.313202902674675e-05
+Processed 142400/160000 samplesIntensity stats - min: 0.0, max: 0.9908443689346313, mean: 6.822682917118073e-05
+Processed 142500/160000 samplesIntensity stats - min: 0.0, max: 0.9576041102409363, mean: 5.587860505329445e-05
+Processed 142600/160000 samplesIntensity stats - min: 0.0, max: 0.951799213886261, mean: 6.0382255469448864e-05
+Processed 142700/160000 samplesIntensity stats - min: 0.0, max: 0.9690265655517578, mean: 6.51812442811206e-05
+Processed 142800/160000 samplesIntensity stats - min: 0.0, max: 0.9653089046478271, mean: 6.389024201780558e-05
+Processed 142900/160000 samplesIntensity stats - min: 0.0, max: 0.9702054858207703, mean: 6.147968088043854e-05
+Processed 143000/160000 samplesIntensity stats - min: 0.0, max: 0.9671593308448792, mean: 6.50006695650518e-05
+Processed 143100/160000 samplesIntensity stats - min: 0.0, max: 0.9736736416816711, mean: 6.5578606154304e-05
+Processed 143200/160000 samplesIntensity stats - min: 0.0, max: 0.9374517798423767, mean: 6.310272874543443e-05
+Processed 143300/160000 samplesIntensity stats - min: 0.0, max: 0.9672691822052002, mean: 5.8570611145114526e-05
+Processed 143400/160000 samplesIntensity stats - min: 0.0, max: 0.9570214152336121, mean: 5.652895924868062e-05
+Processed 143500/160000 samplesIntensity stats - min: 0.0, max: 0.9429852962493896, mean: 6.935261626495048e-05
+Processed 143600/160000 samplesIntensity stats - min: 0.0, max: 0.9667497873306274, mean: 6.518225563922897e-05
+Processed 143700/160000 samplesIntensity stats - min: 0.0, max: 0.9557652473449707, mean: 5.819942816742696e-05
+Processed 143800/160000 samplesIntensity stats - min: 0.0, max: 0.9885488152503967, mean: 5.919618342886679e-05
+Processed 143900/160000 samplesIntensity stats - min: 0.0, max: 0.9219451546669006, mean: 6.264084368012846e-05
+Processed 144000/160000 samplesIntensity stats - min: 0.0, max: 0.9518491625785828, mean: 6.863042654003948e-05
+Processed 144100/160000 samplesIntensity stats - min: 0.0, max: 0.9512906670570374, mean: 6.110015965532511e-05
+Processed 144200/160000 samplesIntensity stats - min: 0.0, max: 0.9438470602035522, mean: 5.838380093337037e-05
+Processed 144300/160000 samplesIntensity stats - min: 0.0, max: 0.9304465651512146, mean: 5.735997547162697e-05
+Processed 144400/160000 samplesIntensity stats - min: 0.0, max: 0.9111669063568115, mean: 5.9537520428420976e-05
+Processed 144500/160000 samplesIntensity stats - min: 0.0, max: 0.9679203629493713, mean: 5.866173523827456e-05
+Processed 144600/160000 samplesIntensity stats - min: 0.0, max: 0.9548492431640625, mean: 6.344391294987872e-05
+Processed 144700/160000 samplesIntensity stats - min: 0.0, max: 0.9579926133155823, mean: 6.252106686588377e-05
+Processed 144800/160000 samplesIntensity stats - min: 0.0, max: 0.9449248909950256, mean: 6.021601438988e-05
+Processed 144900/160000 samplesIntensity stats - min: 0.0, max: 0.9573829174041748, mean: 5.6552333262516186e-05
+Processed 145000/160000 samplesIntensity stats - min: 0.0, max: 1.0087907314300537, mean: 6.301905523287132e-05
+Processed 145100/160000 samplesIntensity stats - min: 0.0, max: 0.9702610373497009, mean: 6.429861969081685e-05
+Processed 145200/160000 samplesIntensity stats - min: 0.0, max: 0.9539905786514282, mean: 6.865219620522112e-05
+Processed 145300/160000 samplesIntensity stats - min: 0.0, max: 0.9608891606330872, mean: 6.214179302332923e-05
+Processed 145400/160000 samplesIntensity stats - min: 0.0, max: 0.9042543768882751, mean: 6.061789463274181e-05
+Processed 145500/160000 samplesIntensity stats - min: 0.0, max: 0.9466010332107544, mean: 6.399294215952978e-05
+Processed 145600/160000 samplesIntensity stats - min: 0.0, max: 0.9478687644004822, mean: 6.533406849484891e-05
+Processed 145700/160000 samplesIntensity stats - min: 0.0, max: 0.968570351600647, mean: 5.650614548358135e-05
+Processed 145800/160000 samplesIntensity stats - min: 0.0, max: 1.0327311754226685, mean: 5.8870617067441344e-05
+Processed 145900/160000 samplesIntensity stats - min: 0.0, max: 1.0277687311172485, mean: 6.878789281472564e-05
+Processed 146000/160000 samplesIntensity stats - min: 0.0, max: 0.9506609439849854, mean: 6.403416773537174e-05
+Processed 146100/160000 samplesIntensity stats - min: 0.0, max: 0.9648424386978149, mean: 5.4214400734053925e-05
+Processed 146200/160000 samplesIntensity stats - min: 0.0, max: 0.9610535502433777, mean: 6.380458944477141e-05
+Processed 146300/160000 samplesIntensity stats - min: 0.0, max: 0.9386898875236511, mean: 6.160809425637126e-05
+Processed 146400/160000 samplesIntensity stats - min: 0.0, max: 0.9441108703613281, mean: 6.302482506725937e-05
+Processed 146500/160000 samplesIntensity stats - min: 0.0, max: 0.9527203440666199, mean: 5.6293960369657725e-05
+Processed 146600/160000 samplesIntensity stats - min: 0.0, max: 0.9505340456962585, mean: 6.374412623699754e-05
+Processed 146700/160000 samplesIntensity stats - min: 0.0, max: 0.937201738357544, mean: 5.984393283142708e-05
+Processed 146800/160000 samplesIntensity stats - min: 0.0, max: 0.9500332474708557, mean: 6.329808093141764e-05
+Processed 146900/160000 samplesIntensity stats - min: 0.0, max: 0.9768529534339905, mean: 5.761644570156932e-05
+Processed 147000/160000 samplesIntensity stats - min: 0.0, max: 0.9680430293083191, mean: 6.058214057702571e-05
+Processed 147100/160000 samplesIntensity stats - min: 0.0, max: 0.9417176246643066, mean: 6.494210538221523e-05
+Processed 147200/160000 samplesIntensity stats - min: 0.0, max: 0.9583665132522583, mean: 7.027024548733607e-05
+Processed 147300/160000 samplesIntensity stats - min: 0.0, max: 0.9569700956344604, mean: 5.936429079156369e-05
+Processed 147400/160000 samplesIntensity stats - min: 0.0, max: 0.9626275300979614, mean: 5.7416920753894374e-05
+Processed 147500/160000 samplesIntensity stats - min: 0.0, max: 0.9256760478019714, mean: 6.1009519413346425e-05
+Processed 147600/160000 samplesIntensity stats - min: 0.0, max: 0.9328914880752563, mean: 6.807674799347296e-05
+Processed 147700/160000 samplesIntensity stats - min: 0.0, max: 0.9669619202613831, mean: 5.95456367591396e-05
+Processed 147800/160000 samplesIntensity stats - min: 0.0, max: 0.9519830942153931, mean: 5.503661304828711e-05
+Processed 147900/160000 samplesIntensity stats - min: 0.0, max: 1.0101370811462402, mean: 6.319904059637338e-05
+Processed 148000/160000 samplesIntensity stats - min: 0.0, max: 0.9683183431625366, mean: 6.446271436288953e-05
+Processed 148100/160000 samplesIntensity stats - min: 0.0, max: 0.9595353007316589, mean: 5.464990681502968e-05
+Processed 148200/160000 samplesIntensity stats - min: 0.0, max: 0.9766356348991394, mean: 6.502640462713316e-05
+Processed 148300/160000 samplesIntensity stats - min: 0.0, max: 0.9647703766822815, mean: 6.260495138121769e-05
+Processed 148400/160000 samplesIntensity stats - min: 0.0, max: 0.9642364978790283, mean: 6.539384776260704e-05
+Processed 148500/160000 samplesIntensity stats - min: 0.0, max: 0.9545588493347168, mean: 5.415405030362308e-05
+Processed 148600/160000 samplesIntensity stats - min: 0.0, max: 0.9710689187049866, mean: 5.9843343478860334e-05
+Processed 148700/160000 samplesIntensity stats - min: 0.0, max: 0.9570816159248352, mean: 6.269013101700693e-05
+Processed 148800/160000 samplesIntensity stats - min: 0.0, max: 0.9235624074935913, mean: 5.99065278947819e-05
+Processed 148900/160000 samplesIntensity stats - min: 0.0, max: 0.9590776562690735, mean: 6.0671987739624456e-05
+Processed 149000/160000 samplesIntensity stats - min: 0.0, max: 0.9675831198692322, mean: 5.8751666074385867e-05
+Processed 149100/160000 samplesIntensity stats - min: 0.0, max: 0.955784797668457, mean: 6.707652210025117e-05
+Processed 149200/160000 samplesIntensity stats - min: 0.0, max: 0.9585157036781311, mean: 6.104727071942762e-05
+Processed 149300/160000 samplesIntensity stats - min: 0.0, max: 0.9706214070320129, mean: 6.162689533084631e-05
+Processed 149400/160000 samplesIntensity stats - min: 0.0, max: 0.9626858830451965, mean: 5.738674008171074e-05
+Processed 149500/160000 samplesIntensity stats - min: 0.0, max: 0.9269286394119263, mean: 6.178821058711037e-05
+Processed 149600/160000 samplesIntensity stats - min: 0.0, max: 0.9463062882423401, mean: 6.56393967801705e-05
+Processed 149700/160000 samplesIntensity stats - min: 0.0, max: 0.9355624318122864, mean: 5.654590131598525e-05
+Processed 149800/160000 samplesIntensity stats - min: 0.0, max: 0.9564924836158752, mean: 5.6338893045904115e-05
+Processed 149900/160000 samplesIntensity stats - min: 0.0, max: 0.9754840731620789, mean: 6.454974209191278e-05
+Processed 150000/160000 samplesIntensity stats - min: 0.0, max: 0.9522186517715454, mean: 7.124715193640441e-05
+Processed 150100/160000 samplesIntensity stats - min: 0.0, max: 0.9584505558013916, mean: 5.8819954574573785e-05
+Processed 150200/160000 samplesIntensity stats - min: 0.0, max: 0.9619277119636536, mean: 5.719785258406773e-05
+Processed 150300/160000 samplesIntensity stats - min: 0.0, max: 0.960170328617096, mean: 6.397939432645217e-05
+Processed 150400/160000 samplesIntensity stats - min: 0.0, max: 0.9285697340965271, mean: 6.420532736228779e-05
+Processed 150500/160000 samplesIntensity stats - min: 0.0, max: 0.9665244221687317, mean: 6.354142533382401e-05
+Processed 150600/160000 samplesIntensity stats - min: 0.0, max: 0.9499040246009827, mean: 5.816618067910895e-05
+Processed 150700/160000 samplesIntensity stats - min: 0.0, max: 0.9240618348121643, mean: 5.9244684962322935e-05
+Processed 150800/160000 samplesIntensity stats - min: 0.0, max: 0.967706024646759, mean: 5.778585546067916e-05
+Processed 150900/160000 samplesIntensity stats - min: 0.0, max: 0.9296345114707947, mean: 5.703830538550392e-05
+Processed 151000/160000 samplesIntensity stats - min: 0.0, max: 0.9656674861907959, mean: 5.868952575838193e-05
+Processed 151100/160000 samplesIntensity stats - min: 0.0, max: 0.9480451941490173, mean: 5.9498743212316185e-05
+Processed 151200/160000 samplesIntensity stats - min: 0.0, max: 0.9552421569824219, mean: 6.644836685154587e-05
+Processed 151300/160000 samplesIntensity stats - min: 0.0, max: 0.9652305245399475, mean: 5.7203429605579004e-05
+Processed 151400/160000 samplesIntensity stats - min: 0.0, max: 0.944456160068512, mean: 5.670223254128359e-05
+Processed 151500/160000 samplesIntensity stats - min: 0.0, max: 0.9273834824562073, mean: 6.660784129053354e-05
+Processed 151600/160000 samplesIntensity stats - min: 0.0, max: 0.9186651110649109, mean: 6.551750266226009e-05
+Processed 151700/160000 samplesIntensity stats - min: 0.0, max: 0.958667516708374, mean: 5.6139273510780185e-05
+Processed 151800/160000 samplesIntensity stats - min: 0.0, max: 0.9566974639892578, mean: 5.95069577684626e-05
+Processed 151900/160000 samplesIntensity stats - min: 0.0, max: 0.9439842104911804, mean: 5.9773643442895263e-05
+Processed 152000/160000 samplesIntensity stats - min: 0.0, max: 0.9387631416320801, mean: 5.8058005379280075e-05
+Processed 152100/160000 samplesIntensity stats - min: 0.0, max: 0.9572268724441528, mean: 5.6098233471857384e-05
+Processed 152200/160000 samplesIntensity stats - min: 0.0, max: 0.9618670344352722, mean: 6.220604700502008e-05
+Processed 152300/160000 samplesIntensity stats - min: 0.0, max: 0.9448022246360779, mean: 6.335727812256664e-05
+Processed 152400/160000 samplesIntensity stats - min: 0.0, max: 0.9742947220802307, mean: 6.410407513612881e-05
+Processed 152500/160000 samplesIntensity stats - min: 0.0, max: 0.9715947508811951, mean: 6.008739728713408e-05
+Processed 152600/160000 samplesIntensity stats - min: 0.0, max: 0.955760657787323, mean: 5.772372969659045e-05
+Processed 152700/160000 samplesIntensity stats - min: 0.0, max: 0.9284091591835022, mean: 6.180468335514888e-05
+Processed 152800/160000 samplesIntensity stats - min: 0.0, max: 0.967480480670929, mean: 7.232696952996776e-05
+Processed 152900/160000 samplesIntensity stats - min: 0.0, max: 1.0020995140075684, mean: 6.446510087698698e-05
+Processed 153000/160000 samplesIntensity stats - min: 0.0, max: 0.9493368268013, mean: 5.559064811677672e-05
+Processed 153100/160000 samplesIntensity stats - min: 0.0, max: 0.9631615281105042, mean: 6.746578583260998e-05
+Processed 153200/160000 samplesIntensity stats - min: 0.0, max: 0.9443480968475342, mean: 6.496519199572504e-05
+Processed 153300/160000 samplesIntensity stats - min: 0.0, max: 0.958486020565033, mean: 5.9250040067126974e-05
+Processed 153400/160000 samplesIntensity stats - min: 0.0, max: 0.9589064717292786, mean: 5.712889469577931e-05
+Processed 153500/160000 samplesIntensity stats - min: 0.0, max: 0.9324102997779846, mean: 6.428310734918341e-05
+Processed 153600/160000 samplesIntensity stats - min: 0.0, max: 0.9287573099136353, mean: 6.51031659799628e-05
+Processed 153700/160000 samplesIntensity stats - min: 0.0, max: 0.9607862234115601, mean: 5.4109175835037604e-05
+Processed 153800/160000 samplesIntensity stats - min: 0.0, max: 0.954295814037323, mean: 5.444756607175805e-05
+Processed 153900/160000 samplesIntensity stats - min: 0.0, max: 0.919471263885498, mean: 6.132444104878232e-05
+Processed 154000/160000 samplesIntensity stats - min: 0.0, max: 0.9727355241775513, mean: 6.795392982894555e-05
+Processed 154100/160000 samplesIntensity stats - min: 0.0, max: 0.9640011787414551, mean: 5.782421794719994e-05
+Processed 154200/160000 samplesIntensity stats - min: 0.0, max: 0.9673841595649719, mean: 5.8148769312538207e-05
+Processed 154300/160000 samplesIntensity stats - min: 0.0, max: 0.9827918410301208, mean: 6.273797043832019e-05
+Processed 154400/160000 samplesIntensity stats - min: 0.0, max: 0.9801408648490906, mean: 6.603870133403689e-05
+Processed 154500/160000 samplesIntensity stats - min: 0.0, max: 0.9619282484054565, mean: 6.260999361984432e-05
+Processed 154600/160000 samplesIntensity stats - min: 0.0, max: 0.9662004709243774, mean: 5.59392137802206e-05
+Processed 154700/160000 samplesIntensity stats - min: 0.0, max: 0.9434235095977783, mean: 5.890936517971568e-05
+Processed 154800/160000 samplesIntensity stats - min: 0.0, max: 0.962526798248291, mean: 6.515891436720267e-05
+Processed 154900/160000 samplesIntensity stats - min: 0.0, max: 0.9698659181594849, mean: 5.773192606284283e-05
+Processed 155000/160000 samplesIntensity stats - min: 0.0, max: 0.9622705578804016, mean: 5.5911885283421725e-05
+Processed 155100/160000 samplesIntensity stats - min: 0.0, max: 0.9186728596687317, mean: 6.615989696001634e-05
+Processed 155200/160000 samplesIntensity stats - min: 0.0, max: 0.9571126103401184, mean: 6.671013397863135e-05
+Processed 155300/160000 samplesIntensity stats - min: 0.0, max: 0.9675158858299255, mean: 5.88102157053072e-05
+Processed 155400/160000 samplesIntensity stats - min: 0.0, max: 0.9537449479103088, mean: 5.6565255363238975e-05
+Processed 155500/160000 samplesIntensity stats - min: 0.0, max: 0.9158539175987244, mean: 5.942317875451408e-05
+Processed 155600/160000 samplesIntensity stats - min: 0.0, max: 0.952284574508667, mean: 6.415327516151592e-05
+Processed 155700/160000 samplesIntensity stats - min: 0.0, max: 0.9610624313354492, mean: 5.772110671387054e-05
+Processed 155800/160000 samplesIntensity stats - min: 0.0, max: 0.9594085812568665, mean: 5.489673276315443e-05
+Processed 155900/160000 samplesIntensity stats - min: 0.0, max: 0.9703649282455444, mean: 5.4529191402252764e-05
+Processed 156000/160000 samplesIntensity stats - min: 0.0, max: 0.9630245566368103, mean: 6.291093450272456e-05
+Processed 156100/160000 samplesIntensity stats - min: 0.0, max: 0.955488920211792, mean: 6.263653631322086e-05
+Processed 156200/160000 samplesIntensity stats - min: 0.0, max: 0.9634523987770081, mean: 6.226312689250335e-05
+Processed 156300/160000 samplesIntensity stats - min: 0.0, max: 1.0543463230133057, mean: 6.233947351574898e-05
+Processed 156400/160000 samplesIntensity stats - min: 0.0, max: 0.941920816898346, mean: 6.347963062580675e-05
+Processed 156500/160000 samplesIntensity stats - min: 0.0, max: 0.9603254199028015, mean: 6.233691237866879e-05
+Processed 156600/160000 samplesIntensity stats - min: 0.0, max: 0.9625651240348816, mean: 5.5958331358851865e-05
+Processed 156700/160000 samplesIntensity stats - min: 0.0, max: 0.9203638434410095, mean: 6.167005631141365e-05
+Processed 156800/160000 samplesIntensity stats - min: 0.0, max: 0.9425415992736816, mean: 5.963313378742896e-05
+Processed 156900/160000 samplesIntensity stats - min: 0.0, max: 0.9573554396629333, mean: 5.9355326811783016e-05
+Processed 157000/160000 samplesIntensity stats - min: 0.0, max: 0.9519048929214478, mean: 5.751744902227074e-05
+Processed 157100/160000 samplesIntensity stats - min: 0.0, max: 0.968357264995575, mean: 6.411680078599602e-05
+Processed 157200/160000 samplesIntensity stats - min: 0.0, max: 0.9415588974952698, mean: 5.9004436479881406e-05
+Processed 157300/160000 samplesIntensity stats - min: 0.0, max: 0.9767552018165588, mean: 6.085508721298538e-05
+Processed 157400/160000 samplesIntensity stats - min: 0.0, max: 0.9536580443382263, mean: 5.79900988668669e-05
+Processed 157500/160000 samplesIntensity stats - min: 0.0, max: 0.9197366237640381, mean: 6.011702862451784e-05
+Processed 157600/160000 samplesIntensity stats - min: 0.0, max: 0.9360174536705017, mean: 6.050253432476893e-05
+Processed 157700/160000 samplesIntensity stats - min: 0.0, max: 0.9642148017883301, mean: 5.614838664769195e-05
+Processed 157800/160000 samplesIntensity stats - min: 0.0, max: 0.9600024819374084, mean: 5.393035098677501e-05
+Processed 157900/160000 samplesIntensity stats - min: 0.0, max: 0.9315688014030457, mean: 5.5788383178878576e-05
+Processed 158000/160000 samplesIntensity stats - min: 0.0, max: 0.9742682576179504, mean: 6.619971100008115e-05
+Processed 158100/160000 samplesIntensity stats - min: 0.0, max: 0.9655458331108093, mean: 5.882623736397363e-05
+Processed 158200/160000 samplesIntensity stats - min: 0.0, max: 0.9742031693458557, mean: 5.6523724197177216e-05
+Processed 158300/160000 samplesIntensity stats - min: 0.0, max: 1.0044876337051392, mean: 6.38675774098374e-05
+Processed 158400/160000 samplesIntensity stats - min: 0.0, max: 0.954576849937439, mean: 5.68582363484893e-05
+Processed 158500/160000 samplesIntensity stats - min: 0.0, max: 0.9641055464744568, mean: 5.758701081504114e-05
+Processed 158600/160000 samplesIntensity stats - min: 0.0, max: 0.9656570553779602, mean: 5.498194514075294e-05
+Processed 158700/160000 samplesIntensity stats - min: 0.0, max: 0.9089366793632507, mean: 6.126899825176224e-05
+Processed 158800/160000 samplesIntensity stats - min: 0.0, max: 0.9405384063720703, mean: 6.56427801004611e-05
+Processed 158900/160000 samplesIntensity stats - min: 0.0, max: 0.9270057082176208, mean: 6.008590935380198e-05
+Processed 159000/160000 samplesIntensity stats - min: 0.0, max: 0.9771590232849121, mean: 6.03038897679653e-05
+Processed 159100/160000 samplesIntensity stats - min: 0.0, max: 0.9947136044502258, mean: 5.877631701878272e-05
+Processed 159200/160000 samplesIntensity stats - min: 0.0, max: 0.9608981013298035, mean: 6.188804400153458e-05
+Processed 159300/160000 samplesIntensity stats - min: 0.0, max: 0.9600305557250977, mean: 5.697207961929962e-05
+Processed 159400/160000 samplesIntensity stats - min: 0.0, max: 0.9568418860435486, mean: 5.817340934299864e-05
+Processed 159500/160000 samplesIntensity stats - min: 0.0, max: 0.9599399566650391, mean: 6.533646956086159e-05
+Processed 159600/160000 samplesIntensity stats - min: 0.0, max: 0.9309334754943848, mean: 5.8799301768885925e-05
+Processed 159700/160000 samplesIntensity stats - min: 0.0, max: 0.9663519859313965, mean: 5.646284989779815e-05
+Processed 159800/160000 samplesIntensity stats - min: 0.0, max: 0.9575815796852112, mean: 5.3151070460444316e-05
+Processed 159900/160000 samplesIntensity stats - min: 0.0, max: 0.9049462080001831, mean: 5.547875116462819e-05
+Processed 160000/160000 samplesIntensity stats - min: 0.0, max: 0.9172713756561279, mean: 6.251229933695868e-05
+
+Decoding complete!
+Coordinates shape: (160000, 2)
+Intensity stats - min: 1.0426344871520996, max: 16.088088989257812, mean: 4.184053959684074
+Image saved to: ../Results/AE/cnn_cancer.png
+[4.81762886 4.98127079 5.04025888 ... 8.31581879 6.39558983 3.03179407]
+Ended at: Mon Nov 10 07:45:52 PM SAST 2025
+Tapedza!!! Mwari Ngaakudzwe!
