@@ -29,6 +29,9 @@ def main():
     intensities_sum = np.zeros(num_samples)
     
     # Process in batches
+    mse_list = []
+    mae_list = []
+    
     for i in range(0, num_samples, batch_size):
         end_idx = min(i + batch_size, num_samples)
         batch = X[i:end_idx]
@@ -39,10 +42,23 @@ def main():
         if args.cnn and len(decoded_batch.shape) == 3:
             decoded_batch = decoded_batch.squeeze(-1)  # Remove last dimension
         
+        # Calculate reconstruction errors
+        mse_batch = np.mean((batch - decoded_batch) ** 2, axis=1)
+        mae_batch = np.mean(np.abs(batch - decoded_batch), axis=1)
+        
+        mse_list.extend(mse_batch)
+        mae_list.extend(mae_batch)
+        
         intensities_sum[i:end_idx] = decoded_batch[:, :].sum(axis=1)
         
         print(f"Processed {end_idx}/{num_samples} samples", end='\r')
         print(f"Intensity stats - min: {np.min(decoded_batch)}, max: {np.max(decoded_batch)}, mean: {np.mean(decoded_batch)}")
+    
+    mse_array = np.array(mse_list)
+    mae_array = np.array(mae_list)
+    
+    print(f"\nMSE - min: {mse_array.min()}, max: {mse_array.max()}, mean: {mse_array.mean()}")
+    print(f"MAE - min: {mae_array.min()}, max: {mae_array.max()}, mean: {mae_array.mean()}")
     
     print(f"\nDecoding complete!")
 
