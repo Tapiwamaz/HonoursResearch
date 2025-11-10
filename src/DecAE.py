@@ -36,20 +36,20 @@ def main():
         # Decode batch
         decoded_batch = decoder.predict(batch, verbose=0)
         
-        # Extract and sum intensities at m/z ~390 (indices 11999:12001)
         if args.cnn and len(decoded_batch.shape) == 3:
             decoded_batch = decoded_batch.squeeze(-1)  # Remove last dimension
         
-        # Extract and sum intensities at m/z ~390 (indices 11999:12001)
-        intensities_sum[i:end_idx] = decoded_batch[:, 11000:12001].sum(axis=1)
+        intensities_sum[i:end_idx] = decoded_batch[:, :].sum(axis=1)
         
         print(f"Processed {end_idx}/{num_samples} samples", end='\r')
+        print(f"Intensity stats - min: {np.min(decoded_batch)}, max: {np.max(decoded_batch)}, mean: {np.mean(decoded_batch)}")
     
     print(f"\nDecoding complete!")
 
     del decoder
     coords = np.load(args.coords)
     print(f"Coordinates shape: {coords.shape}")
+
     print(f"Intensity stats - min: {intensities_sum.min()}, max: {intensities_sum.max()}, mean: {intensities_sum.mean()}")
     # Create the spatial map
     plt.figure(figsize=(10, 8))
@@ -66,6 +66,7 @@ def main():
     plt.savefig(output_path, dpi=500, bbox_inches='tight')
     print(f"Image saved to: {output_path}")
     plt.close()
+    print(intensities_sum)
  
 
 if __name__ == "__main__":
