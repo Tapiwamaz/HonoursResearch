@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=DecAE
-#SBATCH --output=decode_ae.log
+#SBATCH --output=decode_ae_%j.log
 #SBATCH --error=decode_ae_err.log
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
