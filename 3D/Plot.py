@@ -39,7 +39,7 @@ def plot_msi_slices_3d(intensity_data, mz_channels, mz_values_to_plot, spatial_d
                               shade=False)
         # Add colorbar for the last surface
         if mz_target == mz_values_to_plot[-1]:
-            m = plt.cm.ScalarMappable(cmap=plt.cm.viridis)
+            m = plt.cm.ScalarMappable(cmap=plt.cm.Reds)
             m.set_array([0, 1])
             plt.colorbar(m, ax=ax, shrink=0.5, aspect=5, label='Normalized Intensity')
     
@@ -80,7 +80,7 @@ spatial_dims = (400, 400)
 #     intensity_data[:, i] = pattern.flatten()
 
 # mz_channels = np.linspace(100, 1500, num_mz_channels)
-mz_targets = [100, 300, 500, 800, 1200]
+mz_targets = [100,200,290,390]
 fig, ax = plot_msi_slices_3d(intensity_data, mzs, mz_targets, spatial_dims=spatial_dims)
 
 # Save multiple images from different views

@@ -1,14 +1,8 @@
-Starting OpenH5.py for cancer at Sat Nov 15 08:30:52 PM SAST 2025
-Using input file: ./3d-cancer_x.npy
+Starting OpenH5.py for hiv at Sat Nov 15 08:43:44 PM SAST 2025
+Using input file: ./3d-hiv_x.npy
 Output directory: ./
-SLURM Job ID: 167901
+SLURM Job ID: 167906
 (400, 400)
-Saved: ./cancer_view_1.png
-Saved: ./cancer_view_2.png
-Saved: ./cancer_view_3.png
-Saved: ./cancer_view_4.png
-Saved: ./cancer_view_5.png
-Saved: ./cancer_view_6.png
-cancer completed at Sat Nov 15 08:31:29 PM SAST 2025
+hiv completed at Sat Nov 15 08:43:45 PM SAST 2025
 Results saved to ./
 Tapedza!!! Mwari Ngaakudzwe!

@@ -2,3 +2,10 @@ Starting OpenH5.py for hiv at Sat Nov 15 08:32:11 PM SAST 2025
 Using input file: ../../mass_spec_data/HIV/3 June/3 June PHRU FFPE test 1_1-115501_SN0p0_profile.h5
 Output directory: ../3D/
 SLURM Job ID: 167902
+File loaded
+Range of mz values: (0, 1500)
+Matrix created!
+Matrix has dimensions of (56679, 1500)
+hiv completed at Sat Nov 15 08:42:24 PM SAST 2025
+Results saved to ../3D/
+Tapedza!!! Mwari Ngaakudzwe!

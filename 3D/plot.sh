@@ -8,11 +8,11 @@
 #SBATCH --partition=bigbatch
 #SBATCH --time=3-00:00:00      # 3 days max runtime 
 
-INPUT_FILE="./3d-cancer_x.npy"
-MZS="./3d-cancer_mzs.npy"
+INPUT_FILE="./3d-hiv_x.npy"
+MZS="./3d-hiv_mzs.npy"
 
 OUTPUT_DIR="./"
-NAME="cancer"
+NAME="hiv"
 
 
 if [ ! -f "$INPUT_FILE" ]; then
