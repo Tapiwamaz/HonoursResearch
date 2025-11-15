@@ -22,7 +22,7 @@ def prepare_data(file: h5py.File, name :str , output_dir: str,sorted_keys: list[
     print(f'Range of mz values:',(min_mz,max_mz))
 
 
-    common_mzs = np.arange(min_mz,max_mz+1,1)
+    common_mzs = np.arange(min_mz,max_mz,1)
     binned = np.zeros((len(my_spectra), len(common_mzs)), dtype=np.float32)
 
     for i, (mzs, intensities) in enumerate(my_spectra):
@@ -32,14 +32,9 @@ def prepare_data(file: h5py.File, name :str , output_dir: str,sorted_keys: list[
                 binned[i, k] += val
 
 
-    tic = binned.sum(axis=1, keepdims=True)
-    X = binned / (tic + 1e-10)
+    X = binned 
 
     del binned
-
-    X_min = X.min(axis=1, keepdims=True)
-    X_max = X.max(axis=1, keepdims=True)
-    X = (X - X_min) / (X_max - X_min + 1e-6)  # Adding a small epsilon to avoid division by zero
 
 
     # X = X.astype(np.float32)
