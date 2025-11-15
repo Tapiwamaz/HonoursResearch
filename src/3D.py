@@ -32,17 +32,17 @@ def prepare_data(file: h5py.File, name :str , output_dir: str,sorted_keys: list[
                 binned[i, k] += val
 
 
-    # tic = binned.sum(axis=1, keepdims=True)
-    # X = binned / (tic + 1e-10)
+    tic = binned.sum(axis=1, keepdims=True)
+    X = binned / (tic + 1e-10)
 
-    # del binned
+    del binned
 
-    # X_min = X.min(axis=1, keepdims=True)
-    # X_max = X.max(axis=1, keepdims=True)
-    # X = (X - X_min) / (X_max - X_min + 1e-6)  # Adding a small epsilon to avoid division by zero
+    X_min = X.min(axis=1, keepdims=True)
+    X_max = X.max(axis=1, keepdims=True)
+    X = (X - X_min) / (X_max - X_min + 1e-6)  # Adding a small epsilon to avoid division by zero
 
 
-    X = X.astype(np.float32)
+    # X = X.astype(np.float32)
     print(f"Matrix created!")
     print(f"Matrix has dimensions of", X.shape)
 
