@@ -26,14 +26,14 @@ def plot_msi_slices_3d(intensity_data, mz_channels, mz_values_to_plot, spatial_d
         slice_2d = slice_data.reshape(spatial_dims)
         
         # Normalize for better visualization
-        slice_norm = slice_2d / np.max(slice_2d) if np.max(slice_2d) > 0 else slice_2d
+        # slice_norm = slice_2d / np.max(slice_2d) if np.max(slice_2d) > 0 else slice_2d
         
         # Create surface at the m/z level
         Z = np.ones_like(X) * mz_channels[mz_index]
         
         # Use surface plot with color mapping
         surf = ax.plot_surface(X, Z, Y, 
-                              facecolors=plt.cm.viridis(slice_norm),
+                              facecolors=plt.cm.Reds(slice_2d),
                               rstride=5, cstride=5,  # Subsample for performance
                               alpha=0.7,
                               shade=False)
@@ -56,14 +56,19 @@ parser.add_argument("--X", required=True, help="Path to the X data.")
 parser.add_argument("--mzs", required=True, help="Path to the mzs file.")
 parser.add_argument("--output", required=True, help="Directory to save the plot.")
 parser.add_argument("--name", required=True, help="Name of plots.")
+parser.add_argument("--coords", required=True, help="coords of plots.")
+
 
 args = parser.parse_args()
 
 intensity_data = np.load(args.X,mmap_mode='r')
 mzs = np.load(args.mzs,mmap_mode='r')
+coords = np.load(args.coords, mmap_mode="r")
+
+# Get spatial dimensions from the coords
+spatial_dims = (int(coords[:, 0].max()) + 1, int(coords[:, 1].max()) + 1)
 
 
-spatial_dims = (400, 400)
 # num_spectra = spatial_dims[0] * spatial_dims[1]
 # num_mz_channels = len(mzs)
 
@@ -89,8 +94,6 @@ views = [
     (30, 135, 'view_2'),
     (30, 225, 'view_3'),
     (30, 315, 'view_4'),
-    (60, 45, 'view_5'),
-    (10, 45, 'view_6')
 ]
 
 for elev, azim, view_name in views:

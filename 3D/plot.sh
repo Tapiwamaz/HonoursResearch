@@ -8,11 +8,11 @@
 #SBATCH --partition=bigbatch
 #SBATCH --time=3-00:00:00      # 3 days max runtime 
 
-INPUT_FILE="./3d-hiv_x.npy"
-MZS="./3d-hiv_mzs.npy"
-
+INPUT_FILE="./3d-cancer_x.npy"
+MZS="./3d-cancer_mzs.npy"
+COORDS="./3d-cancer_coords.npy"
 OUTPUT_DIR="./"
-NAME="hiv"
+NAME="cancer"
 
 
 if [ ! -f "$INPUT_FILE" ]; then
@@ -27,7 +27,7 @@ echo "Using input file: $INPUT_FILE"
 echo "Output directory: $OUTPUT_DIR"
 echo "SLURM Job ID: $SLURM_JOB_ID"
 
-python Plot.py --X "$INPUT_FILE" --mzs "$MZS" --output "$OUTPUT_DIR" --name "$NAME"
+python Plot.py --X "$INPUT_FILE" --mzs "$MZS" --coords "$COORDS" --output "$OUTPUT_DIR" --name "$NAME"
 
 echo "$NAME completed at $(date)"
 echo "Results saved to $OUTPUT_DIR"
