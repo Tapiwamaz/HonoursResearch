@@ -10,7 +10,7 @@
 
 INPUT_FILE="./3d-cancer_x.npy"
 MZS="./3d-cancer_mzs.npy"
-COORDS="./3d-cancer_coords.npy"
+COORDS="../Data/Cancer/cancer-150-1500-h5-coords.npy"
 OUTPUT_DIR="./"
 NAME="cancer"
 
