@@ -83,7 +83,18 @@ spatial_dims = (400, 400)
 mz_targets = [100, 300, 500, 800, 1200]
 fig, ax = plot_msi_slices_3d(intensity_data, mzs, mz_targets, spatial_dims=spatial_dims)
 
-# Set the viewing angle (elevation, azimuth)
-ax.view_init(elev=30, azim=45)
+# Save multiple images from different views
+views = [
+    (30, 45, 'view_1'),
+    (30, 135, 'view_2'),
+    (30, 225, 'view_3'),
+    (30, 315, 'view_4'),
+    (60, 45, 'view_5'),
+    (10, 45, 'view_6')
+]
 
-fig.savefig('msi_slices_3d.png', dpi=300, bbox_inches='tight')
+for elev, azim, view_name in views:
+    ax.view_init(elev=elev, azim=azim)
+    output_path = os.path.join(args.output, f'{args.name}_{view_name}.png')
+    fig.savefig(output_path, dpi=300, bbox_inches='tight')
+    print(f'Saved: {output_path}')
