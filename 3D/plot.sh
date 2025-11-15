@@ -8,8 +8,8 @@
 #SBATCH --partition=bigbatch
 #SBATCH --time=3-00:00:00      # 3 days max runtime 
 
-INPUT_FILE="./cancer-3d_x.npy"
-MZS="./cancer-3d_mzs.npy"
+INPUT_FILE="./3d-cancer_x.npy"
+MZS="./3d-cancer_mzs.npy"
 
 OUTPUT_DIR="./"
 NAME="cancer"
