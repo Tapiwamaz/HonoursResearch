@@ -82,6 +82,8 @@ spatial_dims = (400, 400)
 # mz_channels = np.linspace(100, 1500, num_mz_channels)
 mz_targets = [100, 300, 500, 800, 1200]
 fig, ax = plot_msi_slices_3d(intensity_data, mzs, mz_targets, spatial_dims=spatial_dims)
-# plt.show()
+
+# Set the viewing angle (elevation, azimuth)
+ax.view_init(elev=30, azim=45)
 
 fig.savefig('msi_slices_3d.png', dpi=300, bbox_inches='tight')
