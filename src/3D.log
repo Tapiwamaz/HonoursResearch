@@ -1,0 +1,12 @@
+Starting OpenH5.py for cancer at Sat Nov 15 01:59:22 PM SAST 2025
+Using input file: ../../mass_spec_data/Cancer biopsy/5 June/5 June tumour test 2_1-327482_SN0p0_profile.h5
+Output directory: ../3D/
+SLURM Job ID: 167876
+File loaded
+Range of mz values: (100, 1500)
+Matrix created!
+Matrix has dimensions of (160000, 67499)
+Done creating data
+cancer completed at Sat Nov 15 02:22:42 PM SAST 2025
+Results saved to ../3D/
+Tapedza!!! Mwari Ngaakudzwe!
