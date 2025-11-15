@@ -22,7 +22,7 @@ def prepare_data(file: h5py.File, name :str , output_dir: str,sorted_keys: list[
     print(f'Range of mz values:',(min_mz,max_mz))
 
 
-    common_mzs = np.arange(min_mz,max_mz,1)
+    common_mzs = np.arange(min_mz,max_mz+1,1)
     binned = np.zeros((len(my_spectra), len(common_mzs)), dtype=np.float32)
 
     for i, (mzs, intensities) in enumerate(my_spectra):

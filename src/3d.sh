@@ -28,7 +28,7 @@ echo "Using input file: $INPUT_FILE"
 echo "Output directory: $OUTPUT_DIR"
 echo "SLURM Job ID: $SLURM_JOB_ID"
 
-python Openh5.py --input "$INPUT_FILE" --output "$OUTPUT_DIR" --name "$NAME"
+python 3D.py --input "$INPUT_FILE" --output "$OUTPUT_DIR" --name "$NAME"
 
 echo "$NAME completed at $(date)"
 echo "Results saved to $OUTPUT_DIR"
