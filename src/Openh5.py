@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import math
 
 
-def plot_image( file: h5py.File ,sorted_keys: list[int],mz : float,name: str ,shape ,output_dir: str,tolerance: float=100.02):
+def plot_image( file: h5py.File ,sorted_keys: list[int],mz : float,name: str ,shape ,output_dir: str,tolerance: float=50):
     img = np.zeros(shape)
     count = 0
     for index, key in enumerate(sorted_keys):
@@ -111,7 +111,7 @@ sorted_keys = sorted([int(key) for key in f.keys()])
 # print("\n")
 
 # target_mzs = [271,390]
-# tolerance = 100
+# tolerance = 50
 # width = 400
 # height = 400
 
@@ -122,7 +122,7 @@ sorted_keys = sorted([int(key) for key in f.keys()])
 
 
 
-prepare_data(sorted_keys=sorted_keys,output_dir=args.output,name=args.name,file=f)
+# prepare_data(sorted_keys=sorted_keys,output_dir=args.output,name=args.name,file=f)
 
 print("Done creating data")
 
