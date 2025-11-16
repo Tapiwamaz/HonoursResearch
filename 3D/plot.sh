@@ -8,10 +8,11 @@
 #SBATCH --partition=bigbatch
 #SBATCH --time=3-00:00:00      # 3 days max runtime 
 
-INPUT_FILE="../../mass_spec_data/Cancer biopsy/5 June/5 June tumour test 2_1-327482_SN0p0_profile.h5"
+INPUT_FILE="../../mass_spec_data/HIV/3 June/3 June PHRU FFPE test 1_1-115501_SN0p0_profile.h5"
 #INPUT_FILE="../../mass_spec_data/HIV/3 June/3 June PHRU FFPE test 1_1-115501_SN0p0_profile.h5"
-OUTPUT_DIR="./cancer"
-NAME="cancer"
+OUTPUT_DIR="./hiv"
+NAME="hiv"
+COORDS="../Data/HIV/hiv-150-1500_coords.npy"
 
 mkdir -p "$OUTPUT_DIR"
 
@@ -28,7 +29,7 @@ echo "Using input file: $INPUT_FILE"
 echo "Output directory: $OUTPUT_DIR"
 echo "SLURM Job ID: $SLURM_JOB_ID"
 
-python Plot.py --input "$INPUT_FILE" --output "$OUTPUT_DIR" --name "$NAME"
+python Plot.py --input "$INPUT_FILE" --output "$OUTPUT_DIR" --name "$NAME" --coords "$COORDS"
 
 echo "$NAME completed at $(date)"
 echo "Results saved to $OUTPUT_DIR"
