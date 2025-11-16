@@ -94,4 +94,4 @@ sorted_keys = sorted([int(key) for key in f.keys()])
 
 mzs = [100,200,350]
 
-plot_3d_slices(f,sorted_keys=sorted_keys,mz_values=mzs,name=args.name,shape=(335,460),output_dir=args.output,tolerance=50)
+plot_3d_slices(f,sorted_keys=sorted_keys,mz_values=mzs,name=args.name,shape=(400,400),output_dir=args.output,tolerance=50)
