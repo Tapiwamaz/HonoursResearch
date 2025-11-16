@@ -21,6 +21,8 @@ def get_image_data(file: h5py.File, sorted_keys: list[int], mz: float, shape: tu
         val = np.sum(intensities[mask]) if np.any(mask) else 0
         row, col = divmod(index, shape[1])
         img[row, col] = val
+    non_zero_pixels = np.count_nonzero(img)
+    print(f"m/z {mz}: {non_zero_pixels} non-zero pixels")
     return img
 
 
