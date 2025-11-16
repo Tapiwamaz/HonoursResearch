@@ -7,31 +7,36 @@ import numpy as np
 import argparse
 
 
-def get_image_data(file: h5py.File, sorted_keys: list[int], mz: float, shape: tuple, tolerance: float = 50) -> np.ndarray:
+def get_image_data(file: h5py.File, sorted_keys: list[int], mz: float, coords: np.ndarray, tolerance: float = 50) -> np.ndarray:
     """
     Generates a 2D image array for a single m/z value.
     """
+    max_x = int(np.max(coords[:, 0]))
+    max_y = int(np.max(coords[:, 1]))
+    shape = (max_x + 1, max_y + 1)
     img = np.zeros(shape)
     for index, key in enumerate(sorted_keys):
-        if index >= shape[0] * shape[1]:
-            break
         mass_to_charges = file[str(key)]["x"][:]
         intensities = file[str(key)]["y"][:]
         mask = np.abs(mass_to_charges - mz) <= tolerance
         val = np.sum(intensities[mask]) if np.any(mask) else 0
-        row, col = divmod(index, shape[1])
+        row, col = coords[index]
         img[row, col] = val
     non_zero_pixels = np.count_nonzero(img)
     print(f"m/z {mz}: {non_zero_pixels} non-zero pixels")
     return img
 
 
-def plot_3d_slices(file: h5py.File, sorted_keys: list[int], mz_values: list[float], name: str, shape: tuple, output_dir: str, tolerance: float = 50):
+def plot_3d_slices(file: h5py.File, sorted_keys: list[int], mz_values: list[float], name: str, coords: np.ndarray, output_dir: str, tolerance: float = 50):
     """
     Plots multiple 2D MSI images as slices in a 3D space.
     """
     fig = plt.figure(figsize=(16, 12))
     ax = fig.add_subplot(111, projection='3d')
+
+    max_x = int(np.max(coords[:, 0]))
+    max_y = int(np.max(coords[:, 1]))
+    shape = (max_x + 1, max_y + 1)
 
     # Create coordinate grids
     x = np.arange(shape[0])
@@ -41,7 +46,7 @@ def plot_3d_slices(file: h5py.File, sorted_keys: list[int], mz_values: list[floa
     # Plot each m/z slice
     for mz_target in mz_values:
         # Get the 2D image data for the current m/z
-        slice_2d = get_image_data(file, sorted_keys, mz_target, shape, tolerance)
+        slice_2d = get_image_data(file, sorted_keys, mz_target, coords, tolerance)
 
         # Normalize for better visualization
         slice_max = np.max(slice_2d)
@@ -52,14 +57,14 @@ def plot_3d_slices(file: h5py.File, sorted_keys: list[int], mz_values: list[floa
 
         # Plot the surface with colors based on intensity
         ax.plot_surface(X, Z, Y,
-                        facecolors=plt.cm.viridis(slice_norm),
+                        facecolors=plt.cm.magma(slice_norm),
                         rstride=5, cstride=5,  # Subsample for performance
-                        alpha=0.8, shade=False)
+                        alpha=1, shade=False)
 
     # Add a colorbar
-    m = plt.cm.ScalarMappable(cmap=plt.cm.viridis)
+    m = plt.cm.ScalarMappable(cmap=plt.cm.magma)
     m.set_array([0, 1])
-    fig.colorbar(m, ax=ax, shrink=0.5, aspect=10, label='Normalized Intensity')
+    fig.colorbar(m, ax=ax, shrink=0.25, aspect=10, label='Normalized Intensity')
 
     ax.set_xlabel('X Position')
     ax.set_zlabel('Y Position')
@@ -76,13 +81,15 @@ def plot_3d_slices(file: h5py.File, sorted_keys: list[int], mz_values: list[floa
     for elev, azim, view_name in views:
         ax.view_init(elev=elev, azim=azim)
         output_path = os.path.join(output_dir, f"{name}_{view_name}.png")
-        fig.savefig(output_path, dpi=300, bbox_inches='tight')
+        fig.savefig(output_path, dpi=100, bbox_inches='tight')
         print(f'Saved: {output_path}')
 
 parser = argparse.ArgumentParser(description="Generate ion image plot.")
 parser.add_argument("--input", required=True, help="Path to the input HDF5 file.")
 parser.add_argument("--output", required=True, help="Directory to save the plot.")
 parser.add_argument("--name", required=True, help="Name of plots.")
+parser.add_argument("--coords", required=True, help="Coords of plots.")
+
 
 
 args = parser.parse_args()
@@ -93,5 +100,6 @@ print(f"File loaded")
 sorted_keys = sorted([int(key) for key in f.keys()])
 
 mzs = [100,200,350]
+coords = np.load(args.coords)
 
-plot_3d_slices(f,sorted_keys=sorted_keys,mz_values=mzs,name=args.name,shape=(400,400),output_dir=args.output,tolerance=50)
+plot_3d_slices(f,sorted_keys=sorted_keys,mz_values=mzs,name=args.name,coords=coords,output_dir=args.output,tolerance=50)
