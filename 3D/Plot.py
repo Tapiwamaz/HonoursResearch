@@ -42,15 +42,15 @@ def plot_3d_slices(file: h5py.File, sorted_keys: list[int], mz_values: list[floa
         slice_2d = get_image_data(file, sorted_keys, mz_target, shape, tolerance)
 
         # Normalize for better visualization
-        # slice_max = np.max(slice_2d)
-        # slice_norm = slice_2d / slice_max if slice_max > 0 else slice_2d
+        slice_max = np.max(slice_2d)
+        slice_norm = slice_2d / slice_max if slice_max > 0 else slice_2d
 
         # Create a constant Z plane at the m/z level
         Z = np.full(X.shape, mz_target)
 
         # Plot the surface with colors based on intensity
-        ax.plot_surface(X, Y, Z,
-                        facecolors=plt.cm.viridis(slice_2d),
+        ax.plot_surface(X, Z, Y,
+                        facecolors=plt.cm.viridis(slice_norm),
                         rstride=5, cstride=5,  # Subsample for performance
                         alpha=0.8, shade=False)
 
@@ -60,8 +60,8 @@ def plot_3d_slices(file: h5py.File, sorted_keys: list[int], mz_values: list[floa
     fig.colorbar(m, ax=ax, shrink=0.5, aspect=10, label='Normalized Intensity')
 
     ax.set_xlabel('X Position')
-    ax.set_ylabel('Y Position')
-    ax.set_zlabel('m/z')
+    ax.set_zlabel('Y Position')
+    ax.set_ylabel('m/z')
     ax.set_title(f'3D Slices for {name}')
 
     views = [
