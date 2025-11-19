@@ -101,9 +101,13 @@ print(f"Shape of coords: {coords.shape}")
 f = h5py.File(args.input, 'r')
 print(f"File loaded")
 sorted_keys = sorted([int(key) for key in f.keys()])
-tolerance = 100
+sorted_keys = sorted_keys[:len(sorted_keys)-1]
+print(f"Num of keys: {len(sorted_keys)}")
+tolerance = 10
 mzs = [100,200,350, 450,600,1000,1300]
 coords = np.load(args.coords)
+coords = coords[:len(sorted_keys)]
+print(f"New coords size: {len(coords)}")
 
 for mz in mzs:
     slice_2d = get_image_data(f, sorted_keys, mz, coords, tolerance=tolerance)

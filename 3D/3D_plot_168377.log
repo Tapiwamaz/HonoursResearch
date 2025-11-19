@@ -1,9 +1,11 @@
-Starting OpenH5.py for hiv at Wed Nov 19 12:09:26 PM SAST 2025
+Starting OpenH5.py for hiv at Wed Nov 19 12:24:35 PM SAST 2025
 Using input file: ../../mass_spec_data/HIV/3 June/3 June PHRU FFPE test 1_1-115501_SN0p0_profile.h5
 Output directory: ./hiv
-SLURM Job ID: 168376
+SLURM Job ID: 168377
 Shape of coords: (56678, 3)
 File loaded
-hiv completed at Wed Nov 19 12:16:57 PM SAST 2025
+Num of keys: 56679
+New coords size: 56678
+hiv completed at Wed Nov 19 12:25:27 PM SAST 2025
 Results saved to ./hiv
 Tapedza!!! Mwari Ngaakudzwe!
