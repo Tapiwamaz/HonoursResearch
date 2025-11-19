@@ -98,8 +98,21 @@ args = parser.parse_args()
 f = h5py.File(args.input, 'r')
 print(f"File loaded")
 sorted_keys = sorted([int(key) for key in f.keys()])
-
-mzs = [100,200,350]
+tolerance = 50
+mzs = [100,200,350, 450,600,1000,1300]
 coords = np.load(args.coords)
 
-plot_3d_slices(f,sorted_keys=sorted_keys,mz_values=mzs,name=args.name,coords=coords,output_dir=args.output,tolerance=50)
+for mz in mzs:
+    slice_2d = get_image_data(f, sorted_keys, mz, coords, tolerance=tolerance)
+    output_path = os.path.join(args.output, f"{args.name}_mz_{mz}.png")
+    plt.figure(figsize=(10, 8))
+    plt.imshow(slice_2d.T, cmap='magma', origin='lower')
+    plt.colorbar(label='Intensity')
+    plt.xlabel('X Position')
+    plt.ylabel('Y Position')
+    plt.title(f'{args.name} sample at m/z = {mz} with tolerance of {tolerance}')
+    plt.savefig(output_path, dpi=300, bbox_inches='tight')
+    plt.close()
+    print(f'Saved: {output_path}')
+
+# plot_3d_slices(f,sorted_keys=sorted_keys,mz_values=mzs,name=args.name,coords=coords,output_dir=args.output,tolerance=50)

@@ -9,10 +9,10 @@
 #SBATCH --time=3-00:00:00      # 3 days max runtime 
 
 INPUT_FILE="../../mass_spec_data/HIV/3 June/3 June PHRU FFPE test 1_1-115501_SN0p0_profile.h5"
-#INPUT_FILE="../../mass_spec_data/HIV/3 June/3 June PHRU FFPE test 1_1-115501_SN0p0_profile.h5"
-OUTPUT_DIR="./hiv"
-NAME="hiv"
-COORDS="../Data/HIV/hiv-150-1500_coords.npy"
+#INPUT_FILE="../../mass_spec_data/Cancer biopsy/"
+OUTPUT_DIR="./cancer"
+NAME="cancer"
+COORDS="../Data/Cancer/cancer-150-1500_coords.npy"
 
 mkdir -p "$OUTPUT_DIR"
 
@@ -21,7 +21,7 @@ if [ ! -f "$INPUT_FILE" ]; then
     echo "Error: Input file not found at $INPUT_FILE"
     continue
 fi
-
+terter
 
 # Run the Python script
 echo "Starting OpenH5.py for $NAME at $(date)"
