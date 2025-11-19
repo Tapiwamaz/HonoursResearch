@@ -1,9 +1,7 @@
+/var/lib/slurm/slurmd/job168373/slurm_script: line 24: terter: command not found
 Traceback (most recent call last):
-  File "/home-mscluster/tmazarura/HonoursResearch/3D/Plot.py", line 105, in <module>
-    plot_3d_slices(f,sorted_keys=sorted_keys,mz_values=mzs,name=args.name,coords=coords,output_dir=args.output,tolerance=50)
-    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home-mscluster/tmazarura/HonoursResearch/3D/Plot.py", line 49, in plot_3d_slices
-    slice_2d = get_image_data(file, sorted_keys, mz_target, coords, tolerance)
+  File "/home-mscluster/tmazarura/HonoursResearch/3D/Plot.py", line 106, in <module>
+    slice_2d = get_image_data(f, sorted_keys, mz, coords, tolerance=tolerance)
   File "/home-mscluster/tmazarura/HonoursResearch/3D/Plot.py", line 23, in get_image_data
     row, col = coords[index]
     ^^^^^^^^

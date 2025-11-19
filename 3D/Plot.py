@@ -98,7 +98,7 @@ args = parser.parse_args()
 f = h5py.File(args.input, 'r')
 print(f"File loaded")
 sorted_keys = sorted([int(key) for key in f.keys()])
-tolerance = 50
+tolerance = 100
 mzs = [100,200,350, 450,600,1000,1300]
 coords = np.load(args.coords)
 
@@ -115,4 +115,4 @@ for mz in mzs:
     plt.close()
     print(f'Saved: {output_path}')
 
-# plot_3d_slices(f,sorted_keys=sorted_keys,mz_values=mzs,name=args.name,coords=coords,output_dir=args.output,tolerance=50)
+plot_3d_slices(f,sorted_keys=sorted_keys,mz_values=mzs,name=args.name,coords=coords,output_dir=args.output,tolerance=50)
