@@ -13,6 +13,7 @@ INPUT_FILE="../../mass_spec_data/HIV/3 June/3 June PHRU FFPE test 1_1-115501_SN0
 OUTPUT_DIR="./hiv"
 NAME="hiv"
 COORDS="../Data/HIV/hiv-150-1500_coords.npy"
+#COORDS="../Data/Cancer/cancer-150-1500-h5-coords.npy"
 
 mkdir -p "$OUTPUT_DIR"
 

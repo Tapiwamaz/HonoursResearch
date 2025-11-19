@@ -20,7 +20,8 @@ def get_image_data(file: h5py.File, sorted_keys: list[int], mz: float, coords: n
         intensities = file[str(key)]["y"][:]
         mask = np.abs(mass_to_charges - mz) <= tolerance
         val = np.sum(intensities[mask]) if np.any(mask) else 0
-        row, col = coords[index]
+        row = coords[index][0]
+        col = coords[index][1]
         img[row, col] = val
     non_zero_pixels = np.count_nonzero(img)
     print(f"m/z {mz}: {non_zero_pixels} non-zero pixels")
