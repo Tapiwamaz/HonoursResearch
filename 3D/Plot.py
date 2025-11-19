@@ -95,6 +95,8 @@ parser.add_argument("--coords", required=True, help="Coords of plots.")
 args = parser.parse_args()
 
 # Load data
+coords = np.load(args.coords)
+print(f"Shape of coords: {coords.shape}")
 f = h5py.File(args.input, 'r')
 print(f"File loaded")
 sorted_keys = sorted([int(key) for key in f.keys()])
