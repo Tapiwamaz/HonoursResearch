@@ -1,5 +1,3 @@
-mkdir: cannot create directory ‘’: No such file or directory
-/var/lib/slurm/slurmd/job168904/slurm_script: line 19: terter: command not found
 /home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/pyimzml/ontology/ontology.py:80: UserWarning: Unrecognized accession in <cvParam>:  (name: "").
   warn('Unrecognized accession in <cvParam>: %s (name: "%s").' % (accession, raw_name))
 /home-mscluster/tmazarura/miniconda3/lib/python3.13/site-packages/pyimzml/ontology/ontology.py:92: UserWarning: Accession IMS:1000042 found with incorrect name "max count of pixel x". Updating name to "max count of pixels x".

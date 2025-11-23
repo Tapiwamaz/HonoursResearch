@@ -44,7 +44,7 @@ scatter = ax.scatter(X, Z, Y, c=C, cmap='viridis',alpha=0.6)
 ax.set_xlabel('X')
 ax.set_zlabel('Y')
 ax.set_ylabel('mzs')
-ax.set_title('HIV')
+ax.set_title('Cancer')
 
 # Add a color bar
 fig.colorbar(scatter, ax=ax, label='Intensities')
@@ -60,7 +60,7 @@ view_angles = [
 
 for elev, azim in view_angles:
     ax.view_init(elev=elev, azim=azim)
-    plt.savefig(f'HIV_view_elev{elev}_azim{azim}i.png', dpi=350, bbox_inches='tight')
+    plt.savefig(f'HIV_view_{elev}_{azim}.png', dpi=350, bbox_inches='tight')
     print(f"Saved view: elevation={elev}, azimuth={azim}")
 
 # plt.show()
