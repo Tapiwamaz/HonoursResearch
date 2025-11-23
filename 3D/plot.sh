@@ -25,7 +25,7 @@ echo "Using input file: $INPUT_FILE"
 
 echo "SLURM Job ID: $SLURM_JOB_ID"
 
-python Plot.py --x "$INPUT_FILE" 
+python Plot.py --x "$INPUT_FILE"  --name "$NAME"
 
 echo "$NAME completed job at $(date)"
 
