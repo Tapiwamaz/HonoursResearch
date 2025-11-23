@@ -9,25 +9,23 @@
 #SBATCH --time=3-00:00:00      # 3 days max runtime 
 
 INPUT_FILE="../../mass_spec_data/HIV/3 June/3 June PHRU FFPE test 1_1-115501_SN0p0_1-56679_SN1p0_centroid.imzml"
-mkdir -p "$OUTPUT_DIR"
+
 
 
 if [ ! -f "$INPUT_FILE" ]; then
     echo "Error: Input file not found at $INPUT_FILE"
     continue
 fi
-terter
 
 # Run the Python script
 echo "Starting OpenH5.py for $NAME at $(date)"
 echo "Using input file: $INPUT_FILE"
-echo "Output directory: $OUTPUT_DIR"
+
 echo "SLURM Job ID: $SLURM_JOB_ID"
 
 python Plot.py --x "$INPUT_FILE" 
 
-echo "$NAME completed at $(date)"
-echo "Results saved to $OUTPUT_DIR"
+echo "$NAME completed job at $(date)"
 
 
 echo "Tapedza!!! Mwari Ngaakudzwe!"
