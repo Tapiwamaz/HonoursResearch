@@ -1,125 +1,48 @@
-import matplotlib.pyplot as plt
-import math
-import os
-import h5py
-import hdf5plugin
+from pyimzml.ImzMLParser import ImzMLParser
 import numpy as np
-import argparse
-
-
-def get_image_data(file: h5py.File, sorted_keys: list[int], mz: float, coords: np.ndarray, tolerance: float = 50) -> np.ndarray:
-    """
-    Generates a 2D image array for a single m/z value.
-    """
-    max_x = int(np.max(coords[:, 0]))
-    max_y = int(np.max(coords[:, 1]))
-    shape = (max_x + 1, max_y + 1)
-    img = np.zeros(shape)
-    for index, key in enumerate(sorted_keys):
-        mass_to_charges = file[str(key)]["x"][:]
-        intensities = file[str(key)]["y"][:]
-        mask = np.abs(mass_to_charges - mz) <= tolerance
-        val = np.sum(intensities[mask]) if np.any(mask) else 0
-        row = coords[index][0]
-        col = coords[index][1]
-        img[row, col] = val
-    non_zero_pixels = np.count_nonzero(img)
-    print(f"m/z {mz}: {non_zero_pixels} non-zero pixels")
-    return img
-
-
-def plot_3d_slices(file: h5py.File, sorted_keys: list[int], mz_values: list[float], name: str, coords: np.ndarray, output_dir: str, tolerance: float = 50):
-    """
-    Plots multiple 2D MSI images as slices in a 3D space.
-    """
-    fig = plt.figure(figsize=(16, 12))
-    ax = fig.add_subplot(111, projection='3d')
-
-    max_x = int(np.max(coords[:, 0]))
-    max_y = int(np.max(coords[:, 1]))
-    shape = (max_x + 1, max_y + 1)
-
-    # Create coordinate grids
-    x = np.arange(shape[0])
-    y = np.arange(shape[1])
-    X, Y = np.meshgrid(x, y, indexing='ij')
-
-    # Plot each m/z slice
-    for mz_target in mz_values:
-        # Get the 2D image data for the current m/z
-        slice_2d = get_image_data(file, sorted_keys, mz_target, coords, tolerance)
-
-        # Normalize for better visualization
-        slice_max = np.max(slice_2d)
-        slice_norm = slice_2d / slice_max if slice_max > 0 else slice_2d
-
-        # Create a constant Z plane at the m/z level
-        Z = np.full(X.shape, mz_target)
-
-        # Plot the surface with colors based on intensity
-        ax.plot_surface(X, Z, Y,
-                        facecolors=plt.cm.magma(slice_norm),
-                        rstride=5, cstride=5,  # Subsample for performance
-                        alpha=1, shade=False)
-
-    # Add a colorbar
-    m = plt.cm.ScalarMappable(cmap=plt.cm.magma)
-    m.set_array([0, 1])
-    fig.colorbar(m, ax=ax, shrink=0.25, aspect=10, label='Normalized Intensity')
-
-    ax.set_xlabel('X Position')
-    ax.set_zlabel('Y Position')
-    ax.set_ylabel('m/z')
-    ax.set_title(f'3D Slices for {name}')
-
-    views = [
-    (30, 45, 'view_1'),
-    (30, 135, 'view_2'),
-    (30, 225, 'view_3'),
-    (30, 315, 'view_4'),
-    ]
-
-    for elev, azim, view_name in views:
-        ax.view_init(elev=elev, azim=azim)
-        output_path = os.path.join(output_dir, f"{name}_{view_name}.png")
-        fig.savefig(output_path, dpi=100, bbox_inches='tight')
-        print(f'Saved: {output_path}')
-
-parser = argparse.ArgumentParser(description="Generate ion image plot.")
-parser.add_argument("--input", required=True, help="Path to the input HDF5 file.")
-parser.add_argument("--output", required=True, help="Directory to save the plot.")
-parser.add_argument("--name", required=True, help="Name of plots.")
-parser.add_argument("--coords", required=True, help="Coords of plots.")
+import random
+import math
+import matplotlib.pyplot as plt
 
 
 
-args = parser.parse_args()
+p = ImzMLParser('../Data/HIV.imzml')
+X,Y,Z,C = [],[],[],[]
+for idx, (x,y,z) in enumerate(p.coordinates):
+    mzs, intensities = p.getspectrum(idx)
+    # Normalize intensities for this spectrum
+    if len(intensities) > 0 and np.max(intensities) > 0:
+        normalized_intensities = intensities / np.max(intensities)
+    else:
+        normalized_intensities = intensities
+    
+    for id in range(len(mzs)):
+        if normalized_intensities[id] < 0.1 and idx >= 1: continue
+        X.append(x)
+        Y.append(y)
+        Z.append(mzs[id])
+        C.append(normalized_intensities[id])
+    # if idx >= 500:
+        # break    
+print(len(X))
+print(f"Min: {np.min(C)}")
+print(f"Max: {np.max(C)}")
+print(f"Mean: {np.mean(C)}")
 
-# Load data
-coords = np.load(args.coords)
-print(f"Shape of coords: {coords.shape}")
-f = h5py.File(args.input, 'r')
-print(f"File loaded")
-sorted_keys = sorted([int(key) for key in f.keys()])
-sorted_keys = sorted_keys[:len(sorted_keys)-1]
-print(f"Num of keys: {len(sorted_keys)}")
-tolerance = 10
-mzs = [100,200,350, 450,600,1000,1300]
-coords = np.load(args.coords)
-coords = coords[:len(sorted_keys)]
-print(f"New coords size: {len(coords)}")
 
-for mz in mzs:
-    slice_2d = get_image_data(f, sorted_keys, mz, coords, tolerance=tolerance)
-    output_path = os.path.join(args.output, f"{args.name}_mz_{mz}.png")
-    plt.figure(figsize=(10, 8))
-    plt.imshow(slice_2d.T, cmap='magma', origin='lower')
-    plt.colorbar(label='Intensity')
-    plt.xlabel('X Position')
-    plt.ylabel('Y Position')
-    plt.title(f'{args.name} sample at m/z = {mz} with tolerance of {tolerance}')
-    plt.savefig(output_path, dpi=300, bbox_inches='tight')
-    plt.close()
-    print(f'Saved: {output_path}')
+# Create 3D scatter plot
+fig = plt.figure(figsize=(10, 8))
+ax = fig.add_subplot(111, projection='3d')
 
-plot_3d_slices(f,sorted_keys=sorted_keys,mz_values=mzs,name=args.name,coords=coords,output_dir=args.output,tolerance=50)
+scatter = ax.scatter(X, Z, Y, c=C, cmap='viridis',alpha=0.6)
+
+# Set labels and title
+ax.set_xlabel('X')
+ax.set_zlabel('Y')
+ax.set_ylabel('mzs')
+ax.set_title('HIV')
+
+# Add a color bar
+fig.colorbar(scatter, ax=ax, label='Intensities')
+
+plt.show()
