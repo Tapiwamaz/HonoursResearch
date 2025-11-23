@@ -1,12 +1,16 @@
 from pyimzml.ImzMLParser import ImzMLParser
 import numpy as np
-import random
-import math
+import os
+import argparse
 import matplotlib.pyplot as plt
 
+parser = argparse.ArgumentParser(description="Generate ion image plot.")
+parser.add_argument("--x", required=True, help="Path to the imzml file")
 
 
-p = ImzMLParser('../Data/HIV.imzml')
+args = parser.parse_args()
+
+p = ImzMLParser(args.x)
 X,Y,Z,C = [],[],[],[]
 for idx, (x,y,z) in enumerate(p.coordinates):
     mzs, intensities = p.getspectrum(idx)
@@ -17,7 +21,7 @@ for idx, (x,y,z) in enumerate(p.coordinates):
         normalized_intensities = intensities
     
     for id in range(len(mzs)):
-        if normalized_intensities[id] < 0.1 and idx >= 1: continue
+        # if normalized_intensities[id] < 20000.1 and idx >= 2: continue
         X.append(x)
         Y.append(y)
         Z.append(mzs[id])
@@ -45,4 +49,18 @@ ax.set_title('HIV')
 # Add a color bar
 fig.colorbar(scatter, ax=ax, label='Intensities')
 
-plt.show()
+# Save the image from different view angles
+view_angles = [
+    (30, 45),   # default-ish view
+    (0, 0),     # front view
+    (0, 90),    # side view
+    (90, 0),    # top view
+    (45, 135),  # diagonal view
+]
+
+for elev, azim in view_angles:
+    ax.view_init(elev=elev, azim=azim)
+    plt.savefig(f'HIV_view_elev{elev}_azim{azim}i.png', dpi=350, bbox_inches='tight')
+    print(f"Saved view: elevation={elev}, azimuth={azim}")
+
+# plt.show()
