@@ -15,7 +15,7 @@ width = 0.25  # the width of the bars
 multiplier = 0
 
 fig, ax = plt.subplots(layout='constrained')
-
+plt.figure(figsize=(12, 10))
 for attribute, measurement in penguin_means.items():
     offset = width * multiplier
     rects = ax.bar(x + offset, measurement, width, label=attribute)
@@ -28,4 +28,4 @@ ax.set_xticks(x + width, species)
 ax.legend()
 ax.set_ylim(0, 250)
 
-plt.savefig("ClassifierPerformances.png",dpi=500)
+plt.savefig("ClassifierPerformances.png",dpi=500,bbox_inches="tight")
