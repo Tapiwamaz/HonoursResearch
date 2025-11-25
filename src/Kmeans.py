@@ -95,6 +95,9 @@ cluster_labels = kmeans.fit_predict(X)
 coords = np.load(args.coords)  
 print(f"Coordinates shape: {coords.shape}")
 
+num_spectra = min(coords.shape[0],X.shape[0])
+
+
 if coords.shape[1] == 3:
     xs, ys, _ = coords[:, 0], coords[:, 1], coords[:, 2]
 elif coords.shape[1] == 2:
@@ -121,7 +124,7 @@ os.makedirs(args.output, exist_ok=True)
 
 colors = [
     (1, 0, 0),      # green
-    (0, 1, ),      # blue
+    (0, 1, 0),      # blue
     (0, 0, 1),      # green
     (0.5, 0, 0),      # red
     (1, 0.647, 0),  # orange
@@ -152,29 +155,29 @@ plt.savefig(joint_plot_path, dpi=500, bbox_inches='tight')
 print(f"Saved joint plot to: {joint_plot_path}")
 plt.close()
 
-import math
-cols = min(3, optimal_k)  # Maximum 3 columns
-rows = math.ceil(optimal_k / cols)
+# import math
+# cols = min(3, optimal_k)  # Maximum 3 columns
+# rows = math.ceil(optimal_k / cols)
 
-fig, axes = plt.subplots(rows, cols, figsize=(5*cols, 4*rows))
-if optimal_k == 1:
-    axes = [axes]
-elif rows == 1:
-    axes = axes.reshape(1, -1)
+# fig, axes = plt.subplots(rows, cols, figsize=(5*cols, 4*rows))
+# if optimal_k == 1:
+#     axes = [axes]
+# elif rows == 1:
+#     axes = axes.reshape(1, -1)
 
-for cluster_id in range(optimal_k):
-    row = cluster_id // cols
-    col = cluster_id % cols
+# for cluster_id in range(optimal_k):
+#     row = cluster_id // cols
+#     col = cluster_id % cols
     
-    cluster_only_map = np.zeros((height, width, 3), dtype=np.uint8)  # Default to black
-    cluster_color = [int(c * 255) for c in colors[cluster_id % len(colors)]]  # Scale RGB to 0-255
-    cluster_only_map[cluster_map == cluster_id] = cluster_color
+#     cluster_only_map = np.zeros((height, width, 3), dtype=np.uint8)  # Default to black
+#     cluster_color = [int(c * 255) for c in colors[cluster_id % len(colors)]]  # Scale RGB to 0-255
+#     cluster_only_map[cluster_map == cluster_id] = cluster_color
 
-    # Plot the cluster map
-    axes[row, col].imshow(cluster_only_map, origin='lower')
-    axes[row, col].set_title(f"Cluster {cluster_id}")
-    axes[row, col].set_xlabel('X Coordinate')
-    axes[row, col].set_ylabel('Y Coordinate')
+#     # Plot the cluster map
+#     axes[row, col].imshow(cluster_only_map, origin='lower')
+#     axes[row, col].set_title(f"Cluster {cluster_id}")
+#     axes[row, col].set_xlabel('X Coordinate')
+#     axes[row, col].set_ylabel('Y Coordinate')
 
     
 

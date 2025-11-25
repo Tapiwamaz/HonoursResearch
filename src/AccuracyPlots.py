@@ -11,21 +11,22 @@ penguin_means = {
 }
 
 x = np.arange(len(species))  # the label locations
-width = 0.25  # the width of the bars
+width = 0.2 
 multiplier = 0
 
-fig, ax = plt.subplots(layout='constrained')
-#plt.figure(figsize=(12, 10))
+fig, ax = plt.subplots(layout='constrained',figsize=(8,6))
+ax.grid(axis='both', alpha=0.5, linestyle='--', linewidth=0.7)
+ax.set_ylim(0, 1.1)  # Extend y-axis to accommodate labels
+
 for attribute, measurement in penguin_means.items():
     offset = width * multiplier
-    rects = ax.bar(x + offset, measurement, width, label=attribute)
-    ax.bar_label(rects, padding=3)
+    rects = ax.bar(x + offset, measurement, width, label=attribute,alpha=0.9)
+    ax.bar_label(rects, padding=4)
     multiplier += 1
 
 ax.set_ylabel('Measure')
 ax.set_title('Classifier perfomance on  LPS data')
 ax.set_xticks(x + width, species)
-ax.legend()
-#ax.set_ylim(0, 1)
+ax.legend(loc="lower right")
 
-plt.savefig("ClassifierPerformances.png",dpi=500)
+plt.show()
