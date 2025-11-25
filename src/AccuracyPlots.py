@@ -26,6 +26,6 @@ ax.set_ylabel('Measure')
 ax.set_title('Classifier perfomance on  LPS data')
 ax.set_xticks(x + width, species)
 ax.legend()
-ax.set_ylim(0, 250)
+ax.set_ylim(0, 1)
 
 plt.savefig("ClassifierPerformances.png",dpi=500,bbox_inches="tight")
