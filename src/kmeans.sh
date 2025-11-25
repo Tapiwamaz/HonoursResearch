@@ -5,14 +5,14 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=16      # Using more cores for biggpu            
-#SBATCH --partition=bigbatch
+#SBATCH --partition=stampede
 #SBATCH --time=3-00:00:00      # 3 days max runtime 
 
-INPUT_FILE="../Data/Encoded/cancer-cnn-tanh.npy"
+INPUT_FILE="../Data/Encoded/hiv-10k.npy"
 OUTPUT_DIR="../kmeans"
-COORDS="../Data/Cancer/cancer-150-1500-h5-coords.npy"
-JOB_NAME="cnn-tanh-cancer"
-K_CLUSTERS=2
+COORDS="../Data/HIV/hiv-150-1500_coords.npy"
+JOB_NAME="hiv-cnn"
+K_CLUSTERS=3
 
 
 mkdir -p "$OUTPUT_DIR"

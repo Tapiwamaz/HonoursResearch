@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home-mscluster/tmazarura/HonoursResearch/src/Kmeans.py", line 142, in <module>
+    colored_cluster_map[cluster_map == cluster_id] = cluster_color
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: shape mismatch: value array of shape (2,) could not be broadcast to indexing result of shape (4691,3)

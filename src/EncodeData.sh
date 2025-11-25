@@ -8,7 +8,7 @@
 #SBATCH --partition=bigbatch
 #SBATCH --time=3-00:00:00      # 3 days max runtime 
 
-INPUT_FILE="../Data/Cancer/cancer-h5_x.npy"
+INPUT_FILE="../Data/HIV/hiv-150-1500-h5-data.npy"
 OUTPUT_DIR="../Data/Encoded"
 ENCODER_PATH="../Models/AE/cnn-encoder.keras"
 
@@ -17,7 +17,7 @@ mkdir -p "$OUTPUT_DIR"
 START_TIME=$(date)
 echo "Started at: $START_TIME"
 
-JOB_NAME="cancer-cnn-tanh"
+JOB_NAME="hiv-cnn"
 
 if [ ! -f "$INPUT_FILE" ]; then
     echo "Error: Input file not found at $INPUT_FILE"

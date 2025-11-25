@@ -83,9 +83,9 @@ if np.isnan(X).any():
 print(f"Shape: {X.shape}")
 
 
-inertias, sils = get_optimal_k(data=X,max_k=5)
-print(f"Inertias: {inertias}")
-print(f"Silhouette: {sils}")
+#inertias, sils = get_optimal_k(data=X,max_k=5)
+#print(f"Inertias: {inertias}")
+#print(f"Silhouette: {sils}")
 
 
 optimal_k = int(args.k)
@@ -120,10 +120,10 @@ for cluster_id, count in zip(unique_clusters, cluster_counts):
 os.makedirs(args.output, exist_ok=True)
 
 colors = [
-    (0, 1, 0),      # green
-    (0, 0, 1),      # blue
-    (0, 1, 0),      # green
-    (1, 0, 0),      # red
+    (1, 0, 0),      # green
+    (0, 1, ),      # blue
+    (0, 0, 1),      # green
+    (0.5, 0, 0),      # red
     (1, 0.647, 0),  # orange
     (0.5, 0, 0.5),  # purple
     (0.647, 0.165, 0.165),  # brown
@@ -133,24 +133,24 @@ colors = [
     (0, 1, 1)       # cyan
 ]
 
-# # Joint plot: All clusters together
-# plt.figure(figsize=(12, 10))
-# colored_cluster_map = np.full((height, width, 3), 0, dtype=np.uint8)  # Default to black background
-# for cluster_id in range(optimal_k):
-#     cluster_color = colors[cluster_id]  # Convert to RGB
-#     cluster_color = [int(c * 255) for c in cluster_color]  # Scale to 0-255
-#     colored_cluster_map[cluster_map == cluster_id] = cluster_color
+# Joint plot: All clusters together
+plt.figure(figsize=(12, 10))
+colored_cluster_map = np.full((height, width, 3), 0, dtype=np.uint8)  # Default to black background
+for cluster_id in range(optimal_k):
+     cluster_color = colors[cluster_id]  # Convert to RGB
+     cluster_color = [int(c * 255) for c in cluster_color]  # Scale to 0-255
+     colored_cluster_map[cluster_map == cluster_id] = cluster_color
 
-# plt.imshow(colored_cluster_map, origin='lower')
-# plt.title(f"Tissue Segmentation via K-Means (k={optimal_k}) on Latent Space - {args.name}")
-# plt.xlabel('X Coordinate')
-# plt.ylabel('Y Coordinate')
+#plt.imshow(colored_cluster_map, origin='lower')
+plt.title(f"Tissue Segmentation via K-Means (k={optimal_k}) on Latent Space - {args.name}")
+plt.xlabel('X Coordinate')
+plt.ylabel('Y Coordinate')
 
 # # Save joint plot
-# joint_plot_path = os.path.join(args.output, f"{args.name}_kmeans_k{optimal_k}_joint.png")
-# plt.savefig(joint_plot_path, dpi=500, bbox_inches='tight')
-# print(f"Saved joint plot to: {joint_plot_path}")
-# plt.close()
+joint_plot_path = os.path.join(args.output, f"{args.name}_kmeans_k{optimal_k}_joint.png")
+plt.savefig(joint_plot_path, dpi=500, bbox_inches='tight')
+print(f"Saved joint plot to: {joint_plot_path}")
+plt.close()
 
 import math
 cols = min(3, optimal_k)  # Maximum 3 columns
@@ -179,26 +179,26 @@ for cluster_id in range(optimal_k):
     
 
 # Hide empty subplots if any
-for i in range(optimal_k, rows * cols):
-    row = i // cols
-    col = i % cols
-    axes[row, col].set_visible(False)
+#for i in range(optimal_k, rows * cols):
+#    row = i // cols
+#    col = i % cols
+#    axes[row, col].set_visible(False)
 
-plt.suptitle(f"Individual Clusters - {args.name} (K-Means k={optimal_k})", fontsize=16)
-plt.tight_layout()
+#plt.suptitle(f"Individual Clusters - {args.name} (K-Means k={optimal_k})", fontsize=16)
+#plt.tight_layout()
 
 # Save subplot figure
-subplot_path = os.path.join(args.output, f"{args.name}_kmeans_k{optimal_k}_individual_clusters.png")
-plt.savefig(subplot_path, dpi=300, bbox_inches='tight')
-print(f"Saved individual clusters subplot to: {subplot_path}")
-plt.close()
+#subplot_path = os.path.join(args.output, f"{args.name}_kmeans_k{optimal_k}_individual_clusters.png")
+#plt.savefig(subplot_path, dpi=300, bbox_inches='tight')
+#print(f"Saved individual clusters subplot to: {subplot_path}")
+#plt.close()
 
-centroids = kmeans.cluster_centers_
-centroids_path = os.path.join(args.output, f"{args.name}_centroids_k{optimal_k}.npy")
-np.save(centroids_path, centroids)
-print(f"Saved centroids to: {centroids_path}")
-print(f"Centroids shape: {centroids.shape}")
+#centroids = kmeans.cluster_centers_
+#centroids_path = os.path.join(args.output, f"{args.name}_centroids_k{optimal_k}.npy")
+#np.save(centroids_path, centroids)
+#print(f"Saved centroids to: {centroids_path}")
+#print(f"Centroids shape: {centroids.shape}")
 
-print(f"\nAll plots saved to: {args.output}")
+#print(f"\nAll plots saved to: {args.output}")
 print(f"Job '{args.name}' completed successfully!")
 
