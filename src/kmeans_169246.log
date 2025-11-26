@@ -1,0 +1,13 @@
+K-Means clustering started at: Tue Nov 25 05:30:19 PM SAST 2025
+Loaded data
+Shape: (56679, 200)
+Coordinates shape: (56678, 3)
+Image dimensions: 335 x 460
+
+Cluster Statistics:
+Total number of pixels: 56679
+Cluster 0: 38372 pixels (67.70%)
+Cluster 1: 13621 pixels (24.03%)
+Cluster 2: 4686 pixels (8.27%)
+K-Means clustering finished at: Tue Nov 25 05:32:30 PM SAST 2025
+Tapedza!!! Mwari Ngaakudzwe!
